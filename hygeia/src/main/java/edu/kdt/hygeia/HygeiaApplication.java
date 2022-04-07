@@ -10,6 +10,7 @@ public class HygeiaApplication {
 		SpringApplication.run(HygeiaApplication.class, args);
 		// conflict test 1
 		// git test
+		// conflict test 2
 	}
 
 }
