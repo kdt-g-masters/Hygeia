@@ -8,6 +8,7 @@ public class HygeiaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HygeiaApplication.class, args);
+		//hi github
 	}
 
 }
