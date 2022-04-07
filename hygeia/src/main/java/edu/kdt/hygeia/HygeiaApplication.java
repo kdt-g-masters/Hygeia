@@ -13,6 +13,7 @@ public class HygeiaApplication {
 		// conflict test 3
 		// conflict test 2
 		// conflict SH 1
+		// conflict SH 2
 	}
 
 }
