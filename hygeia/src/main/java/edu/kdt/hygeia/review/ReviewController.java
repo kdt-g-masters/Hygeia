@@ -1,5 +1,8 @@
 package edu.kdt.hygeia.review;
 
-public class ReviewController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class ReviewController {
+	
 }
