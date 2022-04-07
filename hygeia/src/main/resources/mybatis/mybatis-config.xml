@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  <!-- mybatis db 연결정보 세팅 파일 -->
+<configuration>
+	<!-- 1. sql 실행 결과 ...DTO 매핑 -->
+	<typeAliases>
+		<typeAlias type="edu.kdt.hygeia.disease.DiseaseDTO" alias="diseasedto"/>
+		<typeAlias type="edu.kdt.hygeia.food.FoodDTO" alias="fooddto"/>
+		<typeAlias type="edu.kdt.hygeia.helpfulfood.HelpfulfoodDTO" alias="helpfulfooddto"/>
+		<typeAlias type="edu.kdt.hygeia.member.MemberDTO" alias="memberdto"/>
+		<typeAlias type="edu.kdt.hygeia.review.ReviewDTO" alias="reviewdto"/>
+		<typeAlias type="edu.kdt.hygeia.survey.surveyDTO" alias="surveydto"/>
+	</typeAliases>
+</configuration>
