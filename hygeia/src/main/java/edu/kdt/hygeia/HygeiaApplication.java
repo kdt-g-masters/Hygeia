@@ -12,6 +12,7 @@ public class HygeiaApplication {
 		// git test
 		// conflict test 3
 		// conflict test 2
+		// conflict SH 1
 	}
 
 }
