@@ -14,6 +14,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
-reviewlist 테스트
+<c:forEach items="${ reviewlist }" var="dto">
+	<div>${ dto.id }, ${ dto.title }, ${ dto.dateWrtn }</div>
+</c:forEach>
 </body>
 </html>

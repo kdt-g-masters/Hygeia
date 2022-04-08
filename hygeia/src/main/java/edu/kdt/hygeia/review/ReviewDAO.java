@@ -1,5 +1,12 @@
 package edu.kdt.hygeia.review;
 
-public interface ReviewDAO {
+import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+@Mapper
+@Repository("reviewdao")
+public interface ReviewDAO {
+	public List<ReviewDTO> reviewlist();
 }

@@ -1,5 +1,7 @@
 package edu.kdt.hygeia.review;
 
-public interface ReviewService {
+import java.util.List;
 
+public interface ReviewService {
+	public List<ReviewDTO> reviewlist();
 }
