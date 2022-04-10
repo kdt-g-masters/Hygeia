@@ -3,9 +3,19 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.kdt.hygeia.member.MemberDAO" >
-	<!--
-	<select id="memberList" resultType="memberdto">
-		select * from member
+	<!-- 로그인 -->
+	<select id="loginMember" resultType="memberdto" parameterType="memberdto">
+		select * from member where id=#{id} and password=#{password}
 	</select>
-	-->
+	
+	<!-- 회원가입 -->
+	<insert id="joinMember" parameterType="memberdto">
+		insert into member values(#{id}, #{password}, #{name}, #{gender}, #{birthDate}, #{phone})
+	</insert>
+	
+	<!-- 아이디 중복 확인 -->
+	<select id="checkId" resultType="String" parameterType="String">
+		select id from member
+		where id=#{id}
+	</select>
 </mapper>
