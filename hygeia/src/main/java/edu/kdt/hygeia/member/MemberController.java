@@ -67,6 +67,6 @@ public class MemberController {
 		}
 	}
 	
-	@RequestMapping(value="/footer")
+	@RequestMapping(value="/index")
 	public void temp() {}
 }
