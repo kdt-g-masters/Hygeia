@@ -8,9 +8,12 @@
 		select * from review
 	</select>
 	
-	<!--
-	<select id="reviewList" resultType="reviewdto">
-		select * from review
+	<select id="reviewresult" resultType="reviewdto" parameterType="int">
+		select * from review where id=#{id}
 	</select>
-	-->
+	
+	<insert id="reviewinput" parameterType="reviewdto">
+		insert into review values(#{id}, #{member_id}, #{disease_cntntsSn}, #{dateWrtn}, #{views}, #{title}, #{content}, #{attachments}, #{tag}, 0, 0)
+	</insert>
+	
 </mapper>

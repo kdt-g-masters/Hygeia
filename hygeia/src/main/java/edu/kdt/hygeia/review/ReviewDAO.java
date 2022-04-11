@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository("reviewdao")
 public interface ReviewDAO {
 	public List<ReviewDTO> reviewlist();
+	public ReviewDTO reviewresult(int reviewid);
+	public int reviewinput(ReviewDTO dto);
 }

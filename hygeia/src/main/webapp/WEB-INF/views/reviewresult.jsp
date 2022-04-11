@@ -14,12 +14,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
-<h1>만병통치 후기</h1>
-<input type="search">
-<a href="/reviewinput">리뷰쓰기</a>
-<div>병명 제목   작성자   일자   조회수</div>
-<c:forEach items="${ reviewlist }" var="dto">
-	<a href="/reviewresult?reviewid=${ dto.id }">${ dto.disease_cntntsSn } ${ dto.title } ${ dto.member_id } ${ dto.dateWrtn } ${ dto.views }</a><br>
-</c:forEach>
+<div>${ reviewresult.disease_cntntsSn } ${ reviewresult.title } ${ reviewresult.member_id } ${ reviewresult.dateWrtn } ${ reviewresult.views }</div>
+<div>${ reviewresult.content }<br>${ reviewresult.tag }</div>
+<input type="button" value="rcm">
+<input type="button" value="nonrcm">
+<input type="button" value="목록 보기">
 </body>
 </html>
