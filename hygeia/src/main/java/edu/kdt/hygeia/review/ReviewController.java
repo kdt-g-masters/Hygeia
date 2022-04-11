@@ -16,6 +16,7 @@ public class ReviewController {
 	@Qualifier("reviewservice")
 	ReviewService service;
 	
+	//후기 목록 페이지
 	@RequestMapping("/reviewlist")
 	public ModelAndView reviewlist() {
 		ModelAndView mv = new ModelAndView();
@@ -25,6 +26,7 @@ public class ReviewController {
 		return mv;
 	}
 	
+	//후기 상세 페이지
 	@RequestMapping("/reviewresult")
 	public ModelAndView reviewresult(int reviewid) {
 		ModelAndView mv = new ModelAndView();
@@ -34,11 +36,13 @@ public class ReviewController {
 		return mv;
 	}
 	
+	//후기 작성 페이지
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.GET)
 	public String reviewinputform() {
 		return "reviewinput";
 	}
 	
+	//후기 작성
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.POST)
 	public ModelAndView reviewinput(ReviewDTO dto) {
 		int result = service.reviewinput(dto);

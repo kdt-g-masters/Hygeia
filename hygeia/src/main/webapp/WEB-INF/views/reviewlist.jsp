@@ -15,9 +15,12 @@
 </head>
 <body>
 <h1>만병통치 후기</h1>
+<!-- 검색 -->
 <input type="search">
+<!-- 후기 작성 페이지 링크 -->
 <a href="/reviewinput">리뷰쓰기</a>
 <div>병명 제목   작성자   일자   조회수</div>
+<!-- 후기 목록 -->
 <c:forEach items="${ reviewlist }" var="dto">
 	<a href="/reviewresult?reviewid=${ dto.id }">${ dto.disease_cntntsSn } ${ dto.title } ${ dto.member_id } ${ dto.dateWrtn } ${ dto.views }</a><br>
 </c:forEach>

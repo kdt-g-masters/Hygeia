@@ -18,6 +18,7 @@
 <body>
 <h1>만병통치 후기</h1>
 <form action="reviewinput" method="post">
+	<!-- 병 선택 -->
 	<select name="disease_cntntsSn">
 		<option value="5300">고혈압</option>
 		<option value="5305">당뇨병</option>
@@ -32,13 +33,19 @@
 		<option value="1988">관절염</option>
 	</select>
 	<div>
+		<!-- 작성자 아이디 -->
 		<div>작성자</div><input type="text" name="member_id">
+		<!-- 현재 날짜 -->
 		<%Date now = new Date(); SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); %>
 		<div><%=formatter.format(now) %></div><input type="text" name="dateWrtn" value="<%=formatter.format(now) %>" hidden>
 	</div>
+	<!-- 제목 -->
 	<input type="text" name="title">
+	<!-- 첨부파일 -->
 	<input type="text" name="attachments">
+	<!-- 태그 -->
 	<input type="text" name="tag">
+	<!-- 후기 내용 -->
 	<textarea rows="40" cols="100" name="content"></textarea>
 	<input type="submit" value="후기 올리기">
 </form>
