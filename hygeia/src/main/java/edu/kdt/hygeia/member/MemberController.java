@@ -67,6 +67,6 @@ public class MemberController {
 		}
 	}
 	
-	@RequestMapping(value="/navbar")
+	@RequestMapping(value="/index")
 	public void temp() {}
 }
