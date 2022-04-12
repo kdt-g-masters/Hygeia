@@ -13,6 +13,7 @@ import edu.kdt.hygeia.member.MemberDAO;
 
 @SpringBootApplication
 @ComponentScan // 같은 패키지
+@ComponentScan(basePackageClasses = ChatbotContoller.class)
 @ComponentScan(basePackageClasses = ReviewController.class)
 @ComponentScan(basePackageClasses = MemberController.class)
 @ComponentScan(basePackageClasses = DiseaseController.class)
@@ -20,6 +21,7 @@ import edu.kdt.hygeia.member.MemberDAO;
 @MapperScan(basePackageClasses = MemberDAO.class)
 @MapperScan(basePackageClasses = ReviewDAO.class)
 @MapperScan(basePackageClasses = DiseaseDAO.class)
+
 public class HygeiaApplication {
 
 	public static void main(String[] args) {
