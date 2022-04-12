@@ -1,0 +1,12 @@
+@charset "UTF-8";
+nav {
+	background: linear-gradient(to right, #FCA937, #FFD37C);
+}
+
+svg {
+	margin: 5px;
+}
+
+.nav-item:hover {
+	background-color: #E6890A;
+}
