@@ -49,7 +49,7 @@ public class ReviewController {
 		int result = service.reviewInput(dto);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject(result);
-		mv.setViewName("reviewlist");
+		//mv.setViewName("reviewlist");
 		return mv;
 	}
 	

@@ -10,7 +10,7 @@
 <script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
-		//url에서 param값 받아오기 $.urlParam('변수') param 변수의 값 받아온다.
+		//현재 페이지의 url에서 param값 받아오기 $.urlParam('변수') param 변수의 값 받아온다.
 		$.urlParam = function(name){
 		    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
 		    return results[1] || 0;
@@ -46,7 +46,16 @@ JSONArray cntntsCl = (JSONArray)cntntsClList.get("cntntsCl");
 String cntntssj = (String)svc.get("CNTNTSSJ");//병 이름 부분
 
 //병 개요 부분
-JSONObject overview = (JSONObject)cntntsCl.get(0);
+JSONObject overview = null;
+if(cntntssj.equals("골다공증")){
+	overview = (JSONObject)cntntsCl.get(1);
+}
+else if(cntntssj.equals("만성폐쇄성폐질환")){
+	overview = (JSONObject)cntntsCl.get(2);
+}
+else{
+	overview = (JSONObject)cntntsCl.get(0);	
+}
 String overviewcontent = (String)overview.get("CNTNTS_CL_CN");
 %>
 <div>
