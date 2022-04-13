@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 @Service("chatbotservice")
-public class ChatbotService implements NaverService{
+public class ChatbotService implements NaverService {
 
 	@Override
 	public String test(String request) {
@@ -95,7 +95,9 @@ public class ChatbotService implements NaverService{
         } catch (Exception e){
             System.out.println(e);
         }
-
+       //-----------추가------------ 
+        System.out.println("\n encodeBase64String : " + encodeBase64String);
+        //-----------추가------------  
         return encodeBase64String;
 
     }

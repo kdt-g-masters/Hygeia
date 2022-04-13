@@ -13,26 +13,6 @@ public class ChatbotContoller {
 	@Qualifier("chatbotservice")
 	ChatbotService service;
 	
-	@RequestMapping("/chatbotrequest")
-	public String chatbotinput() {
-		return "chatbotrequest";
-	}
-	
-	@RequestMapping("/chatbotresponse")
-	public ModelAndView chatbotresponse(String request, String event) {
-		ModelAndView mv = new ModelAndView();
-		String response = "";
-		if(event.equals("입력")) {
-			response = service.test(request);
-		}
-		else if(event.equals("웰컴")) {
-			response = service.test(request, "open");
-		}
-		mv.addObject("response", response);
-		mv.setViewName("chatbotresponse");
-		return mv;
-	}
-	
 	@RequestMapping("/chatbotajax")
 	public String chatbotajax() {
 		return "chatbot";
@@ -47,7 +27,8 @@ public class ChatbotContoller {
 		if(event.equals("입력")) {
 			response = service.test(request);
 		}
-		System.out.println("==> ");
+		System.out.println("==> " + response);
+		
 		return response;
 	}
 	

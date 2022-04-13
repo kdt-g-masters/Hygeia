@@ -9,22 +9,20 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("input:button").on('click', function(){
-			$("#response").append("<div class='question'>" + $("#request").val() + "</div><br>");	//질문출력
+			$("#record").append("<div class='question'>" + $("#request").val() + "</div><br>");	//질문출력
 			
 			$.ajax({
 				url : "/chatbotajax2",
-				data : {"request": $("#request").val(), "event":$(this).val()},
+				data : {"request": $("#request").val(), "event":$(this).val()}, //질문, 입력 
 				type : "get",
 				dataType : "json",
 				success : function(serverdata){ // 값을 보냈을 때 화면에서 바뀌는 부분
-		
 					var bubbles = serverdata.bubbles;
 					for(var b in bubbles){
 						if(bubbles[b].type == "text"){ //기본답변일때
 							var textanswer = "<div class='answer'>"; 
-							if(bubbles[b].data.url != null) textanswer += "<a href='" + bubbles[b].data.url + "'>" + bubbles[b].data.description + "</a>";
-							else textanswer += bubbles[b].data.description;
-							$("#response").append(textanswer+"</div><br>");	
+							textanswer += bubbles[b].data.description;
+							$("#record").append(textanswer+"</div><br>");	
 						}	
 					}
 				} // success end
@@ -76,10 +74,10 @@
 </head>
 <body>
 <div id="box">
- <input type="text" id="request">  <!-- 질문이 한줄 이상 넘어가면 textarea로 만들것 -->
-<input type="button" id="event" value="입력" >
+<input type="text" id="request" name="text" placeholder="질문을 입력하세요." >  <!-- 질문이 한줄 이상 넘어가면 textarea로 만들것 -->
+<input type="button" id="event" value="입력" name="event">
 <div id="sound"></div>
- <div id="response"></div>
+ <div id="record"></div>
 
 </div>
 
