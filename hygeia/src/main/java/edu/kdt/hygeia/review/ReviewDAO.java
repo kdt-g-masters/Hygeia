@@ -8,7 +8,8 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository("reviewdao")
 public interface ReviewDAO {
-	public List<ReviewDTO> reviewlist();
-	public ReviewDTO reviewresult(int reviewid);
-	public int reviewinput(ReviewDTO dto);
+	public List<ReviewDTO> reviewList();
+	public ReviewDTO reviewResult(int reviewid);
+	public int reviewInput(ReviewDTO dto);
+	public int reviewCount(int reviewid);
 }

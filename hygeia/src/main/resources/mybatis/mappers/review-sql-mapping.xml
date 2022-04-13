@@ -16,4 +16,7 @@
 		insert into review values(#{id}, #{member_id}, #{disease_cntntsSn}, #{dateWrtn}, #{views}, #{title}, #{content}, #{attachments}, #{tag}, 0, 0)
 	</insert>
 	
+	<update id="reviewCount" parameterType="int">
+		update review set views = views + 1 where id=#{id}
+	</update>
 </mapper>
