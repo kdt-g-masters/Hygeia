@@ -3,9 +3,21 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.kdt.hygeia.food.FoodDAO" >
-	<!--
 	<select id="foodList" resultType="fooddto">
 		select * from food
 	</select>
-	-->
+	<select id="selectFoodBySearchWord" parameterType="String">
+		<![CDATA[
+			select name from food
+			where name like '%'|| #{searchWord} || '%'
+		]]>	
+	</select>
+	
+	<select id="selectKeywordSearch" resultType="String" parameterType="String">
+		<![CDATA[
+			select name from food
+			where name like '%'|| #{keyword} || '%'
+		]]>
+	</select>
+
 </mapper>

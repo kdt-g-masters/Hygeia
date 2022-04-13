@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link href="/css/index.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
 <script>
@@ -23,25 +25,26 @@
 		<div id="mainText">
 			<p>당신은 ( </p>
 			<p class="texts">
-			  <span>고혈압</span>
-			  <span>당뇨병</span>
-			  <span>비만</span>
-			  <span>고지혈증</span>
-			  <span>동맥경화증</span>
-			  <span>급성심근경색</span>
-			  <span>심장판막질환</span>
-			  <span>뇌졸중</span>
-			  <span>골다공증</span>
-			  <span>폐질환</span>
-			  <span>위장병</span>
-			  <span>관절염</span>
+			  <c:forEach items="${ diseaseList }" var="dto">
+			  	<span>${ dto.name }</span>
+			  </c:forEach>			  
 			</p>
 			<p> ) 에 걸리실 수 있습니다.</p>		
 		</div>
-		
 		<div>
-		
+			<div class="row">
+			  <c:forEach items="${ diseaseList }" var="dto">
+				  <div class="col-sm-1">
+				    <div class="card">
+				      <div class="card-body">
+				        <h5 class="card-title">${ dto.name }</h5>
+				      </div>
+				    </div>
+				  </div>
+			  </c:forEach>
+			</div>		
 		</div>
+	
 	</main>
 	
 	<!-- footer -->
