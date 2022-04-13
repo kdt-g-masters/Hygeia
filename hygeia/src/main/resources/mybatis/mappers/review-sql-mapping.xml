@@ -4,15 +4,15 @@
 
 <mapper namespace="edu.kdt.hygeia.review.ReviewDAO" >
 
-	<select id="reviewlist" resultType="reviewdto">
+	<select id="reviewList" resultType="reviewdto">
 		select * from review
 	</select>
 	
-	<select id="reviewresult" resultType="reviewdto" parameterType="int">
+	<select id="reviewResult" resultType="reviewdto" parameterType="int">
 		select * from review where id=#{id}
 	</select>
 	
-	<insert id="reviewinput" parameterType="reviewdto">
+	<insert id="reviewInput" parameterType="reviewdto">
 		insert into review values(#{id}, #{member_id}, #{disease_cntntsSn}, #{dateWrtn}, #{views}, #{title}, #{content}, #{attachments}, #{tag}, 0, 0)
 	</insert>
 	
