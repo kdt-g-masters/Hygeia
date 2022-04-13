@@ -15,5 +15,5 @@ public interface DiseaseService {
 	public String openAPI(int cntntsSn);
 	
 	//병 리뷰
-	//public List<ReviewDTO> diseaseReview(int cntntsSn);
+	public List<ReviewDTO> diseaseReview(int disease_cntntsSn);
 }

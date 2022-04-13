@@ -12,5 +12,5 @@ import edu.kdt.hygeia.review.ReviewDTO;
 public interface DiseaseDAO {
 	public List<DiseaseDTO> diseaseList();
 	public DiseaseDTO diseaseResult(int cntntsSn);
-	//public List<ReviewDTO> diseaseReview(int cntntsSn);
+	public List<ReviewDTO> diseaseReview(int disease_cntntsSn);
 }

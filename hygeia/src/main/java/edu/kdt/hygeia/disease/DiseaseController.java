@@ -39,11 +39,10 @@ public class DiseaseController {
 	}
 	
 	//병 리뷰
-	/*
 	@RequestMapping(value = "/diseasereview", produces = {"application/json;charset=utf-8"})
 	@ResponseBody
-	public List<ReviewDTO> diseaseReview(int cnttnsSn){
-		List<ReviewDTO> list = service.diseaseReview(cnttnsSn);
+	public List<ReviewDTO> diseaseReview(int disease_cntntsSn){
+		List<ReviewDTO> list = service.diseaseReview(disease_cntntsSn);
 		return list;
-	}*/
+	}
 }

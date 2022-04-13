@@ -30,6 +30,7 @@ public class ReviewController {
 	@RequestMapping("/reviewresult")
 	public ModelAndView reviewResult(int reviewid) {
 		ModelAndView mv = new ModelAndView();
+		int count = service.reviewCount(reviewid);
 		ReviewDTO reviewresult = service.reviewResult(reviewid);
 		mv.addObject("reviewresult", reviewresult);
 		mv.setViewName("reviewresult");

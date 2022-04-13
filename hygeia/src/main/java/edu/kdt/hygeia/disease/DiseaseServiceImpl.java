@@ -56,10 +56,10 @@ public class DiseaseServiceImpl implements DiseaseService{
         return jsonresult.toString();//String 리턴
 	}
 
-	/*
+	
 	@Override
-	public List<ReviewDTO> diseaseReview(int cntntsSn) {
-		return dao.diseaseReview(cntntsSn);
+	public List<ReviewDTO> diseaseReview(int disease_cntntsSn) {
+		return dao.diseaseReview(disease_cntntsSn);
 	}
-	*/
+	
 }

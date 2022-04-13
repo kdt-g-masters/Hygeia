@@ -21,6 +21,6 @@
 <input type="button" value="rcm">
 <input type="button" value="nonrcm">
 <!-- 후기 목록으로 이동 -->
-<input type="button" value="목록 보기">
+<button type="button" onclick="location.href='/reviewlist'">목록 보기</button>
 </body>
 </html>
