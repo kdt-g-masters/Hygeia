@@ -27,6 +27,9 @@ public class ChatbotContoller {
 		if(event.equals("입력")) {
 			response = service.test(request);
 		}
+		else if(event.equals("대화시작")) {
+			response = service.test(request, "open");
+		}
 		System.out.println("==> " + response);
 		
 		return response;
