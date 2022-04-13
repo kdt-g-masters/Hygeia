@@ -18,9 +18,9 @@ public class ReviewController {
 	
 	//후기 목록 페이지
 	@RequestMapping("/reviewlist")
-	public ModelAndView reviewList() {
+	public ModelAndView reviewlist() {
 		ModelAndView mv = new ModelAndView();
-		List<ReviewDTO> list = service.reviewList();
+		List<ReviewDTO> list = service.reviewlist();
 		mv.addObject("reviewlist", list);
 		mv.setViewName("reviewlist");
 		return mv;
@@ -28,9 +28,9 @@ public class ReviewController {
 	
 	//후기 상세 페이지
 	@RequestMapping("/reviewresult")
-	public ModelAndView reviewResult(int reviewid) {
+	public ModelAndView reviewresult(int reviewid) {
 		ModelAndView mv = new ModelAndView();
-		ReviewDTO reviewresult = service.reviewResult(reviewid);
+		ReviewDTO reviewresult = service.reviewresult(reviewid);
 		mv.addObject("reviewresult", reviewresult);
 		mv.setViewName("reviewresult");
 		return mv;
@@ -38,14 +38,14 @@ public class ReviewController {
 	
 	//후기 작성 페이지
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.GET)
-	public String reviewInputForm() {
+	public String reviewinputform() {
 		return "reviewinput";
 	}
 	
 	//후기 작성
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.POST)
-	public ModelAndView reviewInput(ReviewDTO dto) {
-		int result = service.reviewInput(dto);
+	public ModelAndView reviewinput(ReviewDTO dto) {
+		int result = service.reviewinput(dto);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject(result);
 		mv.setViewName("reviewlist");

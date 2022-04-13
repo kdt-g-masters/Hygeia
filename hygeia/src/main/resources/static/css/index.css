@@ -230,23 +230,86 @@ html, body {
   vertical-align: middle;
   font-size: 16px;
 }
-.floating-container .float-element:nth-child(1) {
-  background: linear-gradient(to right, #FCA937, #FFD37C);
-  box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
-}
-.floating-container .float-element:nth-child(2) {
-  background: #4CAF50;
-  box-shadow: 0 20px 20px -10px rgba(76, 175, 80, 0.5);
-}
-.floating-container .float-element:nth-child(3) {
-  background: #FF9800;
-  box-shadow: 0 20px 20px -10px rgba(255, 152, 0, 0.5);
+
+main {
+	margin-top: 200px;
+	width: 100%;
+	height: 100px;
 }
 
+#mainText {	
+	margin: 0 auto;
+	text-align: center;
+}
 
+/* 텍스트 전환 효과 */
+main p{
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: top;
+}
 
+main .texts{
+  width: 5.5em;
+  height: 1.5em;
+  text-align: center;
+  overflow-y: hidden;
+}
 
+main .texts span{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
 
+main .texts span {
+  animation: ShiftText 25s linear infinite;
+}
 
+@keyframes ShiftText{
+  0%{
+    opacity: 0;
+  }
 
+  1%,10%{
+    top: 0;
+    opacity: 1;
+  }
+  
+  11%,20%{
+    top: -1.5em;
+  }
 
+  21%,30%{
+    top: -3em;
+  }
+
+  31%,40%{
+    top: -4.5em;
+  }
+  
+  41%,50%{
+    top: -6.0em;
+  }
+
+  51%,60%{
+    top: -7.5em;
+  }
+  
+  61%,70%{
+    top: -9.0em;
+  }
+  
+  71%,80%{
+    top: -10.5em;
+  }
+  
+  81%,90%{
+    top: -12.0em;
+  }
+  
+  91%,100%{
+    top: -13.5em;
+  }
+}

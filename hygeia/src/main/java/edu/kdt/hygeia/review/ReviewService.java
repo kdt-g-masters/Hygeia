@@ -4,11 +4,11 @@ import java.util.List;
 
 public interface ReviewService {
 	//후기 목록
-	public List<ReviewDTO> reviewList();
+	public List<ReviewDTO> reviewlist();
 	
 	//후기 상세
-	public ReviewDTO reviewResult(int reviewid);
+	public ReviewDTO reviewresult(int reviewid);
 	
 	//후기 작성
-	public int reviewInput(ReviewDTO dto);
+	public int reviewinput(ReviewDTO dto);
 }

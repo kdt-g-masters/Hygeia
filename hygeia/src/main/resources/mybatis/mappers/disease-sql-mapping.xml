@@ -3,16 +3,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.kdt.hygeia.disease.DiseaseDAO" >
+	<!--
 	<select id="diseaseList" resultType="diseasedto">
 		select * from disease
 	</select>
-	
-	<select id="diseaseResult" resultType="diseasedto" parameterType="int">
-		select * from disease where cntntsSn=#{cntntsSn}
-	</select>
-	
-	<select id="diseaseReview" resultType="reviewdto" parameterType="int">
-		select * from review where disease_cntntsSn=#{disease_cntntsSn}
-	</select>
-	
+	-->
 </mapper>

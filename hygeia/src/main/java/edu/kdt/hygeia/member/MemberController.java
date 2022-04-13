@@ -69,4 +69,7 @@ public class MemberController {
 	
 	@RequestMapping(value="/index")
 	public void temp() {}
+	
+	@RequestMapping(value="/test")
+	public void temp2() {}
 }
