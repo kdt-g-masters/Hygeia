@@ -29,14 +29,14 @@
 	<br>
 	<br>
 	<br>
-	<input type="button" value=">     테스트 시작하기" name="startbtn" onClick="location.href='http://www.daum.net'" /> 
+	<input type="button" value=">     테스트 시작하기" name="startbtn" onClick="location.href='http://localhost:8081/survey2'" /> 
 	
 	<!-- footer -->
 	<br>
 	<br>
 	<br>
 	<br>
-	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://www.daum.net'" />
+	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://localhost:8081/index'" />
     
     
 </body>
