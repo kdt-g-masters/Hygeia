@@ -10,6 +10,6 @@
 		<typeAlias type="edu.kdt.hygeia.helpfulfood.HelpfulfoodDTO" alias="helpfulfooddto"/>
 		<typeAlias type="edu.kdt.hygeia.member.MemberDTO" alias="memberdto"/>
 		<typeAlias type="edu.kdt.hygeia.review.ReviewDTO" alias="reviewdto"/>
-		<typeAlias type="edu.kdt.hygeia.survey.surveyDTO" alias="surveydto"/>
+		<typeAlias type="edu.kdt.hygeia.survey.SurveyDTO" alias="surveydto"/>
 	</typeAliases>
 </configuration>

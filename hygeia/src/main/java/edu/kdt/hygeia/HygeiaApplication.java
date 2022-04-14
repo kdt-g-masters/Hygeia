@@ -1,30 +1,25 @@
 package edu.kdt.hygeia;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+import edu.kdt.hygeia.food.FoodController;
+import edu.kdt.hygeia.food.FoodDAO;
+import edu.kdt.hygeia.review.ReviewController;
+import edu.kdt.hygeia.review.ReviewDAO;
 
 @SpringBootApplication
+@ComponentScan(basePackageClasses = FoodController.class)
+@ComponentScan(basePackageClasses = ReviewController.class)
+
+@MapperScan(basePackageClasses = ReviewDAO.class)
+@MapperScan(basePackageClasses = FoodDAO.class)
 public class HygeiaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HygeiaApplication.class, args);
-		//hi github
-		// conflict test 1
-		// git test
-
-		// conflict test 3
-		// conflict test 2
-
-		// conflict test 100
-		// conflict test 101
-
-		// conflict test 3
-		// conflict test 2
-		// 또잉또잉
-		// conflict test 4
-
-		// conflict 5
-
 
 	}
 
