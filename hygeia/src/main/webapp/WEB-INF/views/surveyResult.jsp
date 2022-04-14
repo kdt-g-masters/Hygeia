@@ -42,14 +42,14 @@
 	<br> 
 	<br>
 	<br>
-	<input type="button" value="버튼버튼" name="temporary" onClick="location.href='http://www.daum.net'" />
+	<input type="button" value="임의 기능 버튼버튼" name="temporary" onClick="location.href='http://www.daum.net'" />
 	
 	<!-- footer -->
 	<br>
 	<br>
 	<br>
 	<br>
-	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://www.daum.net'" />
+	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://localhost:8081/index'" />
     
     
 </body>

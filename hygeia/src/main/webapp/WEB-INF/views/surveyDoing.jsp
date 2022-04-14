@@ -34,22 +34,22 @@
     <!-- 답변 (value 를 DB 로 부터 받아오기) -->
 	<br>
 	<br>
-	<input type="button" value="답변1(증상 1)" name="ans1" onClick="location.href='http://www.daum.net'" /> 
+	답변1 
 	<br>
-	<input type="button" value="답변2(증상 2)" name="ans2" onClick="location.href='http://www.daum.net'" /> 
+	답변2 
 	<br>
-	<input type="button" value="답변3(증상 3)" name="ans3" onClick="location.href='http://www.daum.net'" /> 
+	답변3 
 	<br>
-	<input type="button" value="답변4(증상 4)" name="ans4" onClick="location.href='http://www.daum.net'" /> 
+	답변4 
 	<br>
-	<input type="button" value="답변5(증상 5)" name="ans5" onClick="location.href='http://www.daum.net'" /> 
+	답변5 
 	<br>
 	
 	<!-- footer -->
 	<br>
 	<br>
 	<br>
-	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://www.daum.net'" />
+	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://localhost:8081/index'" />
     
     
 </body>
