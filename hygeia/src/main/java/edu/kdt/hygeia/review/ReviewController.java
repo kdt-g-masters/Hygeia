@@ -17,11 +17,29 @@ public class ReviewController {
 	ReviewService service;
 	
 	//후기 목록 페이지
+	/*
 	@RequestMapping("/reviewlist")
 	public ModelAndView reviewList() {
 		ModelAndView mv = new ModelAndView();
 		List<ReviewDTO> list = service.reviewList();
 		mv.addObject("reviewlist", list);
+		mv.setViewName("reviewlist");
+		return mv;
+	}
+	*/
+	
+	//후기 페이징 목록 페이지
+	@RequestMapping("/reviewlist")
+	public ModelAndView reviewPagingList(Criteria cri) {
+		ModelAndView mv = new ModelAndView();
+		List<ReviewDTO> list = service.reviewPagingList(cri);
+		mv.addObject("reviewlist", list);
+		
+		//페이징 인터페이스
+		int total = service.reviewTotal();
+		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
+		mv.addObject("pageMaker", pageMake);
+		
 		mv.setViewName("reviewlist");
 		return mv;
 	}
@@ -49,7 +67,7 @@ public class ReviewController {
 		int result = service.reviewInput(dto);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject(result);
-		//mv.setViewName("reviewlist");
+		mv.setViewName("redirect:/reviewlist");
 		return mv;
 	}
 	

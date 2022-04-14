@@ -3,19 +3,33 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.kdt.hygeia.review.ReviewDAO" >
-
+	
+	<!-- 전체 후기 목록 -->
 	<select id="reviewList" resultType="reviewdto">
-		select * from review
+		select * from review order by dateWrtn desc
 	</select>
 	
+	<!-- 후기 페이징 목록 -->
+	<select id="reviewPagingList" resultType="reviewdto">
+		select * from review order by dateWrtn desc limit #{skip}, #{amount}
+	</select>
+	
+	<!-- 전체 후기 개수 -->
+	<select id="reviewTotal" resultType="int">
+		select count(*) from review
+	</select>
+	
+	<!-- 후기 상세 -->
 	<select id="reviewResult" resultType="reviewdto" parameterType="int">
 		select * from review where id=#{id}
 	</select>
 	
+	<!-- 후기 작성 -->
 	<insert id="reviewInput" parameterType="reviewdto">
 		insert into review values(#{id}, #{member_id}, #{disease_cntntsSn}, #{dateWrtn}, #{views}, #{title}, #{content}, #{attachments}, #{tag}, 0, 0)
 	</insert>
 	
+	<!-- 후기 조회수 -->
 	<update id="reviewCount" parameterType="int">
 		update review set views = views + 1 where id=#{id}
 	</update>

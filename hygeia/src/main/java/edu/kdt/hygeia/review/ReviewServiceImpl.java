@@ -17,6 +17,16 @@ public class ReviewServiceImpl implements ReviewService{
 	public List<ReviewDTO> reviewList() {
 		return dao.reviewList();
 	}
+	
+	@Override
+	public List<ReviewDTO> reviewPagingList(Criteria cri) {
+		return dao.reviewPagingList(cri);
+	}
+
+	@Override
+	public int reviewTotal() {
+		return dao.reviewTotal();
+	}
 
 	@Override
 	public ReviewDTO reviewResult(int reviewid) {
