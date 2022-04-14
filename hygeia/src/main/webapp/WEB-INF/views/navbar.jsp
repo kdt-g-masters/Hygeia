@@ -29,16 +29,16 @@
 	      <div class="navbar-expand" id="navbarsExample01">
 	        <ul class="navbar-nav me-auto mb-2">
 	          <li class="nav-item">
-	            <a class="nav-link active" aria-current="page" href="#">생활습관병</a>
+	            <a class="nav-link active" aria-current="page" href="diseaselist">생활습관병</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="#">식재료</a>
+	            <a class="nav-link" href="foodlist">식재료</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="#">맞춤 정보</a>
+	            <a class="nav-link" href="survey1">맞춤 정보</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="#">후기</a>
+	            <a class="nav-link" href="reviewlist">후기</a>
 	          </li>	                  
 	        </ul>
 	        </div>	  	    	   
