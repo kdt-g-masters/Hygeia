@@ -6,18 +6,15 @@
 	<select id="foodList" resultType="fooddto">
 		select * from food
 	</select>
-	<select id="selectFoodBySearchWord" parameterType="String">
-		<![CDATA[
-			select name from food
-			where name like '%'|| #{searchWord} || '%'
-		]]>	
-	</select>
 	
 	<select id="selectKeywordSearch" resultType="String" parameterType="String">
-		<![CDATA[
-			select name from food
-			where name like '%'|| #{keyword} || '%'
-		]]>
+		select name from food
+		where name like #{keyword}
+	</select>
+	
+	<select id="selectFoodBySearchWord" resultType="fooddto" parameterType="String">
+		select * from food
+		where name like #{searchWord}
 	</select>
 
 </mapper>
