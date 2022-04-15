@@ -17,9 +17,14 @@ public class SurveyController {
 			return "surveyDoing"; 
 		}
 
-	@RequestMapping(value="/survey1", method=RequestMethod.GET) 
+	@RequestMapping(value="/survey3", method=RequestMethod.GET) 
 		public String surveyResult() {
 			return "surveyResult"; 
+		}
+	
+	@RequestMapping(value="/survey4", method=RequestMethod.GET) 
+		public String surveyResultResult() {
+			return "surveyResultResult"; 
 		}
 
 
