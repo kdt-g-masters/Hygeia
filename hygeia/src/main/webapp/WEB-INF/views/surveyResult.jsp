@@ -42,7 +42,9 @@
 	<br> 
 	<br>
 	<br>
-	<input type="button" value="임의 기능 버튼버튼" name="temporary" onClick="location.href='http://www.daum.net'" />
+	<form action="/survey3" method="post" ><br> 
+	<input type="button" value="결과 저장하기 버튼" name="saveresult" onClick="location.href='http://www.daum.net'" />
+	</form> 
 	
 	<!-- footer -->
 	<br>
