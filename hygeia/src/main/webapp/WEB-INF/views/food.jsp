@@ -24,7 +24,7 @@
 <!-- 식재료 이름 -->
 <h1>${fooddto.name }</h1><br> 
 
-<!-- api 식재료  -->
+<!-- open api 식재료  -->
 <%
 String foodresult = (String)request.getAttribute("foodresult");
 JSONObject total = new JSONObject(foodresult);

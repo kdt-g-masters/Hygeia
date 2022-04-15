@@ -9,7 +9,7 @@
 		select * from food
 	</select>
 	
-	<!-- 식재료 상세페이지(설명, 효능) -->
+	<!-- 식재료 상세페이지 -->
 	<select id="food" resultType="fooddto"  parameterType="int">
 		select * from food where num=#{num}
 	</select>

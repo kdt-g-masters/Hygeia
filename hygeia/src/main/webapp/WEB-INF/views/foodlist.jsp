@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<!-- db 식재료 -->
+<!-- 식재료 -->
 <c:forEach items = "${foodlist }" var = "dto">
 	<a href="/food?num=${dto.num}" > ${dto.name }</a> <br>
 </c:forEach>

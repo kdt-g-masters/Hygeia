@@ -30,7 +30,7 @@ public class FoodServiceImpl implements FoodService {
 		return dao.food(num);
 	}
 	
-	//open api 미완성
+	//open api
 	@Override
 	public String foodapi(int number) {
 		 BufferedReader br = null;

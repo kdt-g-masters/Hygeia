@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository("fooddao")
 public interface FoodDAO {
 	public List<FoodDTO> foodlist();
-	public FoodDTO food(int num);
+	public FoodDTO food(int num);//
 }

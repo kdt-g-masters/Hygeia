@@ -41,6 +41,7 @@ public class FoodController {
 		return mv;
 	}
 	
+	//테스트
 	/*
 	@RequestMapping("/food")
 	public ModelAndView foodimage(String image) {

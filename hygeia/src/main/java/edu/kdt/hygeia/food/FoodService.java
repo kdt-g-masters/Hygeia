@@ -8,6 +8,6 @@ public interface FoodService {
 	
 	// db 식재료 리스트
 	public List<FoodDTO> foodlist(); 
-	// db 식재료 상세페이지
+	// db 식재료 관련 상세페이지
 	public FoodDTO food(int num);
 }
