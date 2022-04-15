@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import edu.kdt.hygeia.food.FoodDTO;
 import edu.kdt.hygeia.review.ReviewDTO;
 
 @Mapper
@@ -13,4 +14,6 @@ public interface DiseaseDAO {
 	public List<DiseaseDTO> diseaseList();
 	public DiseaseDTO diseaseResult(int cntntsSn);
 	public List<ReviewDTO> diseaseReview(int disease_cntntsSn);
+	public List<String> selectKeywordSearch(String keyword);
+	public List<DiseaseDTO> selectDiseaseBySearchWord(String searchWord);
 }

@@ -19,4 +19,14 @@
 		select * from review where disease_cntntsSn=#{disease_cntntsSn}
 	</select>
 	
+	<select id="selectKeywordSearch" resultType="String" parameterType="String">
+		select name from disease
+		where name like #{keyword}
+	</select>
+	
+	<select id="selectDiseaseBySearchWord" resultType="diseasedto" parameterType="String">
+		select * from disease
+		where name like #{searchWord}
+	</select>
+	
 </mapper>
