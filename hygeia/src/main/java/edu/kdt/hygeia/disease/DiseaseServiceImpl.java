@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import edu.kdt.hygeia.food.FoodDTO;
 import edu.kdt.hygeia.review.ReviewDTO;
 
 @Service("diseaseservice")

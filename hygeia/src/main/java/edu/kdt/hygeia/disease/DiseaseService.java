@@ -2,7 +2,6 @@ package edu.kdt.hygeia.disease;
 
 import java.util.List;
 
-import edu.kdt.hygeia.food.FoodDTO;
 import edu.kdt.hygeia.review.ReviewDTO;
 
 public interface DiseaseService {
