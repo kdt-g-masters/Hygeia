@@ -2,21 +2,22 @@ package edu.kdt.hygeia.survey;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class SurveyController {
 	
-	@RequestMapping("/survey1")
+	@RequestMapping(value="/survey1", method=RequestMethod.GET) 
 		public String surveyMain() {
 			return "surveyMain"; 
 		}
 
-	@RequestMapping("/survey2")
+	@RequestMapping(value="/survey2", method=RequestMethod.GET) 
 		public String surveyDoing() {
 			return "surveyDoing"; 
 		}
 
-	@RequestMapping("/survey3")
+	@RequestMapping(value="/survey1", method=RequestMethod.GET) 
 		public String surveyResult() {
 			return "surveyResult"; 
 		}
