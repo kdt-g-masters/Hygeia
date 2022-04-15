@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface ReviewDAO {
 	public List<ReviewDTO> reviewList();
 	public List<ReviewDTO> reviewPagingList(Criteria cri);
-	public int reviewTotal();
+	public int reviewTotal(Criteria cri);
 	public ReviewDTO reviewResult(int reviewid);
 	public int reviewInput(ReviewDTO dto);
 	public int reviewCount(int reviewid);

@@ -22,9 +22,9 @@ public class PageMakerDTO {
 		this.total = total;
 		
 		//마지막 페이지 Math.ceil-> 올림
-		this.endPage = (int)(Math.ceil(cri.getPageNum()/10.0))*10;
+		this.endPage = (int)(Math.ceil(cri.getPageNum()/5.0))*5;
 		//시작 페이지
-		this.startPage = this.endPage - 9;
+		this.startPage = this.endPage - 4;
 		
 		//전체 마지막 페이지
 		int realEnd = (int)(Math.ceil(total * 1.0/cri.getAmount()));

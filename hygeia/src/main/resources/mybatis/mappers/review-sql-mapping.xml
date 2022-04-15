@@ -9,14 +9,24 @@
 		select * from review order by dateWrtn desc
 	</select>
 	
-	<!-- 후기 페이징 목록 -->
+	<!-- 후기 페이징 목록 and 검색 -->
 	<select id="reviewPagingList" resultType="reviewdto">
-		select * from review order by dateWrtn desc limit #{skip}, #{amount}
+		select review.*, disease.name from review 
+		left join disease on review.disease_cntntsSn = disease.cntntsSn 
+		<if test="keyword != null">
+			where disease.name like concat('%', #{keyword}, '%')
+		</if>
+		order by dateWrtn desc 
+		limit #{skip}, #{amount}
 	</select>
 	
 	<!-- 전체 후기 개수 -->
 	<select id="reviewTotal" resultType="int">
 		select count(*) from review
+		<if test="keyword != null">
+			left join disease on review.disease_cntntsSn = disease.cntntsSn
+			where disease.name like concat('%', #{keyword}, '%')
+		</if>
 	</select>
 	
 	<!-- 후기 상세 -->

@@ -24,8 +24,8 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	@Override
-	public int reviewTotal() {
-		return dao.reviewTotal();
+	public int reviewTotal(Criteria cri) {
+		return dao.reviewTotal(cri);
 	}
 
 	@Override

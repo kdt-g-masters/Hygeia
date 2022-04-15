@@ -36,6 +36,19 @@
 			//form태그 내부 데이터 서버 전송
 			moveForm.submit();
 		});//on click end
+		
+		$(".search_area button").on("click", function (e) {
+			e.preventDefault();
+			//사용자가 작성한 keyword값 변수 value에 저장
+			let val = $("input[name='keyword']").val();
+			//form태그 내부에 name속성이 keyword인 input태그에 val값 저장
+			moveForm.find("input[name='keyword']").val(val);
+			//pageNum 1로 변경
+			moveForm.find("input[name='pageNum']").val(1);
+			//form태그 내부 데이터 서버 전송
+			moveForm.submit();
+		});//on click end
+		
 	});//ready end
 </script>
 <style type="text/css">
@@ -62,15 +75,23 @@
 </head>
 <body>
 <h1>만병통치 후기</h1>
-<!-- 검색 -->
-<input type="search">
+
 <!-- 후기 작성 페이지 링크 -->
 <a href="/reviewinput">리뷰쓰기</a>
-<div>병명 제목   작성자   일자   조회수</div>
+
 <!-- 후기 목록 -->
+<div>병명 제목   작성자   일자   조회수</div>
 <c:forEach items="${ reviewlist }" var="dto">
-	<a class="move" href="<c:out value= '${ dto.id }'/>">${ dto.disease_cntntsSn } ${ dto.title } ${ dto.member_id } ${ dto.dateWrtn } ${ dto.views }</a><br>
+	<a class="move" href="<c:out value= '${ dto.id }'/>">${ dto.name } ${ dto.title } ${ dto.member_id } ${ dto.dateWrtn } ${ dto.views }</a><br>
 </c:forEach>
+
+<!-- 검색 -->
+<div class="search_wrap">
+	<div class="search_area">
+		<input type="text" name="keyword" value="${ pageMaker.cri.keyword }">
+		<button>검색</button>
+	</div>
+</div>
 
 <!-- 페이징 인터페이스 -->
 <div class="pageInfo_wrap">
@@ -99,6 +120,7 @@
 <form id="moveForm">
 	<input type="hidden" name="pageNum" value="${ pageMaker.cri.pageNum }">
 	<input type="hidden" name="amount" value="${ pageMaker.cri.amount }">
+	<input type="hidden" name="keyword" value="${ pageMaker.cri.keyword }">
 </form>
 </body>
 </html>
