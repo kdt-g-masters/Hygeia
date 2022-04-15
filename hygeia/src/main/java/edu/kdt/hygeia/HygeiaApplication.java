@@ -15,7 +15,7 @@ import edu.kdt.hygeia.review.ReviewDAO;
 @ComponentScan(basePackageClasses = ReviewController.class)
 
 @MapperScan(basePackageClasses = ReviewDAO.class)
-@MapperScan(basePackageClasses = FoodDAO.class)//
+@MapperScan(basePackageClasses = FoodDAO.class)
 public class HygeiaApplication {
 
 	public static void main(String[] args) {

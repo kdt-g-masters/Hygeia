@@ -19,13 +19,12 @@
 </head>
 <body>
 
-<!-- 식재료이미지 -->
+<!-- 식재료 이미지 -->
 <img id= "image" src="/images/${fooddto.image }"><br><br> 
-
 <!-- 식재료 이름 -->
 <h1>${fooddto.name }</h1><br> 
 
-<!-- open api 식재료  -->
+<!-- api 식재료  -->
 <%
 String foodresult = (String)request.getAttribute("foodresult");
 JSONObject total = new JSONObject(foodresult);

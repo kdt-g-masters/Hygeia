@@ -13,7 +13,8 @@ import org.springframework.stereotype.Service;
 @Service("foodservice")
 public class FoodServiceImpl implements FoodService {
 
-	// food db
+//	Food db
+	
 	@Autowired
 	@Qualifier("fooddao")
 	FoodDAO	dao;
@@ -29,7 +30,7 @@ public class FoodServiceImpl implements FoodService {
 		return dao.food(num);
 	}
 	
-	//open api
+	//open api 미완성
 	@Override
 	public String foodapi(int number) {
 		 BufferedReader br = null;

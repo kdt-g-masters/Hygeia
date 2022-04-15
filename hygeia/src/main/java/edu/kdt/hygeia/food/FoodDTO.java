@@ -3,9 +3,9 @@ package edu.kdt.hygeia.food;
 public class FoodDTO {
 	int num;
 	String name;
-	String description;
+	String description; // 설명
 	String effect;
-	String image;//
+	String image;
 	
 	
 	public String getImage() {
