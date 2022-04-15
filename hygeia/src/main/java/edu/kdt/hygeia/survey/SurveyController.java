@@ -22,6 +22,16 @@ public class SurveyController {
 			return "surveyResult"; 
 		}
 	
+//	@RequestMapping(value="/survey3", method=RequestMethod.POST)
+//		public ModelAndView surveyAction(ServiceDTO dto) { 
+//			int row = service.saveResult(dto); 
+//		
+//			ModelAndView mv = new ModelAndView();
+//			mv.addObject("result", row);
+//			mv.setViewName("surveyResultResult"); 
+//			return mv;
+//		}
+	
 	@RequestMapping(value="/survey4", method=RequestMethod.GET) 
 		public String surveyResultResult() {
 			return "surveyResultResult"; 
