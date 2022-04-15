@@ -156,10 +156,6 @@ a{
   padding: 0;
 }
 
-html, body {
-  background: #eaedf2;
-}
-
 .floating-container {
   position: fixed;
   width: 100px;
@@ -231,15 +227,54 @@ html, body {
   font-size: 16px;
 }
 
+.bg-color {
+	background: #eaedf2;
+}
 main {
-	margin-top: 200px;
-	width: 100%;
-	height: 100px;
+	margin-top: 70px;
+	width: 100%;	
 }
 
 #mainText {	
-	margin: 0 auto;
 	text-align: center;
+	font-weight: bold;
+	padding: 200px;
+	color: white;
+    width: 100%;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#mainText a {
+	color: white;
+}
+
+#mainText a:hover {
+	color: #FFD37C;
+}
+
+#box1 {
+	width: 100%;
+	height: 450px;
+	background: url('/images/indeximage.jpg');
+}
+
+#box2 {
+	width: 100%;
+	padding: 50px;
+}
+
+#box2 a {
+	color: #716F6F;
+}
+
+#box2 a:hover {
+	color: #FCA937;
+	text-decoration: none;
+}
+
+.shadow {
+	box-shadow: 5px 5px 10px;	
 }
 
 /* 텍스트 전환 효과 */

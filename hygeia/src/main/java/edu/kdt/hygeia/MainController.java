@@ -28,4 +28,14 @@ public class MainController {
 		mv.setViewName("index");
 		return mv;
 	}
+	
+	// 메인 화면
+	@RequestMapping(value="/index", method=RequestMethod.GET)
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView();
+		List<DiseaseDTO> list = service.diseaseList();
+		mv.addObject("diseaseList", list);
+		mv.setViewName("index");
+		return mv;
+	}
 }

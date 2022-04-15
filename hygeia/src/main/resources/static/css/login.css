@@ -1,0 +1,79 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'KoPubDotumMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	font-family: 'KoPubDotumMedium';
+}
+
+body {
+	background: #FEE7C5;
+}
+
+input[type=button] {
+		font-size: 15px;
+		width : 295px;
+		height: 40px;
+		margin : 1px;
+}
+
+input[type=text] {
+	font-size: 15px;
+	width: 296px;
+	height: 40px;
+	margin : 5px;
+}
+
+#pw {
+	font-size: 15px;
+	width: 296px;
+	height: 40px;
+	margin : 5px;
+}
+
+#keep {
+	border : 2px solid #c165dd;
+	margin-left: 10px;
+}
+
+#line{
+	width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+img{
+	width : 270px;
+	height: 180px;
+	margin: 20px;
+}
+	
+#eee{
+	display: inline;
+	font-size: 15px;
+	color : red;
+}
+
+#box {
+	width: 500px;
+	height: 700px;
+	padding: 100px;
+	margin: 100px auto;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 5px 5px 20px;
+}
+
+#box3 {
+	width: 500px;
+	height: 600px;
+	padding: 100px;
+	margin: 100px auto;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 5px 5px 20px;
+}
