@@ -13,4 +13,6 @@ public interface DiseaseDAO {
 	public List<DiseaseDTO> diseaseList();
 	public DiseaseDTO diseaseResult(int cntntsSn);
 	public List<ReviewDTO> diseaseReview(int disease_cntntsSn);
+	public List<String> selectKeywordSearch(String keyword);
+	public List<DiseaseDTO> selectDiseaseBySearchWord(String searchWord);
 }

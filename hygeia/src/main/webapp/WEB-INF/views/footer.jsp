@@ -51,7 +51,7 @@
 									<ul class="">
 										<li><a href="" >생활습관병</a></li>
 										<li><a href="">식재료</a></li>
-										<li><a href="">맞춤정보</a></li>
+										<li><a href="">내 건강 정보</a></li>
 										<li><a href="">후기</a></li>
 									</ul>
 								</div><!-- /.footer-menu-->
@@ -61,7 +61,7 @@
 							<div class="hm-footer-widget">
 								<div class="copyright">우주최강 4조! 파이팅!!! :)</div>
 								<div class="copyright">주소: 서울시 역삼동</div>
-								<div class="copyright">연락처: 02)000-0000</div>								
+								<div class="copyright">연락처: 02) 000-0000</div>								
 														
 							</div><!--/.hm-footer-widget-->
 						</div><!--/.col-->

@@ -5,7 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hygeia</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="/css/index.css" rel="stylesheet"/>
+<link href="/css/login.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -30,11 +34,15 @@
 </script>
 </head>
 <body>
-	<form action="">
-		<input type="text" id="id" name="id" placeholder= "아이디">
-		<input type="text" id="password" name="password" placeholder="비밀번호">
-		<input type="button" id="loginBtn" name="loginBtn" value="로그인">
-		<input type="button" id="joinBtn" name="joinBtn" value="회원가입">
-	</form>
+	<div id="box">
+		<form action="">
+			<input class = "form-control me-2" type="text" id="id" name="id" placeholder= "아이디">
+			<input class = "form-control me-2" type="text" id="password" name="password" placeholder="비밀번호">
+			<input id="keep" type="checkbox" name="autoLogin" value="자동로그인"> Remember me <br>
+			<input class="btn btn-primary" type="button" id="loginBtn" name="loginBtn" value="로그인">
+			<input class="btn btn-outline-primary" id="btnFindId" type="button" name="btnFindId" value="아이디 / 비밀번호 찾기">
+			<a href="/join" class="btn btn-outline-primary" type="button" id="joinBtn" name="joinBtn">회원가입</a>
+		</form>
+	</div>
 </body>
 </html>

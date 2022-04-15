@@ -12,6 +12,7 @@ public class ReviewDTO {
 	String tag;
 	int rcm;
 	int nonrcm;
+	String name;
 	
 	public int getId() {
 		return id;
@@ -78,6 +79,12 @@ public class ReviewDTO {
 	}
 	public void setNonrcm(int nonrcm) {
 		this.nonrcm = nonrcm;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

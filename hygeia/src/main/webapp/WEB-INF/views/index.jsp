@@ -19,34 +19,37 @@
 	});
 </script>
 </head>
-<body>
+<body class="bg-color">
 	<!-- navbar -->
 	<%@ include file="navbar.jsp" %>
 
 	<main>
-		<div id="mainText">
-			<p>당신은 ( </p>
-			<p class="texts">
-			  <c:forEach items="${ diseaseList }" var="dto">
-			  	<span>${ dto.name }</span>
-			  </c:forEach>			  
-			</p>
-			<p> ) 에 걸리실 수 있습니다.</p>		
+		<div id="box1">
+			<div id="mainText">
+				<p>당신은 ( </p>
+				<p class="texts">
+				  <c:forEach items="${ diseaseList }" var="dto">				  	
+				  	<span><a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">${ dto.name }</a></span>
+				  </c:forEach>			  
+				</p>
+				<p> ) 에 걸리실 수 있습니다.</p>		
+			</div>	
 		</div>
-		<div>
+		<div id="box2">
 			<div class="row">
 			  <c:forEach items="${ diseaseList }" var="dto">
 				  <div class="col-sm-1">
-				    <div class="card">
-				      <div class="card-body">
-				        <h5 class="card-title">${ dto.name }</h5>
+				    <a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">
+				      <div class="card shadow">				      
+				        <div class="card-body">
+				          <h5 class="card-title"> ${ dto.name } </h5>
+				        </div>				      
 				      </div>
-				    </div>
+				    </a>
 				  </div>
 			  </c:forEach>
 			</div>		
-		</div>
-	
+		</div>			
 	</main>
 	
 	<!-- footer -->

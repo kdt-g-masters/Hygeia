@@ -10,7 +10,7 @@ public interface ReviewService {
 	public List<ReviewDTO> reviewPagingList(Criteria cri);
 	
 	//전체 후기 개수
-	public int reviewTotal();
+	public int reviewTotal(Criteria cri);
 	
 	//후기 상세
 	public ReviewDTO reviewResult(int reviewid);

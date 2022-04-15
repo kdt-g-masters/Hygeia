@@ -62,4 +62,15 @@ public class DiseaseServiceImpl implements DiseaseService{
 		return dao.diseaseReview(disease_cntntsSn);
 	}
 	
+	@Override
+	public List<String> keywordSearch(String keyword) throws Exception {
+		List<String> list = dao.selectKeywordSearch("%"+keyword+"%");
+		return list;
+	}
+	
+	@Override
+	public List<DiseaseDTO> searchDisease(String searchWord) throws Exception{
+		List<DiseaseDTO> diseaseList = dao.selectDiseaseBySearchWord("%"+searchWord+"%");
+		return diseaseList;
+	}
 }

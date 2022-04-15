@@ -36,7 +36,7 @@ public class ReviewController {
 		mv.addObject("reviewlist", list);
 		
 		//페이징 인터페이스
-		int total = service.reviewTotal();
+		int total = service.reviewTotal(cri);
 		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
 		mv.addObject("pageMaker", pageMake);
 		
