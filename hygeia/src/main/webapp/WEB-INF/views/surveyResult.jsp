@@ -43,7 +43,7 @@
 	<br>
 	<br>
 	<form action="/survey3" method="post" ><br> 
-	<input type="button" value="결과 저장하기 버튼" name="saveresult" onClick="location.href='http://localhost:8081/survey4'" />
+	<input type="button" value="결과 저장하기 버튼" name="saveresult" />
 	</form> 
 	
 	<!-- footer -->
