@@ -22,38 +22,52 @@
 	  <div class="container-fluid">
 		  <div class="d-flex justify-content-start">			
 		    <a class="navbar-brand " href="/">
-		    	<img src="resources/images/logo_sm.png" width="10%">	    	
+		    	<img src="/images/logo_sm.png" width="10%">	    	
 		    	<b>Hygeia</b>
 		    </a>	  	
 		  </div>
 	      <div class="navbar-expand" id="navbarsExample01">
 	        <ul class="navbar-nav me-auto mb-2">
 	          <li class="nav-item">
-	            <a class="nav-link active" aria-current="page" href="diseaselist">생활습관병</a>
+	            <a class="nav-link active" href="diseaselist">생활습관병</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="foodlist">식재료</a>
+	            <a class="nav-link active" href="foodlist">식재료</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="survey1">맞춤 정보</a>
+	            <a class="nav-link active" href="survey1">내 건강 정보</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link" href="reviewlist">후기</a>
+	            <a class="nav-link active" href="reviewlist">후기</a>
 	          </li>	                  
 	        </ul>
-	        </div>	  	    	   
-	  		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-		      <span>
-				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" color="#FFFFFF">
-				  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-				  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-				</svg>		      
-		      </span>
-		    </button>		    		   		 
+	        </div>	  	
+	        <c:if test="${ empty sessionid }">
+				<a href="/login">
+					<button class="navbar-toggler" type="button">
+				      <span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" color="#FFFFFF">
+						  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+						  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+						</svg>		      
+				      </span>
+				    </button>
+	        	</a>
+	        </c:if>
+	        <c:if test="${ !empty sessionid }">
+		  		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+			      <span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" color="#FFFFFF">
+					  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+					  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+					</svg>		      
+			      </span>
+			    </button>	        
+	        </c:if>    	   		    		   		 
 
 		    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #FCA937">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: #FFFFFF">마이 페이지</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: #FFFFFF">${ sessionid } 님</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
