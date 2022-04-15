@@ -4,12 +4,12 @@
 
 <mapper namespace="edu.kdt.hygeia.food.FoodDAO" >
 	
-	<!-- 식재료 리스트 -->
+	<!-- 식재료리스트 -->
 	<select id="foodlist" resultType="fooddto">
 		select * from food
 	</select>
 	
-	<!-- 식재료 상세페이지 -->
+	<!-- 식재료상세페이지 -->
 	<select id="food" resultType="fooddto"  parameterType="int">
 		select * from food where num=#{num}
 	</select>

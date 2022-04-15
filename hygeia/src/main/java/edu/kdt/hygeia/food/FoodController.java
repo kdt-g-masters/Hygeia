@@ -15,7 +15,7 @@ public class FoodController {
 	@Qualifier("foodservice")
 	FoodService foodservice;
 	
-	// DB 식재료 + api 식재료 리스트
+	// DB식재료 + api식재료 리스트
 	
 	@RequestMapping("/foodlist")
 	public ModelAndView foodlist() {

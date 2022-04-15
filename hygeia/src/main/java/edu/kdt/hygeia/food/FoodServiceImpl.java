@@ -13,8 +13,7 @@ import org.springframework.stereotype.Service;
 @Service("foodservice")
 public class FoodServiceImpl implements FoodService {
 
-//	Food db
-	
+	// food db
 	@Autowired
 	@Qualifier("fooddao")
 	FoodDAO	dao;

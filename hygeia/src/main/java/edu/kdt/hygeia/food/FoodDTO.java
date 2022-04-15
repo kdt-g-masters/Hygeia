@@ -5,7 +5,7 @@ public class FoodDTO {
 	String name;
 	String description;
 	String effect;
-	String image;
+	String image;//
 	
 	
 	public String getImage() {

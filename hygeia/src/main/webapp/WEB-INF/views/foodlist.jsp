@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<!-- 식재료 -->
+<!-- 식재료 목록 보여라 -->
 <c:forEach items = "${foodlist }" var = "dto">
 	<a href="/food?num=${dto.num}" > ${dto.name }</a> <br>
 </c:forEach>
