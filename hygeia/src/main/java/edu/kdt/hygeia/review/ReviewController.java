@@ -64,8 +64,8 @@ public class ReviewController {
 	public ModelAndView reviewInputForm(HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
-		String name = "b";
-		session.setAttribute("sessionid", name);
+		//String name = "b";
+		//session.setAttribute("sessionid", name);
 		String memberid = (String)session.getAttribute("sessionid");
 		mv.addObject("memberid", memberid);
 		mv.setViewName("reviewinput");
