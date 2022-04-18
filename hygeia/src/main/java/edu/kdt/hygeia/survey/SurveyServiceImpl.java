@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service("surveyservice")
+@Service("SurveyServiceImpl")
 public class SurveyServiceImpl implements SurveyService {
 
 	@Autowired
-	@Qualifier("surveyDAO")
+	@Qualifier("SurveyDAO")
 	SurveyDAO dao;
 	
 	@Override 
