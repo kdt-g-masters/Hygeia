@@ -23,7 +23,7 @@ import org.json.JSONObject;
 
 public class ChatbotProc {
 	public static void main(String args[]) {
-		String result = main("",
+		String result = main("맞춤정보",
 				"https://8gqo56nzsl.apigw.ntruss.com/custom/v1/6821/a7960ec5372a1ef0c47f06b709e720bca8cfe06f1575a86625407b5d4638c568",
 				"VXdpS2tVaGxncGtESWlYSXFIRm9kS0dQSnlHUVVCdVE=");
 		System.out.println(result);
@@ -138,8 +138,8 @@ public class ChatbotProc {
           bubbles_array.put(bubbles_obj);
 
           obj.put("bubbles", bubbles_array);
-          //obj.put("event", "send"); // 기본메세지 모드
-          obj.put("event", "open"); // 웰컴메세지 모드 -> 질문무시
+          obj.put("event", "send"); // 기본메세지 모드
+          //obj.put("event", "open"); // 웰컴메세지 모드 -> 질문무시
           
           requestBody = obj.toString();
 
