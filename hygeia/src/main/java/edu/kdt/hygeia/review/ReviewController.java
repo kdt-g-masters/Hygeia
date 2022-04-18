@@ -59,29 +59,44 @@ public class ReviewController {
 		return mv;
 	}
 	
-	//후기 작성 페이지
+	//후기 작성 페이지 이동
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.GET)
 	public ModelAndView reviewInputForm(HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		//String name = "b";
 		//session.setAttribute("sessionid", name);
-		String memberid = (String)session.getAttribute("sessionid");
+		String memberid = (String)session.getAttribute("memberInfo");
 		mv.addObject("memberid", memberid);
 		mv.setViewName("reviewinput");
 		return mv;
 	}
 	
-	//후기 작성
+	//후기 작성 완료
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.POST)
-	public ModelAndView reviewInput(ReviewDTO dto, RedirectAttributes rttr) {
-		int result = service.reviewInput(dto);
-		ModelAndView mv = new ModelAndView();
-		mv.addObject(result);
+	public String reviewInput(ReviewDTO dto, RedirectAttributes rttr) {
+		service.reviewInput(dto);
 		//일회성 데이터 전달
-		rttr.addFlashAttribute("result", result);
-		mv.setViewName("redirect:/reviewlist");
+		rttr.addFlashAttribute("result", "input success");
+		
+		return "redirect:/reviewlist";
+	}
+	
+	//후기 수정 페이지 이동
+	@RequestMapping(value = "/reviewmodify", method = RequestMethod.GET)
+	public ModelAndView reviewModifyForm(int reviewid) {
+		ModelAndView mv = new ModelAndView();
+		ReviewDTO reviewmodify = service.reviewResult(reviewid);
+		mv.addObject("reviewmodify", reviewmodify);
+		mv.setViewName("reviewmodify");
 		return mv;
 	}
 	
+	//후기 수정 완료
+	@RequestMapping(value = "/reviewmodify", method = RequestMethod.POST)
+	public String reviewModify(ReviewDTO dto, RedirectAttributes rttr) {
+		service.reviewModify(dto);
+		rttr.addFlashAttribute("result", "modify success");
+		return "redirect:/reviewlist";
+	}
 }

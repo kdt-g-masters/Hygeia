@@ -10,14 +10,16 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		//alert창 띄우기
-		
 		let result = '<c:out value="${result}"/>';
 		
 		checkAlert(result);
 		
 		function checkAlert(result) {
-			if(result == 1){
-				alert("등록 완료되었습니다.");
+			if(result === "input success"){
+				alert("등록이 완료되었습니다.");
+			}
+			else if(result === "modify success"){
+				alert("수정이 완료되었습니다.");
 			}
 			else{
 				return;

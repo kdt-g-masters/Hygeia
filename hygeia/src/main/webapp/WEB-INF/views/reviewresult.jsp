@@ -15,11 +15,13 @@
 </head>
 <body>
 <!-- 후기 상세 구현 -->
-<div>${ reviewresult.disease_cntntsSn } ${ reviewresult.title } ${ reviewresult.member_id } ${ reviewresult.dateWrtn } ${ reviewresult.views }</div>
+<div>${ reviewresult.name } ${ reviewresult.title } ${ reviewresult.member_id } ${ reviewresult.dateWrtn } ${ reviewresult.views }</div>
 <div>${ reviewresult.content }<br>${ reviewresult.tag }</div>
 <!-- 추천과 비추천 -->
 <input type="button" value="rcm">
 <input type="button" value="nonrcm">
+<!-- 후기 수정으로 이동 -->
+<button type="button" id="modify_btn" onclick="location.href='/reviewmodify?reviewid=${ param.reviewid }'">후기 수정</button>
 <!-- 후기 목록으로 이동 -->
 <button type="button" onclick="location.href='/reviewlist'">목록 보기</button>
 </body>

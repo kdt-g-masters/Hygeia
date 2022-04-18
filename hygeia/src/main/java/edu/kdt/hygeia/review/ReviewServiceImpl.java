@@ -42,5 +42,10 @@ public class ReviewServiceImpl implements ReviewService{
 	public int reviewCount(int reviewid) {
 		return dao.reviewCount(reviewid);
 	}
+
+	@Override
+	public int reviewModify(ReviewDTO dto) {
+		return dao.reviewModify(dto);
+	}
 	
 }
