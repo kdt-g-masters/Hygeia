@@ -108,6 +108,7 @@
 
 img{
 	width: 100%;
+	
 }
 #box {
 	display: none;
@@ -125,7 +126,7 @@ img{
 .menu-bar{
 	height: 3em;
 	border-radius: 1.5em 1.5em 0 0;	
-	background: linear-gradient(to right, #FCA937, #FFD37C);
+	background: linear-gradient(to left, #FCA937, #FFD37C);
 }
 .close-chat{
 	position: absolute;
@@ -133,7 +134,7 @@ img{
 	right: 1em;
 }
 #close{
-	color: gray;
+	color: white;
 	font-weight: bold;
 }
 #record-box{
@@ -152,11 +153,6 @@ img{
     background-clip: padding-box;
     border: 2px solid transparent;
  }
-/* #record-box::-webkit-scrollbar-track {
-	background-color: grey;
-	border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
-} */
 .ch-input{	
 	width: 23%;
 	position: fixed;
@@ -240,10 +236,37 @@ img{
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<div id="mainText">
 
-	<img src="images/indeximage.jpg">
-</div>
+	<main>
+		<div id="box1">
+			<div id="mainText">
+				<p>당신은 ( </p>
+				<p class="texts">
+				  <c:forEach items="${ diseaseList }" var="dto">				  	
+				  	<span><a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">${ dto.name }</a></span>
+				  </c:forEach>			  
+				</p>
+				<p> ) 에 걸리실 수 있습니다.</p>		
+			</div>	
+		</div>
+		<div id="box2">
+			<div class="row">
+			  <c:forEach items="${ diseaseList }" var="dto">
+				  <div class="col-sm-1">
+				    <a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">
+				      <div class="card shadow">				      
+				        <div class="card-body">
+				          <h5 class="card-title"> ${ dto.name } </h5>
+				        </div>				      
+				      </div>
+				    </a>
+				  </div>
+			  </c:forEach>
+			</div>		
+		</div>			
+	</main>
+
+
 
 <div id="box">
 	<div class="menu-bar">

@@ -16,7 +16,7 @@
 <body>
 검색 결과 총 ${ cnt }개의 검색 결과가 있습니다.<br>
 <c:forEach items="${ foodList }" var="dto">
-	<a href="/foodDetail?foodNum=${ dto.num }">
+	<a href="/food?num=${ dto.num }">
 		${ dto.name }
 		<img src="/images/food/${ dto.image }" width="50px" height="50px">
 	</a><br>

@@ -25,6 +25,7 @@
 	
 	  --> 
     
+    <form action="/survey3" method="post" > <br> 
     <!-- 설명 (value 를 DB 로 부터 받아오기) -->
 	<br>
 	<br>
@@ -42,7 +43,8 @@
 	<br> 
 	<br>
 	<br>
-	<form action="/survey3" method="post" ><br> 
+	<input type="text" placeholder="아이디 입력" name="member_id" /> <br>
+	<input type="text" placeholder="의심 성인병 입력" name="resultDisease" /> <br>
 	<input type="button" value="결과 저장하기 버튼" name="saveresult" />
 	</form> 
 	

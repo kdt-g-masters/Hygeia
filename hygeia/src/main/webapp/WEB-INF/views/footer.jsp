@@ -27,7 +27,7 @@
 							<div class="hm-footer-widget">
 								<div class="hm-foot-title ">
 									<div class="logo">
-										<a href="index.html">
+										<a href="/">
 											<!-- <img src="assets/images/logo/logo.png" alt="logo" /> -->
 											<h1>Hygeia</h1>
 										</a>
@@ -49,10 +49,10 @@
 								</div><!--/.hm-foot-title-->
 								<div class="footer-menu ">	  
 									<ul class="">
-										<li><a href="" >생활습관병</a></li>
-										<li><a href="">식재료</a></li>
-										<li><a href="">내 건강 정보</a></li>
-										<li><a href="">후기</a></li>
+										<li><a href="diseaselist" >생활습관병</a></li>
+										<li><a href="foodlist">식재료</a></li>
+										<li><a href="survey1">내 건강 정보</a></li>
+										<li><a href="reviewlist">후기</a></li>
 									</ul>
 								</div><!-- /.footer-menu-->
 							</div><!--/.hm-footer-widget-->

@@ -6,8 +6,12 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 @Mapper
-@Repository("foodDAO")
+@Repository("fooddao")
 public interface FoodDAO {
+	
+	public List<FoodDTO> foodlist();
+	
+	public FoodDTO food(int num);
 
 	public List<String> selectKeywordSearch(String keyword);
 	
