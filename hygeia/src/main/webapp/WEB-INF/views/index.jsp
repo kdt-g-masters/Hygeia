@@ -18,23 +18,6 @@
 		});
 	});
 </script>
-<style>
-/* 스크롤 디자인 -> 괜찮으면 전체 페이지 구성되면 적용하고 별로면 없애기  */
-body{
-	overflow-y: auto;
-}
-body::-webkit-scrollbar{
-	disbplay: block;
-	width: 15;
-	border-radius: 15px;
-}
-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #FCA937, #FFD37C);
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 4px solid transparent;
-}
-</style>
 </head>
 <body class="bg-color">
 	<!-- navbar -->
