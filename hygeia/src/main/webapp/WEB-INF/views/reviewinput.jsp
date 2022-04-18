@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="resources/jquery-3.6.0.min.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
 		
@@ -34,7 +34,7 @@
 	</select>
 	<div>
 		<!-- 작성자 아이디 -->
-		<div>작성자</div><input type="text" name="member_id">
+		<div>${ memberid }</div><input type="text" name="member_id" value="${ memberid }" hidden>
 		<!-- 현재 날짜 -->
 		<%Date now = new Date(); SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); %>
 		<div><%=formatter.format(now) %></div><input type="text" name="dateWrtn" value="<%=formatter.format(now) %>" hidden>
@@ -47,7 +47,7 @@
 	<input type="text" name="tag">
 	<!-- 후기 내용 -->
 	<textarea rows="40" cols="100" name="content"></textarea>
-	<input type="submit" value="후기 올리기">
+	<button class="btn">후기 올리기</button>
 </form>
 </body>
 </html>

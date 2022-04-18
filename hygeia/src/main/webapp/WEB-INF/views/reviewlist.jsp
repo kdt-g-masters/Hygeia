@@ -9,8 +9,23 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
 	$(document).ready(function () {
+		//alert창 띄우기
+		
+		let result = '<c:out value="${result}"/>';
+		
+		checkAlert(result);
+		
+		function checkAlert(result) {
+			if(result == 1){
+				alert("등록 완료되었습니다.");
+			}
+			else{
+				return;
+			}
+		}
 		
 		//목록 상세 페이지 이동
+		
 		let moveForm = $("#moveForm");
 		
 		$(".move").on("click", function (e) {
@@ -75,6 +90,13 @@
 </head>
 <body>
 <h1>만병통치 후기</h1>
+<!-- 검색 -->
+<div class="search_wrap">
+	<div class="search_area">
+		<input type="text" name="keyword" value="${ pageMaker.cri.keyword }">
+		<button>검색</button>
+	</div>
+</div>
 
 <!-- 후기 작성 페이지 링크 -->
 <a href="/reviewinput">리뷰쓰기</a>
@@ -84,14 +106,6 @@
 <c:forEach items="${ reviewlist }" var="dto">
 	<a class="move" href="<c:out value= '${ dto.id }'/>">${ dto.name } ${ dto.title } ${ dto.member_id } ${ dto.dateWrtn } ${ dto.views }</a><br>
 </c:forEach>
-
-<!-- 검색 -->
-<div class="search_wrap">
-	<div class="search_area">
-		<input type="text" name="keyword" value="${ pageMaker.cri.keyword }">
-		<button>검색</button>
-	</div>
-</div>
 
 <!-- 페이징 인터페이스 -->
 <div class="pageInfo_wrap">
