@@ -45,7 +45,7 @@
 	<br>
 	<input type="text" placeholder="아이디 입력" name="member_id" /> <br>
 	<input type="text" placeholder="의심 성인병 입력" name="resultDisease" /> <br>
-	<input type="button" value="결과 저장하기 버튼" name="saveresult" />
+	<input type="submit" value="결과 저장하기 버튼" name="saveresult" />
 	</form> 
 	
 	<!-- footer -->
