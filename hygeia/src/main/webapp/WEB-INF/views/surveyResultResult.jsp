@@ -7,16 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>설문조사-결과페이지</title>
+<title>설문조사-결과결과페이지</title>
 <script src="/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
 
 	<br>
-    <!-- 의심 성인병 (value 를 DB 로 부터 받아오기) --> 
+    <!-- 저장 결과 알림 --> 
     <section>
-      <h3>(의심 성인병 이름)</h3>
+      <h3>저장되었을까요...!?</h3>
     </section>
 
 	<!-- a태그 예시 : naver 
@@ -25,28 +25,30 @@
 	
 	  --> 
     
-    <form action="/survey3" method="post" > <br> 
-    <!-- 설명 (value 를 DB 로 부터 받아오기) -->
+    <!-- 결과 출력 -->
 	<br>
 	<br>
 	<br>
 	<br>
-	당신의 의심 증상은...
+	저장에 성공했습니다 
 	<br>
-	(의심 성인병 이름) 
+	<br>	
+	저장에 실패했습니다  
 	<br> 
+	
+	---------- 
 	<br>
-	추천 식재료 : 
-	<br> 
-	(추천 식재료 리스트) 
+		<c:if test="${ result == 1 }">
+				<h2>저장 성공</h2>
+		</c:if>
+			
+		<c:if test="${ result == 0 }">
+				<h3>저장 실패</h3>
+		</c:if>
+			
+	---------- 
 	<br>
-	<br> 
-	<br>
-	<br>
-	<input type="text" placeholder="아이디 입력" name="member_id" /> <br>
-	<input type="text" placeholder="의심 성인병 입력" name="resultDisease" /> <br>
-	<input type="button" value="결과 저장하기 버튼" name="saveresult" />
-	</form> 
+	
 	
 	<!-- footer -->
 	<br>

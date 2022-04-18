@@ -8,4 +8,9 @@
 		select * from survey
 	</select>
 	-->
+	
+	<insert id="saveResult" parameterType="SurveyDTO"> 
+		insert into surveyresult values(#{member_id}, #{resultDisease}) 
+	</insert> 
+	
 </mapper>
