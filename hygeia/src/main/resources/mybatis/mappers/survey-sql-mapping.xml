@@ -9,8 +9,8 @@
 	</select>
 	-->
 	
-	<insert id="saveResult" parameterType="SurveyDTO"> 
-		insert into surveyresult values(#{member_id}, #{resultDisease}) 
+	<insert id="saveResult" parameterType="surveydto"> 
+		insert into surveyResult values(#{member_id}, #{resultDisease}) 
 	</insert> 
 	
 </mapper>

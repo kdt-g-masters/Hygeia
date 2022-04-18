@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import edu.kdt.hygeia.review.ReviewController;
 import edu.kdt.hygeia.review.ReviewDAO;
+import edu.kdt.hygeia.survey.SurveyController;
+import edu.kdt.hygeia.survey.SurveyDAO;
 import edu.kdt.hygeia.disease.DiseaseController;
 import edu.kdt.hygeia.disease.DiseaseDAO;
 import edu.kdt.hygeia.food.FoodController;
@@ -20,11 +22,13 @@ import edu.kdt.hygeia.member.MemberDAO;
 @ComponentScan(basePackageClasses = MemberController.class)
 @ComponentScan(basePackageClasses = DiseaseController.class)
 @ComponentScan(basePackageClasses = FoodController.class)
+@ComponentScan(basePackageClasses = SurveyController.class)
 
 @MapperScan(basePackageClasses = MemberDAO.class)
 @MapperScan(basePackageClasses = ReviewDAO.class)
 @MapperScan(basePackageClasses = DiseaseDAO.class)
 @MapperScan(basePackageClasses = FoodDAO.class)
+@MapperScan(basePackageClasses = SurveyDAO.class)
 
 public class HygeiaApplication {
 

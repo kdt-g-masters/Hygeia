@@ -4,7 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 @Mapper
-@Repository("SurveyDAO")
+@Repository("surveyDAO")
 public interface SurveyDAO {
 	
 	public int saveResult(SurveyDTO dto); 
