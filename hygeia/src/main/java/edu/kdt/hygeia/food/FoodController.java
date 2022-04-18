@@ -18,10 +18,33 @@ import org.springframework.web.servlet.ModelAndView;
 public class FoodController {
 	@Autowired
 	@Qualifier("foodservice")
-	FoodServiceImpl service;
+	FoodServiceImpl foodservice;
 	
-	@RequestMapping(value="/foodlist")
-	public void foodlist() {}
+	// DB 식재료 + api 식재료 리스트
+	
+	@RequestMapping("/foodlist")
+	public ModelAndView foodlist() {
+		//String json = foodservice.foodapi();//
+		List<FoodDTO> list = foodservice.foodlist();
+		ModelAndView mv = new ModelAndView();
+		//mv.addObject("foodresult", json);//
+		mv.addObject("foodlist", list);
+		mv.addObject("apifoodlist", list);
+		mv.setViewName("foodlist");
+		return mv;
+	}
+	
+	//식재료 db 상세페이지
+	@RequestMapping("/food")
+	public ModelAndView food(int num) {
+		FoodDTO	dto = foodservice.food(num);
+		String json = foodservice.foodapi(num);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("foodresult", json);
+		mv.addObject("fooddto", dto);
+		mv.setViewName("food");
+		return mv;
+	}
 
 	// 키워드가 포함된 상품 제목 조회
 	@RequestMapping(value="/food/keywordSearch.do", method=RequestMethod.GET, produces = "application/text; charset=utf-8")
@@ -34,7 +57,7 @@ public class FoodController {
 		}
 
 		// keyword = keyword.toUpperCase();
-		List<String> keywordList = service.keywordSearch(keyword);
+		List<String> keywordList = foodservice.keywordSearch(keyword);
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("keyword", keywordList);
 		String jsonInfo = jsonObject.toString();
@@ -45,7 +68,7 @@ public class FoodController {
 	@RequestMapping(value="/food/searchFood.do", method=RequestMethod.GET)
 	public ModelAndView searchFood(String searchWord, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// String viewName = (String)request.getAttribute("viewName");
-		List<FoodDTO> foodList = service.searchFood(searchWord);
+		List<FoodDTO> foodList = foodservice.searchFood(searchWord);
 		ModelAndView mv = new ModelAndView("searchFood");
 		mv.addObject("foodList", foodList);
 		mv.addObject("cnt", foodList.size());

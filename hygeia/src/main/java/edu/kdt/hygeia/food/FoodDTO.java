@@ -5,7 +5,7 @@ public class FoodDTO {
 	int num;
 	String name;
 	String image;
-	String description;
+	String description; // 설명
 	String effect;
 	
 	public int getNum() {

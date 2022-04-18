@@ -79,5 +79,10 @@
 	<div id="suggest">
         <div id="suggestList"></div>
    </div>
+   
+	<!-- db 식재료 -->
+	<c:forEach items = "${foodlist }" var = "dto">
+		<a href="/food?num=${dto.num}" > ${dto.name }</a> <br>
+	</c:forEach>
 </body>
 </html>
