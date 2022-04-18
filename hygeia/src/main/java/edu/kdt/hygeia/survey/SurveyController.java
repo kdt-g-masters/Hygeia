@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class SurveyController {
 	
 	@Autowired 
-	@Qualifier("surveyservice") 
+	@Qualifier("SurveyServiceImpl") 
 	SurveyService service; 
 	
 	@RequestMapping(value="/survey1", method=RequestMethod.GET) 
