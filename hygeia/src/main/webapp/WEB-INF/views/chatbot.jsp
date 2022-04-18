@@ -108,6 +108,7 @@
 
 img{
 	width: 100%;
+	
 }
 #box {
 	display: none;
@@ -152,11 +153,6 @@ img{
     background-clip: padding-box;
     border: 2px solid transparent;
  }
-/* #record-box::-webkit-scrollbar-track {
-	background-color: grey;
-	border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
-} */
 .ch-input{	
 	width: 23%;
 	position: fixed;
@@ -240,9 +236,8 @@ img{
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
-<div id="mainText">
-
-	<img src="images/indeximage.jpg">
+<div id="box1">
+	<!-- <img src="images/indeximage.jpg"> -->
 </div>
 
 <div id="box">
