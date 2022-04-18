@@ -21,11 +21,11 @@
 				dataType: 'json',
 				success: function(result) {
 					if (result == '1') {
-						alert("로그인 성공");
+						alert($("#id").val() + "님 환영합니다.");
 						location.replace('/');
 					}
 					else {
-						alert("로그인 실패");
+						$('#msg').html("아이디 또는 비밀번호가 일치하지 않습니다.");
 					}
 				} // function end
 			});	// ajax end		
@@ -37,8 +37,9 @@
 	<div id="box">
 		<form action="">
 			<input class = "form-control me-2" type="text" id="id" name="id" placeholder= "아이디">
-			<input class = "form-control me-2" type="text" id="password" name="password" placeholder="비밀번호">
+			<input class = "form-control me-2" type="password" id="password" name="password" placeholder="비밀번호">
 			<input id="keep" type="checkbox" name="autoLogin" value="자동로그인"> Remember me <br>
+			<div id="msg"></div>
 			<input class="btn btn-primary" type="button" id="loginBtn" name="loginBtn" value="로그인">
 			<input class="btn btn-outline-primary" id="btnFindId" type="button" name="btnFindId" value="아이디 / 비밀번호 찾기">
 			<a href="/join" class="btn btn-outline-primary" type="button" id="joinBtn" name="joinBtn">회원가입</a>

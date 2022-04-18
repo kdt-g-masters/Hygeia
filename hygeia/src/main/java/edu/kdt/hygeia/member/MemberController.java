@@ -1,6 +1,7 @@
 package edu.kdt.hygeia.member;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +29,33 @@ public class MemberController {
 	public String loginAction(HttpServletRequest request, MemberDTO dto) throws Exception {
 		MemberDTO loginMemberDTO = service.loginMember(dto);
 		
-		if(loginMemberDTO != null) {
-			// 세션 아이디 가져오기
+		if(loginMemberDTO != null && loginMemberDTO.getId() != null) {
+			// 세션
 			HttpSession session = request.getSession();
+			
+			// 로그인 상태로 설정
+			session.setAttribute("isLogOn", true);
+			
+			// 로그인 정보 세션에 저장
 			session.setAttribute("sessionid", loginMemberDTO.getId());
+			session.setAttribute("memberInfo", loginMemberDTO);
+				
 			return "1";//{\"process\":\"정상로그인\" , \"role\":\"user\"}";	
 		}
 		else {
 			return "2";//"{\"process\":\"비정상로그인\" , \"role\":\"admin\"}";		
 		}
+	}
+	
+	// 로그아웃
+	@RequestMapping(value="/member/logout.do", method = RequestMethod.GET)
+	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		session.setAttribute("isLogOn", false);
+		session.removeAttribute("memberInfo");
+		mv.setViewName("redirect:/");
+		return mv;
 	}
 	
 	// 회원가입 페이지
