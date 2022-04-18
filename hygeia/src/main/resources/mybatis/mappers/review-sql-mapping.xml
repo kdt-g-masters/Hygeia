@@ -31,7 +31,9 @@
 	
 	<!-- 후기 상세 -->
 	<select id="reviewResult" resultType="reviewdto" parameterType="int">
-		select * from review where id=#{id}
+		select * from review 
+		left join disease on review.disease_cntntsSn = disease.cntntsSn 
+		where id=#{id}
 	</select>
 	
 	<!-- 후기 작성 -->
@@ -42,5 +44,10 @@
 	<!-- 후기 조회수 -->
 	<update id="reviewCount" parameterType="int">
 		update review set views = views + 1 where id=#{id}
+	</update>
+	
+	<!-- 후기 수정 -->
+	<update id="reviewModify" parameterType="reviewdto">
+		update review set title = #{title}, content = #{content}, dateWrtn = now() where id=#{id}
 	</update>
 </mapper>

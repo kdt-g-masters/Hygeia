@@ -14,4 +14,5 @@ public interface ReviewDAO {
 	public ReviewDTO reviewResult(int reviewid);
 	public int reviewInput(ReviewDTO dto);
 	public int reviewCount(int reviewid);
+	public int reviewModify(ReviewDTO dto);
 }

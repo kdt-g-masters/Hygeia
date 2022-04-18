@@ -20,4 +20,7 @@ public interface ReviewService {
 	
 	//후기 조회수
 	public int reviewCount(int reviewid);
+	
+	//후기 수정
+	public int reviewModify(ReviewDTO dto);
 }

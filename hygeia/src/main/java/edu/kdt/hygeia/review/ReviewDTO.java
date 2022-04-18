@@ -86,5 +86,12 @@ public class ReviewDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	@Override
+	public String toString() {
+		return "ReviewDTO [id=" + id + ", member_id=" + member_id + ", disease_cntntsSn=" + disease_cntntsSn
+				+ ", dateWrtn=" + dateWrtn + ", views=" + views + ", title=" + title + ", content=" + content
+				+ ", attachments=" + attachments + ", tag=" + tag + ", rcm=" + rcm + ", nonrcm=" + nonrcm + ", name="
+				+ name + "]";
+	}
 	
 }
