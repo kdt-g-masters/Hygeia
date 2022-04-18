@@ -55,7 +55,7 @@
 					var textanswer = "<div class='answer'>"; 
 					textanswer += bubbles[b].data.description;
 					$("#record").append(textanswer+"</div>");	
-				}	
+				}
 				else if(bubbles[b].type == "template"){
 					if(bubbles[b].data.cover.type == "text"){ //멀티링크답변일때
 						var textanswer ="<div class='answer'>" + bubbles[b].data.cover.data.description + "</div>";
@@ -64,9 +64,13 @@
 						var addlink = "<div class='link-group'>";//"<div class='link-group'>";
 						for(var c in bubbles[0].data.contentTable){
 							for(var d in bubbles[0].data.contentTable[c]){
-								var link = bubbles[0].data.contentTable[c][d].data.title;
-								//링크 있을때의 JSON 추출하기(맞춤정보, 후기정보)
-								addlink += "<input type='button' class='link' value=" + link + ">";
+								
+								if(bubbles[0].data.contentTable[c][d].data.type == "button"){
+									var link = bubbles[0].data.contentTable[c][d].data.title;
+									//링크 있을때의 JSON 추출하기(맞춤정보, 후기정보)
+									addlink += "<input type='button' class='link' value='" + link + "''>";
+								}
+								
 							}
 						}
 						$("#record").append(addlink+"</div>");
@@ -91,6 +95,23 @@
 	}
 </script>
 <style>
+/* 스크롤 디자인 -> 괜찮으면 전체 페이지 구성되면 적용하고 별로면 없애기  */
+body{
+	overflow-y: auto;
+}
+body::-webkit-scrollbar{
+	margin: 20px 0 20px 0;
+	disbplay: block;
+	width: 15;
+	border-radius: 15px;
+}
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #FCA937, #FFD37C);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+}
+
 /* 부트스트랩 custom start*/
 .input-group{
 	width: 100%;
@@ -231,6 +252,7 @@ img{
 	border-color: #FCA937;
 	color : white;
 }
+
 </style>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
@@ -265,7 +287,6 @@ img{
 			</div>		
 		</div>			
 	</main>
-
 
 
 <div id="box">

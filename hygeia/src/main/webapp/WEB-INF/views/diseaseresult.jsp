@@ -58,10 +58,18 @@ else{
 }
 String overviewcontent = (String)overview.get("CNTNTS_CL_CN");
 %>
+
 <div>
 	<h2><%= cntntssj %></h2>
+	
 	<div><%= overviewcontent %></div>
 </div>
-<div id="diseaseReview"></div>
+
+<br>
+<h4><%= cntntssj %> 관련 후기</h4>
+
+<div id="diseaseReview">
+	
+</div>
 </body>
 </html>
