@@ -65,13 +65,15 @@
 		</c:if>
  -->
  
- 	<c:out value="${Test}" />
+ 	<c:out value="Test!" /> <br>
  		
 	---------- 
 	<br>
 	
 	<br>
-	현재 페이지는, ${ num }페이지 입니다. 
+	<!-- <c:set var="dto" /> --> 
+	<!-- 현재 페이지는, ${dto.no}페이지 입니다. <br>  -->
+	<!-- 현재 페이지는, <c:out value="${dto.no}" />페이지 입니다. <br>  -->
 	
 	
 	<!-- footer -->
