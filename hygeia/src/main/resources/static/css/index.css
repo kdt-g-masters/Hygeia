@@ -274,7 +274,6 @@ main {
 
 #box1 {
 	width: 100%;
-	height: 450px;
 	background: url('/images/indeximage.jpg');
 }
 
@@ -294,6 +293,28 @@ main {
 
 .shadow {
 	box-shadow: 5px 5px 10px;	
+}
+
+.diseaseCardStyle {
+	width: 130px;
+	height: 130px;
+}
+
+.cardTextCenter {
+	text-align: center;
+	margin-top: 35px;
+}
+
+.mainTitle {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#myInfo {
+	padding: 10px 50px;
+	border: black;
+	background-color: black;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
 /* 텍스트 전환 효과 */
