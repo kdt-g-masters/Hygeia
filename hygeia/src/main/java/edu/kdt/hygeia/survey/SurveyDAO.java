@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface SurveyDAO {
 	
 	public int saveResult(SurveyDTO dto); 
+	
+	public SurveyDTO loadSheet(SurveyDTO dto);
 
 }
