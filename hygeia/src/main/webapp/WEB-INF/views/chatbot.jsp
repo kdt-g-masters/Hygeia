@@ -9,171 +9,12 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link href="/css/index.css" rel="stylesheet"/>
+<link href="/css/chat.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
 <script type="text/javascript">
 	
 </script>
-<style>
-/* 스크롤 디자인 -> 괜찮으면 전체 페이지 구성되면 적용하고 별로면 없애기  */
-body{
-	overflow-y: auto;
-}
-body::-webkit-scrollbar{
-	margin: 20px 0 20px 0;
-	disbplay: block;
-	width: 15;
-	border-radius: 15px;
-}
-body::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #FCA937, #FFD37C);
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 4px solid transparent;
-}
-
-/* 부트스트랩 custom start*/
-.input-group{
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-.input-group .form-control{
-	/* padding: 0.6vh 1vw 0.6vh 1vw; */
-	border: 0;
-	border-radius: 1.5em;
-	background-color: #FFEFD8;
-}
-
-/* 부트스트랩 custom end*/
-
-img{
-	width: 100%;
-	
-}
-#box {
-	display: none;
-	width : 25%;
-	 height : 70vh;
-	 margin: 35px 25px;
-	 border-radius: 1.5em;
-	 box-shadow: 0.2em 0.2em 5em black;
-	 background-color: white;
-	 position: fixed;
-	 bottom: 0;
-  	 right: 0;
-	 z-index: 1000;
-}
-.menu-bar{
-	height: 3em;
-	border-radius: 1.5em 1.5em 0 0;	
-	background: linear-gradient(to left, #FCA937, #FFD37C);
-}
-.close-chat{
-	position: absolute;
-	top: 0.5em;
-	right: 1em;
-}
-#close{
-	color: white;
-	font-weight: bold;
-}
-#record-box{
-	margin: 10px 3px;
-	height: 32em;
-	overflow: hidden;
-	overflow-y: auto;
-}
-#record-box::-webkit-scrollbar{
-	disbplay: block;
-	width: 10px;
-}
-#record-box::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #FCA937, #FFD37C);
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid transparent;
- }
-.ch-input{	
-	width: 23%;
-	position: fixed;
-	bottom: 0;
-	margin: 35px 10px;
-}
-#event1, #event2{
-	float: right;
-	width: 18.5%;
-	padding: 0.6vh 0.6vw 0.6vh 0.6vw;
-	border: 0;
-	background-color: #FCA937;
-	color: white; 
-	font-wieght: bold;
-}
-#event1{
-	border-radius: 0;
-	margin: 0.1vw;
-}
-#event2{
-	border-radius: 0 1.5em 1.5em 0;
-	padding: 0.6vh 0.9vw 0.6vh 0.6vw;
-	margin: 0.1vw;
-}
-.record{
-	overflow: hidden;
-}
-#request{
-	margin: 0.1vw;
-	width: 60%;
-}
-.question{
-	min-width: auto;
-	max-width: 70%;
-	margin: 1vh 0.3vw 1vh auto;
-	padding: 0.5vh 0.5vw;
-	background-color: #FFD37C;
-	right: 0;
- 	text-align: right; 
-	display: block;
-	border-radius: 1.3em 1.3em 0.1em 1.3em;
-	font-size: 0.9em;
-	box-shadow: 0.2em 0.2em 1em #ffd37c;
-}
-.answer{
-	margin: 1vh 5vw 1vh 0.3vw;
-	padding: 0.5vh 0.5vw;
-	background-color:#FCA937;
-	text-align: left; 
-	display: block;
-	border-radius: 1.3em 1.3em 1.3em 0.1em;
-	font-size: 0.9em;
-	color: white;
-	box-shadow: 0.2em 0.2em 1em #d7d7d7;
-	
-}
-.link-group{
-	margin:0.1vh 0.1vw 1vh 0.1vw;
-	padding: 0.1vh 0.1vw 1vh 0.1vw;
-	overflow: hidden;
-	overflow-x: auto;
-}
-.link{
-	float: left;
-	margin: 0.1vh 0.1vw 0.5vh 0.1vw;
-	padding: 0.5vh 0.5vw;
-	display: inline;
-	border-radius: 1.5em;
-	border: 0.1em solid #FFD37C;
-	background-color: transparent;
-	color : dark;
-	font-size : 0.8em;
-}
-.link:hover{
-	background-color: #FCA937;
-	border-color: #FCA937;
-	color : white;
-}
-
-</style>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
@@ -208,16 +49,16 @@ img{
 		</div>			
 	</main>
 
-
-<div id="box">
+<div id="ch-window" style="display:none">
 	<div class="menu-bar">
-		<span class="close-chat"><a id="close" href="..">
+		<span class="close-chat"><a id="close" href="/">
 			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 19 19">
 	  			<path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
 	  			<path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
 			</svg>
 		</a></span>
-	</div>
+	</div>	
+	
 	<div class="ch-input">
 		<hr>
 		<div class="input-group mb-3">
@@ -247,7 +88,6 @@ img{
 		  <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
 		  <!-- chatbot modal? toggle? -->
 		</svg>
-		<div id="ch-window" style="display:none"></div>
 	  </div>
 	</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
