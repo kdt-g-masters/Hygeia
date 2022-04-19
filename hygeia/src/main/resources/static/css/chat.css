@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/* ----------부트스트랩 custom----------*/
+.input-group{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.input-group .form-control{
+	/* padding: 0.6vh 1vw 0.6vh 1vw; */
+	border: 0;
+	border-radius: 1.5em;
+	background-color: #FFEFD8;
+}
+
+/* ----------------------------------*/
+
+img{
+	width: 100%;
+	
+}
+#ch-window {
+	display: none;
+	width : 25%;
+	 height : 70vh;
+	 margin: 35px 25px;
+	 border-radius: 1.5em;
+	 box-shadow: 0.2em 0.2em 5em black;
+	 background-color: white;
+	 position: fixed;
+	 bottom: 0;
+  	 right: 0;
+	 z-index: 1000;
+}
+.menu-bar{
+	height: 3em;
+	border-radius: 1.5em 1.5em 0 0;	
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+}
+.close-chat{
+	position: absolute;
+	top: 0.5em;
+	right: 1em;
+}
+#close{
+	color: white;
+	font-weight: bold;
+}
+#record-box{
+	margin: 10px 3px;
+	height: 32em;
+	overflow: hidden;
+	overflow-y: auto;
+}
+#record-box::-webkit-scrollbar{
+	display: block;
+	width: 10px;
+}
+#record-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #FCA937, #FFD37C);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+ }
+.ch-input{	
+	width: 23%;
+	position: fixed;
+	bottom: 0;
+	margin: 35px 10px;
+}
+#event1, #event2{
+	float: right;
+	width: 18.5%;
+	padding: 0.6vh 0.6vw 0.6vh 0.6vw;
+	border: 0;
+	background-color: #FCA937;
+	color: white;
+	font-weight: bolder;
+}
+#event1{
+	border-radius: 0;
+	margin: 0.1vw;
+}
+#event2{
+	border-radius: 0 1.5em 1.5em 0;
+	padding: 0.6vh 0.9vw 0.6vh 0.6vw;
+	margin: 0.1vw;
+}
+.record{
+	overflow: hidden;
+}
+#request{
+	margin: 0.1vw;
+	width: 60%;
+}
+.question{
+	min-width: auto;
+	max-width: 70%;
+	margin: 1vh 0.3vw 1vh auto;
+	padding: 0.5vh 0.5vw;
+	background-color: #FFD37C;
+	right: 0;
+ 	text-align: right; 
+	display: block;
+	border-radius: 1.3em 1.3em 0.1em 1.3em;
+	font-size: 1em;
+	box-shadow: 0.2em 0.2em 1em #ffd37c;
+}
+.answer{
+	margin: 1vh 5vw 1vh 0.3vw;
+	padding: 0.5vh 0.5vw;
+	background-color:#FCA937;
+	text-align: left; 
+	display: block;
+	border-radius: 1.3em 1.3em 1.3em 0.1em;
+	font-size: 1em;
+	color: white;
+	box-shadow: 0.2em 0.2em 1em #d7d7d7;
+	
+}
+.link-group{
+	margin:0.1vh 0.1vw 1vh 0.1vw;
+	padding: 0.1vh 0.1vw 1vh 0.1vw;
+	overflow: hidden;
+	overflow-x: auto;
+}
+.link{
+	float: left;
+	margin: 0.1vh 0.1vw 0.5vh 0.1vw;
+	padding: 0.5vh 0.5vw;
+	display: inline;
+	border-radius: 1.5em;
+	border: 0.1em solid #FFD37C;
+	background-color: transparent;
+	color : dark;
+	font-size : 0.9em;
+	cursor : pointer;
+}
+.link:hover{
+	background-color: #FCA937;
+	border-color: #FCA937;
+	color : white;
+	cursor : pointer;
+} 
