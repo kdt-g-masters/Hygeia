@@ -95,6 +95,9 @@
 		<input name="searchWord" id="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
 		<input type="button" id="search" name="search" class="btn1"  value="검 색" >
 	</form>
+	<button id="record">음성 질문 시작</button>
+	<button id="stop">음성 질문 종료</button>
+	<div id="sound"></div>
 </div>
 <div id="suggest" style="background-color: silver">
        <div id="suggestList"></div>
@@ -107,5 +110,9 @@
 		<a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">${ dto.name }</a><br>
 	</c:forEach>
 </div>
+
+<!-- 음성 질문 처리 -->
+<script src="/js/stt.js"></script>
+
 </body>
 </html>

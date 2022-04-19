@@ -72,9 +72,12 @@
 <body>
 	<div id="search" >
 		<form name="frmSearch" action="/food/searchFood.do" >
-			<input name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
+			<input id="searchWord" name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
 			<input type="submit" name="search" class="btn1"  value="검 색" >
 		</form>
+		<button id="record">음성 질문 시작</button>
+		<button id="stop">음성 질문 종료</button>
+		<div id="sound"></div>
 	</div>
 	<div id="suggest">
         <div id="suggestList"></div>
@@ -84,5 +87,8 @@
 	<c:forEach items = "${foodlist }" var = "dto">
 		<a href="/food?num=${dto.num}" > ${dto.name }</a> <br>
 	</c:forEach>
+	
+	<!-- 음성 질문 처리 -->
+	<script src="/js/stt.js"></script>
 </body>
 </html>
