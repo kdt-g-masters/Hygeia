@@ -69,7 +69,11 @@ public class MainController {
 		String text = sttService.test(fileName);
 		return text;
 	}
-	
 	@RequestMapping(value="/mypage", method=RequestMethod.GET)
 	public void mypage() {	}
+	
+	
+	/* 나중에 삭제할 것 */ 
+	@RequestMapping(value="/template")
+	public void template() {	}
 }

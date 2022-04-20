@@ -31,25 +31,30 @@ img{
   	 right: 0;
 	 z-index: 1000;
 }
-a, a:hover, a:link, a:visited, a:active, a:-webkit-any-link {
+li a, li a:link {
 	text-decoration-line: none;
 	text-decoration: none;
-	color : dark;
+	color: gray;
 }
-
+li:hover a{
+	color: white;
+}
 .menu-bar{
 	height: 3em;
 	border-radius: 1.5em 1.5em 0 0;	
 	background: linear-gradient(to left, #FCA937, #FFD37C);
 }
-.close-chat{
+.chat-close{
+	cursor: pointer;	
 	position: absolute;
 	top: 0.5em;
 	right: 1em;
 }
 #close{
 	color: white;
-	font-weight: bold;
+}
+#close:hover {
+	color: gray;
 }
 #record-box{
 	margin: 10px 3px;

@@ -1,9 +1,5 @@
 @charset "UTF-8";
 .hm-footer{
- 	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
     padding-bottom: 68px;
     background: #716F6F;
 }
