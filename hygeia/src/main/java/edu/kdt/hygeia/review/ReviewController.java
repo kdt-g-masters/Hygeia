@@ -1,6 +1,8 @@
 package edu.kdt.hygeia.review;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -77,7 +80,22 @@ public class ReviewController {
 	
 	//후기 작성 완료
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.POST)
-	public String reviewInput(ReviewDTO dto, RedirectAttributes rttr) {
+	public String reviewInput(ReviewDTO dto, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request) throws Exception {
+		//파일 저장 경로
+		String savepath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\images\\reviewfiles";
+		
+		//무작위 이름 만들기(식별자)
+		UUID uuid = UUID.randomUUID();
+		String filename = uuid + "_" + file.getOriginalFilename();
+		
+		//파일 저장
+		File savefile = new File(savepath, filename);
+		file.transferTo(savefile);
+		
+		//dto에 파일정보 주입
+		dto.setFilename(filename);
+		dto.setFilepath(savepath);
+		
 		service.reviewInput(dto);
 		//일회성 데이터 전달
 		rttr.addFlashAttribute("result", "input success");

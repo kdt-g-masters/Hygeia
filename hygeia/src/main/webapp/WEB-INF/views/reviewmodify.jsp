@@ -31,7 +31,7 @@
 	<!-- 제목 -->
 	<input type="text" name="title" value="${ reviewmodify.title }">
 	<!-- 첨부파일 -->
-	<input type="text" name="attachments" value="${ reviewmodify.attachments }" readonly="readonly">
+	<input type="text" name="attachments" value="${ reviewmodify.filename }" readonly="readonly">
 	<!-- 태그 -->
 	<input type="text" name="tag" value="${ reviewmodify.tag }" readonly="readonly">
 	<!-- 후기 내용 -->

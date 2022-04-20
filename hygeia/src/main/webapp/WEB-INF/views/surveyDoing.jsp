@@ -96,7 +96,7 @@
 	<br>
 	
 	<!-- 페이지 포함 --> 
-	
+	<!-- 
 	<c:if test="${survey.no == 1}"> 
 		<%@ include file="surveyDoingP1.jspf" %> 
 	</c:if> 
@@ -144,7 +144,7 @@
 	<c:if test="${survey.no == 12 }"> 
 		<%@ include file="surveyDoingP12.jspf" %> 
 	</c:if> 
-		
+	 -->
 	<br>
 	---------- 
 	<br>

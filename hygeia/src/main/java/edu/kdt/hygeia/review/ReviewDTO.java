@@ -8,10 +8,9 @@ public class ReviewDTO {
 	int views;
 	String title;
 	String content;
-	String attachments;
+	String filename;
+	String filepath;
 	String tag;
-	int rcm;
-	int nonrcm;
 	String name;
 	
 	public int getId() {
@@ -56,11 +55,17 @@ public class ReviewDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getAttachments() {
-		return attachments;
+	public String getFilename() {
+		return filename;
 	}
-	public void setAttachments(String attachments) {
-		this.attachments = attachments;
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getFilepath() {
+		return filepath;
+	}
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
 	}
 	public String getTag() {
 		return tag;
@@ -68,30 +73,18 @@ public class ReviewDTO {
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
-	public int getRcm() {
-		return rcm;
-	}
-	public void setRcm(int rcm) {
-		this.rcm = rcm;
-	}
-	public int getNonrcm() {
-		return nonrcm;
-	}
-	public void setNonrcm(int nonrcm) {
-		this.nonrcm = nonrcm;
-	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	@Override
 	public String toString() {
 		return "ReviewDTO [id=" + id + ", member_id=" + member_id + ", disease_cntntsSn=" + disease_cntntsSn
 				+ ", dateWrtn=" + dateWrtn + ", views=" + views + ", title=" + title + ", content=" + content
-				+ ", attachments=" + attachments + ", tag=" + tag + ", rcm=" + rcm + ", nonrcm=" + nonrcm + ", name="
-				+ name + "]";
+				+ ", filename=" + filename + ", filepath=" + filepath + ", tag=" + tag + ", name=" + name + "]";
 	}
 	
 }

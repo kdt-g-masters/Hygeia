@@ -38,7 +38,7 @@
 	
 	<!-- 후기 작성 -->
 	<insert id="reviewInput" parameterType="reviewdto">
-		insert into review values(#{id}, #{member_id}, #{disease_cntntsSn}, #{dateWrtn}, #{views}, #{title}, #{content}, #{attachments}, #{tag}, 0, 0)
+		insert into review values(#{id}, #{member_id}, #{disease_cntntsSn}, #{dateWrtn}, #{views}, #{title}, #{content}, #{filename}, #{filepath}, #{tag})
 	</insert>
 	
 	<!-- 후기 조회수 -->

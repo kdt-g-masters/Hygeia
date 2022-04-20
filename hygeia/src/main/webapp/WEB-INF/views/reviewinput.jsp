@@ -17,7 +17,7 @@
 </head>
 <body>
 <h1>만병통치 후기</h1>
-<form action="reviewinput" method="post">
+<form action="reviewinput" method="post" enctype="multipart/form-data">
 	<!-- 병 선택 -->
 	<select name="disease_cntntsSn">
 		<option value="5300">고혈압</option>
@@ -42,7 +42,7 @@
 	<!-- 제목 -->
 	<input type="text" name="title">
 	<!-- 첨부파일 -->
-	<input type="text" name="attachments">
+	<input type="file" name="file">
 	<!-- 태그 -->
 	<input type="text" name="tag">
 	<!-- 후기 내용 -->

@@ -25,7 +25,11 @@
 		//후기 추천수
 		$.ajax({
 			url: '<%=request.getContextPath() %>/rcmcount', 
-			data: {''}, 
+			data: {'reviewid':$.urlParam('reviewid')}, 
+			dataType: 'json', 
+			success: function (rcmcount){
+				$("#rcm_count").html("<h3>추천수=" + rcmcount + "</h3>");
+			}
 		});//ajax end
 		
 		//후기 추천 기능
@@ -62,11 +66,12 @@
 </head>
 <body>
 <!-- 후기 상세 구현 -->
+<img src="/images/reviewfiles/${ reviewresult.filename }">
 <div>${ reviewresult.name } ${ reviewresult.title } ${ reviewresult.member_id } ${ reviewresult.dateWrtn } ${ reviewresult.views }</div>
 <div>${ reviewresult.content }<br>${ reviewresult.tag }</div>
-<!-- 추천과 비추천 -->
-<input type="button" value="rcm" id="rcm">
-<input type="button" value="nonrcm">
+<!-- 공감 기능 -->
+<input type="button" value="공감" id="rcm">
+<div id="rcm_count"></div>
 <!-- 후기 수정으로 이동 -->
 <button type="button" id="modify_btn" onclick="location.href='/reviewmodify?reviewid=${ param.reviewid }'">후기 수정</button>
 <!-- 후기 목록으로 이동 -->

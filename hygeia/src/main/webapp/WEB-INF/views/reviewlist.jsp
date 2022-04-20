@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="jquery-3.6.0.min.js"></script>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script type="text/javascript">
 	$(document).ready(function () {
+		//뒤로가기로 목록 페이지에 왔을 때
+		window.onpageshow = function(event) {
+		    if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+		    	location.reload();
+		    }
+		}
+		
 		//alert창 띄우기
 		let result = '<c:out value="${result}"/>';
 		
@@ -27,7 +34,6 @@
 		}
 		
 		//목록 상세 페이지 이동
-		
 		let moveForm = $("#moveForm");
 		
 		$(".move").on("click", function (e) {
@@ -64,7 +70,7 @@
 			moveForm.find("input[name='pageNum']").val(1);
 			//form태그 내부 데이터 서버 전송
 			moveForm.submit();
-		});//on click end
+		});//on click end		
 		
 	});//ready end
 </script>
