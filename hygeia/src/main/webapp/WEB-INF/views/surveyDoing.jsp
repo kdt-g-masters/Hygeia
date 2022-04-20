@@ -95,7 +95,13 @@
 	
 	<!-- 페이지 포함과 변수와 조건문을 활용해서, no 에 맞게 출력되도록 구성 --> 
 	
-	<%@ include file="surveyDoingP2.jspf" %> 
+	<c:if test="${survey.no < 12}"> 
+		<%@ include file="surveyDoingP2.jspf" %> 
+	</c:if> 
+
+	<c:if test="${survey.no == 12 }"> 
+		<%@ include file="surveyDoingP3.jspf" %> 
+	</c:if> 
 		
 	<br>
 	---------- 

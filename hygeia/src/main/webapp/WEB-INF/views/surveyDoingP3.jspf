@@ -47,6 +47,6 @@
 	
 	
 	<br> 
-	선택완료 - form 태그 + input 태그 버튼 (POST 방식의 /survey1 값을 갖는 RequestMapping 어노테이션이 붙는 메소드 재실행) 
+	설문 제출 
 	<br>
 	
