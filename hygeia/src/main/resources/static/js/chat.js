@@ -1,6 +1,4 @@
-/**
- * 
- */
+/*chatbot.js */
  $(document).ready(function() {
 		$(".floating-button").on('click', function(){
 			show('ch-window');
@@ -8,14 +6,13 @@
 				hide('ch-window');
 			});
 		});
-		$(".close").on('click'),hide('ch-window');
 		//---입력, 대화시작 클릭시 
 		$(".ch-bnt").on('click', function(){
 				if( $("#request").val() != ""){
 					$("#record").append("<div class='question'>" + $("#request").val() + "</div>");	//질문출력
 				}
 				$.ajax({
-					url : "/chatbotajax2",
+					url : "/chatbot",
 					data : {"request": $("#request").val(), "event":$(this).val()}, //입력,대화시작 
 					type : "get",
 					dataType : "json",
@@ -25,7 +22,7 @@
 							console.log($(this).text());
 							$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
 							$.ajax({
-								url : "/chatbotajax2",
+								url : "/chatbot",
 								data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
 								type : "post",
 								dataType : "json",
@@ -59,7 +56,7 @@
 					for(var d in contentTable[c]){
 						var text = contentTable[c][d].data.title;
 						if( contentTable[c][d].data.data.action.type == "link" ) {
-							addlink += "<li class='link'><a href='" +contentTable[c][d].data.data.action.data.url + "'>" +
+							addlink += "<li class='link'><a href='" + contentTable[c][d].data.data.action.data.url + "'>" +
 									text + "</a></li>"	
 						}
 						else  {

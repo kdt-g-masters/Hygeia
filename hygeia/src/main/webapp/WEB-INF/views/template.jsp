@@ -24,32 +24,17 @@
 	<%@ include file="navbar.jsp" %>
 	
 	<main>
-		<div id="box1">
-			<div id="mainText">
-				<p>당신은 ( </p>
-				<p class="texts">
-				  <c:forEach items="${ diseaseList }" var="dto">				  	
-				  	<span><a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">${ dto.name }</a></span>
-				  </c:forEach>			  
-				</p>
-				<p> ) 에 걸리실 수 있습니다.</p>		
-			</div>	
-		</div>
-		<div id="box2">
-			<div class="row">
-			  <c:forEach items="${ diseaseList }" var="dto">
-				  <div class="col-sm-1">
-				    <a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">
-				      <div class="card shadow">				      
-				        <div class="card-body">
-				          <h5 class="card-title"> ${ dto.name } </h5>
-				        </div>				      
-				      </div>
-				    </a>
-				  </div>
-			  </c:forEach>
-			</div>		
-		</div>			
+	
+	
+
+		<!-- 아래 <br>태그를 삭제하고 이곳<main></main> 안에서 프론트 코드 짜면 됩니다. 
+			이부분 위 아래를 복붙해서 nav, footer, chatbot을 넣으세용 -->
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+		
+		
+		
 	</main>
 	
 	<!-- chatbot -->

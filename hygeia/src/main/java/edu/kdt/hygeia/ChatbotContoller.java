@@ -13,12 +13,7 @@ public class ChatbotContoller {
 	@Qualifier("chatbotservice")
 	ChatbotService service;
 	
-	@RequestMapping("/chatbotajax")
-	public String chatbotajax() {
-		return "chatbot";
-	}
-	
-	@RequestMapping("/chatbotajax2")
+	@RequestMapping("/chatbot")
 	@ResponseBody
 	public String chatbotajax2(String request, String event) {
 		System.out.println(event);
