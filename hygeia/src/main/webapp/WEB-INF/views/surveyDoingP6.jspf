@@ -51,5 +51,4 @@
 		<input type="hidden" name="no" value="7" /> 
 		<input type="submit" name="nextbtn" value="다음 페이지로" /> 
 	</form>  
-	<br>
 	
