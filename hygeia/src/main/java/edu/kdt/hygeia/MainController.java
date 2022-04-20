@@ -69,4 +69,7 @@ public class MainController {
 		String text = sttService.test(fileName);
 		return text;
 	}
+	
+	@RequestMapping(value="/mypage", method=RequestMethod.GET)
+	public void mypage() {	}
 }
