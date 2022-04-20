@@ -70,40 +70,17 @@
 	현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. 
 	<br> 
 	
-	<br> 
-	<!-- 질문1 --> 
-	<c:out value="${survey.question}" /> 
-	<br> 
-	
-	<br>
-	<!-- 답변1 -->
-	<c:out value="${survey.answer1}" />
-	<br> 
-	
-	<br>
-	<!-- 답변2 -->
-	<c:out value="${survey.answer2}" />
-	<br> 
-	
-	<br>
-	<!-- 답변3 -->
-	<c:out value="${survey.answer3}" />
-	<br> 
-	
-	<br>
-	<!-- 답변4 -->
-	<c:out value="${survey.answer4}" />
-	<br> 
-	
-	<br>
-	<!-- 답변5 -->
-	<c:out value="${survey.answer5}" />
-	<br> 
-	
 	<br>
 	---------- 
 	<br>
 	
+	<!-- 페이지 포함과 form 태그와 버튼을 사용해서, no 에 맞게 출력되도록 구성 --> 
+	
+	<%@ include file="surveyDoingP2.jspf" %> 	
+		
+	<br>
+	---------- 
+	<br>
 	
 	<!-- footer -->
 	<br>
