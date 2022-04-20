@@ -20,7 +20,7 @@ public class SurveyController {
 		}
 	
 	@RequestMapping(value="/survey1", method=RequestMethod.POST)
-		public ModelAndView surveyAction1(SurveyDTO dto) { 
+		public ModelAndView surveyAction20(SurveyDTO dto) { 
 			SurveyDTO surveydata = service.loadSheet(dto);
 				
 			ModelAndView mv2 = new ModelAndView();	

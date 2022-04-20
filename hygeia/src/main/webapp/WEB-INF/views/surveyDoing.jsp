@@ -55,28 +55,20 @@
 	<br>	
 	---------- 
 	<br>
-<!-- 
-		<c:if test="${ result == 1 }">
-				<h2>저장 성공</h2>
-		</c:if>
-			
-		<c:if test="${ result == 0 }">
-				<h3>저장 실패</h3>
-		</c:if>
- -->
- 
- <!-- 
+	<br>
+
  	<c:out value="Test!" /> <br>
  		
+	<br>
+	
+	<br>
+	
+	현재 페이지는, <c:out value="${surveydata.no}" />페이지 입니다. <br> 
+	
+	<br>
 	---------- 
 	<br>
 	
-	<br>
-	<!-- <c:set var="dto" /> --> 
-	<!-- 현재 페이지는, ${dto.no}페이지 입니다. <br>  -->
-	<!-- 현재 페이지는, <c:out value="${dto.no}" />페이지 입니다. <br>  -->
-	
- -->
 	
 	<!-- footer -->
 	<br>
