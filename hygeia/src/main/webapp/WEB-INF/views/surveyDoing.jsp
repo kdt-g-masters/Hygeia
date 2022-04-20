@@ -71,16 +71,29 @@
 	<br> 
 	
 	<br>
-
+	출력 테스트 : <c:out value="10" /> <br>
+	출력 테스트 2 : <c:out value="10+10" />  -> 변수 사용해야 함 
+	<br>
+	
+	<br>
+	변수 테스트 1) 변수 값 
+	<c:set var="noCount" value="1" /> 
+	<c:set var="plus" value="1" />
+	<br> 
+	현재 변수 값 : <c:out value="${noCount}" /> , 더하기 값 : <c:out value="${plus}" /> 
 	<br> 
 	
+	<br>
+	변수 테스트 2) 변수 연산 
+	<br>
+	연산 결과 : <c:out value="${noCount+plus}" /> 
+	<br>
 	
 	<br>
 	---------- 
 	<br>
 	
-	<!-- 페이지 포함과 변수를 활용해서, no 에 맞게 출력되도록 구성 --> 
-	
+	<!-- 페이지 포함과 변수와 조건문을 활용해서, no 에 맞게 출력되도록 구성 --> 
 	
 	<%@ include file="surveyDoingP2.jspf" %> 
 		
