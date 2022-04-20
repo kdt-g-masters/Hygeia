@@ -71,12 +71,18 @@
 	<br> 
 	
 	<br>
+
+	<br> 
+	
+	
+	<br>
 	---------- 
 	<br>
 	
-	<!-- 페이지 포함과 form 태그와 버튼을 사용해서, no 에 맞게 출력되도록 구성 --> 
+	<!-- 페이지 포함과 변수를 활용해서, no 에 맞게 출력되도록 구성 --> 
 	
-	<%@ include file="surveyDoingP2.jspf" %> 	
+	
+	<%@ include file="surveyDoingP2.jspf" %> 
 		
 	<br>
 	---------- 
