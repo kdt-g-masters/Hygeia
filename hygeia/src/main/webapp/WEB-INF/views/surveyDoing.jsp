@@ -55,16 +55,20 @@
 	<br>	
 	---------- 
 	<br>
+	
+	<br>
 	테스트 영역 
 	<br>
+	
+	<br>
 
- 	<c:out value="Test!" /> <br>
- 		
 	<br>
+ 	<c:out value="Test!" /> 
+ 	<br>
 	
 	<br>
-	
-	현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. <br> 
+	현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. 
+	<br> 
 	
 	<br>
 	---------- 
