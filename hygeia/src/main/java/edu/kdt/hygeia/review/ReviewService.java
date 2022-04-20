@@ -23,4 +23,16 @@ public interface ReviewService {
 	
 	//후기 수정
 	public int reviewModify(ReviewDTO dto);
+	
+	//동일 후기 추천 여부 검색
+	public int rcmCheck(RcmDTO dto);
+	
+	//후기 추천
+	public int rcmInsert(RcmDTO dto);
+	
+	//후기 추천 취소
+	public int rcmDelete(RcmDTO dto);
+	
+	//후기 추천수
+	public int rcmCount(int reviewid);
 }

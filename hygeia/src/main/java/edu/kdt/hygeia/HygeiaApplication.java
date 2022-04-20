@@ -12,6 +12,8 @@ import edu.kdt.hygeia.disease.DiseaseController;
 import edu.kdt.hygeia.disease.DiseaseDAO;
 import edu.kdt.hygeia.food.FoodController;
 import edu.kdt.hygeia.food.FoodDAO;
+import edu.kdt.hygeia.helpfulfood.HelpfulfoodController;
+import edu.kdt.hygeia.helpfulfood.HelpfulfoodDAO;
 import edu.kdt.hygeia.member.MemberController;
 import edu.kdt.hygeia.member.MemberDAO;
 
@@ -23,13 +25,14 @@ import edu.kdt.hygeia.member.MemberDAO;
 @ComponentScan(basePackageClasses = DiseaseController.class)
 @ComponentScan(basePackageClasses = FoodController.class)
 @ComponentScan(basePackageClasses = SurveyController.class)
+@ComponentScan(basePackageClasses = HelpfulfoodController.class)
 
 @MapperScan(basePackageClasses = MemberDAO.class)
 @MapperScan(basePackageClasses = ReviewDAO.class)
 @MapperScan(basePackageClasses = DiseaseDAO.class)
 @MapperScan(basePackageClasses = FoodDAO.class)
 @MapperScan(basePackageClasses = SurveyDAO.class)
-
+@MapperScan(basePackageClasses = HelpfulfoodDAO.class)
 public class HygeiaApplication {
 
 	public static void main(String[] args) {

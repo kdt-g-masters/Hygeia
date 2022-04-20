@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -34,10 +35,14 @@ public class ReviewController {
 	
 	//후기 페이징 목록 페이지
 	@RequestMapping("/reviewlist")
-	public ModelAndView reviewPagingList(Criteria cri) {
+	public ModelAndView reviewPagingList(Criteria cri, HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		List<ReviewDTO> list = service.reviewPagingList(cri);
 		mv.addObject("reviewlist", list);
+		
+		HttpSession session = request.getSession();
+		String name = "b";
+		session.setAttribute("memberInfo", name);
 		
 		//페이징 인터페이스
 		int total = service.reviewTotal(cri);
@@ -64,8 +69,6 @@ public class ReviewController {
 	public ModelAndView reviewInputForm(HttpServletRequest request) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
-		//String name = "b";
-		//session.setAttribute("sessionid", name);
 		String memberid = (String)session.getAttribute("memberInfo");
 		mv.addObject("memberid", memberid);
 		mv.setViewName("reviewinput");
@@ -78,7 +81,6 @@ public class ReviewController {
 		service.reviewInput(dto);
 		//일회성 데이터 전달
 		rttr.addFlashAttribute("result", "input success");
-		
 		return "redirect:/reviewlist";
 	}
 	
@@ -98,5 +100,28 @@ public class ReviewController {
 		service.reviewModify(dto);
 		rttr.addFlashAttribute("result", "modify success");
 		return "redirect:/reviewlist";
+	}
+	
+	//후기 추천 기능
+	@RequestMapping(value = "/reviewrcm", produces = {"application/json;charset=utf-8"})
+	@ResponseBody
+	public int reviewrcm(RcmDTO dto) throws Exception{
+		//후기 중복 확인
+		int rcmcheck = service.rcmCheck(dto);
+		if(rcmcheck == 0) {
+			service.rcmInsert(dto);
+		}
+		else if(rcmcheck == 1) {
+			service.rcmDelete(dto);
+		}
+		return rcmcheck;
+	}
+	
+	//후기 추천수
+	@RequestMapping(value = "/rcmcount", produces = {"application/json;charset=utf-8"})
+	@ResponseBody
+	public int reviewrcmCount(int reviewid) {
+		int rcmcount = service.rcmCount(reviewid);
+		return rcmcount;
 	}
 }

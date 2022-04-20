@@ -15,4 +15,8 @@ public interface ReviewDAO {
 	public int reviewInput(ReviewDTO dto);
 	public int reviewCount(int reviewid);
 	public int reviewModify(ReviewDTO dto);
+	public int rcmCheck(RcmDTO dto);
+	public int rcmInsert(RcmDTO dto);
+	public int rcmDelete(RcmDTO dto);
+	public int rcmCount(int reviewid);
 }

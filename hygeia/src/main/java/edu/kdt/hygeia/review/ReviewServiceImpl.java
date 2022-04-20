@@ -47,5 +47,25 @@ public class ReviewServiceImpl implements ReviewService{
 	public int reviewModify(ReviewDTO dto) {
 		return dao.reviewModify(dto);
 	}
+
+	@Override
+	public int rcmCheck(RcmDTO dto) {
+		return dao.rcmCheck(dto);
+	}
+
+	@Override
+	public int rcmInsert(RcmDTO dto) {
+		return dao.rcmInsert(dto);
+	}
+
+	@Override
+	public int rcmDelete(RcmDTO dto) {
+		return dao.rcmDelete(dto);
+	}
+
+	@Override
+	public int rcmCount(int reviewid) {
+		return dao.rcmCount(reviewid);
+	}
 	
 }

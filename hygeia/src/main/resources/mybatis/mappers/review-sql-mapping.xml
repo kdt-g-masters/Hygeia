@@ -50,4 +50,24 @@
 	<update id="reviewModify" parameterType="reviewdto">
 		update review set title = #{title}, content = #{content}, dateWrtn = now() where id=#{id}
 	</update>
+	
+	<!-- 동일 후기 추천 여부 검색 -->
+	<select id="rcmCheck" resultType="int">
+		select count(*) from reviewrcm where review_id=#{review_id} and member_id=#{member_id}
+	</select>
+	
+	<!-- 후기 추천 -->
+	<insert id="rcmInsert">
+		insert into reviewrcm values(#{id}, #{review_id}, #{member_id})
+	</insert>
+	
+	<!-- 후기 추천 취소 -->
+	<delete id="rcmDelete">
+		delete from reviewrcm where review_id=#{review_id} and member_id=#{member_id}
+	</delete>
+	
+	<!-- 후기 추천수 -->
+	<select id="rcmCount" resultType="int">
+		select count(*) from reviewrcm where review_id=#{review_id}
+	</select>
 </mapper>

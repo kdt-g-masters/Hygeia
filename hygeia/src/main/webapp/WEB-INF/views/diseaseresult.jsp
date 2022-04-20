@@ -13,7 +13,12 @@
 		//현재 페이지의 url에서 param값 받아오기 $.urlParam('변수') param 변수의 값 받아온다.
 		$.urlParam = function(name){
 		    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
-		    return results[1] || 0;
+		    if(results == null){
+		    	return null;
+		    }
+		    else{
+			    return results[1] || 0;		    	
+		    }
 		}
 		
 		//병 후기 목록 보여주기
@@ -28,6 +33,20 @@
 				}
 				$("#diseaseReview").html(review);
 			}//success end
+		});//ajax end
+		
+		//병에 좋은 식재료 리스트
+		$.ajax({
+			url: '<%=request.getContextPath()%>/helpfulfoodlist', 
+			data: { 'disease_cntntsSn': $.urlParam('cntntsSn') }, 
+			dataType: 'json', 
+			success: function (list) {
+				var helpfulfood = "";
+				for (var i = 0; i < list.length; i++){
+					helpfulfood += "<a href=\"/food?num=" + list[i].food_num + "\">" + list[i].name + "</a><br>";
+				}
+				$("#helpfulfoodList").html(helpfulfood);
+			}
 		});//ajax end
 	});//ready end
 </script>
@@ -67,6 +86,8 @@ String overviewcontent = (String)overview.get("CNTNTS_CL_CN");
 
 <br>
 <h4><%= cntntssj %> 관련 후기</h4>
+
+<div id="helpfulfoodList"></div>
 
 <div id="diseaseReview">
 	
