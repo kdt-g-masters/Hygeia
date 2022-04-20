@@ -47,9 +47,6 @@
 	
 	
 	<br> 
-	<form method="POST" action="/survey1"> 
-		<input type="hidden" name="no" value="4" /> 
-		<input type="submit" name="nextbtn" value="다음 페이지로" /> 
-	</form>  
+	설문 제출 
 	<br>
 	
