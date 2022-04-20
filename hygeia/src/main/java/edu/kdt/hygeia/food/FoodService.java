@@ -2,6 +2,8 @@ package edu.kdt.hygeia.food;
 
 import java.util.List;
 
+import edu.kdt.hygeia.review.ReviewDTO;
+
 public interface FoodService {
 	// open api 식재료
 	public String foodapi(int number);
@@ -17,4 +19,8 @@ public interface FoodService {
 	
 	// 검색창의 단어가 포함된 상품 제목 조회
 	public List<FoodDTO> searchFood(String searchWord) throws Exception;
+	
+	//리뷰 리스트
+	public List<ReviewDTO> foodReview(String title);
+
 }
