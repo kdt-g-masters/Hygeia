@@ -18,24 +18,55 @@
 
 	});
 </script>
+<style>
+/* 부트스트랩 custom */
+.container{
+	margin: 0 0;
+}
+.btn{
+	text-align: center;
+}
+#mypage{
+	margin: 10em auto;
+	width: 100%;
+}
+.mypage-menu{
+	text-align: center;
+	margin-top: 200px;
+}
+
+
+</style>
 </head>
 <body class="bg-color">
 	<!-- navbar -->
 	<%@ include file="navbar.jsp" %>
 	
 	<main>
-	
-	
-
-		<h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4>
-		<h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4>
-		<h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4>
-		<h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4>
-		<h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4>
-		<h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4>
-		<h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4><h4>My Page</h4>
-		<h4>마지막 글이 푸터에 안가려지려나?</h4>
-		
+		<section id="mypage">
+			<div class="btn btn-primary me-2 mainColor">
+				<h4>My Page</h4>
+			</div>
+				
+			<div class="container">
+			 	<div class="row mypage-menu">
+				   	<div class="col">
+				   		<h5>건강 진단 결과</h5>
+				   	</div>
+				    <div class="col">
+				    	<h5>후기 관리</h5>
+				    </div>
+				    <div class="col">
+				    	<h5>나의 정보 수정</h5>
+				    </div>
+				  </div>
+			</div>
+			<div class="mypage-box">
+				<>
+			</div>
+			
+			
+		</section>
 		
 		
 	</main>

@@ -11,6 +11,7 @@
 * {
 	font-family: 'KoPubDotumMedium';
 	font-size: 100%;
+
 }
 /*--------------------------추가---------------------------*/
 /* 스크롤 디자인 -> 괜찮으면 전체 페이지 구성되면 적용하고 별로면 없애기  */
@@ -19,7 +20,7 @@ body{
 }
 body::-webkit-scrollbar{
 	margin: 20px 0 20px 0;
-	disbplay: block;
+ 	display: block;
 	width: 15;
 	border-radius: 15px;
 }
