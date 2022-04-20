@@ -23,7 +23,7 @@ import org.json.JSONObject;
 
 public class ChatbotProc {
 	public static void main(String args[]) {
-		String result = main("맞춤정보",
+		String result = main("생활습관병",
 				"https://8gqo56nzsl.apigw.ntruss.com/custom/v1/6821/a7960ec5372a1ef0c47f06b709e720bca8cfe06f1575a86625407b5d4638c568",
 				"VXdpS2tVaGxncGtESWlYSXFIRm9kS0dQSnlHUVVCdVE=");
 		System.out.println(result);

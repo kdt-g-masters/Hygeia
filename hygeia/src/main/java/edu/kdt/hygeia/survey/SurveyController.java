@@ -18,6 +18,17 @@ public class SurveyController {
 		public String surveyMain() {
 			return "surveyMain"; 
 		}
+	
+	@RequestMapping(value="/survey1", method=RequestMethod.POST)
+		public ModelAndView surveyAction1(SurveyDTO dto) { 
+			SurveyDTO surveydata = service.loadSheet(dto);
+				
+			ModelAndView mv2 = new ModelAndView();	
+			mv2.addObject("survey", surveydata);
+			mv2.setViewName("surveyDoing");
+			return mv2;
+		
+	}
 
 	@RequestMapping(value="/survey2", method=RequestMethod.GET)
 		public String surveyDoing() {
@@ -30,7 +41,7 @@ public class SurveyController {
 		}
 	
 	@RequestMapping(value="/survey3", method=RequestMethod.POST)
-		public ModelAndView surveyAction(SurveyDTO dto) { 
+		public ModelAndView surveyAction10(SurveyDTO dto) { 
 			int row = service.saveResult(dto); 
 		
 			ModelAndView mv = new ModelAndView();

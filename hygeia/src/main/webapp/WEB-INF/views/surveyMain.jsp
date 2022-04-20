@@ -29,7 +29,10 @@
 	<br>
 	<br>
 	<br>
-	<input type="button" value=">     테스트 시작하기" name="startbtn" onClick="location.href='http://localhost:8081/survey2'" /> 
+	<form method="POST" action="/survey1">
+	<input type="submit" name="startbtn" value=">     테스트 시작하기" />
+	<input type="hidden" name="no" value="1" />
+	</form> 
 	
 	<!-- footer -->
 	<br>

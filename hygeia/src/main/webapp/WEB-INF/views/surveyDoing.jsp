@@ -20,6 +20,8 @@
 	<br>
 	<br>
 
+	<!-- 질문 ~ 답변 부분을 include 페이지로 처리 --> 
+	
     <!-- 질문 (value 를 DB 로 부터 받아오기) --> 
     <section>
       <h1>질문 칸</h1>
@@ -44,6 +46,35 @@
 	<br>
 	답변5 
 	<br>
+	
+	<br>
+	<br>
+	선택완료
+	<br>
+	
+	<br>	
+	---------- 
+	<br>
+<!-- 
+		<c:if test="${ result == 1 }">
+				<h2>저장 성공</h2>
+		</c:if>
+			
+		<c:if test="${ result == 0 }">
+				<h3>저장 실패</h3>
+		</c:if>
+ -->
+ 
+ 	<c:out value="Test!" /> <br>
+ 		
+	---------- 
+	<br>
+	
+	<br>
+	<!-- <c:set var="dto" /> --> 
+	<!-- 현재 페이지는, ${dto.no}페이지 입니다. <br>  -->
+	<!-- 현재 페이지는, <c:out value="${dto.no}" />페이지 입니다. <br>  -->
+	
 	
 	<!-- footer -->
 	<br>

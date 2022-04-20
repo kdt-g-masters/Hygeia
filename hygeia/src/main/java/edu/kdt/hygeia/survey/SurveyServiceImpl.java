@@ -15,5 +15,10 @@ public class SurveyServiceImpl implements SurveyService {
 	public int saveResult(SurveyDTO dto) { 
 		return dao.saveResult(dto);
 	}
+	
+	@Override
+	public SurveyDTO loadSheet(SurveyDTO dto) {
+		return dao.loadSheet(dto);
+	};
 
 }
