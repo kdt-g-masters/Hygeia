@@ -24,7 +24,7 @@ img{
 	 height : 70vh;
 	 margin: 35px 25px;
 	 border-radius: 1.5em;
-	 box-shadow: 0.2em 0.2em 5em black;
+	 box-shadow: 0.2em 0.2em 2em rgba(147,147,147,30%);
 	 background-color: white;
 	 position: fixed;
 	 bottom: 0;

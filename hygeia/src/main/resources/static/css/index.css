@@ -11,6 +11,7 @@
 * {
 	font-family: 'KoPubDotumMedium';
 	font-size: 100%;
+
 }
 /*--------------------------추가---------------------------*/
 /* 스크롤 디자인 -> 괜찮으면 전체 페이지 구성되면 적용하고 별로면 없애기  */
@@ -19,7 +20,7 @@ body{
 }
 body::-webkit-scrollbar{
 	margin: 20px 0 20px 0;
-	disbplay: block;
+ 	display: block;
 	width: 15;
 	border-radius: 15px;
 }
@@ -274,7 +275,6 @@ main {
 
 #box1 {
 	width: 100%;
-	height: 450px;
 	background: url('/images/indeximage.jpg');
 }
 
@@ -294,6 +294,28 @@ main {
 
 .shadow {
 	box-shadow: 5px 5px 10px;	
+}
+
+.diseaseCardStyle {
+	width: 130px;
+	height: 130px;
+}
+
+.cardTextCenter {
+	text-align: center;
+	margin-top: 35px;
+}
+
+.mainTitle {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#myInfo {
+	padding: 10px 50px;
+	border: black;
+	background-color: black;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
 /* 텍스트 전환 효과 */

@@ -9,10 +9,13 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import edu.kdt.hygeia.review.ReviewDTO;
 
 @Controller
 public class FoodController {
@@ -34,7 +37,7 @@ public class FoodController {
 		return mv;
 	}
 	
-	//식재료 db 상세페이지
+	//식재료 상세페이지
 	@RequestMapping("/food")
 	public ModelAndView food(int num) {
 		FoodDTO	dto = foodservice.food(num);
@@ -74,4 +77,15 @@ public class FoodController {
 		mv.addObject("cnt", foodList.size());
 		return mv;
 	}
+	
+	// 식재료 리뷰
+	@RequestMapping(value = "/foodreview", produces = {"application/json;charset=utf-8"})
+	@ResponseBody
+	public List<ReviewDTO> foodReview(String title){
+		List<ReviewDTO> list = foodservice.foodReview(title);
+		return list;
+	}
+
+
+	
 }
