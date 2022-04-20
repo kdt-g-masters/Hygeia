@@ -63,7 +63,7 @@
 	
 	<br>
 	
-	현재 페이지는, <c:out value="${surveydata.no}" />페이지 입니다. <br> 
+	현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. <br> 
 	
 	<br>
 	---------- 

@@ -9,12 +9,13 @@
 	</select>
 	-->
 	
+	<!-- 데이터 저장 임시기능 -->
 	<!-- surveyresult 테이블의 컬럼 member_id 와 컬럼 resultDisease 에다가, 값을 넣는다 --> 
 	<insert id="saveResult" parameterType="SurveyDTO"> 
 		insert into surveyresult values(#{member_id}, #{resultDisease}) 
 	</insert> 
 	
-	<!--  -->
+	<!-- 설문내용 불러오기 임시기능 -->
 	<select id="loadSheet" parameterType="SurveyDTO" resultType="SurveyDTO"> 
 		select * from surveyform where no=#{no} 
 	</select>

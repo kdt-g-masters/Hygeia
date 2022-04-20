@@ -30,8 +30,8 @@
 	<br>
 	<br>
 	<form method="POST" action="/survey1">
-	<input type="submit" name="startbtn" value=">     테스트 시작하기" />
 	<input type="hidden" name="no" value="1" />
+	<input type="submit" name="startbtn" value=">     테스트 시작하기" />
 	</form> 
 	
 	<!-- footer -->
