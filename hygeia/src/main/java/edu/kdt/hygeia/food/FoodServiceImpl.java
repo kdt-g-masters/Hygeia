@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 @Service("foodservice")
 public class FoodServiceImpl implements FoodService {
 
-//	Food db
+	//	Food db
 	
 	@Autowired
 	@Qualifier("fooddao")
-	FoodDAO	dao;
+	FoodDAO dao;
 	
 	//식재료 리스트
 	@Override
@@ -52,5 +52,20 @@ public class FoodServiceImpl implements FoodService {
 	        }
 	        return result;//String 리턴
 	    }
-	    
-} //end
+	
+	@Override
+	public List<String> keywordSearch(String keyword) throws Exception {
+		List<String> list = dao.selectKeywordSearch("%"+keyword+"%");
+		return list;
+	}
+	
+	@Override
+	public List<FoodDTO> searchFood(String searchWord) throws Exception{
+		List<FoodDTO> foodList = dao.selectFoodBySearchWord("%"+searchWord+"%");
+		return foodList;
+	}
+	
+	
+	
+	
+} // end
