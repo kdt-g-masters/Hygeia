@@ -139,7 +139,7 @@ border: 1px solid red; */
    </div><br>
    
    
-	<!-- db 식재료 -->
+	<!-- db 식재료. -->
 	
 	<div id = "outlist">
 	<c:forEach items = "${foodlist }" var = "dto">		

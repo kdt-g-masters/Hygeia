@@ -3,7 +3,7 @@ package edu.kdt.hygeia.food;
 import java.util.List;
 
 public interface FoodService {
-	// open api 식재료
+	// open api 식재료.
 	public String foodapi(int number);
 	
 	// db 식재료 리스트

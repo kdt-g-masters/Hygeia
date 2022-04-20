@@ -88,7 +88,7 @@ text-align: center;
 	<div id="suggest">
         <div id="suggestList"></div>
    </div><br>
-<!-- 검색end -->
+<!-- 검색end. -->
 
 <div id = "line" class="border border-2, shadow p-3 mb-5 bg-body rounded"> <!-- 전체 테두리 -->
 <!-- 식재료 이름 -->
