@@ -25,6 +25,7 @@
 }
 .btn{
 	text-align: center;
+	line-height: 100%;
 }
 #mypage{
 	margin: 10em auto;
@@ -34,8 +35,27 @@
 	text-align: center;
 	margin-top: 200px;
 }
-
-
+.mypage-box{
+    background-color: #f3f1f5;
+    border: 1px solid #sd7d7d7;
+    border-radius: 30px;
+    margin: 2em 10vh 20em 10em;
+    padding: 2.5em;
+    height: 100%;
+}
+.mypage-box h4{
+	text-align: center;
+	font-weight: bold;
+	text-decoration: underline lime;
+}
+.rcm-food{
+	text-align: center;
+}
+.pageTitle{
+	text-align: center;
+	margin: 0 auto 50px;
+	
+}
 </style>
 </head>
 <body class="bg-color">
@@ -43,29 +63,58 @@
 	<%@ include file="navbar.jsp" %>
 	
 	<main>
+	<!-- 내 건강 결과 메뉴  -->
 		<section id="mypage">
-			<div class="btn btn-primary me-2 mainColor">
-				<h4>My Page</h4>
-			</div>
-				
+	<!-- 		<div class="container "> -->
+				<div class="row pageTitle">
+					<div class="col-lg-12">
+						<div class="btn btn-lg btn-primary">
+							<h4>My Page</h4>
+						</div>
+					</div>
+				</div>
+		<!-- 	</div> -->
 			<div class="container">
 			 	<div class="row mypage-menu">
 				   	<div class="col">
-				   		<h5>건강 진단 결과</h5>
+				   		<h5>내 건강 결과</h5>
 				   	</div>
 				    <div class="col">
 				    	<h5>후기 관리</h5>
 				    </div>
 				    <div class="col">
-				    	<h5>나의 정보 수정</h5>
+				    	<h5>내 정보 수정</h5>
 				    </div>
 				  </div>
 			</div>
-			<div class="mypage-box">
-				<>
+			<div class="mypage-box"> 
+			<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
+				<h4>${ sessionid }님은 00월 00일 진단 결과<br> 생활습관병 중 <span >(병명:DB에서 받아올것)</span><%--  ${diseaseName} --%> 발생 가능성이 있습니다.</h4>
+				
+				<div class="result-word">
+					종무님 건강진단 결과 페이지 프론트 어떻게 제작하실 건지 한번만 다시 설명해 주실 수 있을까요? 
+					마이페이지에서 나타낼때 참고하려고요.
+					만약 제가 먼저 만들면 공유 드리고 종무님이 먼저 만들면 나눠 써요~
+				<div>
+				<div class="rcm-food">
+					<h5>(병명:DB에서 받아올것)</span><%--  ${diseaseName} --%>${diseaseName}에 좋은 음식</h5>
+			   <%-- <c:foreach items="${helpfulfoodlist}" var="dto">
+					<span class="btn btn-primary md-2">
+						<a href="/food?num=${dto.foodnum}"> ${ dto.name }</a>
+					</span>
+					</c:foreach> --%>
+				</div>
 			</div>
 			
-			
+			<div class="row">
+			<div class="col-lg-12 mainTitle">
+				<a id="myInfo" class="btn btn-primary btn-lg" href="survey1">					
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
+					  <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/>
+					</svg>
+					건강 진단 다시하기					
+				</a>
+			</div>			
 		</section>
 		
 		
