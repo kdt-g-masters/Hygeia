@@ -70,6 +70,36 @@
 	현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. 
 	<br> 
 	
+	<br> 
+	<!-- 질문1 --> 
+	<c:out value="${survey.question}" /> 
+	<br> 
+	
+	<br>
+	<!-- 답변1 -->
+	<c:out value="${survey.answer1}" />
+	<br> 
+	
+	<br>
+	<!-- 답변2 -->
+	<c:out value="${survey.answer2}" />
+	<br> 
+	
+	<br>
+	<!-- 답변3 -->
+	<c:out value="${survey.answer3}" />
+	<br> 
+	
+	<br>
+	<!-- 답변4 -->
+	<c:out value="${survey.answer4}" />
+	<br> 
+	
+	<br>
+	<!-- 답변5 -->
+	<c:out value="${survey.answer5}" />
+	<br> 
+	
 	<br>
 	---------- 
 	<br>
@@ -80,6 +110,8 @@
 	<br>
 	<br>
 	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://localhost:8081/index'" />
+	<br>
+	<br>
     
     
 </body>
