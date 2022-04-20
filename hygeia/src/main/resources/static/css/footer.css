@@ -1,13 +1,17 @@
 @charset "UTF-8";
 .hm-footer{
-    padding-bottom:68px;
+ 	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+    padding-bottom: 68px;
     background: #716F6F;
 }
 .hm-footer-details {
-    margin-top: 120px;
-}
+    margin-top: 5px;
+} 
 .hm-footer-widget{
-	margin-bottom:30px;
+	margin-bottom: 30px;
 }
 
 /* hm-foot-title */
