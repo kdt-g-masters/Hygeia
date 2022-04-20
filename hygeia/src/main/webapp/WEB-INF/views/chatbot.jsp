@@ -62,7 +62,7 @@
 	<div class="ch-input">
 		<hr>
 		<div class="input-group mb-3">
-		    <input type="text" id="request" class="form-control" placeholder="질문을 입력하세요." aria-label="Recipient's username" aria-describedby="basic-addon2">
+		    <input type="text" id="request" class="form-control" placeholder="..입력 시 첫대화로 이동" aria-label="Recipient's username" aria-describedby="basic-addon2">
 		    <input type="button" id="event1" class="ch-bnt" value="입력" name="event">
 			    <!-- send 부분 아이콘으로 변경하기
 			    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
