@@ -1,0 +1,41 @@
+@charset "UTF-8";
+#diseasetitle{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#search{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#diseaseList{
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+#diseaseList a {
+	color: #716F6F;
+}
+
+#diseaseList a:hover{
+	color: #FCA937;
+	text-decoration: none;
+}
+
+#listcol{
+	display: inline-block;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+@media screen and (max-width: 850px){
+	#diseaseList{grid-template-columns: repeat(3, 1fr);}
+}
+
+@media screen and (min-width: 851px) and (max-width: 1100px){
+	#diseaseList{grid-template-columns: repeat(4, 1fr);}
+}

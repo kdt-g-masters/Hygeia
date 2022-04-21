@@ -10,9 +10,13 @@
 			success: function(diseaseList) {
 				var result = "";
 				for (var i = 0; i < diseaseList.length; i++){
-					result += "<a href=\"/diseaseresult?cntntsSn=" + diseaseList[i].cntntsSn + "\">" + diseaseList[i].name + "</a><br>";
+					result += "<div id='listcol'><div class='col-sm-4 col-md-2 col-lg-2 col-xl-1'>"
+					+ "<a href=\"/diseaseresult?cntntsSn=" + diseaseList[i].cntntsSn + "\">" 
+					+ "<div class='card shadow diseaseCardStyle'><div class='card-body cardTextCenter'>"
+					+ "<h5 class='card-title'>" + diseaseList[i].name + "</h5>"
+					+ "</div></div></a></div></div>";
 				}
-				$("#dList").html(result);
+				$("#diseaseList").html(result);
 			} // function end
 		});	// ajax end		
 	}); // on end
