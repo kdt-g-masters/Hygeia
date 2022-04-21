@@ -1,9 +1,9 @@
 /*chatbot.js */
  $(document).ready(function() {
 		$(".floating-button").on('click', function(){
-			show('ch-window');
+			$("#ch-window").fadeToggle();
 			$("#close").on('click',function(){
-				hide('ch-window');
+				$("#ch-window").fadeToggle();
 			});
 		});
 		//---입력, 대화시작 클릭시 
@@ -78,18 +78,3 @@
 			$("#record").append(quickbnt+"</ul>");
 		}
 	} 
-	
-	
-	function show(elementId) {
-		var element = document.getElementById(elementId);
-		if(element) {
-			element.style.display = 'block';
-		}
-	}
-	
-	function hide(elementId){
-	   var element = document.getElementById(elementId);
-	   if(element){
-		  element.style.display = 'none';
-	   }
-	}
