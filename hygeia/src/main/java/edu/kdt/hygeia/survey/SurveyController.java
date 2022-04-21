@@ -27,8 +27,6 @@ public class SurveyController {
 		public ModelAndView surveyAction20(SurveyDTO dto) { 
 		
 			SurveyDTO surveydata = service.loadSheet(dto);
-		
-			// DB 스택 값 변경 메소드 실행 구문 작성 
 				
 			ModelAndView mv2 = new ModelAndView();	
 			mv2.addObject("survey", surveydata);
@@ -38,7 +36,145 @@ public class SurveyController {
 	}
 	
 	// 설문 페이지로 이동 및 문항들 호출 및 DB 스택 값 변경 (답변 별 함수) 
+	@RequestMapping(value="/survey1a", method=RequestMethod.POST)
+	public ModelAndView surveyAction1a(SurveyDTO dto) { 
 	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+	
+	@RequestMapping(value="/survey1b", method=RequestMethod.POST)
+	public ModelAndView surveyAction1b(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey1c", method=RequestMethod.POST)
+	public ModelAndView surveyAction1c(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey1d", method=RequestMethod.POST)
+	public ModelAndView surveyAction1d(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey1e", method=RequestMethod.POST)
+	public ModelAndView surveyAction1e(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey2a", method=RequestMethod.POST)
+	public ModelAndView surveyAction2a(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey2b", method=RequestMethod.POST)
+	public ModelAndView surveyAction2b(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey2c", method=RequestMethod.POST)
+	public ModelAndView surveyAction2c(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey2d", method=RequestMethod.POST)
+	public ModelAndView surveyAction2d(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
+
+	@RequestMapping(value="/survey2e", method=RequestMethod.POST)
+	public ModelAndView surveyAction2e(SurveyDTO dto) { 
+	
+		SurveyDTO surveydata = service.loadSheet(dto);
+	
+		// DB 스택 값 변경 메소드 실행 구문 작성 
+			
+		ModelAndView mv2 = new ModelAndView();	
+		mv2.addObject("survey", surveydata);
+		mv2.setViewName("surveyDoing");
+		return mv2;
+	
+	}
 	
 	
 
