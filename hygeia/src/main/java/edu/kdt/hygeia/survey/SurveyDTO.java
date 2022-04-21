@@ -15,6 +15,11 @@ public class SurveyDTO {
 	String answer5; 
 	
 	
+	int disease_cntntsSn; 
+	String diseaseName; 
+	int value; 
+	
+	
 	public String getMember_id() {
 		return member_id;
 	}
@@ -71,6 +76,26 @@ public class SurveyDTO {
 	}
 	public void setAnswer5(String answer5) {
 		this.answer5 = answer5;
+	}
+	
+	
+	public int getDisease_cntntsSn() {
+		return disease_cntntsSn;
+	}
+	public void setDisease_cntntsSn(int disease_cntntsSn) {
+		this.disease_cntntsSn = disease_cntntsSn;
+	}
+	public String getDiseaseName() {
+		return diseaseName;
+	}
+	public void setDiseaseName(String diseaseName) {
+		this.diseaseName = diseaseName;
+	}
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int value) {
+		this.value = value;
 	}
 	
 }
