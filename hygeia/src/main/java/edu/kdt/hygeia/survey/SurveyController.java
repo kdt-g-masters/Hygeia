@@ -15,13 +15,14 @@ public class SurveyController {
 	SurveyService service; 
 	
 	
+	
 	// 메인 페이지 호출 
 	@RequestMapping(value="/survey1", method=RequestMethod.GET) 
 		public String surveyMain() {
 			return "surveyMain"; 
 		}
 	
-	// 설문 페이지로 이동 및 문항들 호출 및 DB 스택 값 변경  
+	// 설문 페이지로 이동 및 문항들 호출 (원본) 
 	@RequestMapping(value="/survey1", method=RequestMethod.POST)
 		public ModelAndView surveyAction20(SurveyDTO dto) { 
 		
@@ -36,6 +37,10 @@ public class SurveyController {
 		
 	}
 	
+	// 설문 페이지로 이동 및 문항들 호출 및 DB 스택 값 변경 (증상별 함수) 
+	
+	
+	
 
 	// 설문 페이지 호출 
 	@RequestMapping(value="/survey2", method=RequestMethod.GET)
@@ -43,6 +48,7 @@ public class SurveyController {
 			return "surveyDoing"; 
 		}
 
+	
 	
 	// 결과 페이지 호출  
 	@RequestMapping(value="/survey3", method=RequestMethod.GET)
@@ -62,11 +68,13 @@ public class SurveyController {
 		}
 	
 	
+	
 	// 마지막 페이지 호출 
 	@RequestMapping(value="/survey4", method=RequestMethod.GET) 
 		public String surveyResultResult() {
 			return "surveyResultResult"; 
 		}
+	
 	
 
 	// Test 1
