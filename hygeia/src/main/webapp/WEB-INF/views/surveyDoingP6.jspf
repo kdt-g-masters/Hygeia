@@ -24,7 +24,7 @@
 
 	<br> 
 	<!-- 답변 1 -->
-	<form method="POST" action="/survey1"> 
+	<form method="POST" action="/survey6a"> 
 		<input type="hidden" name="(변수)" value="(스택 값)" /> 
 		<input type="submit" name="nextbtn6a" value="<c:out value="${survey.answer1}" />" />
 		<input type="hidden" name="no" value="7" />  
@@ -33,7 +33,7 @@
 
 	<br>
 	<!-- 답변 2 -->
-	<form method="POST" action="/survey1"> 
+	<form method="POST" action="/survey6b"> 
 		<input type="hidden" name="(변수)" value="(스택 값)" /> 
 		<input type="submit" name="nextbtn6b" value="<c:out value="${survey.answer2}" />" />
 		<input type="hidden" name="no" value="7" />  
@@ -42,7 +42,7 @@
 	
 	<br>
 	<!-- 답변 3 -->
-	<form method="POST" action="/survey1"> 
+	<form method="POST" action="/survey6c"> 
 		<input type="hidden" name="(변수)" value="(스택 값)" /> 
 		<input type="submit" name="nextbtn6c" value="<c:out value="${survey.answer3}" />" />
 		<input type="hidden" name="no" value="7" />  
@@ -51,7 +51,7 @@
 	
 	<br>
 	<!-- 답변 4 -->
-	<form method="POST" action="/survey1"> 
+	<form method="POST" action="/survey6d"> 
 		<input type="hidden" name="(변수)" value="(스택 값)" /> 
 		<input type="submit" name="nextbtn6d" value="<c:out value="${survey.answer4}" />" />
 		<input type="hidden" name="no" value="7" />  
@@ -60,7 +60,7 @@
 	
 	<br>
 	<!-- 답변 5 -->
-	<form method="POST" action="/survey1"> 
+	<form method="POST" action="/survey6e"> 
 		<input type="hidden" name="(변수)" value="(스택 값)" /> 
 		<input type="submit" name="nextbtn6e" value="<c:out value="${survey.answer5}" />" />
 		<input type="hidden" name="no" value="7" />  
