@@ -11,9 +11,10 @@
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link href="/css/index.css" rel="stylesheet"/>
 <link href="/css/chat.css" rel="stylesheet"/>
+<link href="/css/diseaselist.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
-<script type="/js/diseaselist.js"></script>
+<script src="/js/diseaselist.js"></script>
 <script>
 	$(document).ready(function() {
 
@@ -25,7 +26,13 @@
 	<%@ include file="navbar.jsp" %>
 	
 	<main>
-		<h1>생활습관병</h1>
+		<br>
+		<div id = "diseasetitle">
+			<h4>
+				<span class="badge rounded-pill bg-warning text-white">생활습관병</span>
+			</h4>		
+		</div>
+		<br>
 
 		<!-- 검색 -->
 		<div id="search" >
@@ -33,6 +40,7 @@
 				<input name="searchWord" id="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
 				<input type="button" id="search" name="search" class="btn1"  value="검 색" >
 			</form>
+			<br>
 			<button id="record">음성 질문 시작</button>
 			<button id="stop">음성 질문 종료</button>
 			<div id="sound"></div>
@@ -43,9 +51,19 @@
 		<hr>
 		
 		<!-- 병 목록 -->
-		<div id="dList">
+		<div id="diseaseList">
 			<c:forEach items="${ diseaselist }" var="dto">
-				<a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">${ dto.name }</a><br>
+				<div id="listcol">
+					<div class="col-sm-4 col-md-2 col-lg-2 col-xl-1">
+						<a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">
+							<div class="card shadow diseaseCardStyle">
+								<div class="card-body cardTextCenter">
+									<h5 class="card-title"> ${ dto.name } </h5>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
 			</c:forEach>
 		</div>
 	</main>

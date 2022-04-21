@@ -29,7 +29,7 @@ public class DiseaseController {
 		ModelAndView mv = new ModelAndView();
 		List<DiseaseDTO> list = service.diseaseList();
 		mv.addObject("diseaselist", list);
-		mv.setViewName("diseaselist");
+		mv.setViewName("template2");
 		return mv;
 	}
 	
