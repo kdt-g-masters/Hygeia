@@ -21,36 +21,49 @@
 	<br> 
 	
 	<br>
-	<!-- 답변 1 -->
-	<c:out value="${survey.answer1}" />
+
 	<br> 
-	
+	<!-- 답변 1 -->
+	<form method="POST" action="/survey1"> 
+		<input type="hidden" name="(병 이름)" value="(스택 값)" /> 
+		<input type="submit" name="nextbtn2a" value="<c:out value="${survey.answer1}" />" />
+		<input type="hidden" name="no" value="3" />  
+	</form>
+	<br> 
+
 	<br>
 	<!-- 답변 2 -->
-	<c:out value="${survey.answer2}" />
+	<form method="POST" action="/survey1"> 
+		<input type="hidden" name="(병 이름)" value="(스택 값)" /> 
+		<input type="submit" name="nextbtn2b" value="<c:out value="${survey.answer2}" />" />
+		<input type="hidden" name="no" value="3" />  
+	</form>
 	<br> 
 	
 	<br>
 	<!-- 답변 3 -->
-	<c:out value="${survey.answer3}" />
+	<form method="POST" action="/survey1"> 
+		<input type="hidden" name="(병 이름)" value="(스택 값)" /> 
+		<input type="submit" name="nextbtn2c" value="<c:out value="${survey.answer3}" />" />
+		<input type="hidden" name="no" value="3" />  
+	</form>
 	<br> 
 	
 	<br>
 	<!-- 답변 4 -->
-	<c:out value="${survey.answer4}" />
+	<form method="POST" action="/survey1"> 
+		<input type="hidden" name="(병 이름)" value="(스택 값)" /> 
+		<input type="submit" name="nextbtn2d" value="<c:out value="${survey.answer4}" />" />
+		<input type="hidden" name="no" value="3" />  
+	</form>
 	<br> 
 	
 	<br>
 	<!-- 답변 5 -->
-	<c:out value="${survey.answer5}" />
-	<br> 
-	
-	<br> 
-	
-	
-	<br> 
 	<form method="POST" action="/survey1"> 
-		<input type="hidden" name="no" value="3" /> 
-		<input type="submit" name="nextbtn" value="다음 페이지로" /> 
-	</form>  
+		<input type="hidden" name="(병 이름)" value="(스택 값)" /> 
+		<input type="submit" name="nextbtn2e" value="<c:out value="${survey.answer5}" />" />
+		<input type="hidden" name="no" value="3" />  
+	</form>
+	<br> 
 	
