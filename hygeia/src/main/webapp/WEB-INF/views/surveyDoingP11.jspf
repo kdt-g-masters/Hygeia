@@ -18,6 +18,7 @@
 	<!-- 질문 --> 
 	<c:out value="${survey.question}" /> 
 	<br> 
+	<br> 
 	
 	<br>
 	<!-- 답변 1 -->

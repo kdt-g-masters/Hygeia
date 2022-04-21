@@ -24,7 +24,11 @@
 
 	<!-- 답변 1 -->
 	<br> 
-	<c:out value="${survey.answer1}" />  
+	<form method="POST" action="/survey1"> 
+		<input type="hidden" name="(병 이름)" value="(스택 값)" /> 
+		<input type="submit" name="nextbtn1a" value="<c:out value="${survey.answer1}" />" />
+		<input type="hidden" name="no" value="2" />  
+	</form>
 	<br> 
 
 	<br>
