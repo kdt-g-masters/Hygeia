@@ -46,9 +46,6 @@ button:hover{
 }
 
 #findIdPw {
-/* 	text-align: right;
-	display: inline-block;
-	width: 75%; */
 	color: #FCA937;
 }
 
@@ -57,8 +54,8 @@ button:hover{
 }
 
 #box {
-	width: 80vw;
-	height: 70vh;
+	width: 70vw;
+	height: 60vh;
 	margin: 20vh auto;
 	border-radius: 2em;
 	background-color: white;
@@ -66,16 +63,16 @@ button:hover{
 }
 
 #leftBox {
-	width: 40vw;
-	height: 70vh;
+	width: 35vw;
+	height: 60vh;
 	border-radius: 2em 0 0 2em;
 	display: inline-block;
 	margin: 0;
 }
 
 #rightBox {
-	width: 40vw;
-	height: 70vh;
+	width: 35vw;
+	height: 60vh;
 	border-radius: 0 2em 2em 0;	
 	background: linear-gradient(to right, #FCA937, #FFD37C);
 	display: inline-block;
@@ -88,6 +85,8 @@ button:hover{
 
 main h3 {
 	color: #4A4A4A;
+	font-size: 1.7em;
+	font-weight: bold;		
 }
 
 #msgLoginFail {

@@ -1,129 +1,129 @@
 @charset "UTF-8";
-body {
+
+#joinBgColor {
 	background: #FEE7C5;
 }
-.mainColor{
-	background-color: #FCA937;
+
+#joinBox {
+	width: 80vw;
+	height: 90vh;
+	margin: 15vh auto;
+	border-radius: 2em;
+	background-color: white;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
-.wrapper {
-    margin: 0 auto;
-    padding: 10px;
-    box-sizing: border-box;
-    max-width: 600px;
+
+#leftBox {
+	width: 40vw;
+	height: 90vh;
+	border-radius: 2em 0 0 2em;
+	display: inline-block;
+	margin: 0;
+	background: linear-gradient(to left, #FCA937, #FFD37C);	
 }
-.text-center{
-	text-align: center;
+
+#rightBox {
+	width: 40vw;
+	height: 90vh;
+	border-radius: 0 2em 2em 0;	
+	display: inline-block;
+	margin: 0;
 }
-.right{
-	float: right;
-	margin-right: 10px;
+
+main h3 {
+	font-size: 1.7em;
+	font-weight: bold;	
 }
-.center{
-	margin: 0 auto;
-	text-align: center;
-	align-content: center;
+
+main h5{
+	font-size: 1.2em;
+	font-weight: bold;
 }
-/* -------- 추가 -------- */
+
+main h1, h2, h3, h4, h5 {
+	color: #4A4A4A;
+}
+
 .sm_msg{
 	color: #7f7c82;
 	font-size: x-small;
 	margin-bottom: 7px;
 }
+
 .inline{
-	display:inline-block;
+	display: inline-block;
 }
-h5{
-	font-size: 1.2em;
-	font-weight: bold;
+
+input[type=text], input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 1em;
+	height: 2.5em;
+	border-radius: 2em;
+	border: 0.01em solid #EFEFEF;
+	background-color: #EFEFEF;
+	margin-top: 0.1em;
+	margin-bottom: 1em;
+	padding: 0 1em;
 }
+
+input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, input[type=password]:focus {
+	border:0.01em solid #FCA937;
+}
+
+.row {
+	justify-content: space-around;
+}
+
+button:hover {
+	color: #FCA937;
+	background-color: transparent;
+}
+
+#btnCheckId, #btnCerti, #btnConfirm {
+	font-size: 1em;
+	height: 2.5em;	
+}
+
+#idAvailable, #pwAvailable {
+	display: none;
+	color: green;
+}
+
+#idNotAvailable, #pwNotAvailable {
+	display: none;
+	color: red;
+}
+
 select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	color:#7f7c82;
 	font-size: 1em;
-	width: 70px;
-	height: 33px;
+	height: 2.5em;
 	border-radius: 30px;
 	border: 0.01em solid #7f7c82;
 	text-align: center;
 }
+
 select:hover{
 	border:0.01em solid #FCA937;
 }
-input[type=text], input[type=password]{
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	font-size: 1em;
-	height: 33px;
-	border-radius: 30px;
-	text-align: center;
-	border: 0.01em solid #7f7c82;
+
+#btnSubmit {
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border: 0;
 }
-input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, input[type=password]:focus{
-	border:0.01em solid #FCA937;
-}
-#year{
-	width: 100px;
-}
-.gender{
-	width: 300px;
-	height: 33px;
-	font-size: 1em;
-}
+
 #company{
-	width: 80px;
+	width: 7em;
+	margin-right: 0.5em;
 }
-label, .date{
-	font-size: 1em;
-}
-.row{
-	justify-content: space-around;
-}
-button:hover{
-	color: #FCA937;
-	background-color: transparent;
-}
-.box {
-	width: 750px;
-	height: 1000px;
-	padding: 50px;
-	margin: 100px auto;
-	border-radius: 10px;
-	background-color: white;
-	box-shadow: 5px 5px 10px gray;
-}
-.box2 {
-	width: 500px;
-	height: 500px;
-	padding: 50px;
-	margin: 100px auto;
-	border-radius: 10px;
-	background-color: white;
-	box-shadow: 5px 5px 10px gray;
-}
-#resultPageLogo {
-	margin: 50px auto;
-	width: 30%;
-	display: block;
-}
-.resultBox h2, a {
-		text-align: center;
-		margin: 50px auto;
-}
-.resultBox a {
-	margin: 10px auto;
-	width: 300px;
-	display: block;
-}
-#idAvailable, #pwAvailable {
-	display: none;
-	color: green;
-	margin: 5px;
-}
-#idNotAvailable, #pwNotAvailable {
-	display: none;
-	color: red;
-	margin: 5px;
+
+#name {
+	padding: 0 1vw;
+	margin-right: 4vw;
+	margin-left: 4vw;
 }

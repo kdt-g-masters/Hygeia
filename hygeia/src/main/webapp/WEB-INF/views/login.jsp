@@ -7,10 +7,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hygeia</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="/css/index.css" rel="stylesheet"/>
+<link href="/css/chat.css" rel="stylesheet"/>
 <link href="/css/login.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
+<script src="/js/chat.js"></script>
 <script>
 	$(document).ready(function() {
 		$("#loginBtn").on('click', function(){
@@ -42,9 +45,9 @@
 		<div id="box">
 			<div class="row">
 				<div id="leftBox" class="col-lg-6">
-					<div class="row">
+					<div class="row">					  
 						<div id="loginElements" class="col-lg-12">
-							<h3 class="mb-4">로그인</h3>
+							<h3 class="mb-4">로그인</h3>							
 							<input class="form-control me-2" type="text" id="id" name="id" placeholder= " 아이디">
 							<input class="form-control me-2" type="password" id="password" name="password" placeholder=" 비밀번호">						
 							<div id="msgLoginFail">로그인 실패</div>
@@ -59,8 +62,8 @@
 					</div>
 				</div>
 				<div id="rightBox" class="col-lg-6">
-					<div class="container d-flex h-100 w-100">
-						<div class="row text-center justify-content-center align-self-center" id="msgWelcome">
+					<div class="container d-flex h-100">
+						<div class="row mx-auto text-center justify-content-center align-self-center" id="msgWelcome">
 							<div class="col-12 py-1">
 								<h2>Welcome to login</h2>
 							</div>
@@ -77,6 +80,38 @@
 		</div>
 	</main>
 	
+	<!-- chatbot -->
+	<div id="ch-window" style="display:none">
+		<div class="menu-bar">
+			<div class="chat-close"><span id="close">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 19 19">
+		  			<path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+		  			<path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+				</svg>
+			</span></div>
+		</div>	
+		
+		<div class="ch-input">
+			<hr>
+			<div class="input-group mb-3">
+			    <input type="text" id="request" class="form-control" placeholder="..입력 시 첫대화로 이동" aria-label="Recipient's username" aria-describedby="basic-addon2">
+			    <input type="button" id="event1" class="ch-bnt" value="입력" name="event">
+				    <!-- send 부분 아이콘으로 변경하기
+				    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+		  				<path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+					</svg> 
+					-->
+				<input type="button" id="event2" class="ch-bnt" value="대화시작" name="event">
+			</div>
+		</div>
+		
+		<div id="record-box">
+			<div id="sound"></div>
+			<div id="record"></div>
+		</div>
+	
+	</div>
+	
 	<!-- footer -->
 	<%@ include file="footer.jsp" %>
 		
@@ -88,5 +123,6 @@
 		</svg>
 	  </div>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
