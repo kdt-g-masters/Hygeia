@@ -21,13 +21,13 @@
 	<br> 
 	
 	<br>
+
+	<form method="POST" action="/survey1"> 
 	<!-- 답변 1 -->
-	<form method="POST" action="(새 요청 함수)" > <br> 
-		<input type="hidden" name="(해당하는 컬럼)" value="(가중치 값)" /> 
-		<input type="checkbox" name="selectarea" value="<c:out value="${survey.answer1}" />" /> 
-	</form> 
 	<br> 
-	
+	<input type="checkbox" name="(해당하는 컬럼)" value="(가중치 값)" /> <c:out value="${survey.answer1}" /> <br> 
+	<br> 
+
 	<br>
 	<!-- 답변 2 -->
 	<c:out value="${survey.answer2}" />
@@ -52,7 +52,7 @@
 	
 	
 	<br> 
-	<form method="POST" action="/survey1"> 
+	
 		<input type="hidden" name="no" value="2" /> 
 		<input type="submit" name="nextbtn" value="다음 페이지로" /> 
 	</form>  

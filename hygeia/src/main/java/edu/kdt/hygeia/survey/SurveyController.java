@@ -21,10 +21,13 @@ public class SurveyController {
 			return "surveyMain"; 
 		}
 	
-	// 설문 페이지로 이동 및 1번 문항 호출 
+	// 설문 페이지로 이동 및 문항들 호출 및 DB 스택 값 변경  
 	@RequestMapping(value="/survey1", method=RequestMethod.POST)
 		public ModelAndView surveyAction20(SurveyDTO dto) { 
+		
 			SurveyDTO surveydata = service.loadSheet(dto);
+		
+			// DB 스택 값 변경 메소드 실행 구문 작성 
 				
 			ModelAndView mv2 = new ModelAndView();	
 			mv2.addObject("survey", surveydata);
@@ -39,8 +42,6 @@ public class SurveyController {
 		public String surveyDoing() {
 			return "surveyDoing"; 
 		}
-	
-	// 설문 페이지 진행 및 나머지 문항들 호출 및 DB 스택 값 변경 
 
 	
 	// 결과 페이지 호출  
