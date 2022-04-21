@@ -1,4 +1,4 @@
-//disease.js
+//diseaselist.js
  $(document).ready(function() {
 	// 검색 버튼 클릭시
 	$("#search").on('click', function(){

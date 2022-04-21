@@ -14,7 +14,7 @@
 <link href="/css/my.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
-<script type="text/javascript">
+<script>
 	$(document).ready(function () {
 		//뒤로가기로 목록 페이지에 왔을 때
 		window.onpageshow = function(event) {
@@ -144,14 +144,15 @@
 						</div>
 						<c:forEach items="${ reviewlist }" var="dto">
 					
-							<c:out value= '${ dto.id }'/>
-							<div class="row review-list" style="cursor: pointer;" onclick="location.href='/';">
+							<a class="move" href="<c:out value= '${ dto.id }'/>">
+							<div class="row review-list" style="cursor: pointer;">
 									<div class="col"> ${ dto.name } </div>
 									<div class="col-5 title"> ${ dto.title } </div>
 									<div class="col-2"> ${ dto.member_id } </div> 
 									<div class="col-2"> ${ dto.dateWrtn } </div> 
 									<div class="col"> ${ dto.views } </div>
 							</div>
+							</a>
 						</c:forEach>
 					</div>
 				</div>
