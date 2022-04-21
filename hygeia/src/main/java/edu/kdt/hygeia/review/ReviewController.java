@@ -69,12 +69,18 @@ public class ReviewController {
 	
 	//후기 작성 페이지 이동
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.GET)
-	public ModelAndView reviewInputForm(HttpServletRequest request) throws Exception {
+	public ModelAndView reviewInputForm(HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
 		String memberid = (String)session.getAttribute("memberInfo");
-		mv.addObject("memberid", memberid);
-		mv.setViewName("reviewinput");
+		if(memberid != null) {
+			mv.addObject("memberid", memberid);
+			mv.setViewName("reviewinput");			
+		}
+		else {
+			rttr.addFlashAttribute("result", "warning");
+			mv.setViewName("redirect:/login");
+		}
 		return mv;
 	}
 	

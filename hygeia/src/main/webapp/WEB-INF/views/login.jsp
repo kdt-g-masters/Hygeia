@@ -31,6 +31,20 @@
 				} // function end
 			});	// ajax end		
 		}); // on end
+		
+		//후기 작성 비로그인 시 경고창
+		let result = '<c:out value="${result}"/>';
+		
+		checkAlert(result);
+		
+		function checkAlert(result) {
+			if(result === "warning"){
+				alert("로그인 이후에 사용 가능합니다.");
+			}
+			else{
+				return;
+			}
+		}
 	});
 </script>
 </head>
