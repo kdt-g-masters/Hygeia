@@ -103,3 +103,31 @@
 	text-align: center;
 	margin: 0 auto 50px;
 }
+
+/* 테이블 */ 
+#review-tlb{
+    margin: 5vh 25vw 10vh;
+    height: 100%;
+    text-align: center;
+}
+.first{
+	font-weight: bold;
+	background-color: #FCA937;
+	border-radius: 30px;
+	padding: 0.9vh 0.3vw;
+	margin: 0.7vh 0;
+	color: white;
+	box-shadow: 2px 2px 5px 1px #d7d7d7;
+}
+.review-list{
+	font-weight: bold;
+	background-color: white;
+	border-radius: 30px;
+	padding: 0.9vh 0.3vw;
+	margin: 0.7vh 0;
+	color: #939393;
+	box-shadow: 2px 2px 5px 1px #d7d7d7;
+}
+.review-list .title{
+	text-align: left;
+}

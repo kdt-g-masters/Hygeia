@@ -36,9 +36,12 @@
 	
 </script>
 <style>
-#mysurveyresult{
+/* 프론트 제작 후 jquery로 메뉴클릭시 해당 
+#id display속성 none or block으로 변경  */
+#mysurveyresult, #editmyinfo{
 	display: none;
 }
+/*----------------------------------*/
 </style>
 </head>
 <body class="bg-color">
@@ -49,7 +52,8 @@
 	
 		<section id="section">
 			<div class="col-lg-12 mainTitle">
-				<a id="title" class="btn btn-primary btn-lg" href="">MY PAGE</a></div>	
+				<a id="title" class="btn btn-primary btn-lg" href="">MY PAGE</a>
+			</div>	
 			
 			<nav>
 				<div id="marker"></div>
@@ -103,10 +107,36 @@
 				</div>	
 			</div>
 			
-			
+		
 			<!-- 후기 관리 메뉴 -->
-			<div id="myreview">This is the area that shows <b>my review</b> list.</div>
-			
+			<div id="myreview">
+				<div id="review-tlb">
+					<div class="container">
+						<div class="row first">
+								<div class="col-2">병 명</div>
+								<div class="col-5">제 목</div>
+								<div class="col-2">작성자</div> 
+								<div class="col-2">일 자</div> 
+								<div class="col">조회수</div>
+						</div>
+						<div class="row review-list" style="cursor: pointer;" onclick="location.href='/';">
+								<div class="col-2">당뇨</div>
+								<div class="col-5 title">저희 어머니 당뇨병 완치했습니다.</div>
+								<div class="col-2">a</div> 
+								<div class="col-2">22.04.20</div> 
+								<div class="col">14</div>
+						</div>
+						<div class="row review-list" style="cursor: pointer;" onclick="location.href='';">
+								<div class="col-2">고지혈증</div>
+								<div class="col-5 title">저희 아버지 마늘먹고 완치했습니다.</div>
+								<div class="col-2">a</div> 
+								<div class="col-2">22.04.20</div> 
+								<div class="col">12</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				
 			
 			<!-- 내 정보 수정 -->
 			<div id="editmyinfo">This is the area where I <b>edit my information</b>.</div>
