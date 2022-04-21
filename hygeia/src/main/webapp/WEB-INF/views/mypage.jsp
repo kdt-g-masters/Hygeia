@@ -15,47 +15,136 @@
 <script src="/js/chat.js"></script>
 <script>
 	$(document).ready(function() {
-
+		var marker = document.querySelector('#marker');
+		var item = document.querySelectorAll('nav a');
+		
+		
+		function indicator(e) {
+			marker.style.left = e.offsetLeft + 'px';
+			marker.style.width = e.offsetWidth + 'px';
+		}
+		
+		item.forEach(link => {
+			link.addEventListener("click", (e) => {	
+				indicator(e.target);			
+			})
+		})
 	});
+	
 </script>
 <style>
+
 /* 부트스트랩 custom */
-.container{
-	margin: 0 0;
-}
 .btn{
 	text-align: center;
 	line-height: 100%;
+	margin: 0.3em 0.2em;
 }
-#mypage{
-	margin: 10em auto;
-	width: 100%;
+/* 부트스트랩 custom */
+#my{
+	margin: 10em 0;
 }
-.mypage-menu{
-	text-align: center;
-	margin-top: 200px;
+#my nav{
+	position: relative;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	background: space;
+}
+#my nav a{
+	position: relative;
+	text-decoration: none;
+	color: #4a4a4a;
+	margin: 5px 20px 10px;
+	padding: 0 20px 0;
+	font-size: 1.3em;
+	font-weight: lighter;
+}
+#my nav a:hover{
+	color: #4a4a4a;
+	font-weight: bold;
+	text-decoration: none;
+}
+#my nav a:active, #my nav a:visited, #my nav a:link{
+	color: #4a4a4a;
+}
+#my nav #marker{
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+	background-color:#FCA937;
+	border-radius: 1em;
+	width: 0;
+	height: 5px;
+	transition: 0.5s; 
+}
+/* nav #marker:before{
+	position: absolute;
+	content: "";
+	bottom: -2px;
+	left: 0;
+	transform: translateX(-50%) rotate(-45deg);
+	border: 5px solid #EA7123;
+	border-left-color: transparent;
+	border-bottom-color: transparent; 
+}
+ */
+#myPage {
+	width:  15vw;
+	padding: 20px auto;
+	border: black;
+	background: #FCA937;
+	font-size:20pt;
+	font-weight: bold;
+}
+.mainTitle a{
+	font-weight: bold;
+	font-size: large;
 }
 .mypage-box{
-    background-color: #f3f1f5;
-    border: 1px solid #sd7d7d7;
+    background-color: white;
+    border: 1px solid #d7d7d7;
     border-radius: 30px;
-    margin: 2em 10vh 20em 10em;
-    padding: 2.5em;
+    margin: 5vh 25vw 10vh;
+    padding: 5em;
     height: 100%;
 }
 .mypage-box h4{
-	text-align: center;
-	font-weight: bold;
-	text-decoration: underline lime;
+	text-align: left;
+	line-height: 150%	
+}
+.mypage-box hr{
+	background-color: #EA7123;
+	border: 1px solid #EA7123;
+}
+.underline{
+	text-decoration: underline 10px rgba(lime);
+}
+.content{
+	margin: 50px auto;
 }
 .rcm-food{
 	text-align: center;
+	margin: 20px 0 20px;
 }
+.rcm-food h5{
+	color: #FCA937;
+	font-weight: bolder;
+}
+.rcm-food .bnt{
+	padding: 3em;
+	margin: 3rem 3em;
+}
+
 .pageTitle{
 	text-align: center;
 	margin: 0 auto 50px;
 	
 }
+/* .rcm-food .foodList{
+  	padding: auto 5vw;
+  	margin: 0 0;
+} */
 </style>
 </head>
 <body class="bg-color">
@@ -64,59 +153,67 @@
 	
 	<main>
 	<!-- 내 건강 결과 메뉴  -->
-		<section id="mypage">
-	<!-- 		<div class="container "> -->
-				<div class="row pageTitle">
-					<div class="col-lg-12">
-						<div class="btn btn-lg btn-primary">
-							<h4>My Page</h4>
-						</div>
-					</div>
-				</div>
-		<!-- 	</div> -->
-			<div class="container">
-			 	<div class="row mypage-menu">
-				   	<div class="col">
-				   		<h5>내 건강 결과</h5>
-				   	</div>
-				    <div class="col">
-				    	<h5>후기 관리</h5>
-				    </div>
-				    <div class="col">
-				    	<h5>내 정보 수정</h5>
-				    </div>
-				  </div>
-			</div>
+		<section id="my">
+				<div class="col-lg-12 mainTitle">
+					<a id="myPage" class="btn btn-primary btn-lg" href="survey1">
+						My Page					
+					</a>
+				</div>	
+			
+			<!-- <span class="menus"> -->
+			<nav>
+				<div id="marker"></div>
+				<a href="#">내 건강 결과</a>
+				<a href="#">후기 관리</a>
+				<a href="#">내 정보 수정</a>
+			</nav>
+			<!-- </span> -->
+			
 			<div class="mypage-box"> 
 			<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
-				<h4>${ sessionid }님은 00월 00일 진단 결과<br> 생활습관병 중 <span >(병명:DB에서 받아올것)</span><%--  ${diseaseName} --%> 발생 가능성이 있습니다.</h4>
+				<h4><b>${ sessionid }님 건강 진단 결과</b></h4>
+				<hr>
+				<h4>생활습관병 중 <br> 
+				<span class="underline">(DB에서 받은 병명)<%--  ${diseaseName} --%></span> 발생 가능성이 있습니다.<br> 
+				가장 효과적이고 간편하게 식재료를 활용한 식습관을 개선해보세요.</h4>
 				
-				<div class="result-word">
-					종무님 건강진단 결과 페이지 프론트 어떻게 제작하실 건지 한번만 다시 설명해 주실 수 있을까요? 
-					마이페이지에서 나타낼때 참고하려고요.
-					만약 제가 먼저 만들면 공유 드리고 종무님이 먼저 만들면 나눠 써요~
-				<div>
+				<div class="content">
+					종무님 건강진단 결과 페이지 프론트 어떻게 제작하실 건지 한번만 다시 설명해 주실 수 있을까요?<br> 
+					마이페이지 만들 때 참고하려고요.<br>만약 제가 먼저 만들면 공유 드리고 종무님이 먼저 만들면 나눠 써요~
+				</div>
+				
 				<div class="rcm-food">
-					<h5>(병명:DB에서 받아올것)</span><%--  ${diseaseName} --%>${diseaseName}에 좋은 음식</h5>
+					<h5>(DB에서 받은 병명)<%--  ${diseaseName} --%>에 좋은 음식</h5>
 			   <%-- <c:foreach items="${helpfulfoodlist}" var="dto">
 					<span class="btn btn-primary md-2">
 						<a href="/food?num=${dto.foodnum}"> ${ dto.name }</a>
 					</span>
 					</c:foreach> --%>
+					<div class="foodList">
+						<span class="btn btn-primary md-2">자몽</span>
+						<span class="btn btn-primary md-2">한라봉</span>
+						<span class="btn btn-primary md-2">레몬</span>
+						<span class="btn btn-primary md-2">블루베리</span>
+						<span class="btn btn-primary md-2">생선</span>
+						<span class="btn btn-primary md-2">피스타치오</span>
+						<span class="btn btn-primary md-2">당근</span>
+						<span class="btn btn-primary md-2">토마토</span>
+						<span class="btn btn-primary md-2">브로콜리</span>
+						<span class="btn btn-primary md-2">요거트</span>
+						<span class="btn btn-primary md-2">시금치</span>
+					</div>
 				</div>
 			</div>
-			
-			<div class="row">
-			<div class="col-lg-12 mainTitle">
-				<a id="myInfo" class="btn btn-primary btn-lg" href="survey1">					
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/>
-					</svg>
-					건강 진단 다시하기					
-				</a>
-			</div>			
 		</section>
 		
+		<div class="col-lg-12 mainTitle">
+			<a id="myInfo" class="btn btn-primary btn-lg" href="survey1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
+					<path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/>
+				</svg>
+				건강 진단 다시하기					
+			</a>
+		</div>	
 		
 	</main>
 	

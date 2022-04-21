@@ -70,7 +70,9 @@ public class MainController {
 		return text;
 	}
 	@RequestMapping(value="/mypage", method=RequestMethod.GET)
-	public void mypage() {	}
+	public void mypage() {
+		/* storage mappers : <select...>  sessionid가 같은 지 확인 후 전달 */
+	}
 	
 	
 	/* 나중에 삭제할 것 */ 
