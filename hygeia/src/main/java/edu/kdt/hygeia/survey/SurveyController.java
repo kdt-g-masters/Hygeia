@@ -14,11 +14,14 @@ public class SurveyController {
 	@Qualifier("SurveyServiceImpl") 
 	SurveyService service; 
 	
+	
+	// 메인 페이지 호출 
 	@RequestMapping(value="/survey1", method=RequestMethod.GET) 
 		public String surveyMain() {
 			return "surveyMain"; 
 		}
 	
+	// 설문 페이지로 이동 및 1번 문항 호출 
 	@RequestMapping(value="/survey1", method=RequestMethod.POST)
 		public ModelAndView surveyAction20(SurveyDTO dto) { 
 			SurveyDTO surveydata = service.loadSheet(dto);
@@ -29,17 +32,24 @@ public class SurveyController {
 			return mv2;
 		
 	}
+	
 
+	// 설문 페이지 호출 
 	@RequestMapping(value="/survey2", method=RequestMethod.GET)
 		public String surveyDoing() {
 			return "surveyDoing"; 
 		}
+	
+	// 설문 페이지 진행 및 나머지 문항들 호출 및 DB 스택 값 변경 
 
+	
+	// 결과 페이지 호출  
 	@RequestMapping(value="/survey3", method=RequestMethod.GET)
 		public String surveyResult() {
 			return "surveyResult"; 
 		}
 	
+	// 결과 저장 
 	@RequestMapping(value="/survey3", method=RequestMethod.POST)
 		public ModelAndView surveyAction10(SurveyDTO dto) { 
 			int row = service.saveResult(dto); 
@@ -50,12 +60,13 @@ public class SurveyController {
 			return mv;
 		}
 	
+	
+	// 마지막 페이지 호출 
 	@RequestMapping(value="/survey4", method=RequestMethod.GET) 
 		public String surveyResultResult() {
 			return "surveyResultResult"; 
 		}
 	
-
 
 	// Test 1
 	// Test 2

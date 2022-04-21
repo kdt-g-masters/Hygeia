@@ -12,15 +12,20 @@
 	<br> 
 	
 	<br>
+	<br> 
 	
 	<br> 
 	<!-- 질문 --> 
 	<c:out value="${survey.question}" /> 
 	<br> 
+	<br> 
 	
 	<br>
 	<!-- 답변 1 -->
-	<c:out value="${survey.answer1}" />
+	<form method="POST" action="(새 요청 함수)" > <br> 
+		<input type="hidden" name="(해당하는 컬럼)" value="(가중치 값)" /> 
+		<input type="checkbox" name="selectarea" value="<c:out value="${survey.answer1}" />" /> 
+	</form> 
 	<br> 
 	
 	<br>
