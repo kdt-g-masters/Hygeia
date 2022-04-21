@@ -1,0 +1,105 @@
+@charset "UTF-8";
+#section .mainTitle .btn{
+	text-align: center;
+	line-height: 100%;
+	margin: 0.3em 0.2em;
+	padding: 1em;
+}
+#section .btn{
+	text-align: center;
+	line-height: 100%;
+	margin: 0.3em 0.1em;
+	padding: 0.5em 0.6em;
+}
+/* 부트스트랩 custom */
+#section{
+	margin: 10em 0;
+}
+#section nav{
+	position: relative;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	background: space;
+}
+#section nav a{
+	position: relative;
+	text-decoration: none;
+	color: #4a4a4a;
+	margin: 5px 20px 10px;
+	padding: 0 20px 0;
+	font-size: 1.3em;
+	font-weight: lighter;
+}
+#section nav a:hover{
+	color: #4a4a4a;
+	font-weight: bold;
+	text-decoration: none;
+}
+#section nav a:active, #my nav a:visited, #my nav a:link{
+	color: #4a4a4a;
+}
+#section nav #marker{
+	position: absolute;
+	bottom: -8px;
+	left: 0;
+	background-color:#FCA937;
+	border-radius: 1em;
+	width: 0;
+	height: 5px;
+	transition: 0.5s; 
+}
+#title {
+	width:  15vw;
+	padding: 20px auto;
+	border: black;
+	background: #FCA937;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.mainTitle a{
+	font-weight: bold;
+	font-size: large;
+}
+.mypage-box{
+    background-color: white;
+    border: 1px solid #d7d7d7;
+    border-radius: 30px;
+    margin: 5vh 25vw 10vh;
+    padding: 5em;
+    height: 100%;
+}
+.mypage-box h4{
+	text-align: left;
+	line-height: 150%	
+}
+.mypage-box hr{
+	background-color: #EA7123;
+	border: 1px solid #EA7123;
+}
+.underline{
+	/* text-decoration: underline 10px lime; */
+	display: inline;
+  	box-shadow: inset 0 -10px 0 #D4F592;
+  	border-radius: 3px;
+}
+.content{
+	margin: 50px auto;
+}
+.rcm-food{
+	text-align: center;
+	margin: 20px 0 20px;
+}
+.rcm-food h5{
+	color: #FCA937;
+	font-weight: bolder;
+}
+.rcm-food .bnt{
+	padding: 3em;
+	margin: 3rem 3em;
+}
+
+.pageTitle{
+	text-align: center;
+	margin: 0 auto 50px;
+}
