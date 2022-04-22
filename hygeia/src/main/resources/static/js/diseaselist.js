@@ -1,7 +1,7 @@
 //diseaselist.js
  $(document).ready(function() {
 	// 검색 버튼 클릭시
-	$("#search").on('click', function(){
+	$("#btnSearch").on('click', function(){
 		$.ajax({
 			url: '/disease/searchDisease.do',
 			data: {'searchWord': $("#searchWord").val()},
@@ -26,7 +26,8 @@ var loopSearch=true;
 function keywordSearch(){
 	if(loopSearch==false)
 		return;
- var value=document.frmSearch.searchWord.value;
+
+	var value = $("#searchWord").val();
 	$.ajax({
 		type : "get",
 		async : true, //false인 경우 동기식으로 처리한다.
@@ -61,7 +62,7 @@ function displayResult(jsonInfo){
 } // displayResult end
 
 function select(selectedKeyword) {
-	 document.frmSearch.searchWord.value=selectedKeyword;
+	 $("#searchWord").val(selectedKeyword)
 	 loopSearch = false;
 	 hide('suggest');
 }

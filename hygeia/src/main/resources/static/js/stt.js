@@ -1,8 +1,8 @@
 /**
  * 음성 질문 처리
  */
-var record = document.getElementById("record"); // 녹음 버튼
-var stop = document.getElementById("stop"); // 정지 버튼
+var record = document.getElementById("btnSearchMic"); // 녹음 버튼
+var stop = document.getElementById("btnMicStop"); // 정지 버튼
 var sound = document.getElementById("sound"); // 오디오 태그 출력 예정
 
 if (navigator.mediaDevices) { // 녹음기 카메라 지원하는 브라우저?
@@ -16,13 +16,15 @@ navigator.mediaDevices.getUserMedia(constraints)
 	var mediaRecorder = new MediaRecorder(stream);
 	record.onclick = function() {
 		mediaRecorder.start();
-		record.style.color = "blue";
-		record.style.background = "red"; // 녹음 진행중, 파란 글씨 빨간 배경
+		record.style.display = "none";
+		stop.style.display = "inline-block";
 	}
 	stop.onclick = function() {
 		mediaRecorder.stop();
 		record.style.color = "";
 		record.style.background = "";
+		record.style.display = "inline-block";
+		stop.style.display = "none";		
 	}
 
  	// 녹음 시작 상태이면 chuncks에 녹음 데이터 저장

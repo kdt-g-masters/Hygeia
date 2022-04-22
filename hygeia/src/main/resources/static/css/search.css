@@ -1,0 +1,52 @@
+@charset "UTF-8";
+input[type=text], input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 1em;
+	height: 3.5em;
+	border-radius: 30px;
+	border: 0.2em solid #FFD37C !important;
+	background-color: #FFF !important; 
+	margin-top: 10px;
+	padding: 1em;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, input[type=password]:focus {
+	border: 0.2em solid #FCA937;
+}
+
+#search button {
+	background-color: transparent;
+	border: 0;
+}
+
+#search button:hover {
+	color: #FCA937;
+}
+
+#searchBox {
+	position: relative;
+}
+
+#searchBox #btnSearchMic {
+    position: absolute;    
+    top: 2vh;
+    right: 5vw;
+    color: #FCA937;
+}
+
+#searchBox #btnMicStop {
+    position: absolute;    
+    top: 2vh;
+    right: 5vw;
+    color: red;
+    display: none;
+}
+
+#searchBox #btnSearch {
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	height: 3.5em;
+	margin-top: 10px;
+
+}
