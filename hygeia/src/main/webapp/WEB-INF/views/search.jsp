@@ -40,11 +40,14 @@
 	      </button>		    
 	    </div>
 	  </div>
-	  <br>
+	  <div class="row justify-content-center">
+	    <div class="d-flex col-4 flex-column">
+		  <div id="suggest" class="">
+			<div id="suggestList"></div>
+		  </div>	    
+	    </div>	  
+	  </div>
 	</div>		
-	<div id="suggest" style="background-color: silver">
-		<div id="suggestList"></div>
-	</div>
 	<br><br><br>
 </body>
 </html>
