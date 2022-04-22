@@ -22,8 +22,13 @@ public class SurveyServiceImpl implements SurveyService {
 	};
 	
 	@Override 
-	public int changeValue1a(SurveyDTO dto) { 
-		return dao.changeValue1a(dto);
+	public int changeValue1(SurveyDTO dto) { 
+		return dao.changeValue1(dto);
+	};
+	
+	@Override 
+	public int changeValue2(SurveyDTO dto) { 
+		return dao.changeValue2(dto);
 	};
 
 }

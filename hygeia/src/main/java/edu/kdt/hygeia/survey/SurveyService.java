@@ -12,6 +12,9 @@ public interface SurveyService {
 	public SurveyDTO loadSheet(SurveyDTO dto);
 	
 	// DB 스택 값 변경
-	public int changeValue1a(SurveyDTO dto); 
+	public int changeValue1(SurveyDTO dto); // 고혈압 
+	
+	public int changeValue2(SurveyDTO dto); // 뇌졸중 
+	
 		
 }

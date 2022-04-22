@@ -42,7 +42,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
-		service.changeValue1a(dto); 
+		service.changeValue1(dto); 
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -56,7 +56,9 @@ public class SurveyController {
 	
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
-		// DB 스택 값 변경 메소드 실행 구문 작성 
+		// DB 스택 값 변경 메소드 실행 구문 작성
+		service.changeValue1(dto);
+		service.changeValue2(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);

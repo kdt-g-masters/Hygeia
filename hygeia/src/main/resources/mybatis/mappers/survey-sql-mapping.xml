@@ -3,6 +3,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.kdt.hygeia.survey.SurveyDAO" >
+
 	<!--
 	<select id="surveyList" resultType="surveydto">
 		select * from survey
@@ -21,9 +22,15 @@
 	</select>
 	
 	<!-- DB 스택 값 변경 기능 --> 
-	<update id="changeValue1a" parameterType="SurveyDTO"> 
+	<update id="changeValue1" parameterType="SurveyDTO"> 
 		update surveycalc set value = value +4 where diseaseName = "고혈압" 
 	</update> 
+	
+	<update id="changeValue2" >
+		update surveycalc set value = value +4 where diseaseName = "뇌졸중"
+	</update>
+	
+	
 	
 	
 </mapper>
