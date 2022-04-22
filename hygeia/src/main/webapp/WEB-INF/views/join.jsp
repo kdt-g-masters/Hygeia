@@ -135,7 +135,7 @@
 			        <div class="col-12">                        
 					  <div class="docs-datepicker">
 				        <div class="input-group">
-				          <input type="text" class="form-control docs-date" name="birthDate" placeholder="Pick a date" autocomplete="off">
+				          <input type="text" class="form-control docs-date" name="birthDate" placeholder="날짜 선택" autocomplete="off">
 				          <div class="input-group-append">
 				            <button type="button" class="btn btn-outline-secondary docs-datepicker-trigger" disabled>
 				              <i class="fa fa-calendar" aria-hidden="true"></i>

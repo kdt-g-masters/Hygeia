@@ -1,0 +1,73 @@
+@charset "UTF-8";
+input[type=text], input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 1em;
+	height: 3.5em;
+	border-radius: 30px;
+	border: 0.2em solid #FCA937 !important;
+	background-color: #FFF !important; 
+	margin-top: 10px;
+	padding: 1em;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, input[type=password]:focus {
+	border: 0.2em solid #FCA937;
+}
+
+#search button {
+	background-color: transparent;
+	border: 0;
+}
+
+#search button:hover {
+	color: #FCA937;
+}
+
+#searchBox {
+	position: relative;
+}
+
+#searchBox #btnSearchMic {
+    position: absolute;    
+    top: 2vh;
+    right: 5vw;
+    color: #FCA937;
+}
+
+#searchBox #btnMicStop {
+    position: absolute;    
+    top: 2vh;
+    right: 5vw;
+    color: red;
+    display: none;
+}
+
+#searchBox #btnSearch {
+	background: linear-gradient(to right, #FCA937, #FFD37C);
+	height: 3.5em;
+	margin-top: 10px;
+}
+
+#suggest {
+	background-color: white;
+	margin-left: 1vw;
+	margin-right: 3.7vw;
+	border-radius: 0.5em;
+	text-align: left;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#suggest a {
+	color: #4A4A4A;
+	padding: 1em;
+	font-size: 1.2em;
+	line-height: 40px;
+}
+
+#suggest a:hover {
+	text-decoration: none;
+	color: #FCA937;
+}
+

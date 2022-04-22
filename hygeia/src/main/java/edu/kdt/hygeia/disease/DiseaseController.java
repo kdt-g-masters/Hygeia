@@ -39,7 +39,7 @@ public class DiseaseController {
 		ModelAndView mv = new ModelAndView();
 		String diseaseresult = service.openAPI(cntntsSn);//open api 정보
 		mv.addObject("diseaseresult", diseaseresult);
-		mv.setViewName("diseaseresult");
+		mv.setViewName("template3");
 		return mv;
 	}
 	

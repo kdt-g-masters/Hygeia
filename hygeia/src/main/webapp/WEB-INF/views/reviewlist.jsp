@@ -12,9 +12,11 @@
 <link href="/css/index.css" rel="stylesheet"/>
 <link href="/css/chat.css" rel="stylesheet"/>
 <link href="/css/my.css" rel="stylesheet"/>
+
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
-<script type="text/javascript">
+
+<script>
 	$(document).ready(function () {
 		//뒤로가기로 목록 페이지에 왔을 때
 		window.onpageshow = function(event) {
@@ -43,7 +45,7 @@
 		//목록 상세 페이지 이동
 		let moveForm = $("#moveForm");
 		
-		$(".review-list").on("click", function (e) {
+		$(".move").on("click", function (e) {
 			//클릭한 a태그 기능 정지
 			e.preventDefault();
 			
@@ -77,30 +79,46 @@
 			moveForm.find("input[name='pageNum']").val(1);
 			//form태그 내부 데이터 서버 전송
 			moveForm.submit();
-		});//on click end		
+		});//on click end	
 		
+		 $(".scroll_move").click(function(event){     
+             event.preventDefault();
+             $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+    	 });
+
 	});//ready end
 </script>
 <style type="text/css">
 	.pageInfo{
 		list-style: none;
 		display: inline-block;
-		margin: 50px 0 0 100px;
 	}
-	
 	.pageInfo li{
-		float: left;
+		display: inline;
 		font-size: 20px;
-		margin-left: 18px;
-		padding: 7px;
+		margin: 0 5px 0;
+		padding: 10px 20px;
 		font-weight: 500;
 	}
+	.pageInfo_wrap{ 
+		text-align: center;
+	}
+ 	.pageInfo li:hover, li:active{
+		color: white;
+		background: linear-gradient(to right, #FCA937 30%, #FFD37C);
+		border-radius: 1em;
+		font-weight: bold;
+	} 
+	.title a, .title a:link, .title a:visited{ color: #939393; text-decoration: none;}
+	.title a:hover{color: #4a4a4a;}
+	.write-icon{
+		margin: 5vh 25vw 0;
+		text-align: right;
+	}	
 	
-	a:link {color: black; text-decoration: none;}
-	a:visited {color: black; text-decoration: none;}
-	a:hover {color: black; text-decoration: underline;}
-	
-	.active{background-color: gray;}
+	#review #review-tlb{
+		margin: 1.5vh 25vw 5vh;
+	}
 </style>
 </head>
 <body class="bg-color">
@@ -111,84 +129,95 @@
 	
 		<section id="section">
 			<div class="col-lg-12 mainTitle">
-				<a id="title" class="btn btn-primary btn-lg" href="">MY PAGE</a>
+				<a id="title" class="btn btn-primary btn-lg" href="">만병통치 후기</a>
 			</div>	
 			
-<h1>만병통치 후기</h1>
-<!-- 검색 -->
-<div class="search_wrap">
-	<div class="search_area">
-		<input type="text" name="keyword" value="${ pageMaker.cri.keyword }">
-		<button>검색</button>
-	</div>
-</div>
-
-<!-- 후기 작성 페이지 링크 -->
-<a href="/reviewinput">리뷰쓰기</a>
-
-<!-- 후기 목록 -->
-<div>병명 제목   작성자   일자   조회수</div>
-
+		<!-- 검색 -->
+		<div class="search_wrap">
+			<div class="search_area">
+				<input type="text" name="keyword" value="${ pageMaker.cri.keyword }">
+				<button>검색</button>
+			</div>
+		</div>
+		<div id="review">
+		<div id="target"></div>
+		<!-- 후기 작성 페이지 링크 -->
+		<div class="write-icon">
+			<a href="/reviewinput" class="btn btn-primary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+				  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+				  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+				</svg>
+			</a>
+		</div>
 	
-
-<!-- 후기 목록 -->
-			<div id="review">
-				<div id="review-tlb">
-					<div class="container">
-						<div class="row first">
-								<div class="col-2">병 명</div>
-								<div class="col-5">제 목</div>
-								<div class="col-2">작성자</div> 
-								<div class="col-2">일 자</div> 
-								<div class="col">조회수</div>
-						</div>
-						<c:forEach items="${ reviewlist }" var="dto">
-					
-							<c:out value= '${ dto.id }'/>
-							<div class="row review-list" style="cursor: pointer;" onclick="location.href='/';">
-									<div class="col"> ${ dto.name } </div>
-									<div class="col-5 title"> ${ dto.title } </div>
-									<div class="col-2"> ${ dto.member_id } </div> 
-									<div class="col-2"> ${ dto.dateWrtn } </div> 
-									<div class="col"> ${ dto.views } </div>
-							</div>
-						</c:forEach>
+		<!-- 후기 목록 -->
+		
+		<div id="review-tlb">
+			<div class="container">
+				<div class="row first">
+						<div class="col-2">병 명</div>
+						<div class="col-5">제 목</div>
+						<div class="col-2">작성자</div> 
+						<div class="col-2">일 자</div> 
+						<div class="col">조회수</div>
+				</div>
+				<c:forEach items="${reviewlist}" var="dto">
+					<div class="row review-list" style="cursor: pointer;">
+							<div class="col"> ${dto.name} </div>
+							<div class="col-5 title"><a class="move" href="<c:out value='${dto.id}'/>"> ${dto.title}</a> </div>
+							<div class="col-2"> ${dto.member_id} </div> 
+							<div class="col-2"> ${dto.dateWrtn} </div> 
+							<div class="col"> ${dto.views} </div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+				
+				<!-- 페이징 인터페이스 -->
+				<div class="pageInfo_wrap">
+					<div class="pageInfo_area">
+						<ul id="pageInfo" class="pageInfo">
+							
+							<!-- 이전 페이지 버튼 -->
+							<c:if test="${ pageMaker.prev }">
+								<li class="pageInfo_btn previous"><a href="${ pageMaker.startPage-1 }">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+									  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+									</svg>
+								</a></li>
+							</c:if>
+							
+							<!-- 각 번호 페이지 버튼 -->
+							<c:forEach var="num" begin="${ pageMaker.startPage }" end="${ pageMaker.endPage }">
+								<li class="pageInfo_btn ${ pageMaker.cri.pageNum == num ? "active":"" }"><a href="${ num }">${ num }</a></li>
+							</c:forEach>
+							
+							<!-- 다음 페이지 버튼 -->
+							<c:if test="${pageMaker.next}">
+								<li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+									  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+									</svg>
+								</a></li>
+							</c:if>
+						</ul>
 					</div>
 				</div>
+					
 			</div>
 
 
-<!-- 페이징 인터페이스 -->
-<div class="pageInfo_wrap">
-	<div class="pageInfo_area">
-		<ul id="pageInfo" class="pageInfo">
 			
-			<!-- 이전 페이지 버튼 -->
-			<c:if test="${ pageMaker.prev }">
-				<li class="pageInfo_btn previous"><a href="${ pageMaker.startPage-1 }">Previous</a></li>
-			</c:if>
 			
-			<!-- 각 번호 페이지 버튼 -->
-			<c:forEach var="num" begin="${ pageMaker.startPage }" end="${ pageMaker.endPage }">
-				<li class="pageInfo_btn ${ pageMaker.cri.pageNum == num ? "active":"" }"><a href="${ num }">${ num }</a></li>
-			</c:forEach>
-			
-			<!-- 다음 페이지 버튼 -->
-			<c:if test="${pageMaker.next}">
-				<li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
-			</c:if>
-		</ul>
-	</div>
-</div>
-
-<!-- pageNum과 amount정보를 전송 -->
-<form id="moveForm">
-	<input type="hidden" name="pageNum" value="${ pageMaker.cri.pageNum }">
-	<input type="hidden" name="amount" value="${ pageMaker.cri.amount }">
-	<input type="hidden" name="keyword" value="${ pageMaker.cri.keyword }">
-</form>
-	</section>
-		</main>
+			<!-- pageNum과 amount정보를 전송 -->
+			<form id="moveForm">
+				<input type="hidden" name="pageNum" value="${ pageMaker.cri.pageNum }">
+				<input type="hidden" name="amount" value="${ pageMaker.cri.amount }">
+				<input type="hidden" name="keyword" value="${ pageMaker.cri.keyword }">
+			</form>
+		</section>
+	</main>
 	
 	<!-- chatbot -->
 	<div id="ch-window" style="display:none">

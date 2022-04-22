@@ -35,20 +35,7 @@
 		<br>
 
 		<!-- 검색 -->
-		<div id="search" >
-			<form name="frmSearch" action="/disease/searchDisease.do" >
-				<input name="searchWord" id="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
-				<input type="button" id="search" name="search" class="btn1"  value="검 색" >
-			</form>
-			<br>
-			<button id="record">음성 질문 시작</button>
-			<button id="stop">음성 질문 종료</button>
-			<div id="sound"></div>
-		</div>
-		<div id="suggest" style="background-color: silver">
-			<div id="suggestList"></div>
-		</div>
-		<hr>
+		<%@ include file="search.jsp" %>
 		
 		<!-- 병 목록 -->
 		<div id="diseaseList">

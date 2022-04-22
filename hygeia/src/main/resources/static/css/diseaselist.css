@@ -4,11 +4,13 @@
 	text-align: center;
 }
 
+/* 검색 창 */
 #search{
 	margin: 0 auto;
 	text-align: center;
 }
 
+/* 생활습관병 목록 */
 #diseaseList{
 	width: 70%;
 	margin: 0 auto;
@@ -32,6 +34,7 @@
 	padding: 10px;
 }
 
+/* 반응형 웹 */
 @media screen and (max-width: 850px){
 	#diseaseList{grid-template-columns: repeat(3, 1fr);}
 }
