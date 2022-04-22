@@ -10,5 +10,7 @@ public interface SurveyDAO {
 	public int saveResult(SurveyDTO dto); 
 	
 	public SurveyDTO loadSheet(SurveyDTO dto);
+	
+	public int changeValue1a(SurveyDTO dto); 
 
 }

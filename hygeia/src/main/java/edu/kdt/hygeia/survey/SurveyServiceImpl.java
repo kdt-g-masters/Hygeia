@@ -14,11 +14,16 @@ public class SurveyServiceImpl implements SurveyService {
 	@Override 
 	public int saveResult(SurveyDTO dto) { 
 		return dao.saveResult(dto);
-	}
+	};
 	
 	@Override
 	public SurveyDTO loadSheet(SurveyDTO dto) {
 		return dao.loadSheet(dto);
+	};
+	
+	@Override 
+	public int changeValue1a(SurveyDTO dto) { 
+		return dao.changeValue1a(dto);
 	};
 
 }

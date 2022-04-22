@@ -15,9 +15,15 @@
 		insert into surveyresult values(#{member_id}, #{resultDisease}) 
 	</insert> 
 	
-	<!-- 설문내용 불러오기 임시기능 -->
+	<!-- 설문내용 불러오기 기능 -->
 	<select id="loadSheet" parameterType="SurveyDTO" resultType="SurveyDTO"> 
 		select * from surveyform where no=#{no} 
 	</select>
+	
+	<!-- DB 스택 값 변경 기능 --> 
+	<update id="changeValue1a" parameterType="SurveyDTO"> 
+		update surveycalc set value = value +4 where diseaseName = "고혈압" 
+	</update> 
+	
 	
 </mapper>

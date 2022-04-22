@@ -25,7 +25,7 @@
 	<br> 
 	<!-- 답변 1 -->
 	<form method="POST" action="/survey1a"> 
-		<input type="hidden" name="(변수)" value="(스택 값)" /> 
+		<input type="hidden" name="value" value="4" /> 
 		<input type="submit" name="nextbtn1a" value="<c:out value="${survey.answer1}" />" />
 		<input type="hidden" name="no" value="2" />  
 	</form>
