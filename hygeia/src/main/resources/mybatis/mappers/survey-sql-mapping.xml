@@ -29,8 +29,45 @@
 	<update id="changeValue2" >
 		update surveycalc set value = value +4 where diseaseName = "뇌졸중"
 	</update>
-	
-	
-	
+
+	<update id="changeValue3" >
+		update surveycalc set value = value +4 where diseaseName = "당뇨병"
+	</update>
+
+	<update id="changeValue4" >
+		update surveycalc set value = value +4 where diseaseName = "동맥경화증"
+	</update>
+
+	<update id="changeValue5" >
+		update surveycalc set value = value +4 where diseaseName = "급성심근경색"
+	</update>
+
+	<update id="changeValue6" >
+		update surveycalc set value = value +4 where diseaseName = "위염"
+	</update>
+
+	<update id="changeValue7" >
+		update surveycalc set value = value +4 where diseaseName = "비만"
+	</update>
+
+	<update id="changeValue8" >
+		update surveycalc set value = value +4 where diseaseName = "만성폐쇄성 폐질환"
+	</update>
+
+	<update id="changeValue9" >
+		update surveycalc set value = value +4 where diseaseName = "골다공증"
+	</update>
+
+	<update id="changeValue10" >
+		update surveycalc set value = value +4 where diseaseName = "관절염"
+	</update>
+
+	<update id="changeValue11" >
+		update surveycalc set value = value +4 where diseaseName = "고지혈증"
+	</update>
+
+	<update id="changeValue12" >
+		update surveycalc set value = value +1 where diseaseName = "건강함"
+	</update>
 	
 </mapper>

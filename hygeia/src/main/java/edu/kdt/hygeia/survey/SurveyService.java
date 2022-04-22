@@ -16,5 +16,24 @@ public interface SurveyService {
 	
 	public int changeValue2(SurveyDTO dto); // 뇌졸중 
 	
+	public int changeValue3(SurveyDTO dto); // 당뇨병 
+	
+	public int changeValue4(SurveyDTO dto); // 동맥경화증 
+	
+	public int changeValue5(SurveyDTO dto); // 급성심근경색 
+	
+	public int changeValue6(SurveyDTO dto); // 위염 
+	
+	public int changeValue7(SurveyDTO dto); // 비만 
+	
+	public int changeValue8(SurveyDTO dto); // 만성폐쇄성 폐질환 
+	
+	public int changeValue9(SurveyDTO dto); // 골다공증 
+	
+	public int changeValue10(SurveyDTO dto); // 관절염 
+	
+	public int changeValue11(SurveyDTO dto); // 고지혈증 
+	
+	public int changeValue12(SurveyDTO dto); // 건강함 
 		
 }

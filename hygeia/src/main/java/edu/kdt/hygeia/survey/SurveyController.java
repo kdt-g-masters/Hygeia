@@ -73,6 +73,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue3(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -87,6 +88,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue3(dto);
+		service.changeValue4(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -101,6 +104,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -115,6 +119,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue4(dto);
+		service.changeValue5(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -129,6 +135,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue5(dto);
+		service.changeValue6(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -143,6 +151,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue1(dto);
+		service.changeValue7(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -157,6 +167,9 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue5(dto);
+		service.changeValue7(dto);
+		service.changeValue8(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -171,6 +184,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -185,6 +199,9 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue7(dto);
+		service.changeValue9(dto);
+		service.changeValue10(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -199,6 +216,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue10(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -213,6 +231,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue11(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -227,6 +246,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue6(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -241,6 +261,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -255,6 +276,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue1(dto);
+		service.changeValue2(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -269,6 +292,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue2(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -283,6 +307,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue3(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -297,6 +322,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue4(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -311,6 +337,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -325,6 +352,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue5(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -339,6 +367,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue6(dto);
+		service.changeValue7(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -353,6 +383,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue8(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -367,6 +398,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue9(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -381,6 +413,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -394,7 +427,8 @@ public class SurveyController {
 	
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
-		// DB 스택 값 변경 메소드 실행 구문 작성 
+		// DB 스택 값 변경 메소드 실행 구문 작성
+		service.changeValue10(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -409,6 +443,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue11(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -423,6 +458,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue1(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -437,6 +473,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue2(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -451,6 +488,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -465,6 +503,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue2(dto);
+		service.changeValue3(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -479,6 +519,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue4(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -493,6 +534,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue5(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -507,6 +549,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue11(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -521,6 +564,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -535,6 +579,8 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue5(dto);
+		service.changeValue6(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -549,6 +595,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue6(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -563,6 +610,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue7(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -577,6 +625,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue11(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -591,6 +640,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -605,6 +655,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue8(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -619,6 +670,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue9(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -633,6 +685,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue10(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -647,6 +700,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue11(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -661,6 +715,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -675,6 +730,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue1(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -689,6 +745,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue2(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -703,6 +760,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue3(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -717,6 +775,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue4(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -731,6 +790,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -745,6 +805,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue5(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -759,6 +820,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue6(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -773,6 +835,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue8(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -787,6 +850,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue9(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -801,6 +865,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -815,6 +880,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue10(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -829,6 +895,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue6(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -843,6 +910,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue8(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -857,6 +925,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue9(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);
@@ -871,6 +940,7 @@ public class SurveyController {
 		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
+		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
 		mv2.addObject("survey", surveydata);

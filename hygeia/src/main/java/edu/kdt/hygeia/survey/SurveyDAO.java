@@ -14,5 +14,25 @@ public interface SurveyDAO {
 	public int changeValue1(SurveyDTO dto); 
 	
 	public int changeValue2(SurveyDTO dto);
+	
+	public int changeValue3(SurveyDTO dto);
+	
+	public int changeValue4(SurveyDTO dto); 
+	
+	public int changeValue5(SurveyDTO dto); 
+	
+	public int changeValue6(SurveyDTO dto); 
+	
+	public int changeValue7(SurveyDTO dto); 
+	
+	public int changeValue8(SurveyDTO dto); 
+	
+	public int changeValue9(SurveyDTO dto); 
+	
+	public int changeValue10(SurveyDTO dto); 
+	
+	public int changeValue11(SurveyDTO dto); 
+	
+	public int changeValue12(SurveyDTO dto); 
 
 }
