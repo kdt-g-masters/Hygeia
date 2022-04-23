@@ -877,13 +877,13 @@ public class SurveyController {
 	@RequestMapping(value="/survey12a", method=RequestMethod.POST)
 	public ModelAndView surveyAction12a(SurveyDTO dto) { 
 	
-		SurveyDTO surveydata = service.loadSheet(dto);
+//		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
 		service.changeValue10(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
-		mv2.addObject("survey", surveydata);
+//		mv2.addObject("survey", surveydata);
 		mv2.setViewName("surveyDoing");
 		return mv2;
 	
@@ -892,13 +892,13 @@ public class SurveyController {
 	@RequestMapping(value="/survey12b", method=RequestMethod.POST)
 	public ModelAndView surveyAction12b(SurveyDTO dto) { 
 	
-		SurveyDTO surveydata = service.loadSheet(dto);
+//		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
 		service.changeValue6(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
-		mv2.addObject("survey", surveydata);
+//		mv2.addObject("survey", surveydata);
 		mv2.setViewName("surveyDoing");
 		return mv2;
 	
@@ -907,13 +907,13 @@ public class SurveyController {
 	@RequestMapping(value="/survey12c", method=RequestMethod.POST)
 	public ModelAndView surveyAction12c(SurveyDTO dto) { 
 	
-		SurveyDTO surveydata = service.loadSheet(dto);
+//		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
 		service.changeValue8(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
-		mv2.addObject("survey", surveydata);
+//		mv2.addObject("survey", surveydata);
 		mv2.setViewName("surveyDoing");
 		return mv2;
 	
@@ -922,13 +922,13 @@ public class SurveyController {
 	@RequestMapping(value="/survey12d", method=RequestMethod.POST)
 	public ModelAndView surveyAction12d(SurveyDTO dto) { 
 	
-		SurveyDTO surveydata = service.loadSheet(dto);
+//		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
 		service.changeValue9(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
-		mv2.addObject("survey", surveydata);
+//		mv2.addObject("survey", surveydata);
 		mv2.setViewName("surveyDoing");
 		return mv2;
 	
@@ -937,13 +937,13 @@ public class SurveyController {
 	@RequestMapping(value="/survey12e", method=RequestMethod.POST)
 	public ModelAndView surveyAction12e(SurveyDTO dto) { 
 	
-		SurveyDTO surveydata = service.loadSheet(dto);
+//		SurveyDTO surveydata = service.loadSheet(dto);
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
 		service.changeValue12(dto);
 			
 		ModelAndView mv2 = new ModelAndView();	
-		mv2.addObject("survey", surveydata);
+//		mv2.addObject("survey", surveydata);
 		mv2.setViewName("surveyDoing");
 		return mv2;
 	
