@@ -1021,6 +1021,7 @@ public class SurveyController {
 
 		// 설문 결과값 로딩 
 		List<SurveyDTO> resultdata = service.loadResult(); 
+//		SurveyDTO result
 		
 		// 설문 결과값 전송 
 		ModelAndView mv4 = new ModelAndView();	

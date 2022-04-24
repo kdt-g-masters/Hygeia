@@ -13,10 +13,26 @@
 
 <body>
 
+	<c:set var="Stack1" value="1" /> 
+	<c:set var="Stack2" value="2" /> 
+	<c:set var="Stack3" value="3" /> 
+	<c:set var="Stack4" value="4" /> 
+	<c:set var="Stack5" value="5" /> 
+	<c:set var="Stack6" value="6" /> 
+	<c:set var="Stack7" value="7" /> 
+	<c:set var="Stack8" value="8" /> 
+	<c:set var="Stack9" value="9" /> 
+	<c:set var="Stack10" value="10" /> 
+	<c:set var="Stack11" value="11" /> 
+	<c:set var="Stack12" value="12" /> 
+
 	<br>
 	<c:forEach items="${result}" var="dto" varStatus="number">
 		번호 : <c:out value="${number.count}" /> <br> 
    		<c:out value="${dto.value}" /> <br>
+   		
+   		<c:set var="Stack<c:out value="${number.count}" />" value="<c:out value="${dto.value}" />" /> <br> 
+   		<c:out value="Stack<c:out value="${number.count}" />" /> <br>
 	</c:forEach> 
 
 	<br>
