@@ -54,18 +54,22 @@
 	      	      <div class="d-flex">
 	      	        <h5 class="inline">아이디</h5>
 	      	        <p class="sm_msg mx-2">최대 20자까지 입력 가능합니다.</p>
-		            <!-- 중복확인 결과 아이콘 -->
-		            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" id="idAvailable">
-					  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-					  <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-					</svg>
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16" id="idNotAvailable">
-					  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-					  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-					</svg>	      	        	      	      	      	    
 	      	      </div>
-	      	      <div class="col-12 d-flex">
-	      	        <input type="text" id="inputMemberId" name="id" class="flex-fill" placeholder="아이디 입력" maxlength="20" size="31" pattern="[a-zA-Z0-9]{0, 20}" required />      	      	      	        	            
+	      	      <div class="col-12 d-flex posRel">
+	      	        <input type="text" id="inputMemberId" name="id" class="flex-fill" placeholder="아이디 입력" maxlength="20" size="31" pattern="[a-zA-Z0-9]{0, 20}" required />
+		            <!-- 중복확인 결과 아이콘 -->
+		            <div id="check">
+		              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" id="idAvailable">
+					    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+					    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+					  </svg>		            
+		            </div>
+		            <div id="warning">
+					  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16" id="idNotAvailable">
+					    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+					    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+					  </svg>	      	        	      	      	      	    		            
+		            </div>	      	            	      	      	        	            
 	      	        <button type="button" id="btnCheckId" class="btn text-white btn-sm btn-primary col-2 mx-2" data-bs-toggle="modal" data-bs-target="#OverlappingCheck1">중복확인</button>
 	      	      </div>
 	      	      <div class="col-2">
@@ -93,19 +97,23 @@
                   <div class="d-flex">
                     <h5 class="inline">비밀번호</h5>
                     <p class="sm_msg mx-2">영문/숫자/특수문자를 조합하여 기재하세요.</p>
-	                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" id="pwAvailable">
-				      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-				      <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-				    </svg>
-				    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16" id="pwNotAvailable">
-				      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-				      <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-				    </svg>                                   
                   </div>
-		          <div class="col-12 d-flex">
+		          <div class="col-12 d-flex posRel">
 		            <input type="password" id="password_1" name="password_1" class="flex-fill" size="21" required />&nbsp;&nbsp;
-		             <!-- 비밀번호 확인 -->
-		             <input type="password" id="password" name="password" class="flex-fill" size="21" required />
+		            <!-- 비밀번호 확인 -->
+		            <input type="password" id="password" name="password" class="flex-fill" size="21" required />
+                    <div id="pwCheck">
+	                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" id="pwAvailable">
+				        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+				        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+				      </svg>                   
+                    </div>
+                    <div id="pwWarning">
+				      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16" id="pwNotAvailable">
+				        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+				        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+				      </svg>                                                       
+                    </div>		             
 		          </div>	                
                 </div>
                 
@@ -135,9 +143,9 @@
 			        <div class="col-12">                        
 					  <div class="docs-datepicker">
 				        <div class="input-group">
-				          <input type="text" class="form-control docs-date" name="birthDate" placeholder="날짜 선택" autocomplete="off">
-				          <div class="input-group-append">
-				            <button type="button" class="btn btn-outline-secondary docs-datepicker-trigger" disabled>
+				          <input type="text" class="form-control docs-date" name="birthDate" aria-label="birthDate" aria-describedby="btnCal" placeholder="날짜 선택" autocomplete="off">
+				          <div class="input-group-append" >
+				            <button id="btnCal" name="birthDate" type="button" class="btn btn-outline-secondary docs-datepicker-trigger" disabled>
 				              <i class="fa fa-calendar" aria-hidden="true"></i>
 				            </button>
 				          </div>

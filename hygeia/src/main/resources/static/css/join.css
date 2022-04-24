@@ -6,7 +6,7 @@
 
 #joinBox {
 	width: 80vw;
-	height: 90vh;
+	height: 95vh;
 	margin: 15vh auto;
 	border-radius: 2em;
 	background-color: white;
@@ -15,7 +15,7 @@
 
 #leftBox {
 	width: 40vw;
-	height: 90vh;
+	height: 95vh;
 	border-radius: 2em 0 0 2em;
 	display: inline-block;
 	margin: 0;
@@ -24,19 +24,19 @@
 
 #rightBox {
 	width: 40vw;
-	height: 90vh;
+	height: 95vh;
 	border-radius: 0 2em 2em 0;	
 	display: inline-block;
 	margin: 0;
 }
 
 main h3 {
-	font-size: 1.7em;
+	font-size: 2em;
 	font-weight: bold;	
 }
 
 main h5{
-	font-size: 1.2em;
+	font-size: 1.5em;
 	font-weight: bold;
 }
 
@@ -46,7 +46,7 @@ main h1, h2, h3, h4, h5 {
 
 .sm_msg{
 	color: #7f7c82;
-	font-size: x-small;
+	font-size: 0.8em;
 	margin-bottom: 7px;
 }
 
@@ -58,11 +58,11 @@ input[type=text], input[type=password] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	font-size: 1em;
+	font-size: 1.3em;
 	height: 2.5em;
 	border-radius: 2em;
-	border: 0.01em solid #EFEFEF;
-	background-color: #EFEFEF;
+	border: 0.01em solid #EFEFEF !important;
+	background-color: #EFEFEF !important;
 	margin-top: 0.1em;
 	margin-bottom: 1em;
 	padding: 0 1em;
@@ -82,7 +82,7 @@ button:hover {
 }
 
 #btnCheckId, #btnCerti, #btnConfirm {
-	font-size: 1em;
+	font-size: 1.3em;
 	height: 2.5em;	
 }
 
@@ -101,7 +101,7 @@ select {
 	-moz-appearance: none;
 	appearance: none;
 	color:#7f7c82;
-	font-size: 1em;
+	font-size: 1.3em;
 	height: 2.5em;
 	border-radius: 30px;
 	border: 0.01em solid #7f7c82;
@@ -112,18 +112,48 @@ select:hover{
 	border:0.01em solid #FCA937;
 }
 
+.gender label {
+	font-size: 1.3em;
+	margin-top: 0.3em;
+}
+
+#btnCal {
+	padding: 1em;
+}
+
 #btnSubmit {
 	background: linear-gradient(to left, #FCA937, #FFD37C);
 	border: 0;
+	font-size: 1.3em;
+}
+
+#btnCancel {
+	font-size: 1.3em;
 }
 
 #company{
-	width: 7em;
 	margin-right: 0.5em;
+	font-size: 1.3em;
 }
 
 #name {
 	padding: 0 1vw;
 	margin-right: 4vw;
 	margin-left: 4vw;
+}
+
+.posRel {
+	position: relative;
+}
+
+.posRel #check, #warning {
+	position: absolute;    
+    top: 0.8vh;
+    right: 8vw;
+}
+
+.posRel #pwCheck, #pwWarning {
+	position: absolute;    
+    top: 0.8vh;
+    right: 1.3vw;
 }

@@ -18,7 +18,7 @@ input[type=text], input[type=password] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	font-size: 1em;
+	font-size: 1.2em;
 	height: 45px;
 	border-radius: 30px;
 	border: 0.01em solid #EFEFEF;
@@ -43,10 +43,12 @@ button:hover{
 	background: linear-gradient(to left, #FCA937, #FFD37C);
 	border: 0;
 	height: 45px;
+	font-size: 1.2em;
 }
 
 #findIdPw {
 	color: #FCA937;
+	font-size: 1.2em;
 }
 
 #findIdPw:hover {
@@ -83,9 +85,13 @@ button:hover{
 	padding: 13vh 7vw;
 }
 
+main h2 {
+	font-size: 2.5em;
+}
+
 main h3 {
 	color: #4A4A4A;
-	font-size: 1.7em;
+	font-size: 2em;
 	font-weight: bold;		
 }
 
@@ -99,6 +105,8 @@ main h3 {
 	border: 2px solid white;
 	height: 45px;
 	background-color: transparent;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
 #joinBtn:hover {
@@ -112,6 +120,7 @@ main h3 {
 
 label {
 	color: #939393;
+	font-size: 1.2em;
 }
 
 /* 체크박스 색상 변경 */
@@ -136,24 +145,24 @@ input[type="checkbox"] + label{
 input[type="checkbox"] + label:before{ 
 	content: ''; 
 	position: absolute;
-	top: 3px;
+	top: 5px;
 	left: 5px;
-	width: 15px; 
-	height: 15px; 
+	width: 17px; 
+	height: 17px; 
 	text-align: center; 
 	background: #fff; 
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	box-sizing: border-box; 
+	box-sizing: border-box;
 }
 
 input[type="checkbox"]:checked + label:after{ 
 	content: ''; 
 	position: absolute; 
-	top: 3px;
-	left: 5px; 
-	width: 15px; 
-	height: 15px;
+	top: 5px;
+	left: 5px;
+	width: 17px; 
+	height: 17px;
 	border-radius: 3px;
 	background: url('/images/check-square-fill.svg');
 	background-size: cover;
