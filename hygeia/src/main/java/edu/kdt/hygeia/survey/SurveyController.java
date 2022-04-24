@@ -1022,9 +1022,13 @@ public class SurveyController {
 		// 설문 결과값 로딩 
 		List<SurveyDTO> resultdata = service.loadResult(); 
 		
+		// 병 정보 로딩 
+		List<SurveyDTO> infodata = service.loadInfo();
+		
 		// 설문 결과값 전송 
 		ModelAndView mv4 = new ModelAndView();	
 		mv4.addObject("result", resultdata);
+		mv4.addObject("info", infodata);
 		mv4.setViewName("surveyResult");
 		return mv4;
 	
@@ -1042,7 +1046,11 @@ public class SurveyController {
 	@RequestMapping(value="/survey3", method=RequestMethod.POST)
 		public ModelAndView surveyAction10(SurveyDTO dto) { 
 		
+			// 아이디 및 의심 성인병 저장 
 			int row = service.saveResult(dto); 
+			
+			// surveycalc 테이블 reset 
+			service.resetTable();
 		
 			ModelAndView mv = new ModelAndView();
 			mv.addObject("result", row);

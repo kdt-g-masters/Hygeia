@@ -41,5 +41,12 @@ public interface SurveyService {
 	
 	// 설문 결과 불러오기 
 	public List<SurveyDTO> loadResult(); 
+	
+	// 병 정보 불러오기  
+	public List<SurveyDTO> loadInfo(); 
+	
+	// 연산 테이블 초기화 
+	public int resetTable();
+
 		
 }

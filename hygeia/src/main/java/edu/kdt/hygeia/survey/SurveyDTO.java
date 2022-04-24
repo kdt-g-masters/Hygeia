@@ -20,6 +20,10 @@ public class SurveyDTO {
 	int value; 
 	
 	
+	String name; 
+	String foods;
+	
+
 	public String getMember_id() {
 		return member_id;
 	}
@@ -96,6 +100,20 @@ public class SurveyDTO {
 	}
 	public void setValue(int value) {
 		this.value = value;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}	
+	public String getFoods() {
+		return foods;
+	}
+	public void setFoods(String foods) {
+		this.foods = foods;
 	}
 	
 }

@@ -69,4 +69,14 @@
 		select * from surveycalc
 	</select> 
 	
+	<!-- 병 정보 불러오기 기능 -->
+	<select id="loadInfo" resultType="SurveyDTO">
+		select * from infoDisease 
+	</select>
+	
+	<!-- 연산 테이블 초기화 기능 -->
+	<update id="resetTable" >
+		update surveycalc set value = 0 
+	</update>
+	
 </mapper>

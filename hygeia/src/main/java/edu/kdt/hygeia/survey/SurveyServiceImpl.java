@@ -95,5 +95,19 @@ public class SurveyServiceImpl implements SurveyService {
 	public List<SurveyDTO> loadResult() { 
 		return dao.loadResult();
 	}; 
+	
+	
+	
+	@Override 
+	public List<SurveyDTO> loadInfo() {
+		return dao.loadInfo();
+	}; 
+	
+	
+	
+	@Override
+	public int resetTable() { 
+		return dao.resetTable();
+	};
 
 }

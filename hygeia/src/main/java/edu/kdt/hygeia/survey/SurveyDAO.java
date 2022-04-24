@@ -38,5 +38,9 @@ public interface SurveyDAO {
 	public int changeValue12(SurveyDTO dto); 
 	
 	public List<SurveyDTO> loadResult(); 
+	
+	public List<SurveyDTO> loadInfo(); 
+	
+	public int resetTable();
 
 }
