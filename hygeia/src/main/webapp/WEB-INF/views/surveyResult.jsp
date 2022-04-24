@@ -31,8 +31,8 @@
 		번호 : <c:out value="${number.count}" /> <br> 
    		<c:out value="${dto.value}" /> <br>
    		
-   		<c:set var="Stack<c:out value="${number.count}" />" value="<c:out value="${dto.value}" />" /> <br> 
-   		<c:out value="Stack<c:out value="${number.count}" />" /> <br>
+   		<c:set var="Stack'${number.count}'" value="<c:out value="${dto.value}" />" /> <br> 
+   		<c:out value="Stack'${number.count}'" /> <br>
 	</c:forEach> 
 
 	<br>
