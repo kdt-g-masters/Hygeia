@@ -5,10 +5,10 @@ public interface SurveyService {
 	// !!!
 	// !!!!!!!!!!!!!!!!
 	
-	// 설문결과 저장 
+	// 설문 결과 저장 
 	public int saveResult(SurveyDTO dto); 
 	
-	// 설문문항 불러오기 
+	// 설문 문항 불러오기 
 	public SurveyDTO loadSheet(SurveyDTO dto);
 	
 	// DB 스택 값 변경
@@ -35,5 +35,8 @@ public interface SurveyService {
 	public int changeValue11(SurveyDTO dto); // 고지혈증 
 	
 	public int changeValue12(SurveyDTO dto); // 건강함 
+	
+	// 설문 결과 불러오기 
+	public SurveyDTO loadResult(SurveyDTO dto); 
 		
 }

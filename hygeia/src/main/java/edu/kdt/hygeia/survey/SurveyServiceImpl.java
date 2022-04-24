@@ -86,5 +86,12 @@ public class SurveyServiceImpl implements SurveyService {
 	public int changeValue12(SurveyDTO dto) { 
 		return dao.changeValue12(dto);
 	};
+	
+	
+	
+	@Override 
+	public SurveyDTO loadResult(SurveyDTO dto) { 
+		return dao.loadResult(dto);
+	}; 
 
 }

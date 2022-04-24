@@ -878,6 +878,8 @@ public class SurveyController {
 	public ModelAndView surveyAction12a(SurveyDTO dto) { 
 	
 //		SurveyDTO surveydata = service.loadSheet(dto);
+
+//		SurveyDTO resultdata = service.loadResult(dto);  
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
 		service.changeValue10(dto);

@@ -34,5 +34,7 @@ public interface SurveyDAO {
 	public int changeValue11(SurveyDTO dto); 
 	
 	public int changeValue12(SurveyDTO dto); 
+	
+	public SurveyDTO loadResult(SurveyDTO dto); 
 
 }
