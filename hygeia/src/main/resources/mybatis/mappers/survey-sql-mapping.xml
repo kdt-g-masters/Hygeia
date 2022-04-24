@@ -3,12 +3,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="edu.kdt.hygeia.survey.SurveyDAO" >
-
-	<!--
-	<select id="surveyList" resultType="surveydto">
-		select * from survey
-	</select>
-	-->
 	
 	<!-- 데이터 저장 임시기능 -->
 	<!-- surveyresult 테이블의 컬럼 member_id 와 컬럼 resultDisease 에다가, 값을 넣는다 --> 
@@ -71,11 +65,8 @@
 	</update>
 	
 	<!-- 설문 결과 불러오기 기능 -->
-	<!-- <select id="loadResult" resultType="SurveyDTO"> 
-		select * from surveycalc 
-	</select>  --> 
 	<select id="loadResult" resultType="SurveyDTO"> 
 		select * from surveycalc
-	</select>
+	</select> 
 	
 </mapper>
