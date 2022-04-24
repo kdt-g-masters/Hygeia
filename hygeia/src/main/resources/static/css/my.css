@@ -61,19 +61,19 @@
 	font-weight: bold;
 	font-size: large;
 }
-.mypage-box{
+#mysurveyresult .box{
     background-color: white;
-    border: 1px solid #d7d7d7;
     border-radius: 30px;
     margin: 5vh 25vw 10vh;
     padding: 5em;
     height: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
-.mypage-box h4{
+#mysurveyresult .box h4{
 	text-align: left;
 	line-height: 150%	
 }
-.mypage-box hr{
+#mysurveyresult .box hr{
 	background-color: #EA7123;
 	border: 1px solid #EA7123;
 }

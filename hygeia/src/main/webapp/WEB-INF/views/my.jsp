@@ -55,10 +55,60 @@
 	
 </script>
 <style>
-/* 프론트 제작 후 jquery로 메뉴클릭시 해당 
-#id display속성 none or block으로 변경  */
+#editmyinfo .box {
+	/* width: auto;
+	height: auto; */
+	margin: 5vh 35vw 10vh;
+	border-radius: 2em;
+	background-color: white;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+#confirm-info {
+	padding: 5vh 5vw;
+} 
 
-/*----------------------------------*/
+#confirm-info .col-2{
+	font-size: 1.2em;
+	height: 45px;
+	line-height: 350%;
+	text-align: center;
+	font-weight: bold;
+}
+
+input[type=text], input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 1em;
+	height: 45px;
+	border-radius: 30px;
+	border: 0.01em solid #EFEFEF;
+	background-color: #EFEFEF;
+	margin-top: 10px;
+}
+#editmyinfo input{
+	font-size: 1em;
+	font-weight: bold;
+} 
+#editmyinfo input[type=password]:hover, #editmyinfo input[type=password]:focus {
+	border:0.01em solid #FCA937;
+}
+#editmyinfo input:disabled {
+		background-color: #EFEFEF;
+		color : #939393;
+}	
+.row{
+	justify-content: space-around;
+}
+#loginBtn {
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border: 0;
+	height: 45px;
+}
+button:hover{
+	color: #FCA937;
+	background-color: transparent;
+}
 </style>
 </head>
 <body class="bg-color">
@@ -80,7 +130,7 @@
 			</nav>
 			<!-- 내 건강 결과 메뉴  -->
 			<div id="mysurveyresult">
-				<div class="mypage-box"> 
+				<div class="box"> 
 				<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
 					<h4><b>${ sessionid }님 건강 진단 결과</b></h4>
 					<hr>
@@ -167,7 +217,18 @@
 				
 			
 			<!-- 내 정보 수정 -->
-			<div id="editmyinfo" style="display:none">This is the area where I <b>edit my information</b>.</div>
+			<div id="editmyinfo" style="display:none">
+				<div class="box">
+					<div class="row">				  
+						<div id="confirm-info" class="col-lg-12">						
+							<div class="row"><input class="form-control me-2 col" type="text" id="id" name="id" placeholder= " 아이디" value=" ${sessionid}" disabled/></div>
+							<div class="row"><input class="form-control me-2 col" type="password" id="password" name="password" placeholder=" 비밀번호"></div>						
+							<div id="msgLoginFail">올바른 비밀번호를 다시 입력해주세요.</div>
+						
+							<input class="btn btn-primary col-12 mt-4 mb-2" type="button" id="loginBtn" name="loginBtn" value="내 정보 수정 하기">
+						</div>
+					</div>
+				</div>
 			
 
 		</section>
