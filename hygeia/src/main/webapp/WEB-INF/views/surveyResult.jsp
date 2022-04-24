@@ -14,9 +14,11 @@
 <body>
 
 	<br>
-	<c:forEach items="${result}" var="dto">
+	<c:forEach items="${result}" var="dto" varStatus="number">
+		번호 : <c:out value="${number.count}" /> <br> 
    		<c:out value="${dto.value}" /> <br>
-	</c:forEach>
+	</c:forEach> 
+
 	<br>
 
     <!-- 의심 성인병 (value 를 DB 로 부터 받아오기) --> 
