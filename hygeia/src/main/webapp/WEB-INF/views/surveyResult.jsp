@@ -7,24 +7,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>설문조사-결과페이지</title>
+<title>설문조사-결과 페이지</title>
 <script src="/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
 
 	<br>
+	<c:forEach items="${result}" var="dto">
+   		<c:out value="${dto.value}" /> <br>
+	</c:forEach>
+	<br>
+
     <!-- 의심 성인병 (value 를 DB 로 부터 받아오기) --> 
     <section>
       <h3>(의심 성인병 이름)</h3>
     </section>
 
-	<!-- a태그 예시 : naver 
-	
-	<a href="http://www.naver.com">Go Naver</a><br>
-	
-	  --> 
-    
     <form action="/survey3" method="post" > <br> 
     <!-- 설명 (value 를 DB 로 부터 받아오기) -->
 	<br>
@@ -45,7 +44,7 @@
 	<br>
 	<input type="text" placeholder="아이디 입력" name="member_id" /> <br>
 	<input type="text" placeholder="의심 성인병 입력" name="resultDisease" /> <br>
-	<input type="submit" value="결과 저장하기 버튼" name="saveresult" />
+	<input type="submit" value="결과 저장하기 버튼" name="saveresult" /> <br> 
 	</form> 
 	
 	<!-- footer -->

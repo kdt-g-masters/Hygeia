@@ -56,8 +56,4 @@
 		<input type="submit" name="nextbtn12e" value="<c:out value="${survey.answer5}" />" />
 	</form>
 	<br> 
-	
-	<br>
-	@@@12번 페이지는 no 없애고, 클릭시 결과 페이지로 이동하도록 수정하기 
-	<br>
-		
+

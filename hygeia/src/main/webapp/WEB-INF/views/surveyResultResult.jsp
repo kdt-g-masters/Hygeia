@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>설문조사-결과결과페이지</title>
+<title>설문조사-결과 결과 페이지</title>
 <script src="/jquery-3.6.0.min.js"></script>
 </head>
 
