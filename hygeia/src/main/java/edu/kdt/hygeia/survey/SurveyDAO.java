@@ -1,5 +1,7 @@
 package edu.kdt.hygeia.survey;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -35,6 +37,6 @@ public interface SurveyDAO {
 	
 	public int changeValue12(SurveyDTO dto); 
 	
-	public SurveyDTO loadResult(SurveyDTO dto); 
+	public List<SurveyDTO> loadResult(); 
 
 }

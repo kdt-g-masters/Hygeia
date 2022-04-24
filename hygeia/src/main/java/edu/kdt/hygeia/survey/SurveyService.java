@@ -1,5 +1,7 @@
 package edu.kdt.hygeia.survey;
 
+import java.util.List;
+
 public interface SurveyService {
 	// !!!
 	// !!!
@@ -37,6 +39,6 @@ public interface SurveyService {
 	public int changeValue12(SurveyDTO dto); // 건강함 
 	
 	// 설문 결과 불러오기 
-	public SurveyDTO loadResult(SurveyDTO dto); 
+	public List<SurveyDTO> loadResult(); 
 		
 }

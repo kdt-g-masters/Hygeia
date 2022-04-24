@@ -1,5 +1,7 @@
 package edu.kdt.hygeia.survey;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -877,17 +879,20 @@ public class SurveyController {
 	@RequestMapping(value="/survey12a", method=RequestMethod.POST)
 	public ModelAndView surveyAction12a(SurveyDTO dto) { 
 	
+		// 설문 페이지 로딩 
 //		SurveyDTO surveydata = service.loadSheet(dto);
 
+		// 설문 결과값 로딩 
 //		SurveyDTO resultdata = service.loadResult(dto);  
+		List<SurveyDTO> resultdata = service.loadResult(); 
 	
 		// DB 스택 값 변경 메소드 실행 구문 작성 
 		service.changeValue10(dto);
 			
-		ModelAndView mv2 = new ModelAndView();	
-//		mv2.addObject("survey", surveydata);
-		mv2.setViewName("surveyDoing");
-		return mv2;
+		ModelAndView mv3 = new ModelAndView();	
+		mv3.addObject("result", resultdata);
+		mv3.setViewName("surveyResult");
+		return mv3;
 	
 	}
 
