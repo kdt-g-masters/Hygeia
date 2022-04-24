@@ -69,7 +69,7 @@
 							<input class="btn btn-primary col-12 mt-4 mb-2" type="button" id="loginBtn" name="loginBtn" value="로그인">
 							<div class="d-flex justify-content-between">
 								<div><input id="autoLogin" type="checkbox" name="autoLogin" value="자동로그인"><label for="autoLogin"> 아이디 저장</label></div>							
-								<a href="#" id="findIdPw" class="float-left" name="findIdPw"> 아이디 / 비밀번호 찾기 </a>						
+								<a href="#" id="findIdPw" name="findIdPw"> 아이디 / 비밀번호 찾기 </a>						
 							</div>
 	
 						</div>
