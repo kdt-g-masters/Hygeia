@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+#joinBgColor {
+	background: #FEE7C5;
+}
+
+#joinResultBox {
+	width: 70vw;
+	height: 60vh;
+	margin: 20vh auto;
+	border-radius: 2em;
+	background-color: white;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#leftBox {
+	width: 35vw;
+	height: 60vh;
+	border-radius: 2em 0 0 2em;
+	display: inline-block;
+	margin: 0;
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	padding: 13vh 7vw;
+}
+
+#rightBox {
+	width: 35vw;
+	height: 60vh;
+	border-radius: 0 2em 2em 0;	
+	display: inline-block;
+	margin: 0;
+	color: #4A4A4A;
+}
+
+#rightBox h2 {
+	font-weight: bold;
+}
+
+#rightBox p {
+	font-size: 1.2em;
+}
+
+main h3 {
+	font-size: 1.7em;
+	font-weight: bold;	
+}
+
+main h5{
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+main h1, h2, h3, h4, h5 {
+	color: #4A4A4A;
+}
+
+.inline{
+	display: inline-block;
+}
+
+.row {
+	justify-content: space-around;
+}
+
+button:hover {
+	color: #FCA937;
+	background-color: transparent;
+}
+
+#btnCheckId, #btnCerti, #btnConfirm {
+	font-size: 1em;
+	height: 2.5em;	
+}
+
+#resultPageLogo {
+	width: 20vw;
+	height: 20vh;
+}
+
+#btnGoLogin {
+	color: white;
+	border: 0.15em solid white;
+	background-color: transparent;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+#btnGoLogin:hover {
+	background-color: white;
+	color: #FCA937;
+	font-weight: bold;
+}

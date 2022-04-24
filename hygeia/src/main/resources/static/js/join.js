@@ -29,13 +29,11 @@ $(document).ready(function() {
 		if ($("#password_1").val() == $("#password").val()) {
 			$("#pwAvailable").css("display", "inline");
 			$("#pwNotAvailable").css("display", "none");
-			$("#pwCheck").html("");
 			joinAvailable = true;
 		}
 		else {
 			$("#pwAvailable").css("display", "none");
 			$("#pwNotAvailable").css("display", "inline");
-			$("#pwCheck").html("비밀번호가 일치하지 않습니다.");
 			joinAvailable = false;
 		}
 	});
@@ -43,13 +41,11 @@ $(document).ready(function() {
 		if ($("#password_1").val() == $("#password").val()) {
 			$("#pwAvailable").css("display", "inline");
 			$("#pwNotAvailable").css("display", "none");
-			$("#pwCheck").html("");
 			joinAvailable = true;
 		}
 		else {
 			$("#pwAvailable").css("display", "none");
 			$("#pwNotAvailable").css("display", "inline");
-			$("#pwCheck").html("비밀번호가 일치하지 않습니다.");
 			joinAvailable = false;
 		}
 	});
