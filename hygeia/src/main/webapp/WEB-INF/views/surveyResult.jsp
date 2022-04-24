@@ -13,28 +13,84 @@
 
 <body>
 
-	<c:set var="Stack1" value="1" /> 
-	<c:set var="Stack2" value="2" /> 
-	<c:set var="Stack3" value="3" /> 
-	<c:set var="Stack4" value="4" /> 
-	<c:set var="Stack5" value="5" /> 
-	<c:set var="Stack6" value="6" /> 
-	<c:set var="Stack7" value="7" /> 
-	<c:set var="Stack8" value="8" /> 
-	<c:set var="Stack9" value="9" /> 
-	<c:set var="Stack10" value="10" /> 
-	<c:set var="Stack11" value="11" /> 
-	<c:set var="Stack12" value="12" /> 
+	<c:set var="Stack1" value="0" /> 
+	<c:set var="Stack2" value="0" /> 
+	<c:set var="Stack3" value="0" /> 
+	<c:set var="Stack4" value="0" /> 
+	<c:set var="Stack5" value="0" /> 
+	<c:set var="Stack6" value="0" /> 
+	<c:set var="Stack7" value="0" /> 
+	<c:set var="Stack8" value="0" /> 
+	<c:set var="Stack9" value="0" /> 
+	<c:set var="Stack10" value="0" /> 
+	<c:set var="Stack11" value="0" /> 
+	<c:set var="Stack12" value="0" /> 
 
 	<br>
 	<c:forEach items="${result}" var="dto" varStatus="number">
-		번호 : <c:out value="${number.count}" /> <br> 
-   		<c:out value="${dto.value}" /> <br>
-   		
-   		<c:set var="Stack'${number.count}'" value="<c:out value="${dto.value}" />" /> <br> 
-   		<c:out value="Stack'${number.count}'" /> <br>
+
+		<c:if test="${dto.diseaseName == '고혈압'}"> 
+			<c:set var="Stack1" value="${dto.value}" />
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '뇌졸중'}"> 
+			<c:set var="Stack2" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '당뇨병'}"> 
+			<c:set var="Stack3" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '동맥경화증'}"> 
+			<c:set var="Stack4" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '급성심근경색'}"> 
+			<c:set var="Stack5" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '위염'}"> 
+			<c:set var="Stack6" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '비만'}"> 
+			<c:set var="Stack7" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '만성폐쇄성 폐질환'}"> 
+			<c:set var="Stack8" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '골다공증'}"> 
+			<c:set var="Stack9" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '관절염'}"> 
+			<c:set var="Stack10" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '고지혈증'}"> 
+			<c:set var="Stack11" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '건강함'}"> 
+			<c:set var="Stack12" value="${dto.value}" /> 
+		</c:if> 
+
 	</c:forEach> 
 
+	고혈압 스택 : <c:out value="${Stack1}" /> <br> 
+	뇌졸중 스택 : <c:out value="${Stack2}" /> <br> 
+	당뇨병 스택 : <c:out value="${Stack3}" /> <br> 
+	동맥경화증 스택 : <c:out value="${Stack4}" /> <br> 
+	급성심근경색 스택 : <c:out value="${Stack5}" /> <br> 
+	위염 스택 : <c:out value="${Stack6}" /> <br> 
+	비만 스택 : <c:out value="${Stack7}" /> <br> 
+	만성폐쇄성 폐질환 스택 : <c:out value="${Stack8}" /> <br> 
+	골다공증 스택 : <c:out value="${Stack9}" /> <br> 
+	관절염 스택 : <c:out value="${Stack10}" /> <br> 
+	고지혈증 스택 : <c:out value="${Stack11}" /> <br> 
+	건강함 스택 : <c:out value="${Stack12}" /> <br> 
 	<br>
 
     <!-- 의심 성인병 (value 를 DB 로 부터 받아오기) --> 
