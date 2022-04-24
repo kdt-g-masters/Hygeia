@@ -1,0 +1,210 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	
+	<c:set var="Stack1" value="0" /> 
+	<c:set var="Stack2" value="0" /> 
+	<c:set var="Stack3" value="0" /> 
+	<c:set var="Stack4" value="0" /> 
+	<c:set var="Stack5" value="0" /> 
+	<c:set var="Stack6" value="0" /> 
+	<c:set var="Stack7" value="0" /> 
+	<c:set var="Stack8" value="0" /> 
+	<c:set var="Stack9" value="0" /> 
+	<c:set var="Stack10" value="0" /> 
+	<c:set var="Stack11" value="0" /> 
+	<c:set var="Stack12" value="0" /> 
+
+	<br>
+	
+	<c:forEach items="${result}" var="dto" varStatus="number">
+
+		<c:if test="${dto.diseaseName == '고혈압'}"> 
+			<c:set var="Stack1" value="${dto.value}" />
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '뇌졸중'}"> 
+			<c:set var="Stack2" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '당뇨병'}"> 
+			<c:set var="Stack3" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '동맥경화증'}"> 
+			<c:set var="Stack4" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '급성심근경색'}"> 
+			<c:set var="Stack5" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '위염'}"> 
+			<c:set var="Stack6" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '비만'}"> 
+			<c:set var="Stack7" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '만성폐쇄성 폐질환'}"> 
+			<c:set var="Stack8" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '골다공증'}"> 
+			<c:set var="Stack9" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '관절염'}"> 
+			<c:set var="Stack10" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '고지혈증'}"> 
+			<c:set var="Stack11" value="${dto.value}" /> 
+		</c:if> 
+		
+		<c:if test="${dto.diseaseName == '건강함'}"> 
+			<c:set var="Stack12" value="${dto.value}" /> 
+		</c:if> 
+
+	</c:forEach> 
+
+	고혈압 스택 : <c:out value="${Stack1}" /> <br> 
+	뇌졸중 스택 : <c:out value="${Stack2}" /> <br> 
+	당뇨병 스택 : <c:out value="${Stack3}" /> <br> 
+	동맥경화증 스택 : <c:out value="${Stack4}" /> <br> 
+	급성심근경색 스택 : <c:out value="${Stack5}" /> <br> 
+	위염 스택 : <c:out value="${Stack6}" /> <br> 
+	비만 스택 : <c:out value="${Stack7}" /> <br> 
+	만성폐쇄성 폐질환 스택 : <c:out value="${Stack8}" /> <br> 
+	골다공증 스택 : <c:out value="${Stack9}" /> <br> 
+	관절염 스택 : <c:out value="${Stack10}" /> <br> 
+	고지혈증 스택 : <c:out value="${Stack11}" /> <br> 
+	건강함 스택 : <c:out value="${Stack12}" /> <br> 
+	
+	<br>
+	
+	
+	<br>
+	
+	<c:set var="StackBest" value="0" /> 
+			
+		
+	<c:if test = "${Stack1 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack1}" />
+	</c:if> 
+
+	<c:if test = "${Stack2 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack2}" />
+	</c:if> 
+
+	<c:if test = "${Stack3 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack3}" />
+	</c:if> 
+
+	<c:if test = "${Stack4 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack4}" />
+	</c:if> 
+
+	<c:if test = "${Stack5 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack5}" />
+	</c:if> 
+
+	<c:if test = "${Stack6 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack6}" />
+	</c:if> 
+
+	<c:if test = "${Stack7 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack7}" />
+	</c:if> 
+
+	<c:if test = "${Stack8 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack8}" />
+	</c:if> 
+
+	<c:if test = "${Stack9 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack9}" />
+	</c:if> 
+
+	<c:if test = "${Stack10 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack10}" />
+	</c:if> 
+
+	<c:if test = "${Stack11 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack11}" />
+	</c:if> 
+
+	<c:if test = "${Stack12 > StackBest}" > 
+		<c:set var="StackBest" value="${Stack12}" />
+	</c:if> 
+
+
+	최고 스택 : <c:out value="${StackBest}" /> <br><br> 
+	
+	
+	
+	
+	<c:set var="resultName" />
+	
+	
+	<c:if test = "${StackBest == Stack1}" > 
+		<c:set var="resultName" value="고혈압" /> 
+	</c:if> 
+	
+	<c:if test = "${StackBest == Stack2}" > 
+		<c:set var="resultName" value="뇌졸중" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack3}" > 
+		<c:set var="resultName" value="당뇨병" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack4}" > 
+		<c:set var="resultName" value="동맥경화증" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack5}" > 
+		<c:set var="resultName" value="급성심근경색" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack6}" > 
+		<c:set var="resultName" value="위염" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack7}" > 
+		<c:set var="resultName" value="위염" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack8}" > 
+		<c:set var="resultName" value="만성폐쇄성 폐질환" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack9}" > 
+		<c:set var="resultName" value="골다공증" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack10}" > 
+		<c:set var="resultName" value="관절염" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack11}" > 
+		<c:set var="resultName" value="고지혈증" /> 
+	</c:if> 
+
+	<c:if test = "${StackBest == Stack12}" > 
+		<c:set var="resultName" value="건강함" /> 
+	</c:if> 
+
+
+	의심 성인병 : <c:out value="${resultName}" /> 
+	<br>
+	<br> 
+	
+	---------------
+	<br> 
+	<br> 
+
+	
+
+	<br>
+	 
+	
