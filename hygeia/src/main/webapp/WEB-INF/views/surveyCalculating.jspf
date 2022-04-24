@@ -206,6 +206,8 @@
 	<br> 
 	
 	- 식재료 로딩 테스트 <br><br>  
+	
+	고혈압 추천 식재료 : <br> 
 	<c:forEach items="${info}" var="dto2" varStatus="number">
 
 		<c:if test="${dto2.name == '고혈압'}"> 
