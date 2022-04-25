@@ -48,6 +48,7 @@ input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, inpu
 	background: linear-gradient(to right, #FCA937, #FFD37C);
 	height: 3.5em;
 	margin-top: 10px;
+	margin-left: 0;
 }
 
 #suggest {
