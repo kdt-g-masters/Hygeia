@@ -11,7 +11,7 @@
 	margin: 0.3em 0.1em;
 	padding: 0.5em 0.6em;
 }
-/* 부트스트랩 custom */
+
 #section{
 	margin: 10em 0;
 }
@@ -61,6 +61,8 @@
 	font-weight: bold;
 	font-size: large;
 }
+
+/* 내 건강 결과 */
 #mysurveyresult .box{
     background-color: white;
     border-radius: 30px;
@@ -104,7 +106,7 @@
 	margin: 0 auto 50px;
 }
 
-/* 테이블 */ 
+/* 후기관리 */ 
 #review-tlb{
     margin: 5vh 25vw 10vh;
     height: 100%;
@@ -131,3 +133,68 @@
 .review-list .title{
 	text-align: left;
 }
+
+/* 내 정보 수정 */
+#pwCheck .box{
+	/* width: auto;
+	height: auto; */
+	margin: 5vh 35vw 10vh;
+	border-radius: 2em;
+	background-color: white;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+#confirm-info {
+	padding: 5vh 5vw;
+} 
+
+#confirm-info .col-2{
+	font-size: 1.2em;
+	height: 45px;
+	line-height: 350%;
+	text-align: center;
+	font-weight: bold;
+}
+
+input[type=text], input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 1em;
+	height: 45px;
+	border-radius: 30px;
+	border: 0.01em solid #EFEFEF !important;
+	background-color: #EFEFEF !important;
+	margin-top: 10px;
+}
+#pwCheck input{
+	font-size: 1em;
+	font-weight: bold;
+} 
+#pwCheck input[type=password]:hover, #editmyinfo input[type=password]:focus {
+	border:0.01em solid #FCA937;
+}
+#pwCheck input:disabled {
+		background-color: #EFEFEF;
+		color : #939393;
+}	
+.row{
+	justify-content: space-around;
+}
+#loginBtn {
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border: 0;
+	height: 45px;
+}
+button:hover{
+	color: #FCA937;
+	background-color: transparent;
+}
+#msgLoginFail {
+	color: red;
+	padding: 0.5vh 1vw;
+	visibility: hidden;
+}
+
+
+
+
