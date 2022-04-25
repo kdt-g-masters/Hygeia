@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,6 +20,7 @@ import edu.kdt.hygeia.disease.DiseaseDTO;
 import edu.kdt.hygeia.disease.DiseaseService;
 import edu.kdt.hygeia.member.MemberDTO;
 import edu.kdt.hygeia.member.MemberService;
+import edu.kdt.hygeia.review.ReviewDTO;
 import edu.kdt.hygeia.review.ReviewService;
 
 @Controller
@@ -83,16 +85,8 @@ public class MainController {
 	}
 	@RequestMapping("/my")
 	public void my() {}
-
-	/*
-	 * @RequestMapping(value="/myInfo", method=RequestMethod.POST, produces =
-	 * {"application/json;charset=utf-8"})
-	 * 
-	 * @ResponseBody public void my(HttpServletRequest request, MemberDTO dto)
-	 * throws Exception { storage mappers : <select...> sessionid가 같은 지 확인 후 전달
-	 * ModelAndView memberDTO = memberService.loginMember(dto); memberDTO. }
-	 */
-
+	
+	
 	/* 나중에 삭제할 것 */
 	@RequestMapping(value = "/template2")
 	public void template() {
