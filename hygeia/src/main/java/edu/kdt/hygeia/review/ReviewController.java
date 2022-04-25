@@ -112,7 +112,7 @@ public class ReviewController {
 		service.reviewInput(dto);
 		//일회성 데이터 전달
 		rttr.addFlashAttribute("result", "input success");
-		return "redirect:/template4";
+		return "redirect:/reviewlist";
 	}
 	
 	//후기 수정 페이지 이동
@@ -130,7 +130,7 @@ public class ReviewController {
 	public String reviewModify(ReviewDTO dto, RedirectAttributes rttr) {
 		service.reviewModify(dto);
 		rttr.addFlashAttribute("result", "modify success");
-		return "redirect:/template4";
+		return "redirect:/reviewlist";
 	}
 	
 	//후기 추천 기능
@@ -148,7 +148,7 @@ public class ReviewController {
 		return rcmcheck;
 	}
 	
-	//후기 추천 기능
+	//후기 추천 보여주기
 	@RequestMapping(value = "/reviewrcmview", produces = {"application/json;charset=utf-8"})
 	@ResponseBody
 	public int reviewrcmview(RcmDTO dto) throws Exception{
