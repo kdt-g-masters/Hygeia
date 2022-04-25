@@ -130,6 +130,9 @@ border: 1px solid red; */
 
 </head>
 <body class="bg-color">
+<!-- navbar -->
+	<%@ include file="navbar.jsp" %>
+	
 <main>
 <br>
 <div id = "foodtitle"><h4 ><span class="badge rounded-pill bg-warning text-white">몸에 좋은 식재료</span></h4></div><br>
