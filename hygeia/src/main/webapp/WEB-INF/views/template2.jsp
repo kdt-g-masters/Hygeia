@@ -28,9 +28,9 @@
 	<main>
 		<br>
 		<div id = "diseasetitle">
-			<h4>
-				<span class="badge rounded-pill bg-warning text-white">생활습관병</span>
-			</h4>		
+		  <div class="col-lg-12 mainTitle">
+			<a id="title" class="btn btn-primary btn-lg" href="">생활습관병</a>
+		  </div>		
 		</div>
 		<br>
 

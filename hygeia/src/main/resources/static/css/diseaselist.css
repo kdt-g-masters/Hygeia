@@ -34,6 +34,19 @@
 	padding: 10px;
 }
 
+#diseasetitle .mainTitle .btn{
+	text-align: center;
+	line-height: 100%;
+	margin: 0.3em 0.2em;
+	padding: 1em;
+}
+#diseasetitle .btn{
+	text-align: center;
+	line-height: 100%;
+	margin: 0.3em 0.1em;
+	padding: 0.5em 0.6em;
+}
+
 /* 반응형 웹 */
 @media screen and (max-width: 850px){
 	#diseaseList{grid-template-columns: repeat(3, 1fr);}

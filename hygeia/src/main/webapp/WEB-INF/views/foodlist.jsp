@@ -67,29 +67,31 @@ width: 800px;
 border: 1px solid red; */
 }
 
+#foodtitle .mainTitle .btn{
+	text-align: center;
+	line-height: 100%;
+	margin: 0.3em 0.2em;
+	padding: 1em;
+}
+#foodtitle .btn{
+	text-align: center;
+	line-height: 100%;
+	margin: 0.3em 0.1em;
+	padding: 0.5em 0.6em;
+}
+
 </style>
 </head>
 <body class="bg-color">
-<<<<<<< HEAD
-=======
 <!-- navbar -->
 	<%@ include file="navbar.jsp" %>
-	
-<main>
-<br>
-<div id = "foodtitle"><h4 ><span class="badge rounded-pill bg-warning text-white">몸에 좋은 식재료</span></h4></div><br>
->>>>>>> devHH
-
-	<!-- navbar -->
-	<%@ include file="navbar.jsp" %>
-	<br>
 	
 	<main>
 	  <br>
 	  <div id="foodtitle">
-	    <h4>
-	      <span class="badge rounded-pill bg-warning text-white">몸에 좋은 식재료</span>
-	    </h4>
+		<div class="col-lg-12 mainTitle">
+			<a id="title" class="btn btn-primary btn-lg" href="">몸에 좋은 식재료</a>
+		</div>
 	  </div>
 	  <br>
 	
