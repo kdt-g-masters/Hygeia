@@ -11,22 +11,24 @@
 <script src="/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		//jquery code
-		
-		//병 후기 목록 보여주기
+			
+		// 식재료 후기 보여주기
 		$.ajax({
-			url: '<%=request.getContextPath()%>/foodreview',
-			data: {'title' : $("#title")} 
+			url: '<%=request.getContextPath()%>/foodreview', 
+			data: { 'title': $("#title").val()},
 			dataType: 'json', 
-			success: function (list) {
-				var review = "";
-				for (var i = 0; i < list.length; i++){
-					review += "<a href=\"/reviewresult?reviewid=" + list[i].id + "\">" + list[i].title + list[i].member_id + list[i].dateWrtn + "</a><br>";
-				}
-				$("#diseaseReview").html(review);
+			success: function (list) {			
+				let filterArr = list.filter(ele => ele.title.indexOf("${fooddto.name }")>-1);
+	 			//console.log(filterArr)
+	 			let _htmlHoogi = "" ;
+	 			filterArr.forEach(function(v){
+	 			_htmlHoogi += "<div><a href=\"/reviewresult?reviewid=" + v.id + "\">" + v.title + v.member_id + "</a></div><br>";
+	 			});
+	 			$("#foodReview1").append(_htmlHoogi);			
 			}//success end
-		});//ajax end		
-	});
+		});//식재료 리뷰 ajax end		
+	});//ready end
+	
 </script>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -85,23 +87,16 @@ margin: 0 auto;
 text-align: center;
 }
 
+#effect{
+margin: 0 auto;
+text-align: center;
+}
+
 </style>
 
 <body>
 <br>
 <div id = "foodtitle"><h4 ><span class="badge rounded-pill bg-warning text-white">몸에 좋은 식재료</span></h4></div><br>
-
-<!-- 검색 -->
-<div id="search" >
-		<form name="frmSearch" action="/food/searchFood.do" >
-			<input name="searchWord" class="main_input" type="text"  onKeyUp="keywordSearch()"> 
-			<input type="submit" name="search" class="btn1"  value="검 색" >
-		</form>
-	</div>
-	<div id="suggest">
-        <div id="suggestList"></div>
-   </div><br>
-<!-- 검색end -->
 
 <div id = "line" class="border border-2, shadow p-3 mb-5 bg-body rounded"> <!-- 전체 테두리 -->
 <!-- 식재료 이름 -->
@@ -113,6 +108,11 @@ text-align: center;
 <!-- api 식재료  -->
 <%
 String foodresult = (String)request.getAttribute("foodresult");
+String num = (String)request.getParameter("num");
+String effect = (String)request.getParameter("fooddto.effect");
+String description = (String)request.getParameter("fooddto.description");
+
+
 JSONObject total = new JSONObject(foodresult);
 JSONObject grid = (JSONObject)total.get("Grid_20171128000000000572_1");
 JSONObject result = (JSONObject)grid.get("result");
@@ -123,7 +123,7 @@ for(int i = 0; i < row.length(); i++){
 	JSONObject onefood = (JSONObject)row.get(i);
 	//JSONObject fl = (JSONObject)onefood.get("ROW_NUM");
 	String value = (String)onefood.get("PRDLST_NM");
-	String effect = (String)onefood.get("EFFECT");
+	String effect1 = (String)onefood.get("EFFECT");
 	String purchase = (String)onefood.get("PURCHASE_MTH");
 	String cook = (String)onefood.get("COOK_MTH");
 	String trt = (String)onefood.get("TRT_MTH");
@@ -137,22 +137,27 @@ for(int i = 0; i < row.length(); i++){
 <div id = "inline">
 <%= purchase %><br>
 <%=cook%><br>
-<%=trt %><br>
-<h4><span class="badge rounded-pill bg-secondary">효능</span></h4>
-<%= effect %>
+<%=trt %><br><br>
+<h4 id = effect><span class="badge rounded-pill bg-secondary">효능 </span></h4><br>
+<%= effect1 %>
 </div>
 <%
 }
 %>
 
+
 <!-- DB 식재료 설명, 효능 -->
 <div id = "dbline">
-<p>${fooddto.description }</p><br><br> <!-- 식재료 설명 -->
-<h4><span class="badge rounded-pill bg-secondary">효능</span></h4>
-<p>${fooddto.effect }</p> <!-- 식재료 효능 --> 
+<c:choose> 
+<c:when test= "${not empty fooddto.description}"> 
+<p>${fooddto.description }</p><br> <!-- db 식재료 설명 -->
+<h4 id = effect><span class="badge rounded-pill bg-secondary">효능</span></h4><br>
+<p>${fooddto.effect }</p> <!-- db 식재료 효능 -->
+</c:when> 
+</c:choose> 
 </div>
 </div>
-
+<div id="foodReview1" ></div><br>
 <br>
 <br>
 <br>

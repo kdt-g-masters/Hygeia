@@ -9,12 +9,12 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import edu.kdt.hygeia.helpfulfood.HelpfulfoodDTO;
 import edu.kdt.hygeia.review.ReviewDTO;
 
 @Controller
@@ -85,7 +85,4 @@ public class FoodController {
 		List<ReviewDTO> list = foodservice.foodReview(title);
 		return list;
 	}
-
-
-	
 }
