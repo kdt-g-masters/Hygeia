@@ -58,13 +58,6 @@
 		<input type="submit" value="다시 테스트 하러가기" name="returntomain" /> 
 	</form> 
 	<br>
-	
-	
-	<!-- footer -->
-	<br>
-	<br>
-	<br>
-	<br>
     
     
 </body>

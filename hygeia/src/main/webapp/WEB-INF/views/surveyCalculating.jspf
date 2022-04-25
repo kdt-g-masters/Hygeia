@@ -68,9 +68,7 @@
 
 	</c:forEach> 
 
-	
-	
-	<br>
+
 	
 	<c:set var="StackBest" value="0" /> 
 			
@@ -176,9 +174,6 @@
 		<c:set var="resultName" value="건강함" /> 
 	</c:if> 
 
-	---------------
-	
-	<br> 
 	<br> 
 
 	

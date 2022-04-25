@@ -16,28 +16,11 @@
 	<br>
     <!-- 저장 결과 알림 --> 
     <section>
-      <h3>저장되었을까요...!?</h3>
+      <h3>마지막 페이지랍니다~</h3>
     </section>
-
-	<!-- a태그 예시 : naver 
-	
-	<a href="http://www.naver.com">Go Naver</a><br>
-	
-	  --> 
     
     <!-- 결과 출력 -->
-	<br>
-	<br>
-	<br>
-	<br>
-	저장에 성공했습니다 
-	<br>
-	<br>	
-	저장에 실패했습니다  
-	<br> 
-	<br> 
-	
-	---------- 
+
 	<br>
 		<c:if test="${ result == 1 }">
 				<h2>저장 성공</h2>
@@ -46,23 +29,13 @@
 		<c:if test="${ result == 0 }">
 				<h3>저장 실패</h3>
 		</c:if>
-			
-	---------- 
 	<br>
 	
 	<br>
 	<input type="button" value="홈페이지로 이동하기" name="backtoindex" onClick="location.href='http://localhost:8081/index'" />
 	<br>
 	<br> 
-	
-	
-	<!-- footer -->
-	<br>
-	<br>
-	<br>
-	<br>
 
-    
     
 </body>
 
