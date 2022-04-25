@@ -11,7 +11,7 @@
 	
 	<!-- 후기 페이징 목록 and 검색 -->
 	<select id="reviewPagingList" resultType="reviewdto">
-		select review.*, disease.name from review 
+		select review.* , disease.name from review 
 		left join disease on review.disease_cntntsSn = disease.cntntsSn 
 		<if test="keyword != null">
 			where disease.name like concat('%', #{keyword}, '%')

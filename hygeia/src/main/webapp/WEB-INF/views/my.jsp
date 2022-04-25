@@ -5,15 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>My Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
 <link href="/css/index.css" rel="stylesheet"/>
 <link href="/css/chat.css" rel="stylesheet"/>
 <link href="/css/my.css" rel="stylesheet"/>
+<link href="/css/join.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
+
+
 <script>
 	$(document).ready(function() {
 		/* 마이페이지 메뉴 underline */
@@ -33,82 +39,54 @@
 		})
 	
  		$("#tab1").on('click', function(){
-		   $("#mysurveyresult").css("display", "block");
-		   $("#myreview").css("display", "none");
-		   $("#editmyinfo").css("display", "none");
+		   	$("#mysurveyresult").css("display", "block");
+		   	$("#myreview").css("display", "none");
+		   	$("#pwCheck").css("display", "none");
+		   	$("#editmyinfo").css("display","none");
 		});
 		      
 		$("#tab2").on('click', function(){
-		   $("#mysurveyresult").css("display", "none");
-		   $("#myreview").css("display", "block");         
-		   $("#editmyinfo").css("display", "none");
+		   	$("#mysurveyresult").css("display", "none");
+		   	$("#myreview").css("display", "block");         
+		   	$("#pwCheck").css("display", "none");
+		   	$("#editmyinfo").css("display","none");
 		});
 
 		$("#tab3").on('click', function(){
-		   $("#mysurveyresult").css("display", "none");
-		   $("#myreview").css("display", "none");      
-		   $("#editmyinfo").css("display", "block");
+		   	$("#mysurveyresult").css("display", "none");
+		   	$("#myreview").css("display", "none");      
+		   	$("#pwCheck").css("display", "block");
+		   	$("#editmyinfo").css("display","none");
 		}); 
-
-
+		
+		$("#loginBtn").on('click',function(){
+			if( $("#password").val() == ${memberInfo.getPassword()}){
+				alert($("#id").val() + "님의 정보수정 페이지로 이동합니다.");
+				$("#pwCheck").css("display", "none");
+				$("#editmyinfo").css("display","block");
+			}
+			else{
+				$('#msgLoginFail').html("비밀번호가 일치하지 않습니다.<br> 다시 입력해 주세요.");
+				$('#msgLoginFail').css("visibility", "visible");
+			}
+		});
+		
 	});
 	
 </script>
 <style>
-#editmyinfo .box {
-	/* width: auto;
-	height: auto; */
-	margin: 5vh 35vw 10vh;
+#editmyinfo .box{
+	width: 40vw;
+	height: 95vh;
+	margin: 15vh auto;
 	border-radius: 2em;
 	background-color: white;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
-#confirm-info {
-	padding: 5vh 5vw;
-} 
-
-#confirm-info .col-2{
-	font-size: 1.2em;
-	height: 45px;
-	line-height: 350%;
-	text-align: center;
-	font-weight: bold;
-}
-
-input[type=text], input[type=password] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	font-size: 1em;
-	height: 45px;
-	border-radius: 30px;
-	border: 0.01em solid #EFEFEF;
-	background-color: #EFEFEF;
-	margin-top: 10px;
-}
-#editmyinfo input{
-	font-size: 1em;
-	font-weight: bold;
-} 
-#editmyinfo input[type=password]:hover, #editmyinfo input[type=password]:focus {
-	border:0.01em solid #FCA937;
-}
-#editmyinfo input:disabled {
-		background-color: #EFEFEF;
-		color : #939393;
-}	
-.row{
+.row {
 	justify-content: space-around;
 }
-#loginBtn {
-	background: linear-gradient(to left, #FCA937, #FFD37C);
-	border: 0;
-	height: 45px;
-}
-button:hover{
-	color: #FCA937;
-	background-color: transparent;
-}
+
 </style>
 </head>
 <body class="bg-color">
@@ -188,49 +166,180 @@ button:hover{
 						</div>
 						
 						<c:forEach items="${reviewlist}" var="dto">
-							<%-- <c:if test="${dto.member_id}"></c:if> --%>
-							<div class="row review-list" style="cursor: pointer;">
-									<div class="col"> ${dto.name} </div>
-									<div class="col-5 title"><a class="move" href="<c:out value='${dto.id}'/>"> ${dto.title}</a> </div>
-									<div class="col-2"> ${dto.member_id} </div> 
-									<div class="col-2"> ${dto.dateWrtn} </div> 
-									<div class="col"> ${dto.views} </div>
-							</div>
+							<c:if test="${ sessionid == dto.member_id } ">
+								<div class="row review-list" style="cursor: pointer;">
+										<div class="col"> ${dto.name} </div>
+										<div class="col-5 title"><a class="move" href="<c:out value='${dto.id}'/>"> ${dto.title}</a> </div>
+										<div class="col-2"> ${dto.member_id} </div> 
+										<div class="col-2"> ${dto.dateWrtn} </div> 
+										<div class="col"> ${dto.views} </div>
+								</div>
+							</c:if>
 						</c:forEach>
-						<div class="row review-list" style="cursor: pointer;" onclick="location.href='/';">
-								<div class="col-2">당뇨</div>
-								<div class="col-5 title">저희 어머니 당뇨병 완치했습니다.</div>
-								<div class="col-2">a</div> 
-								<div class="col-2">22.04.20</div> 
-								<div class="col">14</div>
-						</div>
-						<div class="row review-list" style="cursor: pointer;" onclick="location.href='';">
-								<div class="col-2">고지혈증</div>
-								<div class="col-5 title">저희 아버지 마늘먹고 완치했습니다.</div>
-								<div class="col-2">a</div> 
-								<div class="col-2">22.04.20</div> 
-								<div class="col">12</div>
-						</div>
 					</div>
 				</div>
 			</div>
 				
 			
 			<!-- 내 정보 수정 -->
-			<div id="editmyinfo" style="display:none">
+			<div id="pwCheck" style="display:none">
 				<div class="box">
 					<div class="row">				  
 						<div id="confirm-info" class="col-lg-12">						
-							<div class="row"><input class="form-control me-2 col" type="text" id="id" name="id" placeholder= " 아이디" value=" ${sessionid}" disabled/></div>
+							<div class="row"><input class="form-control me-2 col" type="text" id="id" name="id" value=" ${sessionid}" disabled/></div>
 							<div class="row"><input class="form-control me-2 col" type="password" id="password" name="password" placeholder=" 비밀번호"></div>						
-							<div id="msgLoginFail">올바른 비밀번호를 다시 입력해주세요.</div>
-						
+							<div id="msgLoginFail">비밀번호가 일치하지 않습니다.<br>다시 입력해주세요.</div>
+							
 							<input class="btn btn-primary col-12 mt-4 mb-2" type="button" id="loginBtn" name="loginBtn" value="내 정보 수정 하기">
 						</div>
 					</div>
 				</div>
+			</div>
 			
-
+			<%-- 비밀번호 
+				<input type="text" value = "${memberInfo.password}"><br>
+				<input type="text" value = "${memberInfo.password}"><br>
+				<input type="text" value = "${memberInfo.name}"><br>
+				<input type="text" value = "${memberInfo.birthDate}"><br>
+				<input type="text" value = "${memberInfo.phone}"><br> --%>
+			<div id="editmyinfo" style="display:none">
+			  <div class="box">
+				<div class="row">
+				  <form action="/join" method="post" class="mx-5">
+		      	  <!-- 아이디 -->
+		      	  <div class="row">
+		      	  <div class="d-flex">
+		      	  	<h5 class="inline">아이디</h5>
+		      	    <!--  <p class="sm_msg mx-2">최대 20자까지 입력 가능합니다.</p> -->
+		      	  </div>
+		      	  <div class="col-12 d-flex posRel">
+		      	  	<input type="text" id="inputMemberId" name="id" class="flex-fill" value="${memberInfo.id}" disabled />
+		      	      <div class="col-2"></div>
+		            </div>
+		            
+		            <!-- 비밀번호 -->
+	                <div class="row">
+	                  <div class="d-flex">
+	                    <h5 class="inline">비밀번호</h5>
+	                    <p class="sm_msg mx-2">영문/숫자/특수문자를 조합하여 기재하세요.</p>
+	                  </div>
+			          <div class="col-12 d-flex posRel">
+			            <input type="password" id="password_1" name="password_1" class="flex-fill" value="${memberInfo.password}" size="21" required />&nbsp;&nbsp;
+			            <!-- 비밀번호 확인 -->
+			            <input type="password" id="password" name="password" class="flex-fill" value="${memberInfo.password}" size="21" required />
+	                    <div id="pwCheck">
+		                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" id="pwAvailable">
+					        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+					        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+					      </svg>                   
+	                    </div>
+	                    <div id="pwWarning">
+					      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16" id="pwNotAvailable">
+					        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+					        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+					      </svg>                                                       
+	                    </div>		             
+			          </div>	                
+	                </div>
+	                
+		            <!-- 이름 --> 
+		            <div class="row d-flex">
+		              <h5 class="inline col-12">이름</h5>
+		              <input type="text" id="name" name="name" placeholder="이름 입력" value="${memberInfo.name}">		              	              
+		            </div>
+		            
+			        <!-- 성별, 생년월일 --> 
+			        <div class="row">
+			          <div class="col-6">
+			            <h5 class="col-12">성별</h5>
+			            <div class="col-12">
+			              <div class="btn-group gender col-12" role="group" aria-label="Basic radio toggle button group">
+			              	
+								<input type="radio" class="btn-check mainColor" name="gender" id="male" value="0" autocomplete="off" <c:if test="${memberInfo.gender eq 0}">checked</c:if> />
+				                <label class="btn btn-outline-primary" for="male">남성</label>
+				                
+				                <input type="radio" class="btn-check mainColor" name="gender" id="female" value="1" autocomplete="off" <c:if test="${memberInfo.gender eq 1}">checked</c:if>>
+				                <label class="btn btn-outline-primary" for="female">여성</label>
+			              </div>
+			            </div>		              
+			          </div>
+			          
+			          <div class="col-6">
+				        <h5 class="col-12">생년월일</h5>
+				        <div class="col-12">                        
+						  <div class="docs-datepicker">
+					        <div class="input-group">
+					          <input type="text" class="form-control docs-date" name="birthDate" aria-label="birthDate" aria-describedby="btnCal" <c:if test="${memberInfo.birthDate}">value="${memberInfo.birthDate}"</c:if><c:if test="${!memberInfo.birthDate}">placeholder="날짜 선택"</c:if> autocomplete="off">
+					          <div class="input-group-append" >
+					            <button id="btnCal" name="birthDate" type="button" class="btn btn-outline-secondary docs-datepicker-trigger" disabled>
+					              <i class="fa fa-calendar" aria-hidden="true"></i>
+					            </button>
+					          </div>
+					        </div>
+					        <div class="docs-datepicker-container"></div>
+					      </div>
+					    </div> 		            
+			          </div>		           
+			        </div>
+			        
+		            <!-- 휴대전화 -->
+		            <div class="row">
+		              <div class="d-flex">
+		                <h5 class="inline"> 휴대전화</h5>
+		                <p class="sm_msg mx-2">휴대전화 번호는 로그인 정보 분실시에 활용됩니다.</p>	               	            
+		              </div>
+		              <div class="col-12 d-flex">
+		              	<!-- 드랍다운 박스 --> 
+		                <select name="company" id="company" class="col-3">
+		                  <option value="">통신사</option>
+		                  <option value="1">SKT</option>
+		                  <option value="2">KT</option>
+		                  <option value="3">LG U+</option>
+		                  <option value="4">알뜰폰</option>
+		                </select>
+		                <!-- 연락처 텍스트 -->
+		                <input type="text" id="phone" name="phone" class="col-6 ml-2" placeholder="숫자만 입력" pattern="^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$" required />
+		                <!-- 인증번호(모달) -->   
+		                <!-- Button trigger modal -->
+		                <button type="button" id="btnCerti" class="btn text-white btn-sm btn-primary col-3 mx-2" data-bs-toggle="modal" data-bs-target="#CertificationNumber">인증번호</button>		          
+			            <!-- Modal -->
+			            <div class="modal fade" id="CertificationNumber" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+			              <div class="modal-dialog">
+			                <div class="modal-content">
+			                  <div class="modal-header">
+			                    <h5 class="modal-title" id="staticBackdropLabel">인증번호 발송</h5>
+			                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			                  </div>
+			                  <div class="modal-body">
+			                    인증번호 확인
+			                  </div>
+			                  <div class="modal-footer">
+			                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+			                  </div>
+			                </div>
+			              </div>
+			            </div>	                
+		              </div>
+		              <div class="col-12 d-flex">
+		                <!-- 인증번호 텍스트칸 -->
+		                <input type="text" name="certification" class="col-9" placeholder="6자리 인증번호를 입력하세요." size=31 pattern="[0-9]{6}" required />
+			            <!-- Button trigger modal -->
+			            <button type="button" id="btnConfirm" class="btn text-white btn-sm btn-primary col-3 mx-2" data-bs-toggle="modal" data-bs-target="#Checking">확인</button>	                
+		              </div>                	      
+	      	        </div>
+	      	         
+			        <div class="row d-flex center mt-5">         
+			            <!-- 취소 --> 
+			            <button type="button" id="btnCancel" class="btn btn-outline-primary mx-1">취소</button> 
+			            <!-- 가입하기 -->
+			            <button type="submit" id="btnSubmit" class="btn btn-primary mx-1">가입하기</button>		     
+			        </div>      	        	      	    
+		      	  </form>
+		      	  </div>
+	      		</div>
+			</div>
+			
+			
 		</section>
 	</main>
 	
