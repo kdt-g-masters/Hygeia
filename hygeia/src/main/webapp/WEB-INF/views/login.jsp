@@ -16,6 +16,15 @@
 <script src="/js/chat.js"></script>
 <script>
 	$(document).ready(function() {
+		// 쿠키 id 값 읽어오기
+		var memberId = getCookie("cookieId");
+		
+		// 저장된 아이디가 있는 경우
+		if (memberId) {
+			$("#id").val(memberId);
+			$("#chbIdSave").attr("checked", true);
+		}
+		
 		$("#loginBtn").on('click', function(){
 			$.ajax({
 				url: '/login',
@@ -32,8 +41,50 @@
 						$('#msgLoginFail').css("visibility", "visible");
 					}
 				} // function end
-			});	// ajax end		
+			});	// ajax end
+			
+			// 아이디 저장 선택 여부
+			var idChk = $("#chbIdSave").is(":checked");
+			if (idChk) {
+				setCookie("cookieId", $("#id").val(), 7);
+			}
+			else {
+				deleteCookie("cookieId");
+			}
+
 		}); // on end
+		
+		// 쿠키 값 설정
+		function setCookie(cookieName, value, exdays) {
+			var exdate = new Date(); 
+			exdate.setDate(exdate.getDate() + exdays); // 쿠키 저장 기간 
+			var cookieValue = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toGMTString()); 
+			document.cookie = cookieName + "=" + cookieValue; 
+		}
+		
+		// 쿠키 값 조회
+		function getCookie(cookieName) { 
+			cookieName = cookieName + '='; 
+			var cookieData = document.cookie; 
+			var start = cookieData.indexOf(cookieName); 
+			var cookieValue = ''; 
+			if(start != -1){ 
+				start += cookieName.length; 
+				var end = cookieData.indexOf(';', start); 
+				if (end == -1) {
+					end = cookieData.length; 
+				}
+				cookieValue = cookieData.substring(start, end); 
+			} 
+			return unescape(cookieValue); 
+		}
+		
+		// 쿠키 지우기
+		function deleteCookie(cookieName) { 
+			var expireDate = new Date(); 
+			expireDate.setDate(expireDate.getDate() - 1); 
+			document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString(); 
+		}
 		
 		//후기 작성 비로그인 시 경고창
 		let result = '<c:out value="${result}"/>';
@@ -68,7 +119,7 @@
 							
 							<input class="btn btn-primary col-12 mt-4 mb-2" type="button" id="loginBtn" name="loginBtn" value="로그인">
 							<div class="d-flex justify-content-between">
-								<div><input id="autoLogin" type="checkbox" name="autoLogin" value="자동로그인"><label for="autoLogin"> 아이디 저장</label></div>							
+								<div><input id="chbIdSave" type="checkbox" name="chbIdSave" value="아이디 저장"><label for="chbIdSave">아이디 저장</label></div>						
 								<a href="#" id="findIdPw" name="findIdPw"> 아이디 / 비밀번호 찾기 </a>						
 							</div>
 	
