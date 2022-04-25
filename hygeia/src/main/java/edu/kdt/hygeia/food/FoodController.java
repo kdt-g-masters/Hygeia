@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.kdt.hygeia.helpfulfood.HelpfulfoodDTO;
+import edu.kdt.hygeia.disease.DiseaseDTO;
 import edu.kdt.hygeia.review.ReviewDTO;
 
 @Controller
@@ -68,14 +69,12 @@ public class FoodController {
 	}
 	
 	// 검색창의 단어가 포함된 상품 제목 조회
-	@RequestMapping(value="/food/searchFood.do", method=RequestMethod.GET)
-	public ModelAndView searchFood(String searchWord, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value="/food/searchFood.do", produces={"application/json; charset=utf-8"})
+	@ResponseBody
+	public List<FoodDTO> searchFood(String searchWord, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// String viewName = (String)request.getAttribute("viewName");
 		List<FoodDTO> foodList = foodservice.searchFood(searchWord);
-		ModelAndView mv = new ModelAndView("searchFood");
-		mv.addObject("foodList", foodList);
-		mv.addObject("cnt", foodList.size());
-		return mv;
+		return foodList;
 	}
 	
 	// 식재료 리뷰
