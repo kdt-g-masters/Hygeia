@@ -13,11 +13,15 @@
 <link href="/css/index.css" rel="stylesheet"/>
 <link href="/css/chat.css" rel="stylesheet"/>
 <link href="/css/my.css" rel="stylesheet"/>
-<link href="/css/join.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
+
+<!-- datePicker -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous">
+<link rel="stylesheet" href="css/datepicker.css">
+<link rel="stylesheet" href="css/datepicker_main.css">
 
 
 <script>
@@ -58,33 +62,242 @@
 		   	$("#pwCheck").css("display", "block");
 		   	$("#editmyinfo").css("display","none");
 		}); 
+	
 		
 		$("#loginBtn").on('click',function(){
-			if( $("#password").val() == ${memberInfo.getPassword()}){
+			if( $("#password").val() == ${memberInfo.password}){
 				alert($("#id").val() + "님의 정보수정 페이지로 이동합니다.");
 				$("#pwCheck").css("display", "none");
 				$("#editmyinfo").css("display","block");
 			}
 			else{
-				$('#msgLoginFail').html("비밀번호가 일치하지 않습니다.<br> 다시 입력해 주세요.");
+				$('#msgLoginFail').html("비밀번호가 일치하지 않습니다. 다시 입력해 주세요.");
 				$('#msgLoginFail').css("visibility", "visible");
 			}
 		});
 		
+		
+		$("#password_1").focusout(function() {
+			if ($("#password_1").val() == $("#password").val()) {
+				$("#pwAvailable").css("display", "inline");
+				$("#pwNotAvailable").css("display", "none");
+				joinAvailable = true;
+			}
+			else {
+				$("#pwAvailable").css("display", "none");
+				$("#pwNotAvailable").css("display", "inline");
+				joinAvailable = false;
+			}
+		});
+		$("#password").focusout(function() {
+			if ($("#password_1").val() == $("#password").val()) {
+				$("#pwAvailable").css("display", "inline");
+				$("#pwNotAvailable").css("display", "none");
+				joinAvailable = true;
+			}
+			else {
+				$("#pwAvailable").css("display", "none");
+				$("#pwNotAvailable").css("display", "inline");
+				joinAvailable = false;
+			}
+		});
+		$("form").on('submit', pass);
+		function pass(e) {
+			if (joinAvailable == false) {
+				alert("아이디 또는 비밀번호 조건을 확인해주세요.");
+				e.preventDefault();
+			}
+			if($("#password").val().length < 5 || $("#password").val().length > 10){
+				alert("패스워드 형식을 다시 확인해주세요.");
+				e.preventDefault();
+			}
+			if(!$("#name").val().match(/[A-Z가-힣]+/)) {
+				alert("이름 형식을 다시 확인해주세요.");
+				e.preventDefault();
+			}
+
+			if(!$("#phone").val().match(/^010[0-9]{3,4}[0-9]{4}$/)) {
+				alert("전화번호 형식을 확인해주세요.");
+				e.preventDefault();
+			}				
+		}
 	});
 	
 </script>
 <style>
 #editmyinfo .box{
-	width: 40vw;
-	height: 95vh;
+	width: 35vw;
+	height: 80vh;
 	margin: 15vh auto;
+	padding: 5em;
 	border-radius: 2em;
 	background-color: white;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 .row {
 	justify-content: space-around;
+}
+
+#joinBgColor {
+	background: #FEE7C5;
+}
+
+#joinBox {
+	width: 80vw;
+	height: 95vh;
+	margin: 15vh auto;
+	border-radius: 2em;
+	background-color: white;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#leftBox {
+	width: 40vw;
+	height: 95vh;
+	border-radius: 2em 0 0 2em;
+	display: inline-block;
+	margin: 0;
+	background: linear-gradient(to left, #FCA937, #FFD37C);	
+}
+
+#rightBox {
+	width: 40vw;
+	height: 95vh;
+	border-radius: 0 2em 2em 0;	
+	display: inline-block;
+	margin: 0;
+}
+
+main h3 {
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+main h5{
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+main h2 {
+	font-weight: bold;
+}
+
+main h1, h2, h3, h4, h5 {
+	color: #4A4A4A;
+}
+
+.sm_msg{
+	color: #7f7c82;
+	font-size: 0.8em;
+	margin-bottom: 7px;
+}
+
+.inline{
+	display: inline-block;
+}
+
+input[type=text], input[type=password] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 1.1em;
+	height: 2.5em;
+	border-radius: 2em;
+	border: 0.01em solid #EFEFEF !important;
+	background-color: #EFEFEF !important;
+	margin-top: 0.1em;
+	margin-bottom: 1em;
+	padding: 0 1em;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, input[type=password]:focus {
+	border:0.01em solid #FCA937;
+}
+
+.row {
+	justify-content: space-around;
+}
+
+button:hover {
+	color: #FCA937;
+	background-color: transparent;
+}
+
+#btnCheckId, #btnCerti, #btnConfirm {
+	font-size: 1.1em;
+	height: 2.5em;	
+}
+
+#idAvailable, #pwAvailable {
+	display: none;
+	color: green;
+}
+
+#idNotAvailable, #pwNotAvailable {
+	display: none;
+	color: red;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color:#7f7c82;
+	font-size: 1.1em;
+	height: 2.5em;
+	border-radius: 30px;
+	border: 0.01em solid #7f7c82;
+	text-align: center;
+}
+
+select:hover{
+	border:0.01em solid #FCA937;
+}
+
+.gender label {
+	font-size: 1.1em;
+	margin-top: 0.3em;
+}
+
+#btnCal {
+	padding: 1em;
+}
+
+#btnSubmit {
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border: 0;
+	font-size: 1.1em;
+}
+
+#btnCancel {
+	font-size: 1.1em;
+}
+
+#company{
+	margin-right: 0.5em;
+	font-size: 1.1em;
+}
+
+#name {
+	padding: 0 1vw;
+	margin-right: 4vw;
+	margin-left: 4vw;
+}
+
+.posRel {
+	position: relative;
+}
+
+.posRel #check, #warning {
+	position: absolute;    
+    top: 0.8vh;
+    right: 8vw;
+}
+
+.posRel #pwCheck, #pwWarning {
+	position: absolute;    
+    top: 0.8vh;
+    right: 1.3vw;
 }
 
 </style>
@@ -188,7 +401,7 @@
 						<div id="confirm-info" class="col-lg-12">						
 							<div class="row"><input class="form-control me-2 col" type="text" id="id" name="id" value=" ${sessionid}" disabled/></div>
 							<div class="row"><input class="form-control me-2 col" type="password" id="password" name="password" placeholder=" 비밀번호"></div>						
-							<div id="msgLoginFail">비밀번호가 일치하지 않습니다.<br>다시 입력해주세요.</div>
+							<div id="msgLoginFail"></div>
 							
 							<input class="btn btn-primary col-12 mt-4 mb-2" type="button" id="loginBtn" name="loginBtn" value="내 정보 수정 하기">
 						</div>
@@ -196,16 +409,10 @@
 				</div>
 			</div>
 			
-			<%-- 비밀번호 
-				<input type="text" value = "${memberInfo.password}"><br>
-				<input type="text" value = "${memberInfo.password}"><br>
-				<input type="text" value = "${memberInfo.name}"><br>
-				<input type="text" value = "${memberInfo.birthDate}"><br>
-				<input type="text" value = "${memberInfo.phone}"><br> --%>
 			<div id="editmyinfo" style="display:none">
 			  <div class="box">
 				<div class="row">
-				  <form action="/join" method="post" class="mx-5">
+				  <form action="/editinfo" method="post" class="mx-5">
 		      	  <!-- 아이디 -->
 		      	  <div class="row">
 		      	  <div class="d-flex">
@@ -215,6 +422,7 @@
 		      	  <div class="col-12 d-flex posRel">
 		      	  	<input type="text" id="inputMemberId" name="id" class="flex-fill" value="${memberInfo.id}" disabled />
 		      	      <div class="col-2"></div>
+		            </div>
 		            </div>
 		            
 		            <!-- 비밀번호 -->
@@ -269,7 +477,7 @@
 				        <div class="col-12">                        
 						  <div class="docs-datepicker">
 					        <div class="input-group">
-					          <input type="text" class="form-control docs-date" name="birthDate" aria-label="birthDate" aria-describedby="btnCal" <c:if test="${memberInfo.birthDate}">value="${memberInfo.birthDate}"</c:if><c:if test="${!memberInfo.birthDate}">placeholder="날짜 선택"</c:if> autocomplete="off">
+					          <input type="text" class="form-control docs-date" name="birthDate" aria-label="birthDate" aria-describedby="btnCal" value="${memberInfo.birthDate}" autocomplete="off" placeholder="날짜 선택">
 					          <div class="input-group-append" >
 					            <button id="btnCal" name="birthDate" type="button" class="btn btn-outline-secondary docs-datepicker-trigger" disabled>
 					              <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -289,16 +497,8 @@
 		                <p class="sm_msg mx-2">휴대전화 번호는 로그인 정보 분실시에 활용됩니다.</p>	               	            
 		              </div>
 		              <div class="col-12 d-flex">
-		              	<!-- 드랍다운 박스 --> 
-		                <select name="company" id="company" class="col-3">
-		                  <option value="">통신사</option>
-		                  <option value="1">SKT</option>
-		                  <option value="2">KT</option>
-		                  <option value="3">LG U+</option>
-		                  <option value="4">알뜰폰</option>
-		                </select>
 		                <!-- 연락처 텍스트 -->
-		                <input type="text" id="phone" name="phone" class="col-6 ml-2" placeholder="숫자만 입력" pattern="^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$" required />
+		                <input type="text" id="phone" name="phone" class="col ml-2" placeholder="숫자만 입력" value="${memberInfo.phone}" pattern="^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$" required />
 		                <!-- 인증번호(모달) -->   
 		                <!-- Button trigger modal -->
 		                <button type="button" id="btnCerti" class="btn text-white btn-sm btn-primary col-3 mx-2" data-bs-toggle="modal" data-bs-target="#CertificationNumber">인증번호</button>		          
@@ -310,29 +510,17 @@
 			                    <h5 class="modal-title" id="staticBackdropLabel">인증번호 발송</h5>
 			                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			                  </div>
-			                  <div class="modal-body">
-			                    인증번호 확인
-			                  </div>
-			                  <div class="modal-footer">
-			                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
-			                  </div>
 			                </div>
 			              </div>
 			            </div>	                
-		              </div>
-		              <div class="col-12 d-flex">
-		                <!-- 인증번호 텍스트칸 -->
-		                <input type="text" name="certification" class="col-9" placeholder="6자리 인증번호를 입력하세요." size=31 pattern="[0-9]{6}" required />
-			            <!-- Button trigger modal -->
-			            <button type="button" id="btnConfirm" class="btn text-white btn-sm btn-primary col-3 mx-2" data-bs-toggle="modal" data-bs-target="#Checking">확인</button>	                
-		              </div>                	      
+		              </div>      	      
 	      	        </div>
 	      	         
 			        <div class="row d-flex center mt-5">         
 			            <!-- 취소 --> 
 			            <button type="button" id="btnCancel" class="btn btn-outline-primary mx-1">취소</button> 
 			            <!-- 가입하기 -->
-			            <button type="submit" id="btnSubmit" class="btn btn-primary mx-1">가입하기</button>		     
+			            <button type="submit" id="btnSubmit" class="btn btn-primary mx-1">수정하기</button>		     
 			        </div>      	        	      	    
 		      	  </form>
 		      	  </div>
