@@ -52,7 +52,7 @@ public class ReviewController {
 		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
 		mv.addObject("pageMaker", pageMake);
 		
-		mv.setViewName("reviewlist");
+		mv.setViewName("template4");
 		return mv;
 	}
 	
@@ -63,7 +63,7 @@ public class ReviewController {
 		int count = service.reviewCount(reviewid);
 		ReviewDTO reviewresult = service.reviewResult(reviewid);
 		mv.addObject("reviewresult", reviewresult);
-		mv.setViewName("reviewresult");
+		mv.setViewName("template5");
 		return mv;
 	}
 	
@@ -75,7 +75,7 @@ public class ReviewController {
 		String memberid = (String)session.getAttribute("memberInfo");
 		if(memberid != null) {
 			mv.addObject("memberid", memberid);
-			mv.setViewName("reviewinput");			
+			mv.setViewName("template6");			
 		}
 		else {
 			rttr.addFlashAttribute("result", "warning");
@@ -121,7 +121,7 @@ public class ReviewController {
 		ModelAndView mv = new ModelAndView();
 		ReviewDTO reviewmodify = service.reviewResult(reviewid);
 		mv.addObject("reviewmodify", reviewmodify);
-		mv.setViewName("reviewmodify");
+		mv.setViewName("template7");
 		return mv;
 	}
 	

@@ -117,7 +117,7 @@
 
 /* 병 관련 후기 */
 #review-tlb{
-    margin: 5vh 25vw 10vh;
+    margin: 5vh 20vw 10vh;
     height: 100%;
     text-align: center;
 }
@@ -145,7 +145,6 @@
 .review-list .title{
 	text-align: left;
 }
-
 </style>
 </head>
 <body class="bg-color">
@@ -165,18 +164,55 @@
 
 		String cntntssj = (String)svc.get("CNTNTSSJ");//병 이름 부분
 
-		//병 개요 부분
+		//병 개요, 내용 부분
 		JSONObject overview = null;
-		if(cntntssj.equals("골다공증")){
-			overview = (JSONObject)cntntsCl.get(1);
+		JSONObject view1 = null;
+		if(cntntssj.equals("골관절염")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(4);
 		}
-		else if(cntntssj.equals("만성폐쇄성폐질환")){
-			overview = (JSONObject)cntntsCl.get(2);
+		else if(cntntssj.equals("이상지질혈증")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(8);
+		}
+		else if(cntntssj.equals("급성 심근경색증")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(11);
+		}
+		else if(cntntssj.equals("급성 바이러스 위장관염")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(4);
+		}
+		else if(cntntssj.equals("비만")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(8);
+		}
+		else if(cntntssj.equals("고혈압")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(18);
+		}
+		else if(cntntssj.equals("당뇨병")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(26);
+		}
+		else if(cntntssj.equals("폐색성죽상동맥경화증")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(3);
+		}
+		else if(cntntssj.equals("뇌졸중")){
+			overview = (JSONObject)cntntsCl.get(0);
+			view1 = (JSONObject)cntntsCl.get(10);
+		}
+		else if(cntntssj.equals("골다공증")){
+			overview = (JSONObject)cntntsCl.get(1);
+			view1 = (JSONObject)cntntsCl.get(7);
 		}
 		else{
-			overview = (JSONObject)cntntsCl.get(0);	
+			overview = (JSONObject)cntntsCl.get(2);	
+			view1 = (JSONObject)cntntsCl.get(8);
 		}
 		String overviewcontent = (String)overview.get("CNTNTS_CL_CN");
+		String view1content = (String)view1.get("CNTNTS_CL_CN");
 		%>
 		
 		<br>
@@ -187,7 +223,12 @@
 			<div id="diseasename"><h2><%= cntntssj %></h2></div><br><br>
 			
 			<!-- 병 개요 -->
-			<div><%= overviewcontent %></div><br><br>
+			<h4><%= cntntssj %> 개요</h4>
+			<div><%= overviewcontent %></div><br>
+			
+			<!-- 병 내용 -->
+			<h4><%= cntntssj %>에 대한 내용</h4>
+			<div><%= view1content %></div><br><br>
 			
 			<!-- 병에 좋은 식재료 -->
 			<h4><%= cntntssj %> 에 좋은 식재료</h4>
