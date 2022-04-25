@@ -31,12 +31,16 @@
 }
 
 main h3 {
-	font-size: 2em;
-	font-weight: bold;	
+	font-size: 1.7em;
+	font-weight: bold;
 }
 
 main h5{
-	font-size: 1.5em;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+main h2 {
 	font-weight: bold;
 }
 
@@ -58,7 +62,7 @@ input[type=text], input[type=password] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	font-size: 1.3em;
+	font-size: 1.1em;
 	height: 2.5em;
 	border-radius: 2em;
 	border: 0.01em solid #EFEFEF !important;
@@ -82,7 +86,7 @@ button:hover {
 }
 
 #btnCheckId, #btnCerti, #btnConfirm {
-	font-size: 1.3em;
+	font-size: 1.1em;
 	height: 2.5em;	
 }
 
@@ -101,7 +105,7 @@ select {
 	-moz-appearance: none;
 	appearance: none;
 	color:#7f7c82;
-	font-size: 1.3em;
+	font-size: 1.1em;
 	height: 2.5em;
 	border-radius: 30px;
 	border: 0.01em solid #7f7c82;
@@ -113,7 +117,7 @@ select:hover{
 }
 
 .gender label {
-	font-size: 1.3em;
+	font-size: 1.1em;
 	margin-top: 0.3em;
 }
 
@@ -124,16 +128,16 @@ select:hover{
 #btnSubmit {
 	background: linear-gradient(to left, #FCA937, #FFD37C);
 	border: 0;
-	font-size: 1.3em;
+	font-size: 1.1em;
 }
 
 #btnCancel {
-	font-size: 1.3em;
+	font-size: 1.1em;
 }
 
 #company{
 	margin-right: 0.5em;
-	font-size: 1.3em;
+	font-size: 1.1em;
 }
 
 #name {
