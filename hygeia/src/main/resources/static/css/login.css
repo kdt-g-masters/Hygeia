@@ -18,7 +18,7 @@ input[type=text], input[type=password] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	height: 45px;
 	border-radius: 30px;
 	border: 0.01em solid #EFEFEF;
@@ -43,12 +43,12 @@ button:hover{
 	background: linear-gradient(to left, #FCA937, #FFD37C);
 	border: 0;
 	height: 45px;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 #findIdPw {
 	color: #FCA937;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 #findIdPw:hover {
@@ -86,12 +86,12 @@ button:hover{
 }
 
 main h2 {
-	font-size: 2.5em;
+	font-size: 2.3em;
 }
 
 main h3 {
 	color: #4A4A4A;
-	font-size: 2em;
+	font-size: 1.7em;
 	font-weight: bold;		
 }
 
@@ -106,7 +106,7 @@ main h3 {
 	height: 45px;
 	background-color: transparent;
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 #joinBtn:hover {
@@ -120,7 +120,7 @@ main h3 {
 
 label {
 	color: #939393;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 /* 체크박스 색상 변경 */

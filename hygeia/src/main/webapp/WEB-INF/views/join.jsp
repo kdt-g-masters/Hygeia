@@ -36,10 +36,11 @@
 		  <div class="container d-flex h-100">
 		    <div class="row mx-auto text-center justify-content-center align-self-center" id="msgWelcome">
 			  <div class="col-12 py-1">
-			    <h2 class="text-white">Hygeia</h2>
+			  	<img src='/images/logo_white.png' id="joinPageLogo" class="col-6"></img><br>
+			    <h2 class="text-white">HYGEIA</h2>
 			  </div>
 			  <div class="col-12 py-1">
-			    <p class="sm_msg text-white">히기에이아 (Hygeia)<br>그리스 신화에 나오는 건강의 신<br>건강한 삶에 필요한 지혜를 가르쳐준다.</p>
+			    <p class="sm_msg text-white">히기에이아<br>그리스 신화에 나오는 건강의 신<br>건강한 삶에 필요한 지혜를 가르쳐준다.</p>
 			  </div>
 			</div>		
 		  </div>

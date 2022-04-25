@@ -30,8 +30,11 @@
 	      <div id="leftBox" class="col-lg-6">
 	        <div class="row text-center d-flex h-100">
 	          <div class="justify-content-center align-self-center">
-	            <img src='/images/temp.jpg' id="resultPageLogo"></img><br>
-	            <a id="btnGoLogin" class="btn btn-outline-primary col-12 my-3" href="/login">로그인 하기</a>	          
+	            <a href="/">
+	              <img src='/images/logo_white.png' class="col-8"></img>
+	            </a>
+	            <br>
+	            <a id="btnGoLogin" class="btn btn-outline-primary col-8 my-4" href="/login">로그인 하기</a>	          
 	          </div>
 	        </div>
 	      </div>
@@ -46,7 +49,7 @@
 					  </svg>				    
 				    </div>			
 					<h2 class="my-2">회원 가입이 완료되었습니다.</h2>
-					<p class="my-2">로그인 후 내 건강 정보, 후기 서비스를 이용 가능합니다.</p>
+					<p class="my-2">로그인 후 내 건강 정보, 후기 서비스를 이용할 수 있습니다.</p>
 				  </c:if>
 				  <c:if test="${ result == 0 }">
 					<h3>회원가입 실패</h3>
