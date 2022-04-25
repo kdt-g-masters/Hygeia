@@ -148,6 +148,14 @@ public class ReviewController {
 		return rcmcheck;
 	}
 	
+	//후기 추천 기능
+	@RequestMapping(value = "/reviewrcmview", produces = {"application/json;charset=utf-8"})
+	@ResponseBody
+	public int reviewrcmview(RcmDTO dto) throws Exception{
+		int rcmcheck = service.rcmCheck(dto);
+		return rcmcheck;
+	}
+	
 	//후기 추천수
 	@RequestMapping(value = "/rcmcount", produces = {"application/json;charset=utf-8"})
 	@ResponseBody
