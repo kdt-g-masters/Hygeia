@@ -2,12 +2,6 @@
     pageEncoding="UTF-8"%>
 	
 	<br>
-	페이지 포함 영역 
-	<br>
-	
-	<br>
-	
-	<br>
 	(확인용) 현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. 
 	<br> 
 	
