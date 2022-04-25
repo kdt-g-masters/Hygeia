@@ -14,26 +14,29 @@
 <body>
 
 	<%@ include file="surveyCalculating.jspf" %> 	
+	
+	최고 스택 : <c:out value="${StackBest}" /> <br><br> 
 
     <!-- 의심 성인병 (value 를 DB 로 부터 받아오기) --> 
     <section>
-      <h3>(의심 성인병 이름)</h3>
+      <h3>	의심 성인병 : <c:out value="${resultName}" /> </h3>
     </section>
 
     <form action="/survey3" method="post" > <br> 
     <!-- 설명 (value 를 DB 로 부터 받아오기) -->
 	<br>
-	<br>
-	<br>
-	<br>
-	당신의 의심 증상은...
-	<br>
-	(의심 성인병 이름) 
-	<br> 
-	<br>
-	추천 식재료 : 
-	<br> 
-	(추천 식재료 리스트) 
+	
+	추천 식재료 : <br> 
+	<c:forEach items="${info}" var="dto2" varStatus="number">
+
+		<c:if test="${dto2.name == resultName}"> 
+			<c:out value="${dto2.no}" /> <br> 
+			<c:out value="${dto2.name}" /> <br> 
+			<c:out value="${dto2.foods}" /> <br> 
+		</c:if> 	
+
+	</c:forEach> 
+
 	<br>
 	<br> 
 	<br>

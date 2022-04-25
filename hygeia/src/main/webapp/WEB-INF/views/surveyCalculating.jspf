@@ -68,21 +68,6 @@
 
 	</c:forEach> 
 
-	- 스택 테스트 <br><br>  
-	고혈압 스택 : <c:out value="${Stack1}" /> <br> 
-	뇌졸중 스택 : <c:out value="${Stack2}" /> <br> 
-	당뇨병 스택 : <c:out value="${Stack3}" /> <br> 
-	동맥경화증 스택 : <c:out value="${Stack4}" /> <br> 
-	급성심근경색 스택 : <c:out value="${Stack5}" /> <br> 
-	위염 스택 : <c:out value="${Stack6}" /> <br> 
-	비만 스택 : <c:out value="${Stack7}" /> <br> 
-	만성폐쇄성 폐질환 스택 : <c:out value="${Stack8}" /> <br> 
-	골다공증 스택 : <c:out value="${Stack9}" /> <br> 
-	관절염 스택 : <c:out value="${Stack10}" /> <br> 
-	고지혈증 스택 : <c:out value="${Stack11}" /> <br> 
-	건강함 스택 : <c:out value="${Stack12}" /> <br> 
-	
-	<br>
 	
 	
 	<br>
@@ -137,10 +122,6 @@
 	<c:if test = "${Stack12 > StackBest}" > 
 		<c:set var="StackBest" value="${Stack12}" />
 	</c:if> 
-
-
-	최고 스택 : <c:out value="${StackBest}" /> <br><br> 
-	
 	
 	
 	
@@ -195,47 +176,8 @@
 		<c:set var="resultName" value="건강함" /> 
 	</c:if> 
 
-
-	의심 성인병 : <c:out value="${resultName}" /> 
-	<br>
-	<br> 
-	
-	<br> 
-	----- 
-	<br> 
-	<br> 
-	
-	- 식재료 로딩 테스트 <br><br>  
-	
-	고혈압 추천 식재료 : <br> 
-	<c:forEach items="${info}" var="dto2" varStatus="number">
-
-		<c:if test="${dto2.name == '고혈압'}"> 
-			<c:out value="${dto2.no}" /> <br> 
-			<c:out value="${dto2.name}" /> <br> 
-			<c:out value="${dto2.foods}" /> <br> 
-		</c:if> 	
-
-	</c:forEach> 
-	
-	<br>
-	<br> 
-	추천 식재료 : <br> 
-	<c:forEach items="${info}" var="dto2" varStatus="number">
-
-		<c:if test="${dto2.name == resultName}"> 
-			<c:out value="${dto2.no}" /> <br> 
-			<c:out value="${dto2.name}" /> <br> 
-			<c:out value="${dto2.foods}" /> <br> 
-		</c:if> 	
-
-	</c:forEach> 
-
-	
-	<br> 
-	
-	
 	---------------
+	
 	<br> 
 	<br> 
 
