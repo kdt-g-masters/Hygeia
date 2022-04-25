@@ -72,11 +72,6 @@ button:hover {
 	height: 2.5em;	
 }
 
-#resultPageLogo {
-	width: 20vw;
-	height: 20vh;
-}
-
 #btnGoLogin {
 	color: white;
 	border: 0.15em solid white;

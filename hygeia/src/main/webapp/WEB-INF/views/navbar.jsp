@@ -22,8 +22,8 @@
 	  <div class="container-fluid">
 		  <div class="d-flex justify-content-start">			
 		    <a class="navbar-brand " href="/">
-		    	<img src="/images/logo_sm.png" width="10%">	    	
-		    	<b>Hygeia</b>
+		    	<img src="/images/logo_white.png">    	
+		    	<b>HYGEIA</b>
 		    </a>	  	
 		  </div>
 	      <div class="navbar-expand" id="navbarsExample01">

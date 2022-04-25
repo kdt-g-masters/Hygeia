@@ -10,3 +10,11 @@ svg {
 .nav-item:hover {
 	background-color: #E6890A;
 }
+
+.navbar-brand img {
+	width: 2vw;
+}
+
+.nav-item a, .navbar-brand {
+	font-size: 1.2em;
+}
