@@ -14,7 +14,7 @@
 	<c:set var="Stack11" value="0" /> 
 	<c:set var="Stack12" value="0" /> 
 
-	<br>
+
 	
 	<c:forEach items="${result}" var="dto" varStatus="number">
 

@@ -1058,6 +1058,32 @@ public class SurveyController {
 			return mv;
 		}
 	
+	// 다시 테스트하기 
+	@RequestMapping(value="/survey0", method=RequestMethod.POST)
+		public ModelAndView surveyAction0(SurveyDTO dto) {
+		
+		// surveycalc 테이블 reset
+		service.resetTable();
+		
+		ModelAndView mv0 = new ModelAndView();
+		mv0.setViewName("surveyMain");
+		return mv0;
+		
+	}
+	
+	// 마지막 페이지로 이동하기 
+	@RequestMapping(value="/surveynext", method=RequestMethod.POST)
+		public ModelAndView surveyActionNext(SurveyDTO dto) { 
+		
+		// surveycalc 테이블 reset
+		service.resetTable();
+		
+		ModelAndView mv0 = new ModelAndView();
+		mv0.setViewName("surveyResultResult");
+		return mv0;
+		
+	}
+	
 	
 	
 	// 마지막 페이지 호출 

@@ -34,14 +34,17 @@
 	<input type="submit" name="startbtn" value=">     테스트 시작하기" />
 	</form> 
 	
+	<br>
+	<input type="button" value="홈페이지로 이동하기" name="backtoindex" onClick="location.href='http://localhost:8081/index'" />
+	<br>
+	<br> 
+	
 	<!-- footer -->
 	<br>
 	<br>
 	<br>
 	<br>
-	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://localhost:8081/index'" />
-	<br>
-	<br>
+
     
     
 </body>

@@ -149,13 +149,18 @@
 	---------- 
 	<br>
 	
+	<br>
+	<form action="/surveynext" method="POST" > 
+		<input type="submit" value="설문 그만하기" name="gotofinal" />  
+	</form>
+	<br>
+	
 	<!-- footer -->
 	<br>
 	<br>
 	<br>
-	<input type="button" value="made by Hygeia" name="backtomain" onClick="location.href='http://localhost:8081/index'" />
 	<br>
-	<br>
+
     
     
 </body>
