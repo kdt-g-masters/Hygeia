@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 	
 	<br>
-	(확인용) 현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. 
+	&nbsp;(확인용) 현재 페이지는, <c:out value="${survey.no}" />페이지 입니다. 
 	<br> 
 	
 	<br>
@@ -10,7 +10,7 @@
 	
 	<br> 
 	<!-- 질문 --> 
-	<c:out value="${survey.question}" /> 
+	&nbsp;<c:out value="${survey.question}" /> 
 	<br> 
 	<br> 
 	
@@ -19,7 +19,7 @@
 	<br> 
 	<!-- 답변 1 -->
 	<form method="POST" action="/survey7a"> 
-		<input type="submit" name="nextbtn7a" value="<c:out value="${survey.answer1}" />" />
+		&nbsp;<input type="submit" name="nextbtn7a" value="<c:out value="${survey.answer1}" />" />
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -27,7 +27,7 @@
 	<br>
 	<!-- 답변 2 -->
 	<form method="POST" action="/survey7b"> 
-		<input type="submit" name="nextbtn7b" value="<c:out value="${survey.answer2}" />" />
+		&nbsp;<input type="submit" name="nextbtn7b" value="<c:out value="${survey.answer2}" />" />
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -35,7 +35,7 @@
 	<br>
 	<!-- 답변 3 -->
 	<form method="POST" action="/survey7c"> 
-		<input type="submit" name="nextbtn7c" value="<c:out value="${survey.answer3}" />" />
+		&nbsp;<input type="submit" name="nextbtn7c" value="<c:out value="${survey.answer3}" />" />
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -43,7 +43,7 @@
 	<br>
 	<!-- 답변 4 -->
 	<form method="POST" action="/survey7d"> 
-		<input type="submit" name="nextbtn7d" value="<c:out value="${survey.answer4}" />" />
+		&nbsp;<input type="submit" name="nextbtn7d" value="<c:out value="${survey.answer4}" />" />
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -51,7 +51,7 @@
 	<br>
 	<!-- 답변 5 -->
 	<form method="POST" action="/survey7e"> 
-		<input type="submit" name="nextbtn7e" value="<c:out value="${survey.answer5}" />" />
+		&nbsp;<input type="submit" name="nextbtn7e" value="<c:out value="${survey.answer5}" />" />
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 

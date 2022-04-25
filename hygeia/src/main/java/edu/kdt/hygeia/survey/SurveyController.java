@@ -34,9 +34,12 @@ public class SurveyController {
 	
 	
 	
-	// 설문 페이지로 이동 및 문항들 호출 (원본) 
+	// 설문 페이지로 이동 및 문항들 호출 (원본)(시작) 
 	@RequestMapping(value="/survey1", method=RequestMethod.POST)
 		public ModelAndView surveyAction20(SurveyDTO dto) { 
+		
+			// surveycalc 테이블 reset
+			service.resetTable(); 
 		
 			// 설문 문항 로딩 
 			SurveyDTO surveydata = service.loadSheet(dto);
