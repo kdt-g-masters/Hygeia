@@ -141,8 +141,11 @@
 			<input type="button" value="공감" id="rcm">
 			<div id="rcm_count"></div>
 			
+			<% session.getAttribute("memberInfo"); %>
 			<!-- 후기 수정으로 이동 -->
-			<button type="button" id="modify_btn" class="btn btn-primary" onclick="location.href='/reviewmodify?reviewid=${ param.reviewid }'">후기 수정</button>
+			<c:if test="${ reviewresult.member_id == memberInfo }">
+				<button type="button" id="modify_btn" class="btn btn-primary" onclick="location.href='/reviewmodify?reviewid=${ param.reviewid }'">후기 수정</button>
+			</c:if>
 			
 			<!-- 후기 목록으로 이동 -->
 			<button type="button" class="btn btn-primary" onclick="location.href='/reviewlist'">목록 보기</button>
