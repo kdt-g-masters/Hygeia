@@ -133,12 +133,13 @@
 			</div>	
 			
 		<!-- 검색 -->
-		<div class="search_wrap">
+		<%@ include file="search.jsp" %>
+	<%-- 	<div class="search_wrap">
 			<div class="search_area">
 				<input type="text" name="keyword" value="${ pageMaker.cri.keyword }">
 				<button>검색</button>
 			</div>
-		</div>
+		</div> --%>
 		<div id="review">
 		<div id="target"></div>
 		<!-- 후기 작성 페이지 링크 -->
