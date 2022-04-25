@@ -45,7 +45,7 @@
 						<a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">
 							<div class="card shadow diseaseCardStyle">
 								<div class="card-body cardTextCenter">
-									<h5 class="card-title"> ${ dto.name } </h5>
+									<h4 class="card-title"> ${ dto.name } </h4>
 								</div>
 							</div>
 						</a>

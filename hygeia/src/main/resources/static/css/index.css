@@ -242,6 +242,7 @@ a{
   -webkit-transform: translateY(100px);
           transform: translateY(100px);
 }
+
 .floating-container .float-element .material-icons {
   vertical-align: middle;
   font-size: 16px;
@@ -250,6 +251,7 @@ a{
 .bg-color {
 	background: #eaedf2;
 }
+
 main {
 	margin-top: 70px;
 	width: 100%;	
@@ -297,13 +299,16 @@ main {
 }
 
 .diseaseCardStyle {
-	width: 130px;
-	height: 130px;
+	width: 10em;
+	height: 10em;
+	display: inline-block;
+	margin: 1em;
+	border-radius: 2em;
 }
 
 .cardTextCenter {
 	text-align: center;
-	margin-top: 35px;
+	margin-top: 3em;
 }
 
 .mainTitle {
@@ -311,11 +316,33 @@ main {
 	margin-top: 50px;
 }
 
+#title {
+	width: 15vw;
+	padding: 20px auto;
+	border: black;
+	background: #FCA937;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+.mainTitle a {
+	font-weight: bold;
+	font-size: large;
+}
+
+.mainTitle .btn {
+	text-align: center;
+	line-height: 100%;
+	margin: 0.3em 0.2em;
+	padding: 1em;
+}
+
 #myInfo {
-	padding: 10px 50px;
+	padding: 1em 2em;
 	border: black;
 	background-color: black;
 	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+	font-size: 1.3em;
 }
 
 /* 텍스트 전환 효과 */
@@ -388,4 +415,30 @@ main .texts span {
   91%,100%{
     top: -13.5em;
   }
+}
+
+#diseaseListCards {
+	overflow-x: hidden;
+	width: 61vw;
+	height: 30vh;
+	white-space: nowrap;
+	margin: 0 auto;
+}
+
+#diseaseListCards a {
+	display: inline;
+}
+
+.inline {
+	height: 100%;
+	display: inline;
+}
+
+#box2 h4, #diseaseList h4 {
+	font-weight: bold;
+}
+
+.arrow {
+	border: 0;
+	background: transparent;
 }

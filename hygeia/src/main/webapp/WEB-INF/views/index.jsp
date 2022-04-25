@@ -14,9 +14,17 @@
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
 <script>
-	$(document).ready(function() {
+	$(document).ready(function() {		
+		$("#arrowLeft").on("click", function() {
+			var scrollX = $("#diseaseListCards").scrollLeft();
+			$("#diseaseListCards").scrollLeft(scrollX - 150);
+		}); // on end
 		
-	});
+		$("#arrowRight").on("click", function() {		
+			var scrollX = $("#diseaseListCards").scrollLeft();
+			$("#diseaseListCards").scrollLeft(scrollX + 150);
+		}); // on end
+	}); // ready end
 </script>
 </head>
 <body class="bg-color">
@@ -37,17 +45,28 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12 mainTitle">
-				<input class="btn btn-primary" type="button" value="생활습관병"/>
+				<button id="arrowLeft" class="arrow" type="button">
+				  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#FCA937" class="bi bi-caret-left" viewBox="0 0 16 16">
+				    <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+				  </svg>					
+				</button>	
+				<a id="title" class="btn btn-primary btn-lg" type="button">생활습관병</a>
+				<button id="arrowRight" class="arrow" type="button">
+				  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#FCA937" class="bi bi-caret-right" viewBox="0 0 16 16">
+				    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+				  </svg>				
+				</button>
+				
 			</div>			
 		</div>
 		<div id="box2">
-			<div class="row">
+			<div id="diseaseListCards">
 			  <c:forEach items="${ diseaseList }" var="dto">
-				  <div class="col-sm-4 col-md-2 col-lg-2 col-xl-1">
+				  <div class="inline" >
 				    <a href="/diseaseresult?cntntsSn=${ dto.cntntsSn }">
 				      <div class="card shadow diseaseCardStyle">				      
 				        <div class="card-body cardTextCenter">
-				          <h5 class="card-title"> ${ dto.name } </h5>
+				          <h4 class="card-title"> ${ dto.name } </h5>
 				        </div>				      
 				      </div>
 				    </a>
@@ -58,7 +77,7 @@
 		<div class="row">
 			<div class="col-lg-12 mainTitle">
 				<a id="myInfo" class="btn btn-primary btn-lg" href="survey1">					
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
 					  <path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/>
 					</svg>
 					내 건강 정보 확인하기					
