@@ -22,7 +22,7 @@
 	
 	<a href="http://www.naver.com">Go Naver</a><br>
 	
-	  --> 
+	  -->
     
     <!-- 시작 버튼 -->
 	<br>
