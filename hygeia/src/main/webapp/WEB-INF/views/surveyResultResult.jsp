@@ -18,12 +18,6 @@
     <section>
       <h3>마지막 페이지랍니다~</h3>
     </section>
-
-	<!-- a태그 예시 : naver 
-	
-	<a href="http://www.naver.com">Go Naver</a><br>
-	
-	  --> 
     
     <!-- 결과 출력 -->
 
@@ -41,15 +35,7 @@
 	<input type="button" value="홈페이지로 이동하기" name="backtoindex" onClick="location.href='http://localhost:8081/index'" />
 	<br>
 	<br> 
-	
-	
-	<!-- footer -->
-	<br>
-	<br>
-	<br>
-	<br>
 
-    
     
 </body>
 
