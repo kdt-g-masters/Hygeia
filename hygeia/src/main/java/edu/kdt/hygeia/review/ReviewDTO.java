@@ -34,6 +34,11 @@ public class ReviewDTO {
 	public String getDateWrtn() {
 		return dateWrtn;
 	}
+	public String getSubDateWrtn() {
+		String date = getDateWrtn();
+		String a = date.substring(0, 10);
+		return a;
+	}
 	public void setDateWrtn(String dateWrtn) {
 		this.dateWrtn = dateWrtn;
 	}

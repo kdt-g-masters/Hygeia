@@ -197,7 +197,7 @@
 								<div class="col"> ${ dto.name } </div>
 								<div class="col-5 title"> ${ dto.title } </div>
 								<div class="col-2"> ${ dto.member_id } </div>
-								<div class="col-2"> ${ dto.dateWrtn } </div>
+								<div class="col-2"> ${ dto.getSubDateWrtn() } </div>
 								<div class="col"> ${ dto.views } </div>
 							</div>
 						</a>
