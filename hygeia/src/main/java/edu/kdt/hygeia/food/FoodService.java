@@ -22,5 +22,5 @@ public interface FoodService {
 	
 	//리뷰 리스트
 	public List<ReviewDTO> foodReview(String title);
-
+	
 }

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import edu.kdt.hygeia.helpfulfood.HelpfulfoodDTO;
 import edu.kdt.hygeia.review.ReviewDTO;
 
 @Service("foodservice")
@@ -66,9 +67,11 @@ public class FoodServiceImpl implements FoodService {
 		List<FoodDTO> foodList = dao.selectFoodBySearchWord("%"+searchWord+"%");
 		return foodList;
 	}
-	
+
 	@Override
 	public List<ReviewDTO> foodReview(String title) {
+		//List<ReviewDTO> list =  dao.foodReview(title);
+		//System.out.println(list);
 		return dao.foodReview(title);
 	}
 	

@@ -35,7 +35,7 @@ public class FoodDTO {
 	public String getEffect() {
 		return effect;
 	}
-	public void setEffect(String effect) {
+	public void setEffect1(String effect) {
 		this.effect = effect;
 	}
 	
