@@ -80,7 +80,10 @@
 			//form태그 내부 데이터 서버 전송
 			moveForm.submit();
 		});//on click end	
-		
+		$(".search_word").on("click",function{
+			
+		});
+		/* 페이지 이동시 스크롤 다운 */
 		 $(".scroll_move").click(function(event){     
              event.preventDefault();
              $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
@@ -89,6 +92,17 @@
 	});//ready end
 </script>
 <style type="text/css">
+	.search_wrap{
+		margin: 0 auto;
+		text-align: center;
+	}
+	.search_word{
+		border: 2px solid #FCA937;
+		
+	}
+	.search_word{
+		padding-left: 10px;
+	}
 	.pageInfo{
 		list-style: none;
 		display: inline-block;
@@ -100,6 +114,7 @@
 		padding: 10px 20px;
 		font-weight: 500;
 	}
+	
 	.pageInfo_wrap{ 
 		text-align: center;
 	}
@@ -129,17 +144,19 @@
 	
 		<section id="section">
 			<div class="col-lg-12 mainTitle">
-				<a id="title" class="btn btn-primary btn-lg" href="">만병통치 후기</a>
+				<span id="title" class="btn btn-primary btn-lg" href="">만병통치 후기</span>
 			</div>	
 			
 		<!-- 검색 -->
-		<%@ include file="search.jsp" %>
-	<%-- 	<div class="search_wrap">
+		<div class="search_wrap">
 			<div class="search_area">
-				<input type="text" name="keyword" value="${ pageMaker.cri.keyword }">
+				<input type="text" class="c" name="keyword" placeholder=" 병 명을 입력하세요." "${ pageMaker.cri.keyword }">
 				<button>검색</button>
 			</div>
-		</div> --%>
+		</div>
+		<br>
+		
+		<!-- 후기 작성 페이지 링크 -->
 		<div id="review">
 		<div id="target"></div>
 		<!-- 후기 작성 페이지 링크 -->
@@ -153,25 +170,26 @@
 		</div>
 	
 		<!-- 후기 목록 -->
-		
 		<div id="review-tlb">
 			<div class="container">
 				<div class="row first">
-						<div class="col-2">병 명</div>
+						<div class="col">병 명</div>
 						<div class="col-5">제 목</div>
 						<div class="col-2">작성자</div> 
 						<div class="col-2">일 자</div> 
 						<div class="col">조회수</div>
 				</div>
-				<c:forEach items="${reviewlist}" var="dto">
-					<div class="row review-list" style="cursor: pointer;">
-							<div class="col"> ${dto.name} </div>
-							<div class="col-5 title"><a class="move" href="<c:out value='${dto.id}'/>"> ${dto.title}</a> </div>
-							<div class="col-2"> ${dto.member_id} </div> 
-							<div class="col-2"> ${dto.dateWrtn} </div> 
-							<div class="col"> ${dto.views} </div>
-					</div>
-				</c:forEach>
+				<c:forEach items="${ reviewlist }" var="dto">
+						<a class="move" href="<c:out value= '${ dto.id }'/>">
+							<div class="row review-list" style="cursor: pointer;">
+								<div class="col"> ${ dto.name } </div>
+								<div class="col-5 title"> ${ dto.title } </div>
+								<div class="col-2"> ${ dto.member_id } </div>
+								<div class="col-2"> ${ dto.getSubDateWrtn() } </div>
+								<div class="col"> ${ dto.views } </div>
+							</div>
+						</a>
+					</c:forEach>
 			</div>
 		</div>
 				

@@ -137,37 +137,6 @@
 .row {
 	justify-content: space-around;
 }
-
-#joinBgColor {
-	background: #FEE7C5;
-}
-
-#joinBox {
-	width: 80vw;
-	height: 95vh;
-	margin: 15vh auto;
-	border-radius: 2em;
-	background-color: white;
-	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-#leftBox {
-	width: 40vw;
-	height: 95vh;
-	border-radius: 2em 0 0 2em;
-	display: inline-block;
-	margin: 0;
-	background: linear-gradient(to left, #FCA937, #FFD37C);	
-}
-
-#rightBox {
-	width: 40vw;
-	height: 95vh;
-	border-radius: 0 2em 2em 0;	
-	display: inline-block;
-	margin: 0;
-}
-
 main h3 {
 	font-size: 1.7em;
 	font-weight: bold;
@@ -196,7 +165,7 @@ main h1, h2, h3, h4, h5 {
 	display: inline-block;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=radio] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -210,7 +179,7 @@ input[type=text], input[type=password] {
 	padding: 0 1em;
 }
 
-input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, input[type=password]:focus {
+input[type=text]:hover, input[type=password]:hover, input[type=radio]:hover, input[type=text]:focus, input[type=password]:focus {
 	border:0.01em solid #FCA937;
 }
 
@@ -412,7 +381,7 @@ select:hover{
 			<div id="editmyinfo" style="display:none">
 			  <div class="box">
 				<div class="row">
-				  <form action="/editinfo" method="post" class="mx-5">
+				  <form action="/editinfo" method="post">
 		      	  <!-- 아이디 -->
 		      	  <div class="row">
 		      	  <div class="d-flex">
@@ -421,7 +390,6 @@ select:hover{
 		      	  </div>
 		      	  <div class="col-12 d-flex posRel">
 		      	  	<input type="text" id="inputMemberId" name="id" class="flex-fill" value="${memberInfo.id}" disabled />
-		      	      <div class="col-2"></div>
 		            </div>
 		            </div>
 		            
@@ -452,8 +420,8 @@ select:hover{
 	                
 		            <!-- 이름 --> 
 		            <div class="row d-flex">
-		              <h5 class="inline col-12">이름</h5>
-		              <input type="text" id="name" name="name" placeholder="이름 입력" value="${memberInfo.name}">		              	              
+		              <h5 class="inline">이름</h5>
+		              	<input type="text" id="name" name="name" placeholder="이름 입력" value="${memberInfo.name}">
 		            </div>
 		            
 			        <!-- 성별, 생년월일 --> 
@@ -462,11 +430,10 @@ select:hover{
 			            <h5 class="col-12">성별</h5>
 			            <div class="col-12">
 			              <div class="btn-group gender col-12" role="group" aria-label="Basic radio toggle button group">
-			              	
 								<input type="radio" class="btn-check mainColor" name="gender" id="male" value="0" autocomplete="off" <c:if test="${memberInfo.gender eq 0}">checked</c:if> />
 				                <label class="btn btn-outline-primary" for="male">남성</label>
 				                
-				                <input type="radio" class="btn-check mainColor" name="gender" id="female" value="1" autocomplete="off" <c:if test="${memberInfo.gender eq 1}">checked</c:if>>
+				                <input type="radio" class="btn-check mainColor" name="gender" id="female" value="1" autocomplete="off" <c:if test="${memberInfo.gender eq 1}">checked</c:if> />
 				                <label class="btn btn-outline-primary" for="female">여성</label>
 			              </div>
 			            </div>		              
