@@ -5,12 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>설문조사-결과 결과 페이지</title>
+<title>설문조사-결과 페이지</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link href="/css/index.css" rel="stylesheet"/>
 <link href="/css/chat.css" rel="stylesheet"/>
+<link href="/css/my.css" rel="stylesheet"/>
+
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
 <script>
@@ -24,11 +26,10 @@
 	<%@ include file="navbar.jsp" %>
 	
 	<main>
-	
-	
 		<br>
 	    <!-- 소개 --> 
 	    <section>
+	    
 	      <h3>&nbsp;마지막 페이지랍니다~</h3>
 	    </section>
 	    

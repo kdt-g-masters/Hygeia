@@ -40,7 +40,7 @@
 			link.addEventListener("click", (e) => {	
 				indicator(e.target);			
 			})
-		})
+		});
 	
  		$("#tab1").on('click', function(){
 		   	$("#mysurveyresult").css("display", "block");
