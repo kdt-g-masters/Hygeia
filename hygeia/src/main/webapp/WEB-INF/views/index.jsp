@@ -17,12 +17,12 @@
 	$(document).ready(function() {		
 		$("#arrowLeft").on("click", function() {
 			var scrollX = $("#diseaseListCards").scrollLeft();
-			$("#diseaseListCards").scrollLeft(scrollX - 150);
+			$("#diseaseListCards").scrollLeft(scrollX + 150);
 		}); // on end
 		
 		$("#arrowRight").on("click", function() {		
 			var scrollX = $("#diseaseListCards").scrollLeft();
-			$("#diseaseListCards").scrollLeft(scrollX + 150);
+			$("#diseaseListCards").scrollLeft(scrollX - 150);
 		}); // on end
 	}); // ready end
 </script>
