@@ -25,7 +25,7 @@
 	<!-- navbar -->
 	<%@ include file="navbar.jsp" %>
 	
-	<main>	
+	<main> 
 		
 	<br>
     <!-- 제목  --> 

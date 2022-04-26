@@ -66,6 +66,7 @@ input[type="submit"]{
 <body class="bg-color">
 	<!-- navbar -->
 	<%@ include file="navbar.jsp" %>
+	
 	<%@ include file="surveyCalculating.jspf" %>
 	
 	<main>
