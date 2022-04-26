@@ -11,6 +11,8 @@ public interface SurveyDAO {
 	
 	public int saveResult(SurveyDTO dto); 
 	
+	public int updateResult(SurveyDTO dto);
+	
 	public SurveyDTO loadSheet(SurveyDTO dto);
 	
 	public int changeValue1(SurveyDTO dto); 
@@ -42,5 +44,7 @@ public interface SurveyDAO {
 	public List<SurveyDTO> loadInfo(); 
 	
 	public int resetTable();
+	
+	public int checkDuplication(SurveyDTO dto);
 
 }

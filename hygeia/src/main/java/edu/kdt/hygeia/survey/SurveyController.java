@@ -1025,9 +1025,9 @@ public class SurveyController {
 		// 설문 결과값 로딩 
 		List<SurveyDTO> resultdata = service.loadResult(); 
 		
-		// 병 정보 로딩 
+		// 병-추천식재료 정보 로딩 
 		List<SurveyDTO> infodata = service.loadInfo();
-		
+				
 		// 설문 결과값 전송 
 		ModelAndView mv4 = new ModelAndView();	
 		mv4.addObject("result", resultdata);
@@ -1049,16 +1049,27 @@ public class SurveyController {
 	@RequestMapping(value="/survey3", method=RequestMethod.POST)
 		public ModelAndView surveyAction10(SurveyDTO dto) { 
 		
-			// 아이디 및 의심 성인병 저장 
-			int row = service.saveResult(dto); 
-			
 			// surveycalc 테이블 reset 
-			service.resetTable();
-		
+			service.resetTable();		
+
+			// DB에 아이디 존재 여부 확인 
+			int checkdata = service.checkDuplication(dto); 
+			
 			ModelAndView mv = new ModelAndView();
-			mv.addObject("result", row);
-			mv.setViewName("surveyResultResult"); 
+			
+			// 아이디 및 의심성인병 저장 
+			if (checkdata == 0) { 
+				int row = service.saveResult(dto);
+				mv.addObject("result", row);
+			}
+			if (checkdata != 0) {
+				int row2 = service.updateResult(dto);
+				mv.addObject("result2", row2); 
+			}
+			
+			mv.setViewName("surveyResultResult");
 			return mv;
+		
 		}
 	
 	// 다시 테스트하기 

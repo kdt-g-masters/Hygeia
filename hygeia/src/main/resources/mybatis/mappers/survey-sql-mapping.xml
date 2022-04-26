@@ -5,10 +5,14 @@
 <mapper namespace="edu.kdt.hygeia.survey.SurveyDAO" >
 	
 	<!-- 데이터 저장 임시기능 -->
-	<!-- surveyresult 테이블의 컬럼 member_id 와 컬럼 resultDisease 에다가, 값을 넣는다 --> 
+	<!-- surveyresult 테이블의 컬럼 member_id 와 컬럼 resultDisease 에다가, 받아온 데이터 값을 넣는다 --> 
 	<insert id="saveResult" parameterType="SurveyDTO"> 
 		insert into surveyresult values(#{member_id}, #{resultDisease}) 
 	</insert> 
+	
+	<update id="updateResult" parameterType="SurveyDTO">
+		update surveyresult set member_id = #{member_id}, resultDisease = #{resultDisease} where member_id = #{member_id}
+	</update>
 	
 	<!-- 설문 내용 불러오기 기능 -->
 	<select id="loadSheet" parameterType="SurveyDTO" resultType="SurveyDTO"> 
@@ -78,5 +82,10 @@
 	<update id="resetTable" >
 		update surveycalc set value = 0 
 	</update>
+	
+	<!-- DB에 아이디 존재 여부 확인 -->
+	<select id="checkDuplication" resultType="int">
+		select count(*) from surveyresult where member_id=#{member_id} 
+	</select>
 	
 </mapper>

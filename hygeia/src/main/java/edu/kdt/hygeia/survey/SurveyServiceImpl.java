@@ -20,6 +20,11 @@ public class SurveyServiceImpl implements SurveyService {
 		return dao.saveResult(dto);
 	};
 	
+	@Override
+	public int updateResult(SurveyDTO dto) { 
+		return dao.updateResult(dto);
+	}
+	
 	
 	
 	@Override
@@ -108,6 +113,13 @@ public class SurveyServiceImpl implements SurveyService {
 	@Override
 	public int resetTable() { 
 		return dao.resetTable();
+	};
+	
+	
+	
+	@Override 
+	public int checkDuplication(SurveyDTO dto) { 
+		return dao.checkDuplication(dto);
 	};
 
 }

@@ -35,11 +35,19 @@
 	    <!-- 결과 출력 -->
 		<br>
 			<c:if test="${ result == 1 }">
-					&nbsp;<h2>저장 성공</h2>
+					<h2>&nbsp;저장 성공</h2>
 			</c:if>
 				
 			<c:if test="${ result == 0 }">
-					&nbsp;<h3>저장 실패</h3>
+					<h3>&nbsp;저장 실패</h3>
+			</c:if>
+			
+			<c:if test="${ result2 == 1 }">
+					<h2>&nbsp;저장 성공</h2>
+			</c:if>
+
+			<c:if test="${ result2 == 0 }">
+					<h2>&nbsp;저장 실패</h2>
 			</c:if>
 		<br>
 		

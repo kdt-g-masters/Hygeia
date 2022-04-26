@@ -8,8 +8,11 @@ public interface SurveyService {
 	// !!!
 	// !!!!!!!!!!!!!!!!
 	
-	// 설문 결과 저장 
+	// 설문 결과 저장 (insert) 
 	public int saveResult(SurveyDTO dto); 
+	
+	// 설문 결과 저장 2 (update) 
+	public int updateResult(SurveyDTO dto);
 	
 	// 설문 문항 불러오기 
 	public SurveyDTO loadSheet(SurveyDTO dto);
@@ -47,6 +50,8 @@ public interface SurveyService {
 	
 	// 연산 테이블 초기화 
 	public int resetTable();
-
+	
+	// DB 에 아이디 존재 여부 확인 
+	public int checkDuplication(SurveyDTO dto);
 		
 }
