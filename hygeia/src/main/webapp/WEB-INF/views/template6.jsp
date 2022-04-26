@@ -118,8 +118,8 @@ input[type=text], input[type=file]{
 						<!-- 작성자 아이디 -->
 						<div class="col memberid">${ memberid }</div><input type="text" name="member_id" value="${ memberid }" hidden>
 						<!-- 현재 날짜 -->
-						<%Date now = new Date(); SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); %>
-						<div class="col-2"><%=formatter.format(now) %></div><input type="text" name="dateWrtn" value="<%=formatter.format(now) %>" hidden>
+						<%Date now = new Date(); SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-MM-dd"); %>
+						<div class="col-2"><%=formatter1.format(now) %></div><input type="text" name="dateWrtn" value="<%=formatter.format(now) %>" hidden>
 					</div>
 				</div>
 				<!-- 후기 내용 -->

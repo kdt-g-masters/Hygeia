@@ -94,7 +94,7 @@ input[type=text]{
 					<!-- 작성자 아이디 -->
 					<div class="col memberid">${ reviewmodify.member_id }</div>
 					<!-- 수정 전 날짜 -->
-					<div class="col-2">${ reviewmodify.dateWrtn }</div>
+					<div class="col-2">${ reviewmodify.getSubDateWrtn() }</div>
 				</div>
 				<!-- 후기 내용 -->
 				<textarea rows="40" cols="100" name="content" style="width: 100%; border-radius: 30px; padding: 15px;">${ reviewmodify.content }</textarea>

@@ -141,7 +141,7 @@
 					<div class="col"> ${ reviewresult.name } </div>
 					<div class="col-5 title"> ${ reviewresult.title } </div>
 					<div class="col-2"> ${ reviewresult.member_id } </div>
-					<div class="col-2"> ${ reviewresult.dateWrtn } </div>
+					<div class="col-2"> ${ reviewresult.getSubDateWrtn() } </div>
 					<div class="col"> ${ reviewresult.views } </div>
 				</div>
 			</div>
@@ -150,7 +150,10 @@
 			<div id="contents" class="border border-2, shadow p-3 mb-5 bg-body">
 				<!-- 이미지 파일 -->
 				<c:if test="${ !empty reviewresult.filename }">
-					<img src="/images/reviewfiles/${ reviewresult.filename }">
+					<div style="text-align: center;">
+						<img style="width: 50%; height: 50%;" src="/images/reviewfiles/${ reviewresult.filename }">
+					</div>
+					<br>
 				</c:if>
 				
 				<!-- 내용 -->
@@ -162,7 +165,7 @@
 		
 		<div id="contents1">
 			<!-- 공감 기능 -->
-			<div id="rcm"></div>
+			<div id="rcm" style="cursor: pointer;"></div>
 			<div id="rcm_count"></div>
 			
 			<% session.getAttribute("memberInfo"); %>
