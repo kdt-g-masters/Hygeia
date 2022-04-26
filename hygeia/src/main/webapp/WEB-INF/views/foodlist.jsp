@@ -83,8 +83,15 @@ border: 1px solid red; */
 </style>
 </head>
 <body class="bg-color">
+<<<<<<< HEAD
 <!-- navbar -->
 	<%@ include file="navbar.jsp" %>
+=======
+
+	<!-- navbar -->
+	<%@ include file="navbar.jsp" %>
+	<br>
+>>>>>>> devHH
 	
 	<main>
 	  <br>

@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>설문조사-시작페이지</title>
@@ -19,12 +20,12 @@
 	});
 </script>
 </head>
+
 <body class="bg-color">
 	<!-- navbar -->
 	<%@ include file="navbar.jsp" %>
 	
-	<main>	
-
+	<main> 
 		
 	<br>
     <!-- 제목  --> 
