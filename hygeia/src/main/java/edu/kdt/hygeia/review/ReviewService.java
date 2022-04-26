@@ -3,8 +3,8 @@ package edu.kdt.hygeia.review;
 import java.util.List;
 
 public interface ReviewService {
-	//전체 후기 목록
-	public List<ReviewDTO> reviewList();
+	//my페이지 후기 목록
+	public List<ReviewDTO> reviewList(String memberid);
 	
 	//후기 페이징 목록
 	public List<ReviewDTO> reviewPagingList(Criteria cri);

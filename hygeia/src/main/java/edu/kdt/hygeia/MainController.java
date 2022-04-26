@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -84,7 +85,13 @@ public class MainController {
 		return text;
 	}
 	@RequestMapping("/my")
-	public void my() {}
+	public String my(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String memberid = (String)session.getAttribute("sessionid");
+		List<ReviewDTO> list = reviewService.reviewList(memberid);
+		model.addAttribute("reviewlist", list);
+		return "my2";
+	}
 	
 	
 	/* 나중에 삭제할 것 */

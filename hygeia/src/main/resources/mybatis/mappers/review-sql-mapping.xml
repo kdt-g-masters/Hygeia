@@ -6,7 +6,7 @@
 	
 	<!-- 전체 후기 목록 -->
 	<select id="reviewList" resultType="reviewdto">
-		select * from review order by dateWrtn desc
+		select * from review where member_id=#{member_id} order by dateWrtn desc
 	</select>
 	
 	<!-- 후기 페이징 목록 and 검색 -->
