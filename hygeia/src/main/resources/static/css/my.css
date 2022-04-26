@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 #section .mainTitle .btn{
 	text-align: center;
 	line-height: 100%;
@@ -203,4 +204,45 @@ button:hover{
 }
 #editmyinfo h5 {
 	font-size: 1.2em;
+}
+/* survey css */
+#surveyresult .box{
+    background-color: white;
+    border-radius: 30px;
+    margin: 5vh 25vw 10vh;
+    padding: 5em;
+    height: 100%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+	line-height: 150%	
+}
+#surveyresult .title{
+	text-align: left;
+}
+.result-text input[type="text"]{
+	text-align: center;
+	font-size: 1.2em;	
+	font-weight: bold;
+	width: 200px;
+}
+input[type="submit"], .final-result-next input[type="button"]{
+	width: 50%;
+	font-size: 1.2em;
+}
+#saveresult{
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border: 0;
+	font-size: 1.2em;
+}
+
+#returntomain , #gotofinal {
+	font-size: 1.2em;
+}
+#returntomain:hover , #gotofinal:hover{
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border-color: rgba(255, 255, 255, 0.3);
+}
+.final-result-next .btn-outline-primary:hover {
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border-color: transparent;
 }

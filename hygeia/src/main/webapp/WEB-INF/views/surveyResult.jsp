@@ -22,42 +22,6 @@
 	});
 </script>
 <style>
-#surveyresult .box{
-    background-color: white;
-    border-radius: 30px;
-    margin: 5vh 25vw 10vh;
-    padding: 5em;
-    height: 100%;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-	line-height: 150%	
-}
-#surveyresult .title{
-	text-align: left;
-}
-input[type="text"]{
-	text-align: center;
-	font-size: 1.2em;	
-	font-weight: bold;
-	width: 200px;
-}
-input[type="submit"]{
-	width: 100%;
-	
-}
-#saveresult{
-	background: linear-gradient(to left, #FCA937, #FFD37C);
-	border: 0;
-	font-size: 1.1em;
-}
-
-#returntomain , #gotofinal {
-	font-size: 1.1em;
-}
-#returntomain:hover , #gotofinal:hover{
-	background: linear-gradient(to left, #FCA937, #FFD37C);
-	border-color: rgba(255, 255, 255, 0.3);
-}
 </style>
 </head>
 
@@ -77,7 +41,7 @@ input[type="submit"]{
 			<hr>
 			<br><br>
 			<h4>의심 성인병</h4><br>  <h1><span class="underline"><b><c:out value="${resultName}" /></b></span></h1>
-			<br><br><br>
+			<br>
 			
 			<!-- 추천 식재료 : infodisease테이블 접근-->
 			<c:forEach items="${info}" var="dto2" varStatus="number">
@@ -97,9 +61,12 @@ input[type="submit"]{
 				</c:forEach> 
 				<br><br><hr><br>
 			    <form action="/survey3" method="post" > 
-			    	<h5>
-					<input type="text" value="${memberInfo.id}" name="member_id" readonly /> 님의 의심 성인병 진단 결과 : 
-					<input type="text" value="<c:out value='${resultName}'/> " name="resultDisease" readonly/> </h5><br>
+			    	<div class="result-text">
+				    	<h5>
+							<input type="text" value="${memberInfo.id}" name="member_id" readonly /> 님의 의심 성인병 진단 결과 : 
+							<input type="text" value="<c:out value='${resultName}'/> " name="resultDisease" readonly/> 
+						</h5>
+					</div><br><br><br>
 					
 					<input type="submit" id="saveresult" class="btn btn-primary mx-1" value="결과 저장하기" name="saveresult" /> <br> 
 				</form> 

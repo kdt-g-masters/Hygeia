@@ -20,6 +20,8 @@
 
 	});
 </script>
+<style>
+</style>
 </head>
 <body class="bg-color">
 	<!-- navbar -->
@@ -28,40 +30,44 @@
 	<main>
 		<br>
 	    <!-- 소개 --> 
-	    <section>
-	    
-	      <h3>&nbsp;마지막 페이지랍니다~</h3>
+	    <section id="section">
+	      <div id="surveyresult">
+	      	<div class="box">
+	          <!-- 결과 출력 -->
+	          <br>
+					<c:if test="${ result == 1 }">
+							<h2>&nbsp;${memberInfo.id}님의 건강 진단 결과가 정상적으로 저장되었습니다.</h2>
+					</c:if>
+						
+					<c:if test="${ result == 0 }">
+							<h3>&nbsp;${memberInfo.id}님의 건강 진단 결과를 저장하는데 실패하였습니다.</h3>
+					</c:if>
+					
+					<c:if test="${ result2 == 1 }">
+							<h2>&nbsp;${memberInfo.id}님의 건강 진단 결과가 정상적으로 저장되었습니다.</h2>
+					</c:if>
+		
+					<c:if test="${ result2 == 0 }">
+							<h2>&nbsp;${memberInfo.id}님의 건강 진단 결과를 저장하는데 실패하였습니다.</h2>
+					</c:if>
+				<br><br><br>
+				
+				<!-- 성인병 목록 페이지로 이동 -->  
+				<div class="final-result-next">
+					<input type="button" class="btn btn-outline-primary mx-1" value="생활습관병 메뉴로 이동" name="gotodiseaselist" onClick="location.href= 'http://localhost:8081/diseaselist' " /> 
+					<br> 
+					
+					<!-- 홈페이지로 이동 -->
+					<br>
+					&nbsp;<input type="button" class="btn btn-outline-primary mx-1" value="홈으로 이동" name="backtoindex" onClick="location.href='http://localhost:8081/index'" />
+				</div>
+				<br>
+				<br>
+	        </div>
+	      </div>
 	    </section>
 	    
-	    <!-- 결과 출력 -->
-		<br>
-			<c:if test="${ result == 1 }">
-					<h2>&nbsp;저장 성공</h2>
-			</c:if>
-				
-			<c:if test="${ result == 0 }">
-					<h3>&nbsp;저장 실패</h3>
-			</c:if>
-			
-			<c:if test="${ result2 == 1 }">
-					<h2>&nbsp;저장 성공</h2>
-			</c:if>
-
-			<c:if test="${ result2 == 0 }">
-					<h2>&nbsp;저장 실패</h2>
-			</c:if>
-		<br>
-		
-		<!-- 성인병 목록 페이지로 이동 --> 
-		<br> 
-		&nbsp;<input type="button" value="성인병 목록 페이지로 이동하기" name="gotodiseaselist" onClick="location.href= 'http://localhost:8081/diseaselist' " /> 
-		<br> 
-		
-		<!-- 홈페이지로 이동 -->
-		<br>
-		&nbsp;<input type="button" value="홈페이지로 이동하기" name="backtoindex" onClick="location.href='http://localhost:8081/index'" />
-		<br>
-		<br> 	
+	     	
 		
 		
 	</main>
