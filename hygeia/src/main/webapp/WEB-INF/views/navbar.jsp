@@ -35,7 +35,14 @@
 	            <a class="nav-link active" href="foodlist">식재료</a>
 	          </li>
 	          <li class="nav-item">
-	            <a class="nav-link active" href="survey1">내 건강 정보</a>
+	          	<c:choose>
+		          <c:when test="${isLogOn == true and not empty memberInfo }">
+					<a class="nav-link active" href="/survey1">내 건강 정보</a>
+				  </c:when> 
+			      <c:otherwise> 
+					<a class="nav-link active" href="/login">내 건강 정보</a>
+				  </c:otherwise> 
+	            </c:choose>
 	          </li>
 	          <li class="nav-item">
 	            <a class="nav-link active" href="reviewlist">후기</a>
