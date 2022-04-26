@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link href="/css/index.css" rel="stylesheet"/>
 <link href="/css/chat.css" rel="stylesheet"/>
+<link href="/css/my.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
 <script>
@@ -24,15 +25,18 @@
 	<%@ include file="navbar.jsp" %>
 	
 	<main>
-	
-
-		<br>
-			<form method="POST" action="/surveyC"> 
-				&nbsp;<input type="submit" name="nextbtnC" value="결과 확인 하기" /> 
-			</form> 
-		<br>
-		
-			
+		<section id="section">
+			<div id="surveyresult">
+				<div class="box">
+					<img src="/images/logo_orange.png" class="lg-logo"><br><br><br>
+					<form method="POST" action="/surveyC"> 
+						<div class="wannaresult">
+							<input type="submit" class="btn btn-primary btn-lg" name="nextbtnC" value="결과 확인 하기" /> 
+						</div>
+					</form> 
+				</div>
+			</div>
+		</section>
 	</main>
 	
 	<!-- chatbot -->

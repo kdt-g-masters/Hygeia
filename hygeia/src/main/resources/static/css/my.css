@@ -9,8 +9,8 @@
 #section .btn{
 	text-align: center;
 	line-height: 100%;
-	margin: 0.3em 0.1em;
-	padding: 0.5em 0.6em;
+	margin: 0.3em 0.2em;
+	padding: 0.5em;
 }
 
 #section{
@@ -227,16 +227,16 @@ button:hover{
 }
 input[type="submit"], .final-result-next input[type="button"]{
 	width: 50%;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 #saveresult{
 	background: linear-gradient(to left, #FCA937, #FFD37C);
 	border: 0;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
 #returntomain , #gotofinal {
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 #returntomain:hover , #gotofinal:hover{
 	background: linear-gradient(to left, #FCA937, #FFD37C);
@@ -245,4 +245,13 @@ input[type="submit"], .final-result-next input[type="button"]{
 .final-result-next .btn-outline-primary:hover {
 	background: linear-gradient(to left, #FCA937, #FFD37C);
 	border-color: transparent;
+}
+#section .wannaresult .btn{
+	padding: 1em;
+	background: linear-gradient(to left, #FCA937, #FFD37C);
+	border: 0;
+	font-size: 1.3em;
+}	
+.box .lg-logo{
+	width: 10vw;
 }
