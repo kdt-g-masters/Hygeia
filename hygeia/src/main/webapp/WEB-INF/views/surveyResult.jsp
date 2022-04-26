@@ -65,6 +65,7 @@ input[type="submit"]{
 	<!-- navbar -->
 	<%@ include file="navbar.jsp" %>
 	<%@ include file="surveyCalculating.jspf" %>
+	
 	<main>
 	
 	<section id="section">
