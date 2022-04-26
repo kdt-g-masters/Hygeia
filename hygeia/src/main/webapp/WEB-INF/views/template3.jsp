@@ -17,21 +17,10 @@
 <script src="/js/chat.js"></script>
 <script>
 	$(document).ready(function() {
-		//현재 페이지의 url에서 param값 받아오기 $.urlParam('변수') param 변수의 값 받아온다.
-		$.urlParam = function(name){
-		    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
-		    if(results == null){
-		    	return null;
-		    }
-		    else{
-			    return results[1] || 0;		    	
-		    }
-		}
-		
 		//병 후기 목록 보여주기
 		$.ajax({
 			url: '<%=request.getContextPath()%>/diseasereview', 
-			data: { 'disease_cntntsSn': $.urlParam('cntntsSn') }, 
+			data: { 'disease_cntntsSn': ${ param.cntntsSn } }, 
 			dataType: 'json', 
 			success: function (list) {
 				var review = "<div id='review'><div id='review-tlb'><div class='container'>";
@@ -51,7 +40,7 @@
 		//병에 좋은 식재료 리스트
 		$.ajax({
 			url: '<%=request.getContextPath()%>/helpfulfoodlist', 
-			data: { 'disease_cntntsSn': $.urlParam('cntntsSn') }, 
+			data: { 'disease_cntntsSn': ${ param.cntntsSn } }, 
 			dataType: 'json', 
 			success: function (list) {
 				var helpfulfood = "<div id='outlist'>";

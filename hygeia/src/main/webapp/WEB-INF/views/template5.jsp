@@ -15,24 +15,13 @@
 <script src="/js/chat.js"></script>
 <script>
 	$(document).ready(function() {
-		//현재 페이지의 url에서 param값 받아오기 $.urlParam('변수') param 변수의 값 받아온다.
-		$.urlParam = function(name){
-		    var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
-		    if(results == null){
-		    	return null;
-		    }
-		    else{
-			    return results[1] || 0;		    	
-		    }
-		}
-		
 		//세션 아이디 값 가져오기
 		var memberid = '<%= (String)session.getAttribute("memberInfo") %>';
 		
 		//후기 추천수
 		$.ajax({
 			url: '<%=request.getContextPath() %>/rcmcount', 
-			data: {'reviewid':$.urlParam('reviewid')}, 
+			data: {'reviewid':${ param.reviewid }}, 
 			dataType: 'json', 
 			success: function (rcmcount){
 				$("#rcm_count").html("<p>추천수=" + rcmcount + "</p>");
@@ -42,7 +31,7 @@
 		//하트 보여주기
 		$.ajax({
 			url: '<%=request.getContextPath() %>/reviewrcmview', 
-			data: {'review_id':$.urlParam('reviewid'), 'member_id':memberid}, 
+			data: {'review_id':${ param.reviewid }, 'member_id':memberid}, 
 			dataType: 'json', 
 			error: function () {
 				alert("에러");
@@ -72,7 +61,7 @@
 			else{
 				$.ajax({
 					url: '<%=request.getContextPath() %>/reviewrcm', 
-					data: {'review_id':$.urlParam('reviewid'), 'member_id':memberid}, 
+					data: {'review_id':${ param.reviewid }, 'member_id':memberid}, 
 					dataType: 'json', 
 					error: function () {
 						alert("에러");
