@@ -23,106 +23,104 @@
 <link rel="stylesheet" href="css/datepicker.css">
 <link rel="stylesheet" href="css/datepicker_main.css">
 
-
 <script>
-	$(document).ready(function() {
-		/* 마이페이지 메뉴 underline */
-		var marker = document.querySelector('#marker');
-		var item = document.querySelectorAll('#section nav a');
-		
-		
-		function indicator(e) {
-			marker.style.left = e.offsetLeft + 'px';
-			marker.style.width = e.offsetWidth + 'px';
-		}
-		
-		item.forEach(link => {
-			link.addEventListener("click", (e) => {	
-				indicator(e.target);			
-			})
+$(document).ready(function() {
+	/* 마이페이지 메뉴 underline */
+	var marker = document.querySelector('#marker');
+	var item = document.querySelectorAll('#section nav a');
+	
+	
+	function indicator(e) {
+		marker.style.left = e.offsetLeft + 'px';
+		marker.style.width = e.offsetWidth + 'px';
+	}
+	
+	item.forEach(link => {
+		link.addEventListener("click", (e) => {	
+			indicator(e.target);			
 		})
-	
- 		$("#tab1").on('click', function(){
-		   	$("#mysurveyresult").css("display", "block");
-		   	$("#myreview").css("display", "none");
-		   	$("#pwCheck").css("display", "none");
-		   	$("#editmyinfo").css("display","none");
-		});
-		      
-		$("#tab2").on('click', function(){
-		   	$("#mysurveyresult").css("display", "none");
-		   	$("#myreview").css("display", "block");         
-		   	$("#pwCheck").css("display", "none");
-		   	$("#editmyinfo").css("display","none");
-		});
+	})
 
-		$("#tab3").on('click', function(){
-		   	$("#mysurveyresult").css("display", "none");
-		   	$("#myreview").css("display", "none");      
-		   	$("#pwCheck").css("display", "block");
-		   	$("#editmyinfo").css("display","none");
-		}); 
-	
-		
-		$("#loginBtn").on('click',function(){
-			if( $("#password").val() == ${memberInfo.password}){
-				alert($("#id").val() + "님의 정보수정 페이지로 이동합니다.");
-				$("#pwCheck").css("display", "none");
-				$("#editmyinfo").css("display","block");
-			}
-			else{
-				$('#msgLoginFail').html("비밀번호가 일치하지 않습니다. 다시 입력해 주세요.");
-				$('#msgLoginFail').css("visibility", "visible");
-			}
-		});
-		
-		
-		$("#password_1").focusout(function() {
-			if ($("#password_1").val() == $("#password").val()) {
-				$("#pwAvailable").css("display", "inline");
-				$("#pwNotAvailable").css("display", "none");
-				joinAvailable = true;
-			}
-			else {
-				$("#pwAvailable").css("display", "none");
-				$("#pwNotAvailable").css("display", "inline");
-				joinAvailable = false;
-			}
-		});
-		$("#password").focusout(function() {
-			if ($("#password_1").val() == $("#password").val()) {
-				$("#pwAvailable").css("display", "inline");
-				$("#pwNotAvailable").css("display", "none");
-				joinAvailable = true;
-			}
-			else {
-				$("#pwAvailable").css("display", "none");
-				$("#pwNotAvailable").css("display", "inline");
-				joinAvailable = false;
-			}
-		});
-		$("form").on('submit', pass);
-		function pass(e) {
-			if (joinAvailable == false) {
-				alert("아이디 또는 비밀번호 조건을 확인해주세요.");
-				e.preventDefault();
-			}
-			if($("#password").val().length < 5 || $("#password").val().length > 10){
-				alert("패스워드 형식을 다시 확인해주세요.");
-				e.preventDefault();
-			}
-			if(!$("#name").val().match(/[A-Z가-힣]+/)) {
-				alert("이름 형식을 다시 확인해주세요.");
-				e.preventDefault();
-			}
+	$("#tab1").on('click', function(){
+	   	$("#mysurveyresult").css("display", "block");
+	   	$("#myreview").css("display", "none");
+	   	$("#pwCheck").css("display", "none");
+	   	$("#editmyinfo").css("display","none");
+	});
+	      
+	$("#tab2").on('click', function(){
+	   	$("#mysurveyresult").css("display", "none");
+	   	$("#myreview").css("display", "block");         
+	   	$("#pwCheck").css("display", "none");
+	   	$("#editmyinfo").css("display","none");
+	});
 
-			if(!$("#phone").val().match(/^010[0-9]{3,4}[0-9]{4}$/)) {
-				alert("전화번호 형식을 확인해주세요.");
-				e.preventDefault();
-			}				
+	$("#tab3").on('click', function(){
+	   	$("#mysurveyresult").css("display", "none");
+	   	$("#myreview").css("display", "none");      
+	   	$("#pwCheck").css("display", "block");
+	   	$("#editmyinfo").css("display","none");
+	}); 
+
+	
+	$("#loginBtn").on('click',function(){
+		if( $("#password").val() == ${memberInfo.password}){
+			alert($("#id").val() + "님의 정보수정 페이지로 이동합니다.");
+			$("#pwCheck").css("display", "none");
+			$("#editmyinfo").css("display","block");
+		}
+		else{
+			$('#msgLoginFail').html("비밀번호가 일치하지 않습니다. 다시 입력해 주세요.");
+			$('#msgLoginFail').css("visibility", "visible");
 		}
 	});
 	
+	
+	$("#password_1").focusout(function() {
+		if ($("#password_1").val() == $("#password").val()) {
+			$("#pwAvailable").css("display", "inline");
+			$("#pwNotAvailable").css("display", "none");
+			joinAvailable = true;
+		}
+		else {
+			$("#pwAvailable").css("display", "none");
+			$("#pwNotAvailable").css("display", "inline");
+			joinAvailable = false;
+		}
+	});
+	$("#password").focusout(function() {
+		if ($("#password_1").val() == $("#password").val()) {
+			$("#pwAvailable").css("display", "inline");
+			$("#pwNotAvailable").css("display", "none");
+			joinAvailable = true;
+		}
+		else {
+			$("#pwAvailable").css("display", "none");
+			$("#pwNotAvailable").css("display", "inline");
+			joinAvailable = false;
+		}
+	});
+	$("form").on('submit', pass);
+	function pass(e) {
+		if (joinAvailable == false) {
+			alert("아이디 또는 비밀번호 조건을 확인해주세요.");
+			e.preventDefault();
+		}
+		if($("#password").val().length < 5 || $("#password").val().length > 10){
+			alert("패스워드 형식을 다시 확인해주세요.");
+			e.preventDefault();
+		}
+		if(!$("#name").val().match(/[A-Z가-힣]+/)) {
+			alert("이름 형식을 다시 확인해주세요.");
+			e.preventDefault();
+		}
+
+		if(!$("#phone").val().match(/^010[0-9]{3,4}[0-9]{4}$/)) {
+			alert("전화번호 형식을 확인해주세요.");
+			e.preventDefault();
+		}				
+	}
+}); // ready end
 </script>
 <style>
 #editmyinfo .box{
@@ -276,7 +274,6 @@ select:hover{
 	<%@ include file="navbar.jsp" %>
 	
 	<main>
-	
 		<section id="section">
 			<div class="col-lg-12 mainTitle">
 				<a id="title" class="btn btn-primary btn-lg" href="">MY PAGE</a>
@@ -288,15 +285,17 @@ select:hover{
 				<a href="#" id="tab2">후기 관리</a>
 				<a href="#" id="tab3">내 정보 수정</a>
 			</nav>
+			
 			<!-- 내 건강 결과 메뉴  -->
 			<div id="mysurveyresult">
 				<div class="box"> 
-				<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
+					<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
 					<h4><b>${ sessionid }님 건강 진단 결과</b></h4>
 					<hr>
 					<h4>생활습관병 중 <br> 
-					<span class="underline">(병명)<%--  ${diseaseName} --%></span> 발생 가능성이 있습니다.<br> 
-					가장 효과적이고 간편하게 식재료를 활용한 식습관을 개선해보세요.</h4>
+						<span class="underline">(병명)<%--  ${diseaseName} --%></span> 발생 가능성이 있습니다.<br> 
+						가장 효과적이고 간편하게 식재료를 활용한 식습관을 개선해보세요.
+					</h4>
 					
 					<div class="content"></div>
 					
@@ -321,8 +320,7 @@ select:hover{
 							<span class="btn btn-primary md-2">시금치</span>
 						</div>
 					</div>
-				</div>
-		
+				</div>		
 		
 				<div class="col-lg-12 mainTitle">
 					<a id="myInfo" class="btn btn-primary btn-lg" href="survey1">
@@ -351,7 +349,9 @@ select:hover{
 							<c:if test="${ sessionid == dto.member_id } ">
 								<div class="row review-list" style="cursor: pointer;">
 										<div class="col"> ${dto.name} </div>
-										<div class="col-5 title"><a class="move" href="<c:out value='${dto.id}'/>"> ${dto.title}</a> </div>
+										<div class="col-5 title">
+											<a class="move" href="<c:out value='${dto.id}'/>"> ${dto.title} </a>
+										</div>
 										<div class="col-2"> ${dto.member_id} </div> 
 										<div class="col-2"> ${dto.dateWrtn} </div> 
 										<div class="col"> ${dto.views} </div>
@@ -382,19 +382,18 @@ select:hover{
 			  <div class="box">
 				<div class="row">
 				  <form action="/editinfo" method="post">
-		      	  <!-- 아이디 -->
-		      	  <div class="row">
-		      	  <div class="d-flex">
-		      	  	<h5 class="inline">아이디</h5>
-		      	    <!--  <p class="sm_msg mx-2">최대 20자까지 입력 가능합니다.</p> -->
-		      	  </div>
-		      	  <div class="col-12 d-flex posRel">
-		      	  	<input type="text" id="inputMemberId" name="id" class="flex-fill" value="${memberInfo.id}" disabled />
-		            </div>
+		      	    <!-- 아이디 -->
+		      	    <div class="row mb-2">
+		      	  	  <div class="d-flex">
+		      	  		<h5 class="inline">아이디</h5>		      	    
+		      	  	  </div>
+		      	  	  <div class="col-12 d-flex posRel">
+		      	  		<input type="text" id="inputMemberId" name="id" class="flex-fill" value="${memberInfo.id}" disabled />
+		              </div>
 		            </div>
 		            
 		            <!-- 비밀번호 -->
-	                <div class="row">
+	                <div class="row mb-2">
 	                  <div class="d-flex">
 	                    <h5 class="inline">비밀번호</h5>
 	                    <p class="sm_msg mx-2">영문/숫자/특수문자를 조합하여 기재하세요.</p>
@@ -419,22 +418,22 @@ select:hover{
 	                </div>
 	                
 		            <!-- 이름 --> 
-		            <div class="row d-flex">
-		              <h5 class="inline">이름</h5>
-		              	<input type="text" id="name" name="name" placeholder="이름 입력" value="${memberInfo.name}">
+		            <div class="row mb-2 px-2">
+		              <h5 class="col-12">이름</h5>
+		              <input type="text" id="name" name="name" placeholder="이름 입력" value="${memberInfo.name}">		         
 		            </div>
 		            
 			        <!-- 성별, 생년월일 --> 
-			        <div class="row">
-			          <div class="col-6">
+			        <div class="row mb-2">
+			          <div class="col-6 px-0">
 			            <h5 class="col-12">성별</h5>
-			            <div class="col-12">
+			            <div class="col-12 px-0">
 			              <div class="btn-group gender col-12" role="group" aria-label="Basic radio toggle button group">
-								<input type="radio" class="btn-check mainColor" name="gender" id="male" value="0" autocomplete="off" <c:if test="${memberInfo.gender eq 0}">checked</c:if> />
-				                <label class="btn btn-outline-primary" for="male">남성</label>
+							<input type="radio" class="btn-check mainColor" name="gender" id="male" value="0" autocomplete="off" <c:if test="${memberInfo.gender eq 0}">checked</c:if> />
+				            <label id="labelMale" class="btn btn-outline-primary" for="male">남성</label>
 				                
-				                <input type="radio" class="btn-check mainColor" name="gender" id="female" value="1" autocomplete="off" <c:if test="${memberInfo.gender eq 1}">checked</c:if> />
-				                <label class="btn btn-outline-primary" for="female">여성</label>
+				            <input type="radio" class="btn-check mainColor" name="gender" id="female" value="1" autocomplete="off" <c:if test="${memberInfo.gender eq 1}">checked</c:if> />
+				            <label id="labelFemale" class="btn btn-outline-primary" for="female">여성</label>
 			              </div>
 			            </div>		              
 			          </div>
@@ -458,14 +457,15 @@ select:hover{
 			        </div>
 			        
 		            <!-- 휴대전화 -->
-		            <div class="row">
+		            <div class="row my-3">
 		              <div class="d-flex">
-		                <h5 class="inline"> 휴대전화</h5>
+		                <h5 class="inline">휴대전화</h5>
 		                <p class="sm_msg mx-2">휴대전화 번호는 로그인 정보 분실시에 활용됩니다.</p>	               	            
 		              </div>
 		              <div class="col-12 d-flex">
 		                <!-- 연락처 텍스트 -->
 		                <input type="text" id="phone" name="phone" class="col ml-2" placeholder="숫자만 입력" value="${memberInfo.phone}" pattern="^[0-9]{2,3}[0-9]{3,4}[0-9]{4}$" required />
+		                
 		                <!-- 인증번호(모달) -->   
 		                <!-- Button trigger modal -->
 		                <button type="button" id="btnCerti" class="btn text-white btn-sm btn-primary col-3 mx-2" data-bs-toggle="modal" data-bs-target="#CertificationNumber">인증번호</button>		          
@@ -490,23 +490,23 @@ select:hover{
 			            <button type="submit" id="btnSubmit" class="btn btn-primary mx-1">수정하기</button>		     
 			        </div>      	        	      	    
 		      	  </form>
-		      	  </div>
-	      		</div>
+		      	</div>
+	      	  </div>
 			</div>
-			
-			
 		</section>
 	</main>
 	
 	<!-- chatbot -->
 	<div id="ch-window" style="display:none">
 		<div class="menu-bar">
-			<div class="chat-close"><span id="close">
-				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 19 19">
-		  			<path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
-		  			<path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
-				</svg>
-			</span></div>
+			<div class="chat-close">
+				<span id="close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 19 19">
+		  				<path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+		  				<path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+					</svg>
+				</span>
+			</div>
 		</div>	
 		
 		<div class="ch-input">
@@ -527,7 +527,6 @@ select:hover{
 			<div id="sound"></div>
 			<div id="record"></div>
 		</div>
-	
 	</div>
 	
 	<!-- footer -->
@@ -541,6 +540,12 @@ select:hover{
 		</svg>
 	  </div>
 	</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap@4/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://fengyuanchen.github.io/shared/google-analytics.js" crossorigin="anonymous"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/datepicker.ko-KR.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
