@@ -80,9 +80,7 @@
 			//form태그 내부 데이터 서버 전송
 			moveForm.submit();
 		});//on click end	
-		$(".search_word").on("click",function{
-			
-		});
+
 		/* 페이지 이동시 스크롤 다운 */
 		 $(".scroll_move").click(function(event){     
              event.preventDefault();
