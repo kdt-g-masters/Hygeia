@@ -16,7 +16,7 @@
 <script>
 	$(document).ready(function() {
 		//세션 아이디 값 가져오기
-		var memberid = '<%= (String)session.getAttribute("memberInfo") %>';
+		var memberid = '<%= String.valueOf(session.getAttribute("memberInfo")) %>';
 		
 		//후기 추천수
 		$.ajax({
@@ -157,9 +157,9 @@
 			<div id="rcm" style="cursor: pointer;"></div>
 			<div id="rcm_count"></div>
 			
-			<% session.getAttribute("memberInfo"); %>
+			<% session.getAttribute("sessionid"); %>
 			<!-- 후기 수정으로 이동 -->
-			<c:if test="${ reviewresult.member_id == memberInfo }">
+			<c:if test="${ reviewresult.member_id == sessionid }">
 				<button type="button" id="modify_btn" class="btn btn-primary" onclick="location.href='/reviewmodify?reviewid=${ param.reviewid }'">후기 수정</button>
 			</c:if>
 			

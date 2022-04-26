@@ -38,14 +38,10 @@ public class ReviewController {
 	
 	//후기 페이징 목록 페이지
 	@RequestMapping("/reviewlist")
-	public ModelAndView reviewPagingList(Criteria cri, HttpServletRequest request) throws Exception {
+	public ModelAndView reviewPagingList(Criteria cri) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		List<ReviewDTO> list = service.reviewPagingList(cri);
 		mv.addObject("reviewlist", list);
-		
-		HttpSession session = request.getSession();
-		String name = "b";
-		session.setAttribute("memberInfo", name);
 		
 		//페이징 인터페이스
 		int total = service.reviewTotal(cri);
@@ -72,7 +68,7 @@ public class ReviewController {
 	public ModelAndView reviewInputForm(HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HttpSession session = request.getSession();
-		String memberid = (String)session.getAttribute("memberInfo");
+		String memberid = (String)session.getAttribute("sessionid");
 		if(memberid != null) {
 			mv.addObject("memberid", memberid);
 			mv.setViewName("template6");			
