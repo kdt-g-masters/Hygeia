@@ -3,9 +3,10 @@
 		$(".floating-button").on('click', function(){
 			$("#ch-window").fadeToggle();
 			$("#close").on('click',function(){
-				$("#ch-window").fadeToggle();
+				$("#ch-window").fadeOut();
 			});
 		});
+		
 		//---입력, 대화시작 클릭시 
 		$(".ch-bnt").on('click', function(){
 				if( $("#request").val() != ""){
