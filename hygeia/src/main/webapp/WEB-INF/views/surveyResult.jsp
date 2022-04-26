@@ -29,9 +29,7 @@
     padding: 5em;
     height: 100%;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-}
-#surveyresult .box{
-	text-align: center;
+    text-align: center;
 	line-height: 150%	
 }
 #surveyresult .title{
