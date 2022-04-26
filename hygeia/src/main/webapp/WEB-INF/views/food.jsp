@@ -27,21 +27,20 @@
 			success: function (list) {			
 				let filterArr = list.filter(ele => ele.title.indexOf("${fooddto.name }")>-1);
 	 			//console.log(filterArr)
-	 			let _htmlHoogi = "" ;
+	 			//let _htmlHoogi = "" ;
 	 			let _name = "";
 	 			let _id = "";
 	 			let _time = "";
 	 			filterArr.forEach(function(v){
-	 			_htmlHoogi += "<div><a href=\"/reviewresult?reviewid=" + v.id + "\">" + v.title + v.member_id + v.dateWrtn + "</a></div><br>";
-	 			_name += "<div><a href=\"/reviewresult?reviewid=" + v.id + "\">" + v.title + "</a><div>";
-	 			_id += "<div>" + v.member_id + "</div>"
-	 			_time += "<div>" + v.dateWrtn + "</div>"
+	 			//_htmlHoogi += "<div><a href=\"/reviewresult?reviewid=" + v.id + "\">" + v.title + v.member_id + v.dateWrtn + "</a></div><br>";
+	 			_name += "<div><a id = 'a' href=\"/reviewresult?reviewid=" + v.id + "\">" + v.title + "</a></div>";
+	 			//_id += "<div><a href=\"/reviewresult?reviewid=" + v.id + "\">" + v.member_id + "</a></div>";
+	 			//_time += "<div><a href=\"/reviewresult?reviewid=" + v.id + "\">" + v.dateWrtn + "</a></div>";
 	 			});
-	 			$("#name").append(_name);
-	 			$("#id").append(_id);
-	 			$("#time").append(_time);
-	 			$("#foodReview1").append(_htmlHoogi);
-	 			
+	 			$("#name").append(_name);		 
+	 			//$("#id").append(_id);
+	 			//$("#time").append(_time);
+	 			//$("#foodReview1").html(_htmlHoogi);
 			}//success end
 		});//식재료 리뷰 ajax end		
 	});//ready end
@@ -49,14 +48,13 @@
 </script>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-</head>
+
 
 <style>
 
-a:link {color: black; text-decoration: none;}
-a:visited {color: black; text-decoration: none;}
-a:hover {color: black; text-decoration: underline;}
-
+#a{
+color: #939393;
+}
 
 #foodtitle{margin: 0 auto;
 text-align: center;
@@ -116,12 +114,23 @@ text-align: center;
 
 #reviewTitle{
 text-decoration : underline;
-text-decoration-color: #FCA937
+text-decoration-color: #FCA937;
+}
+/* 
+#time{
+background-color : red;
 }
 
+#id{
+background-color : yellow;
+}
 
-
+#name{
+background-color : blue;
+}
+ */
 </style>
+</head>
 
 <body class="bg-color">
 <!-- navbar -->
@@ -178,23 +187,22 @@ for(int i = 0; i < row.length(); i++){
 </c:when> 
 </c:choose> 
 </div>
-</div>
+<br>
+<br>
 
 <!-- 식재료 리뷰  -->
-<div id = "reviewTitle" > ${fooddto.name } 관련 후기</div><br>
+<h4 id = "reviewTitle" > ${fooddto.name } 관련 후기</h4><br>
 
-<div id = "reviewlist">
-<div id="review">
+	<div id="review">
 			<div class="container">
-				<div class="row first">
-						<div id = "name"  class="col-2"></div>
-						<div id = "id" class="col-2"></div> 
-						<div id = "time" class="col-2"></div> 
+				<div id = reviewtext class="row review-list" style="cursor: pointer;">
+					<div id = 'name' class='col'></div>
+					<!-- <div id = 'id' class='col'></div> -->
+					<!-- <div id = 'time' class='col'></div> -->
 				</div>
-			</div>
+			</div>	
 </div>
 </div>
-
 <br>
 
 </main>
