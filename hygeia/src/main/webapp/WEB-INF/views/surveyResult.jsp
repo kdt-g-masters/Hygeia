@@ -71,7 +71,7 @@ input[type="submit"]{
     <!-- 의심 성인병 (value 를 DB 로 부터 받아오기) --> 
 	    <div id="surveyresult">
 	    <div class="box"> 
-	    	<h4 class="title"><b>${ sessionid }님 건강 진단 결과</b></h4>
+	    	<h4 class="title"><b>${memberInfo.id}님 건강 진단 결과</b></h4>
 			<hr>
 			<br><br>
 			<h4>의심 성인병</h4><br>  <h1><span class="underline"><b><c:out value="${resultName}" /></b></span></h1>
