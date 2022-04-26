@@ -69,7 +69,7 @@ input[type="submit"]{
 	
 	<%@ include file="surveyCalculating.jspf" %>
 	
-	<main>
+	<main> 
 	
 	<section id="section">
     <!-- 의심 성인병 (value 를 DB 로 부터 받아오기) --> 
