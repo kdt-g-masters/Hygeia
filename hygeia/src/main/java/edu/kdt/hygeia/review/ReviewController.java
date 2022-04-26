@@ -52,7 +52,7 @@ public class ReviewController {
 		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
 		mv.addObject("pageMaker", pageMake);
 		
-		mv.setViewName("template4");
+		mv.setViewName("reviewlist");
 		return mv;
 	}
 	

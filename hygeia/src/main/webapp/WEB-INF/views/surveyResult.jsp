@@ -96,8 +96,8 @@ input[type="submit"]{
 				<br><br><hr><br>
 			    <form action="/survey3" method="post" > 
 			    	<h5>
-					<input type="text" value="${sessionid}" name="member_id" disabled /> 님의 의심 성인병 진단 결과 : 
-					<input type="text" value="<c:out value='${resultName}'/> " name="resultDisease" disabled/> </h5><br>
+					<input type="text" value="${memberInfo.id}" name="member_id" readonly /> 님의 의심 성인병 진단 결과 : 
+					<input type="text" value="<c:out value='${resultName}'/> " name="resultDisease" readonly/> </h5><br>
 					
 					<input type="submit" id="saveresult" class="btn btn-primary mx-1" value="결과 저장하기" name="saveresult" /> <br> 
 				</form> 
