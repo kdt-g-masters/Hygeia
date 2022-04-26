@@ -75,7 +75,7 @@
 	text-align: left;
 	line-height: 150%	
 }
-#mysurveyresult .box hr{
+.box hr{
 	background-color: #EA7123;
 	border: 1px solid #EA7123;
 }
