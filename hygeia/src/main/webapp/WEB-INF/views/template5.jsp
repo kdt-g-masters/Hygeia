@@ -16,7 +16,7 @@
 <script>
 	$(document).ready(function() {
 		//세션 아이디 값 가져오기
-		var memberid = '<%= String.valueOf(session.getAttribute("memberInfo")) %>';
+		var memberid = '<%= String.valueOf(session.getAttribute("sessionid")) %>';
 		
 		//후기 추천수
 		$.ajax({
