@@ -33,7 +33,6 @@
 				dataType: 'json',
 				success: function(result) {
 					if (result == '1') {
-						alert($("#id").val() + "님 환영합니다.");
 						location.replace('/');
 					}
 					else {

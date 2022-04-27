@@ -9,4 +9,5 @@ public interface MemberDAO {
 	public MemberDTO loginMember(MemberDTO dto);
 	public int joinMember(MemberDTO dto);
 	public String checkId(String id);
+	public int updateMember(MemberDTO dto);
 }

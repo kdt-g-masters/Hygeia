@@ -77,7 +77,7 @@ $(document).ready(function() {
 	
 	
 	$("#password_1").focusout(function() {
-		if ($("#password_1").val() == $("#password").val()) {
+		if ($("#password_1").val() == $("#password_2").val()) {
 			$("#pwAvailable").css("display", "inline");
 			$("#pwNotAvailable").css("display", "none");
 			joinAvailable = true;
@@ -88,8 +88,8 @@ $(document).ready(function() {
 			joinAvailable = false;
 		}
 	});
-	$("#password").focusout(function() {
-		if ($("#password_1").val() == $("#password").val()) {
+	$("#password_2").focusout(function() {
+		if ($("#password_1").val() == $("#password_2").val()) {
 			$("#pwAvailable").css("display", "inline");
 			$("#pwNotAvailable").css("display", "none");
 			joinAvailable = true;
@@ -106,7 +106,7 @@ $(document).ready(function() {
 			alert("아이디 또는 비밀번호 조건을 확인해주세요.");
 			e.preventDefault();
 		}
-		if($("#password").val().length < 5 || $("#password").val().length > 10){
+		if($("#password_2").val().length < 5 || $("#password_2").val().length > 10){
 			alert("패스워드 형식을 다시 확인해주세요.");
 			e.preventDefault();
 		}
@@ -120,6 +120,31 @@ $(document).ready(function() {
 			e.preventDefault();
 		}				
 	}
+	
+	$("#btnSubmit").on('click', function() {
+		var formData = new FormData($("#modifyForm")[0]);
+		$.ajax({
+			url: '/editinfo',
+			data: {
+				'id': $("#inputMemberId").val(),
+				'password': $("#password_2").val(),
+				'name': $("#name").val(),
+				'gender': $('input[name="gender"]:checked').val(),
+				'birthDate': $("#birthDate").val(),
+				'phone': $("#phone").val()
+			},
+			type: 'post',
+			dataType: 'json',
+			success: function(r) {
+				if (r == "1") {
+					alert("회원정보 수정이 완료되었습니다.");
+				}
+				else {
+					alert("실패");
+				}				
+			} // success end
+		}); // ajax end		
+	}); // on end
 }); // ready end
 </script>
 <style>
@@ -190,7 +215,7 @@ button:hover {
 	background-color: transparent;
 }
 
-#btnCheckId, #btnCerti, #btnConfirm {
+#btnCheckId, #btnCerti, #btnConfirm, #btnSubmit {
 	font-size: 1.1em;
 	height: 2.5em;	
 }
@@ -381,14 +406,14 @@ select:hover{
 			<div id="editmyinfo" style="display:none">
 			  <div class="box">
 				<div class="row">
-				  <form action="/editinfo" method="post">
+				  <form action="" id="modifyForm">
 		      	    <!-- 아이디 -->
 		      	    <div class="row mb-2">
 		      	  	  <div class="d-flex">
 		      	  		<h5 class="inline">아이디</h5>		      	    
 		      	  	  </div>
 		      	  	  <div class="col-12 d-flex posRel">
-		      	  		<input type="text" id="inputMemberId" name="id" class="flex-fill" value="${memberInfo.id}" disabled />
+		      	  		<input type="text" id="inputMemberId" name="id" class="flex-fill" value="${memberInfo.id}" readonly />
 		              </div>
 		            </div>
 		            
@@ -401,7 +426,7 @@ select:hover{
 			          <div class="col-12 d-flex posRel">
 			            <input type="password" id="password_1" name="password_1" class="flex-fill" value="${memberInfo.password}" size="21" required />&nbsp;&nbsp;
 			            <!-- 비밀번호 확인 -->
-			            <input type="password" id="password" name="password" class="flex-fill" value="${memberInfo.password}" size="21" required />
+			            <input type="password" id="password_2" name="password" class="flex-fill" value="${memberInfo.password}" size="21" required />
 	                    <div id="pwCheck">
 		                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" id="pwAvailable">
 					        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -443,7 +468,7 @@ select:hover{
 				        <div class="col-12">                        
 						  <div class="docs-datepicker">
 					        <div class="input-group">
-					          <input type="text" class="form-control docs-date" name="birthDate" aria-label="birthDate" aria-describedby="btnCal" value="${memberInfo.birthDate}" autocomplete="off" placeholder="날짜 선택">
+					          <input type="text" class="form-control docs-date" id="birthDate" name="birthDate" aria-label="birthDate" aria-describedby="btnCal" value="${memberInfo.birthDate}" autocomplete="off" placeholder="날짜 선택">
 					          <div class="input-group-append" >
 					            <button id="btnCal" name="birthDate" type="button" class="btn btn-outline-secondary docs-datepicker-trigger" disabled>
 					              <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -483,11 +508,9 @@ select:hover{
 		              </div>      	      
 	      	        </div>
 	      	         
-			        <div class="row d-flex center mt-5">         
-			            <!-- 취소 --> 
-			            <button type="button" id="btnCancel" class="btn btn-outline-primary mx-1">취소</button> 
-			            <!-- 가입하기 -->
-			            <button type="submit" id="btnSubmit" class="btn btn-primary mx-1">수정하기</button>		     
+			        <div class="row d-flex center mt-5">
+			            <!-- 수정하기 -->
+			            <button type="button" id="btnSubmit" class="btn btn-primary mx-1">수정하기</button>		     
 			        </div>      	        	      	    
 		      	  </form>
 		      	</div>
