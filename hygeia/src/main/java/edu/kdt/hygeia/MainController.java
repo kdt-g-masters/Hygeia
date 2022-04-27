@@ -90,9 +90,23 @@ public class MainController {
 		String memberid = (String)session.getAttribute("sessionid");
 		List<ReviewDTO> list = reviewService.reviewList(memberid);
 		model.addAttribute("reviewlist", list);
-		return "my2";
+		return "my";
 	}
 	
+	// 회원정보 수정
+	@RequestMapping(value = "/editinfo", method = RequestMethod.POST)
+	@ResponseBody
+	public int editinfo(HttpServletRequest request, MemberDTO dto) {
+		int row = memberService.updateMember(dto);
+		
+		// 수정된 회원 정보 세션에 저장
+		if (row == 1) {
+			MemberDTO loginMemberDTO = memberService.loginMember(dto);
+			HttpSession session = request.getSession();
+			session.setAttribute("memberInfo", loginMemberDTO);
+		}
+		return row;
+	}
 	
 	/* 나중에 삭제할 것 */
 	@RequestMapping(value = "/template2")
