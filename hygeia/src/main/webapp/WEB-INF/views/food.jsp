@@ -116,19 +116,11 @@ text-align: center;
 text-decoration : underline;
 text-decoration-color: #FCA937;
 }
-/* 
-#time{
-background-color : red;
-}
-
-#id{
-background-color : yellow;
-}
 
 #name{
-background-color : blue;
+line-height: 35px;
 }
- */
+
 </style>
 </head>
 
@@ -136,10 +128,13 @@ background-color : blue;
 <!-- navbar -->
 	<%@ include file="navbar.jsp" %>
 	
-	<main>
+<main>
+<!-- <div id = "foodtitle"><h4 ><span class="badge rounded-pill bg-warning text-white">몸에 좋은 식재료</span></h4></div><br> -->
 <br>
-<div id = "foodtitle"><h4 ><span class="badge rounded-pill bg-warning text-white">몸에 좋은 식재료</span></h4></div><br>
-
+	<div class="col-lg-12 mainTitle">
+			<a id="title" class="btn btn-primary btn-lg" href="">몸에 좋은 식재료</a>
+		</div>
+<br>
 <div id = "line" class="border border-2, shadow p-3 mb-5 bg-body rounded"> <!-- 전체 테두리 -->
 <!-- 식재료 이름 -->
 <div id = "foodname"><h2>${fooddto.name }</h2></div><br><br>
@@ -191,7 +186,7 @@ for(int i = 0; i < row.length(); i++){
 <br>
 
 <!-- 식재료 리뷰  -->
-<h4 id = "reviewTitle" > ${fooddto.name } 관련 후기</h4><br>
+<h4 id = "reviewTitle" > ${fooddto.name } 관련 후기</h4>
 
 	<div id="review">
 			<div class="container">
