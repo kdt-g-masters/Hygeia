@@ -40,10 +40,10 @@ public class MemberController {
 			session.setAttribute("sessionid", loginMemberDTO.getId());
 			session.setAttribute("memberInfo", loginMemberDTO);
 				
-			return "1";//{\"process\":\"정상로그인\" , \"role\":\"user\"}";	
+			return "1";	
 		}
 		else {
-			return "2";//"{\"process\":\"비정상로그인\" , \"role\":\"admin\"}";		
+			return "2";	
 		}
 	}
 	

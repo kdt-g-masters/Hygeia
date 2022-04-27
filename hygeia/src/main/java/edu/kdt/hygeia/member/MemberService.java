@@ -9,4 +9,7 @@ public interface MemberService {
 	
 	// 아이디 중복 확인
 	public boolean checkId(String id);
+	
+	// 회원정보 수정
+	public int updateMember(MemberDTO dto);
 }
