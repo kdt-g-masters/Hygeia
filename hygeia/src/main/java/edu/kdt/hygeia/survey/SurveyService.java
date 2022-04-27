@@ -4,10 +4,6 @@ import java.util.List;
 
 public interface SurveyService {
 	
-	// !!!
-	// !!!
-	// !!!!!!!!!!!!!!!!
-	
 	// 설문 결과 저장 (insert) 
 	public int saveResult(SurveyDTO dto); 
 	
@@ -53,5 +49,8 @@ public interface SurveyService {
 	
 	// DB 에 아이디 존재 여부 확인 
 	public int checkDuplication(SurveyDTO dto);
+	
+	// surveyresult 테이블에서 설문 결과 조회
+	public SurveyDTO selectMemberSurveyResult(String member_id);
 		
 }

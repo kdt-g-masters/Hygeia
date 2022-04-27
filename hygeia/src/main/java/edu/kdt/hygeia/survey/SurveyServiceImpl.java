@@ -120,6 +120,13 @@ public class SurveyServiceImpl implements SurveyService {
 	@Override 
 	public int checkDuplication(SurveyDTO dto) { 
 		return dao.checkDuplication(dto);
-	};
+	}
+
+	@Override
+	public SurveyDTO selectMemberSurveyResult(String member_id) {
+		return dao.selectMemberSurveyResult(member_id);
+	}
+	
+	
 
 }

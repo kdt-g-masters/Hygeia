@@ -46,5 +46,7 @@ public interface SurveyDAO {
 	public int resetTable();
 	
 	public int checkDuplication(SurveyDTO dto);
+	
+	public SurveyDTO selectMemberSurveyResult(String member_id);
 
 }

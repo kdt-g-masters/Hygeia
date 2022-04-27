@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -315,35 +316,38 @@ select:hover{
 			<div id="mysurveyresult">
 				<div class="box"> 
 					<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
-					<h4><b>${ sessionid }님 건강 진단 결과</b></h4>
+					<h4><b>${ memberInfo.id }님 건강 진단 결과</b></h4>
 					<hr>
 					<h4>생활습관병 중 <br> 
-						<span class="underline">(병명)<%--  ${diseaseName} --%></span> 발생 가능성이 있습니다.<br> 
+						<span class="underline"><b><c:out value="${memberResult.resultDisease}" /></b></span> 발생 가능성이 있습니다.<br> 
 						가장 효과적이고 간편하게 식재료를 활용한 식습관을 개선해보세요.
 					</h4>
 					
 					<div class="content"></div>
 					
 					<div class="rcm-food">
-						<h5>(병명)<%--  ${diseaseName} --%>에 좋은 음식들</h5>
-				   <%-- <c:foreach items="${helpfulfoodlist}" var="dto">
-						<span class="btn btn-primary md-2">
-							<a href="/food?num=${dto.foodnum}"> ${ dto.name }</a>
-						</span>
-						</c:foreach> --%>
-						<div class="foodList">
-							<span class="btn btn-primary md-2">자몽</span>
-							<span class="btn btn-primary md-2">한라봉</span>
-							<span class="btn btn-primary md-2">레몬</span>
-							<span class="btn btn-primary md-2">블루베리</span>
-							<span class="btn btn-primary md-2">생선</span>
-							<span class="btn btn-primary md-2">피스타치오</span>
-							<span class="btn btn-primary md-2">당근</span>
-							<span class="btn btn-primary md-2">토마토</span>
-							<span class="btn btn-primary md-2">브로콜리</span>
-							<span class="btn btn-primary md-2">요거트</span>
-							<span class="btn btn-primary md-2">시금치</span>
-						</div>
+						<h5><c:out value="${memberResult.resultDisease}" />에 좋은 음식들</h5>
+						<c:set var="resultDisease_temp" value="${memberResult.resultDisease}" />
+						<!-- resultDisease를 받아오면 생기는 공백 제거 -->
+						<c:set var="length" value="${fn:length(resultDisease_temp)}"/>
+    					<c:set var="resultDisease" value="${fn:substring(resultDisease_temp, 0, length - 1)}" />
+				   		
+				   		<c:forEach items="${info}" var="dto">			   				   			
+				   			<c:if test="${dto.name eq resultDisease}">
+							<%-- <span class="btn btn-primary md-2">
+								<a href="/food?num=${dto.foodnum}"> ${ dto.name }</a>
+							</span> --%>
+													
+								<div class="foodList">
+									<script>
+										 var str = "${dto.foods}";
+				     					 var list = str.split(',');
+				     					 for(var i in list)
+				      					 	document.write( '<span class="btn btn-primary md-2">'+list[i]+'</span>' );
+				    				</script>						
+								</div>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>		
 		

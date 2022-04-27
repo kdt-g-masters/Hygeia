@@ -23,6 +23,8 @@ import edu.kdt.hygeia.member.MemberDTO;
 import edu.kdt.hygeia.member.MemberService;
 import edu.kdt.hygeia.review.ReviewDTO;
 import edu.kdt.hygeia.review.ReviewService;
+import edu.kdt.hygeia.survey.SurveyDTO;
+import edu.kdt.hygeia.survey.SurveyService;
 
 @Controller
 public class MainController {
@@ -41,6 +43,10 @@ public class MainController {
 	@Autowired
 	@Qualifier("reviewservice")
 	ReviewService reviewService;
+	
+	@Autowired 
+	@Qualifier("SurveyServiceImpl") 
+	SurveyService surveyService;
 
 	// 메인 화면
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -89,7 +95,22 @@ public class MainController {
 		HttpSession session = request.getSession();
 		String memberid = (String)session.getAttribute("sessionid");
 		List<ReviewDTO> list = reviewService.reviewList(memberid);
+		
 		model.addAttribute("reviewlist", list);
+		
+		// 병-추천식재료 정보
+		List<SurveyDTO> infodata = surveyService.loadInfo();
+		
+		// 설문 결과값
+		List<SurveyDTO> resultdata = surveyService.loadResult();
+		
+		// surveyresult 설문 결과
+		SurveyDTO memberResultdata = surveyService.selectMemberSurveyResult(memberid);
+		
+		model.addAttribute("info", infodata);
+		model.addAttribute("result", resultdata);
+		model.addAttribute("memberResult", memberResultdata);
+		
 		return "my";
 	}
 	

@@ -88,4 +88,9 @@
 		select count(*) from surveyresult where member_id=#{member_id} 
 	</select>
 	
+	<!-- 건강 진단 결과 불러오기 -->
+	<select id="selectMemberSurveyResult" parameterType="String" resultType="SurveyDTO">
+		select * from surveyresult where member_id=#{member_id}
+	</select>
+	
 </mapper>
