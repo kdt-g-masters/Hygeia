@@ -52,7 +52,6 @@
 	<form method="POST" action="/survey12e"> 
 		<div class="final-result-next">
 		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn12e" value="<c:out value="${survey.answer5}" />" />
-		</div>
 	</form>
 	<br> 
 

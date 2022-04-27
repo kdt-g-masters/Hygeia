@@ -81,8 +81,14 @@
 					<input type="submit" id="returntomain" class="btn btn-outline-primary mx-1" value="다시 테스트 하기" name="returntomain" /> 
 				</form> 
 				<br>
+				<div class="comment">
+				*해당 설문지의 문항 및 결과는, 의학 지식을 참조하여 작성되었습니다. 해당 내용들에 대한 출처들은 아래에 기재되어 있습니다.<br> 
+				*설문지의 질문 증상들은, 타 요인에 의해서도 발병할 수 있습니다.<br> 
+				*해당 결과는 참조용임을 유의해주시길 바랍니다. 정확한 진단은 인근 병원에서 재검받아보시길 권장합니다. 
+				</div>
 			</div>
 			<br>
+			
 		</div>
 	    
 	

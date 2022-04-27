@@ -255,3 +255,17 @@ input[type="submit"], .final-result-next input[type="button"]{
 .box .lg-logo{
 	width: 10vw;
 }
+#section .wide-btn .btn{
+	width: 75%;
+	padding: 0.7em;
+	margin:1em;
+	font-size: 0.9em;
+}
+.comment{
+	border-radius: 1.5em;
+	background-color: #d7d7d7;
+	margin:1em;
+	padding:1em;
+	font-size: 0.5em;
+	text-align: left;
+}

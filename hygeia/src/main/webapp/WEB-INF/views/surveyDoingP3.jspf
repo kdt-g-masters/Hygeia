@@ -13,15 +13,14 @@
 
 	<br> 
 	<!-- 답변 1 -->
+	<div class="wide-btn">
 	<form method="POST" action="/survey3a"> 
 		<div class="final-result-next">
 		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn3a" value="<c:out value="${survey.answer1}" />" />
 		</div>
 		<input type="hidden" name="no" value="4" />  
 	</form>
-	<br> 
-
-	<br>
+	
 	<!-- 답변 2 -->
 	<form method="POST" action="/survey3b"> 
 		<div class="final-result-next">
@@ -29,9 +28,7 @@
 		</div>
 		<input type="hidden" name="no" value="4" />  
 	</form>
-	<br> 
 	
-	<br>
 	<!-- 답변 3 -->
 	<form method="POST" action="/survey3c"> 
 		<div class="final-result-next">
@@ -39,9 +36,7 @@
 		</div>
 		<input type="hidden" name="no" value="4" />  
 	</form>
-	<br> 
 	
-	<br>
 	<!-- 답변 4 -->
 	<form method="POST" action="/survey3d"> 
 		<div class="final-result-next">
@@ -49,9 +44,7 @@
 		</div>
 		<input type="hidden" name="no" value="4" />  
 	</form>
-	<br> 
 	
-	<br>
 	<!-- 답변 5 -->
 	<form method="POST" action="/survey3e"> 
 		<div class="final-result-next">
@@ -59,5 +52,6 @@
 		</div>
 		<input type="hidden" name="no" value="4" />  
 	</form>
+	</div>
 	<br> 
 	
