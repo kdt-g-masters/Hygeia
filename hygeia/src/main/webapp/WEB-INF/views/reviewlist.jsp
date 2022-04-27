@@ -83,16 +83,42 @@
 	});//ready end
 </script>
 <style type="text/css">
+	input[type=text]{
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		font-size: 1em;
+		height: 3.5em;
+		border-radius: 30px;
+		border: 0.2em solid #FCA937 !important;
+		background-color: #FFF !important; 
+		margin-top: 10px;
+		padding: 1em;
+	}
+	
+	input[type=text]:hover, input[type=text]:focus{
+		border: 0.2em solid #FCA937;
+	}
+	
+	.search_wrap button{
+		background-color: transparent;
+		border: 0;
+	}
+	.search_wrap button:hover {
+		color: #FCA937;
+	}
+	#searchBox {
+		position: relative;
+	}
+	#searchBox #btnSearch {
+		background: linear-gradient(to right, #FCA937, #FFD37C);
+		height: 3.5em;
+		margin-top: 10px;
+		margin-left: 0;
+	}
 	.search_wrap{
 		margin: 0 auto;
 		text-align: center;
-	}
-	.search_word{
-		border: 2px solid #FCA937;
-		
-	}
-	.search_word{
-		padding-left: 10px;
 	}
 	.pageInfo{
 		list-style: none;
@@ -134,88 +160,96 @@
 	<main>
 	
 		<section id="section">
-			<div class="col-lg-12 mainTitle">
-				<span id="title" class="btn btn-primary btn-lg" href="">만병통치 후기</span>
-			</div>	
+		<div class="col-lg-12 mainTitle">
+			<span id="title" class="btn btn-primary btn-lg" href="">만병통치 후기</span>
+		</div>
+		<br><br>
 			
 		<!-- 검색 -->
 		<div class="search_wrap">
-			<div class="search_area">
-				<input type="text" class="c" name="keyword" placeholder=" 병 명을 입력하세요." "${ pageMaker.cri.keyword }">
-				<button>검색</button>
+			<div class="row search_area justify-content-center">
+				<div id="searchBox" class="d-flex col-4">
+					<div class="input-group">
+						<input class="form-control main_input flex-fill" type="text" name="keyword" placeholder="병명을 입력하세요." value="${ pageMaker.cri.keyword }">
+						<button class="btn btn-primary" id="btnSearch">
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#FFF" class="bi bi-search" viewBox="0 0 16 16">
+								<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+							</svg>
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		<br>
 		
 		<!-- 후기 작성 페이지 링크 -->
 		<div id="review">
-		<div id="target"></div>
-		<!-- 후기 작성 페이지 링크 -->
-		<div class="write-icon">
-			<a href="/reviewinput" class="btn btn-primary">
-				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-				  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-				  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-				</svg>
-			</a>
-		</div>
+			<div id="target"></div>
+			<!-- 후기 작성 페이지 링크 -->
+			<div class="write-icon">
+				<a href="/reviewinput" class="btn btn-primary">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+					  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+					  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+					</svg>
+				</a>
+			</div>
 	
-		<!-- 후기 목록 -->
-		<div id="review-tlb">
-			<div class="container">
-				<div class="row first">
-						<div class="col">병 명</div>
-						<div class="col-5">제 목</div>
-						<div class="col-2">작성자</div> 
-						<div class="col-2">일 자</div> 
-						<div class="col">조회수</div>
-				</div>
-				<c:forEach items="${ reviewlist }" var="dto">
-						<a class="move" href="<c:out value= '${ dto.id }'/>">
-							<div class="row review-list" style="cursor: pointer;">
-								<div class="col"> ${ dto.name } </div>
-								<div class="col-5 title"> ${ dto.title } </div>
-								<div class="col-2"> ${ dto.member_id } </div>
-								<div class="col-2"> ${ dto.getSubDateWrtn() } </div>
-								<div class="col"> ${ dto.views } </div>
-							</div>
-						</a>
-					</c:forEach>
-			</div>
-		</div>
-				
-				<!-- 페이징 인터페이스 -->
-				<div class="pageInfo_wrap">
-					<div class="pageInfo_area">
-						<ul id="pageInfo" class="pageInfo">
-							
-							<!-- 이전 페이지 버튼 -->
-							<c:if test="${ pageMaker.prev }">
-								<li class="pageInfo_btn previous"><a href="${ pageMaker.startPage-1 }">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-									  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-									</svg>
-								</a></li>
-							</c:if>
-							
-							<!-- 각 번호 페이지 버튼 -->
-							<c:forEach var="num" begin="${ pageMaker.startPage }" end="${ pageMaker.endPage }">
-								<li class="pageInfo_btn ${ pageMaker.cri.pageNum == num ? "active":"" }"><a href="${ num }">${ num }</a></li>
-							</c:forEach>
-							
-							<!-- 다음 페이지 버튼 -->
-							<c:if test="${pageMaker.next}">
-								<li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-									  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-									</svg>
-								</a></li>
-							</c:if>
-						</ul>
+			<!-- 후기 목록 -->
+			<div id="review-tlb">
+				<div class="container">
+					<div class="row first">
+							<div class="col">병 명</div>
+							<div class="col-5">제 목</div>
+							<div class="col-2">작성자</div> 
+							<div class="col-2">일 자</div> 
+							<div class="col">조회수</div>
 					</div>
+					<c:forEach items="${ reviewlist }" var="dto">
+							<a class="move" href="<c:out value= '${ dto.id }'/>">
+								<div class="row review-list" style="cursor: pointer;">
+									<div class="col"> ${ dto.name } </div>
+									<div class="col-5 title"> ${ dto.title } </div>
+									<div class="col-2"> ${ dto.member_id } </div>
+									<div class="col-2"> ${ dto.getSubDateWrtn() } </div>
+									<div class="col"> ${ dto.views } </div>
+								</div>
+							</a>
+					</c:forEach>
 				</div>
-					
 			</div>
+				
+			<!-- 페이징 인터페이스 -->
+			<div class="pageInfo_wrap">
+				<div class="pageInfo_area">
+					<ul id="pageInfo" class="pageInfo">
+						
+						<!-- 이전 페이지 버튼 -->
+						<c:if test="${ pageMaker.prev }">
+							<li class="pageInfo_btn previous"><a href="${ pageMaker.startPage-1 }">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+								  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+								</svg>
+							</a></li>
+						</c:if>
+						
+						<!-- 각 번호 페이지 버튼 -->
+						<c:forEach var="num" begin="${ pageMaker.startPage }" end="${ pageMaker.endPage }">
+							<li class="pageInfo_btn ${ pageMaker.cri.pageNum == num ? "active":"" }"><a href="${ num }">${ num }</a></li>
+						</c:forEach>
+						
+						<!-- 다음 페이지 버튼 -->
+						<c:if test="${pageMaker.next}">
+							<li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+								  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+								</svg>
+							</a></li>
+						</c:if>
+					</ul>
+				</div>
+			</div>	
+		</div>
 
 
 			
