@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="https://unpkg.com/bootstrap@4/dist/css/bootstrap.min.css" crossorigin="anonymous">
 <link href="/css/index.css" rel="stylesheet"/>
 <link href="/css/chat.css" rel="stylesheet"/>
+<link href="/css/my.css" rel="stylesheet"/>
 <script src="/jquery-3.6.0.min.js"></script>
 <script src="/js/chat.js"></script>
 <script>
@@ -26,34 +27,41 @@
 	<%@ include file="navbar.jsp" %>
 	
 	<main> 
+	
+		<section id="section">
 		
-	<br>
-    <!-- 제목  --> 
-    <section>
-      <h3>&nbsp;성인병 증상 간단 테스트</h3>
-    </section>
-
-	<!-- a태그 예시 : naver 
+			<div id="surveyresult">
+			
+				<div class="box">
+		
+						<br>
+					    <!-- 제목  --> 
+					      <h3>&nbsp;성인병 증상 간단 테스트</h3>
+					    
+					    <!-- 시작 버튼 -->
+						<br>
+						<br>
+						<br>
+						<br>
+						<form method="POST" action="/survey1">
+							<div class="final-result-next">
+								<input type="hidden" name="no" value="1" />
+								&nbsp;<input type="submit" class="btn btn-primary btn-lg" name="startbtn" value=">     테스트 시작하기" />
+							</div>
+						</form> 
+						
+						<br>
+							<div class="final-result-next">
+								&nbsp;<input type="button" class="btn btn-primary btn-lg" name="backtoindex" value="홈페이지로 이동하기" onClick="location.href='http://localhost:8081/index'" />
+							</div>
+						<br>
+						<br> 
 	
-	<a href="http://www.naver.com">Go Naver</a><br>
+				</div>
+			
+			</div>
 	
-	  -->
-    
-    <!-- 시작 버튼 -->
-	<br>
-	<br>
-	<br>
-	<br>
-	<form method="POST" action="/survey1">
-		<input type="hidden" name="no" value="1" />
-		&nbsp;<input type="submit" name="startbtn" value=">     테스트 시작하기" />
-	</form> 
-	
-	<br>
-	&nbsp;<input type="button" value="홈페이지로 이동하기" name="backtoindex" onClick="location.href='http://localhost:8081/index'" />
-	<br>
-	<br> 
-	
+		</section>
 		
 	</main>
 	

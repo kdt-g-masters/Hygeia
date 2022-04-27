@@ -5,7 +5,7 @@
 	
 	<br> 
 	<!-- 질문 --> 
-	&nbsp;<c:out value="${survey.question}" /> 
+	<h4>&nbsp;<c:out value="${survey.question}" /></h4> 
 	<br> 
 	<br> 
 	
@@ -14,7 +14,9 @@
 	<br> 
 	<!-- 답변 1 -->
 	<form method="POST" action="/survey7a"> 
-		&nbsp;<input type="submit" name="nextbtn7a" value="<c:out value="${survey.answer1}" />" />
+		<div class="final-result-next">
+		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn7a" value="<c:out value="${survey.answer1}" />" />
+		</div>
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -22,7 +24,9 @@
 	<br>
 	<!-- 답변 2 -->
 	<form method="POST" action="/survey7b"> 
-		&nbsp;<input type="submit" name="nextbtn7b" value="<c:out value="${survey.answer2}" />" />
+		<div class="final-result-next">
+		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn7b" value="<c:out value="${survey.answer2}" />" />
+		</div>
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -30,7 +34,9 @@
 	<br>
 	<!-- 답변 3 -->
 	<form method="POST" action="/survey7c"> 
-		&nbsp;<input type="submit" name="nextbtn7c" value="<c:out value="${survey.answer3}" />" />
+		<div class="final-result-next">
+		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn7c" value="<c:out value="${survey.answer3}" />" />
+		</div>
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -38,7 +44,9 @@
 	<br>
 	<!-- 답변 4 -->
 	<form method="POST" action="/survey7d"> 
-		&nbsp;<input type="submit" name="nextbtn7d" value="<c:out value="${survey.answer4}" />" />
+		<div class="final-result-next">
+		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn7d" value="<c:out value="${survey.answer4}" />" />
+		</div>
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
@@ -46,7 +54,9 @@
 	<br>
 	<!-- 답변 5 -->
 	<form method="POST" action="/survey7e"> 
-		&nbsp;<input type="submit" name="nextbtn7e" value="<c:out value="${survey.answer5}" />" />
+		<div class="final-result-next">
+		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn7e" value="<c:out value="${survey.answer5}" />" />
+		</div>
 		<input type="hidden" name="no" value="8" />  
 	</form>
 	<br> 
