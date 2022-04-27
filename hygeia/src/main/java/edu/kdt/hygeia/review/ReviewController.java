@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class ReviewController {
 	
 	//후기 페이징 목록 페이지
 	@RequestMapping("/reviewlist")
-	public ModelAndView reviewPagingList(Criteria cri) throws Exception {
+	public ModelAndView reviewPagingList(Criteria cri, HttpServletResponse response) throws Exception {
 		ModelAndView mv = new ModelAndView();
 		List<ReviewDTO> list = service.reviewPagingList(cri);
 		mv.addObject("reviewlist", list);
@@ -47,6 +48,12 @@ public class ReviewController {
 		int total = service.reviewTotal(cri);
 		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
 		mv.addObject("pageMaker", pageMake);
+		
+		//뒤로가기 버튼으로 목록에 왔을 때 조회수 반영
+		response.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT");
+		response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
+		response.addHeader("Cache-Control", "post-check=0, pre-check=0"); 
+		response.setHeader("Pragma", "no-cache");
 		
 		mv.setViewName("reviewlist");
 		return mv;

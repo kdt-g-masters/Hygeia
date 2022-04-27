@@ -18,14 +18,7 @@
 
 <script>
 	$(document).ready(function () {
-		//뒤로가기로 목록 페이지에 왔을 때
-		window.onpageshow = function(event) {
-		    if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
-		    	location.reload();
-		    }
-		}
-		
-		//alert창 띄우기
+		//후기 작성, 수정 결과 alert창 띄우기
 		let result = '<c:out value="${result}"/>';
 		
 		checkAlert(result);
