@@ -371,17 +371,15 @@ select:hover{
 						</div>
 						
 						<c:forEach items="${reviewlist}" var="dto">
-							<c:if test="${ sessionid == dto.member_id } ">
+							<a href="/reviewresult?reviewid=${ dto.id }">
 								<div class="row review-list" style="cursor: pointer;">
 										<div class="col"> ${dto.name} </div>
-										<div class="col-5 title">
-											<a class="move" href="<c:out value='${dto.id}'/>"> ${dto.title} </a>
-										</div>
+										<div class="col-5 title"> ${dto.title}</div>
 										<div class="col-2"> ${dto.member_id} </div> 
-										<div class="col-2"> ${dto.dateWrtn} </div> 
+										<div class="col-2"> ${dto.getSubDateWrtn()} </div> 
 										<div class="col"> ${dto.views} </div>
 								</div>
-							</c:if>
+							</a>
 						</c:forEach>
 					</div>
 				</div>
