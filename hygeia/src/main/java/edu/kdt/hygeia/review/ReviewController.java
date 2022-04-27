@@ -49,7 +49,7 @@ public class ReviewController {
 		PageMakerDTO pageMake = new PageMakerDTO(cri, total);
 		mv.addObject("pageMaker", pageMake);
 		
-		//뒤로가기 버튼으로 목록에 왔을 때 조회수 반영
+		//뒤로가기 버튼으로 목록 페이지 이동 시 조회수 반영
 		response.setHeader("Expires", "Sat, 6 May 1995 12:00:00 GMT");
 		response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
 		response.addHeader("Cache-Control", "post-check=0, pre-check=0"); 
