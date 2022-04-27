@@ -13,45 +13,48 @@
 
 	<br> 
 	<!-- 답변 1 -->
+	<div class="wide-btn">
 	<form method="POST" action="/survey12a"> 
 		<div class="final-result-next">
 		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn12a" value="<c:out value="${survey.answer1}" />" />
 		</div>
 	</form>
-	<br> 
+	</div>
 
-	<br>
 	<!-- 답변 2 -->
+	<div class="wide-btn">
 	<form method="POST" action="/survey12b"> 
 		<div class="final-result-next">
 		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn12b" value="<c:out value="${survey.answer2}" />" />
 		</div>
 	</form>
-	<br> 
+	</div>
 	
-	<br>
 	<!-- 답변 3 -->
+	<div class="wide-btn">
 	<form method="POST" action="/survey12c"> 
 		<div class="final-result-next">
 		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn12c" value="<c:out value="${survey.answer3}" />" />
 		</div>
 	</form>
-	<br> 
+	</div>
 	
-	<br>
 	<!-- 답변 4 -->
+	<div class="wide-btn">
 	<form method="POST" action="/survey12d"> 
 		<div class="final-result-next">
 		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn12d" value="<c:out value="${survey.answer4}" />" />
 		</div>
 	</form>
-	<br> 
+	</div>
 	
-	<br>
 	<!-- 답변 5 -->
+	<div class="wide-btn">
 	<form method="POST" action="/survey12e"> 
 		<div class="final-result-next">
 		&nbsp;<input type="submit" class="btn btn-outline-primary mx-1" name="nextbtn12e" value="<c:out value="${survey.answer5}" />" />
+		</div>
 	</form>
-	<br> 
+	</div>
+	<br>
 

@@ -91,11 +91,13 @@
 					<br>
 					
 					<br>
+					<div class="wide-btn">
 					<form action="/surveynext" method="POST" > 
 						<div class="wannaresult">
 						&nbsp;<input type="submit" class="btn btn-primary btn-lg" value="설문 그만하기" name="gotofinal" />
 						</div>  
 					</form>
+					</div>
 					<br>
 		
 				</div>
