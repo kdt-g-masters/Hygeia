@@ -259,7 +259,7 @@ input[type="submit"], .final-result-next input[type="button"]{
 	width: 61%;
 	padding: 1.25em;
 	margin: 1.3em;
-	font-size: 0.81em;
+	font-size: 1em;
 	font-weight: 600;
 }
 .comment{
