@@ -315,50 +315,66 @@ select:hover{
 			<!-- 내 건강 결과 메뉴  -->
 			<div id="mysurveyresult">
 				<div class="box"> 
-					<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
-					<h4><b>${ memberInfo.id }님 건강 진단 결과</b></h4>
-					<hr>
-					<h4>생활습관병 중 <br> 
-						<span class="underline"><b><c:out value="${memberResult.resultDisease}" /></b></span> 발생 가능성이 있습니다.<br> 
-						가장 효과적이고 간편하게 식재료를 활용한 식습관을 개선해보세요.
-					</h4>
-					
-					<div class="content"></div>
-					
-					<div class="rcm-food">
-						<h5><c:out value="${memberResult.resultDisease}" />에 좋은 음식들</h5>
-						<c:set var="resultDisease_temp" value="${memberResult.resultDisease}" />
-						<!-- resultDisease를 받아오면 생기는 공백 제거 -->
-						<c:set var="length" value="${fn:length(resultDisease_temp)}"/>
-    					<c:set var="resultDisease" value="${fn:substring(resultDisease_temp, 0, length - 1)}" />
-				   		
-				   		<c:forEach items="${info}" var="dto">			   				   			
-				   			<c:if test="${dto.name eq resultDisease}">
-							<%-- <span class="btn btn-primary md-2">
-								<a href="/food?num=${dto.foodnum}"> ${ dto.name }</a>
-							</span> --%>
-													
-								<div class="foodList">
-									<script>
-										 var str = "${dto.foods}";
-				     					 var list = str.split(',');
-				     					 for(var i in list)
-				      					 	document.write( '<span class="btn btn-primary md-2">'+list[i]+'</span>' );
-				    				</script>						
-								</div>
-							</c:if>
-						</c:forEach>
-					</div>
-				</div>		
+					<c:choose>
+						<c:when test="${not empty memberResult.member_id}">
+							<!-- DB(Storage)테이블에서 세션아이디의 건강 진단 결과 select 후 mypage view에 전달 -->
+							<h4><b>${ memberInfo.id }님 건강 진단 결과</b></h4>
+							<hr>
+							<h4>생활습관병 중 <br> 
+								<span class="underline"><b><c:out value="${memberResult.resultDisease}" /></b></span> 발생 가능성이 있습니다.<br> 
+								가장 효과적이고 간편하게 식재료를 활용한 식습관을 개선해보세요.
+							</h4>
+							
+							<div class="content"></div>
+							
+							<div class="rcm-food">
+								<h5><c:out value="${memberResult.resultDisease}" />에 좋은 음식들</h5>
+								<c:set var="resultDisease_temp" value="${memberResult.resultDisease}" />
+								<!-- resultDisease를 받아오면 생기는 공백 제거 -->
+								<c:set var="length" value="${fn:length(resultDisease_temp)}"/>
+		    					<c:set var="resultDisease" value="${fn:substring(resultDisease_temp, 0, length - 1)}" />
+						   		
+						   		<c:forEach items="${info}" var="dto">			   				   			
+						   			<c:if test="${dto.name eq resultDisease}">
+									<%-- <span class="btn btn-primary md-2">
+										<a href="/food?num=${dto.foodnum}"> ${ dto.name }</a>
+									</span> --%>
+															
+										<div class="foodList">
+											<script>
+												 var str = "${dto.foods}";
+						     					 var list = str.split(',');
+						     					 for(var i in list)
+						      					 	document.write( '<span class="btn btn-primary md-2">'+list[i]+'</span>' );
+						    				</script>						
+										</div>
+									</c:if>
+								</c:forEach>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<h4 style="text-align:center;"><b>${ memberInfo.id }님 </b><br><br>아직 HYGEIA의 건강 테스트를 안해 보셨군요?<br>건강 테스트로 의심되는 성인병을 발견하고, <br>예방하기 위한 식재료를 알아보세요.</h4>
+						</c:otherwise>
+					</c:choose>
+					</div>		
 		
-				<div class="col-lg-12 mainTitle">
-					<a id="myInfo" class="btn btn-primary btn-lg" href="survey1">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/>
-						</svg>
-						건강 진단 다시하기					
-					</a>
-				</div>	
+						<div class="col-lg-12 mainTitle">
+							<a id="myInfo" class="btn btn-primary btn-lg" href="survey1">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-pulse" viewBox="0 0 16 16">
+									<path fill-rule="evenodd" d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Zm6.979 3.856a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.895-.133L4.232 10H3.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 .416-.223l1.41-2.115 1.195 3.982a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h1.5a.5.5 0 0 0 0-1h-1.128L9.979 5.356Z"/>
+								</svg>
+								<c:choose>
+								<c:when test="${not empty memberResult.member_id}">
+									건강 진단 다시하기	
+								</c:when>
+								<c:otherwise>
+									내 건강 정보 확인하기
+								</c:otherwise>				
+								</c:choose>
+							</a>
+						</div>	
+					
+				
 			</div>
 			
 		
