@@ -91,7 +91,7 @@ public class ReviewController {
 	@RequestMapping(value = "/reviewinput", method = RequestMethod.POST)
 	public String reviewInput(ReviewDTO dto, RedirectAttributes rttr, MultipartFile file, HttpServletRequest request) throws Exception {
 		//파일 저장 경로
-		String savepath = System.getProperty("user.dir") + "\\ROOT\\WEB-INF\\classes\\static\\images\\reviewfiles";
+		String savepath = System.getProperty("user.dir") + "\\WEB-INF\\classes\\static\\images\\reviewfiles";
 		
 		if(!file.isEmpty()) {
 			//무작위 이름 만들기(식별자)
