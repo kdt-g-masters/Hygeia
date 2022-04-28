@@ -64,6 +64,7 @@
 	width: 75%;
 	height: auto;
 	margin: 0 auto;
+	border-radius: 15px;
 }
 
 #diseasename{
@@ -207,17 +208,17 @@
 		<br>
 		<br>
 		<!-- 전체 테두리 -->
-		<div id="line" class="border border-2, shadow p-3 mb-5 bg-body rounded">
+		<div id="line" class="border border-2, shadow p-3 mb-5 bg-body">
 			<!-- 병 이름 -->
 			<div id="diseasename"><h2><%= cntntssj %></h2></div><br><br>
 			
 			<!-- 병 개요 -->
 			<h4><%= cntntssj %> 개요</h4>
-			<div><%= overviewcontent %></div><br>
+			<div style="padding: 10px;"><%= overviewcontent %></div><br>
 			
 			<!-- 병 내용 -->
 			<h4><%= cntntssj %>에 대한 내용</h4>
-			<div><%= view1content %></div><br><br>
+			<div style="padding: 10px;"><%= view1content %></div><br><br>
 			
 			<!-- 병에 좋은 식재료 -->
 			<h4><%= cntntssj %> 에 좋은 식재료</h4>
