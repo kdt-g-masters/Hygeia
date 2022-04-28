@@ -80,7 +80,7 @@ margin: 0 auto;
 margin: 0 auto;
 height: auto;
 width: 850px;
-
+border-radius: 2em;
 /* background-color: orange;
 border: 1px solid green; */
 }
@@ -90,7 +90,6 @@ border: 1px solid green; */
 margin: 0 auto;
 width: 800px;
 height: auto;
-
 /* background-color: blue;
 border: 1px solid red; */
 }
@@ -135,7 +134,8 @@ line-height: 35px;
 			<a id="title" class="btn btn-primary btn-lg" href="">몸에 좋은 식재료</a>
 		</div>
 <br>
-<div id = "line" class="border border-2, shadow p-3 mb-5 bg-body rounded"> <!-- 전체 테두리 -->
+<div id = "line" class="border border-2, shadow p-3 mb-5 bg-body "> <!-- 전체 테두리 -->
+
 <!-- 식재료 이름 -->
 <div id = "foodname"><h2>${fooddto.name }</h2></div><br><br>
 
