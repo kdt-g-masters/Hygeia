@@ -19,6 +19,7 @@ input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, inpu
 #search button {
 	background-color: transparent;
 	border: 0;
+	padding: 0.3rem 0.8rem;
 }
 
 #search button:hover {
@@ -31,15 +32,15 @@ input[type=text]:hover, input[type=password]:hover, input[type=text]:focus, inpu
 
 #searchBox #btnSearchMic {
     position: absolute;    
-    top: 2vh;
-    right: 5vw;
+    top: 1.5vh;
+    right: 4vw;
     color: #FCA937;
 }
 
 #searchBox #btnMicStop {
     position: absolute;    
-    top: 2vh;
-    right: 5vw;
+    top: 1.5vh;
+    right: 4vw;
     color: red;
     display: none;
 }

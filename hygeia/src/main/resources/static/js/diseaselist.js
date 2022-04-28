@@ -13,7 +13,7 @@
 					result += "<div id='listcol'><div class='col-sm-4 col-md-2 col-lg-2 col-xl-1'>"
 					+ "<a href=\"/diseaseresult?cntntsSn=" + diseaseList[i].cntntsSn + "\">" 
 					+ "<div class='card shadow diseaseCardStyle'><div class='card-body cardTextCenter'>"
-					+ "<h5 class='card-title'>" + diseaseList[i].name + "</h5>"
+					+ "<h4 class='card-title'>" + diseaseList[i].name + "</h4>"
 					+ "</div></div></a></div></div>";
 				}
 				$("#diseaseList").html(result);

@@ -85,9 +85,10 @@ button:hover {
 	background-color: transparent;
 }
 
-#btnCheckId, #btnCerti, #btnConfirm {
+#btnCheckId, #btnCerti, #btnConfirm, #btnCancel, #btnSubmit {
 	font-size: 1.1em;
 	height: 2.5em;	
+	padding: 0.4rem 1rem;
 }
 
 #idAvailable, #pwAvailable {
@@ -153,11 +154,15 @@ select:hover{
 .posRel #check, #warning {
 	position: absolute;    
     top: 0.8vh;
-    right: 8vw;
+    right: 9vw;
 }
 
 .posRel #pwCheck, #pwWarning {
 	position: absolute;    
     top: 0.8vh;
     right: 1.3vw;
+}
+
+#btnPadding {
+	padding: 0.4rem 1rem;
 }

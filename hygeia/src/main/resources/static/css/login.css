@@ -44,6 +44,7 @@ button:hover{
 	border: 0;
 	height: 45px;
 	font-size: 1.1em;
+	padding: 0.4rem 1rem;
 }
 
 #findIdPw {
@@ -107,6 +108,7 @@ main h3 {
 	background-color: transparent;
 	font-weight: bold;
 	font-size: 1.1em;
+	padding: 0.4rem 1rem;
 }
 
 #joinBtn:hover {
