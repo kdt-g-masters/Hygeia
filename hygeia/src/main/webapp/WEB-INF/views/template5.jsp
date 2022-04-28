@@ -140,7 +140,7 @@
 				<!-- 이미지 파일 -->
 				<c:if test="${ !empty reviewresult.filename }">
 					<div style="text-align: center;">
-						<img style="width: 50%; height: 50%;" src="/usr/mydir/upload/${ reviewresult.filename }">
+						<img style="width: 50%; height: 50%;" src="/root/usr/mydir/upload/${ reviewresult.filename }">
 					</div>
 					<br>
 				</c:if>
