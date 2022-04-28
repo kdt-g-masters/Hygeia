@@ -112,7 +112,7 @@ input[type=text], input[type=file]{
 					<!-- 첨부파일 -->
 					<input type="file" name="file">
 					<!-- 태그 -->
-					<input type="text" name="tag">
+					<input type="text" name="tag" placeholder="태그를 입력하세요.">
 					<div class="row first">
 						<div class="col memberid">작성자</div>
 						<!-- 작성자 아이디 -->
