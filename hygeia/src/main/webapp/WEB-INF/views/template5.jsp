@@ -140,7 +140,10 @@
 				<!-- 이미지 파일 -->
 				<c:if test="${ !empty reviewresult.filename }">
 					<div style="text-align: center;">
-						<img style="width: 50%; height: 50%;" src="/images/reviewfiles/${ reviewresult.filename }">
+						<!-- 네이버 서버 -->
+						<img style="width: 50%; height: 50%;" src="${ reviewresult.filepath }/${ reviewresult.filename }">
+						<!-- 로컬 -->
+						<!-- <img style="width: 50%; height: 50%;" src="/images/reviewfiles/${ reviewresult.filename }"> -->
 					</div>
 					<br>
 				</c:if>
