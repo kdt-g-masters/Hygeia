@@ -122,7 +122,7 @@
 	
 	<main>
 		<br><br>
-		
+		<%= System.getProperty("user.dir") %>
 		<!-- 후기 상세 정보 -->
 		<div id="review-tlb">
 			<div class="container">
