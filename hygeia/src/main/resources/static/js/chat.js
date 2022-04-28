@@ -1,20 +1,11 @@
 /*chatbot.js */
  $(document).ready(function() {
+		/*챗봇 버튼 클릭 시 웰컴 메세지 출력*/
 		$(".floating-button").on('click', function(){
 			$("#ch-window").fadeToggle();
-			$("#close").on('click',function(){
-				$("#ch-window").fadeOut();
-			});
-		});
-		
-		//---입력, 대화시작 클릭시 
-		$(".ch-bnt").on('click', function(){
-				if( $("#request").val() != ""){
-					$("#record").append("<div class='question'>" + $("#request").val() + "</div>");	//질문출력
-				}
-				$.ajax({
+			$.ajax({
 					url : "/chatbot",
-					data : {"request": $("#request").val(), "event":$(this).val()}, //입력,대화시작 
+					data : {"request": $("#request").val(), "event":"대화시작"}, //입력,대화시작 
 					type : "get",
 					dataType : "json",
 					success : function(serverdata){
@@ -34,9 +25,60 @@
 						});  //li end
 						}//function end
 				});// ajax end
-				
-				$("#request").val(""); // 질문창 리셋
+			$("#close").on('click',function(){
+				$("#ch-window").fadeOut();
+			});
+		});
+		
+		//---입력, 대화시작 클릭시 
+		$(".ch-bnt").on('click', function(){
+			$("#record").append("<div class='question'>" + $("#request").val() + "</div>");	//질문출력
+			$.ajax({
+				url : "/chatbot",
+				data : {"request": $("#request").val(), "event":$(this).val()}, //입력,대화시작 
+				type : "get",
+				dataType : "json",
+				success : function(serverdata){
+					parser(serverdata)
+					$("li").on('click',function(){
+						console.log($(this).text());
+						$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
+						$.ajax({
+							url : "/chatbot",
+							data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
+							type : "post",
+							dataType : "json",
+							success : function(serverdata){
+								parser(serverdata);
+							}
+						});//ajax end
+					});  //li end
+					}//function end
+			});// ajax end
+			$("#request").val(""); // 질문창 리셋
 		}); // .ch-input input:button end
+		$(".link").on('click', function(){
+			$.ajax({
+				url : "/chatbot",
+				data : {"request": $("#request").val(), "event":"입력"}, //입력,대화시작 
+				type : "get",
+				dataType : "json",
+				success : function(serverdata){
+					parser(serverdata)
+					console.log($(this).text());
+						$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
+						$.ajax({
+							url : "/chatbot",
+							data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
+							type : "post",
+							dataType : "json",
+							success : function(serverdata){
+								parser(serverdata);
+							}
+						});//ajax end
+				}
+			});//ajax end
+		}); // .link
 	}); //ready onclick
 		
 	function parser(serverdata){ // 값을 보냈을 때 화면에서 바뀌는 부분
