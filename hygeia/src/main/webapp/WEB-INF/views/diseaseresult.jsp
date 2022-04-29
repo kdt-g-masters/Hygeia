@@ -136,6 +136,10 @@
 	padding-left: 1.5vw;
 	text-align: left;
 }
+.viewcontent{
+   padding: 1vh 8vw 1vh;
+   line-height: 1.75em;
+}
 </style>
 </head>
 <body class="bg-color">
@@ -215,11 +219,11 @@
 			
 			<!-- 병 개요 -->
 			<h4 style="text-align:center;"><b><%= cntntssj %> 개요</b></h4>
-			<div style="padding: 10px;"><%= overviewcontent %></div><br>
+			<div class="viewcontent"><%= overviewcontent %></div><br>
 			
 			<!-- 병 내용 -->
 			<h4 style="text-align:center;"><b><%= cntntssj %>에 대한 내용</b></h4>
-			<div style="padding: 10px;"><%= view1content %></div><br><br>
+			<div class="viewcontent"><%= view1content %></div><br><br>
 			
 			<!-- 병에 좋은 식재료 -->
 			<h4 style="text-align:center;"><b><%= cntntssj %> 에 좋은 식재료</b></h4>
