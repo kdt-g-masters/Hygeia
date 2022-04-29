@@ -29,7 +29,7 @@ public class DiseaseController {
 		ModelAndView mv = new ModelAndView();
 		List<DiseaseDTO> list = service.diseaseList();
 		mv.addObject("diseaselist", list);
-		mv.setViewName("template2");
+		mv.setViewName("diseaselist");
 		return mv;
 	}
 	
@@ -39,7 +39,7 @@ public class DiseaseController {
 		ModelAndView mv = new ModelAndView();
 		String diseaseresult = service.openAPI(cntntsSn);//open api 정보
 		mv.addObject("diseaseresult", diseaseresult);
-		mv.setViewName("template3");
+		mv.setViewName("diseaseresult");
 		return mv;
 	}
 	
