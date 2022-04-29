@@ -107,7 +107,7 @@
 
 /* 병 관련 후기 */
 #review-tlb{
-    margin: 5vh 20vw 10vh;
+    margin: 5vh 15vw 10vh;
     height: 100%;
     text-align: center;
 }
@@ -133,6 +133,7 @@
 }
 
 .review-list .title{
+	padding-left: 1.5vw;
 	text-align: left;
 }
 </style>
@@ -209,24 +210,24 @@
 		<br>
 		<!-- 전체 테두리 -->
 		<div id="line" class="border border-2, shadow p-3 mb-5 bg-body">
-			<!-- 병 이름 -->
-			<div id="diseasename"><h2><%= cntntssj %></h2></div><br><br>
+			<!-- 병 이름 --><br>
+			<div id="diseasename"><h2 style="text-align:center;"><b><%= cntntssj %></b></h2></div><hr><br>
 			
 			<!-- 병 개요 -->
-			<h4><%= cntntssj %> 개요</h4>
+			<h4 style="text-align:center;"><b><%= cntntssj %> 개요</b></h4>
 			<div style="padding: 10px;"><%= overviewcontent %></div><br>
 			
 			<!-- 병 내용 -->
-			<h4><%= cntntssj %>에 대한 내용</h4>
+			<h4 style="text-align:center;"><b><%= cntntssj %>에 대한 내용</b></h4>
 			<div style="padding: 10px;"><%= view1content %></div><br><br>
 			
 			<!-- 병에 좋은 식재료 -->
-			<h4><%= cntntssj %> 에 좋은 식재료</h4>
+			<h4 style="text-align:center;"><b><%= cntntssj %> 에 좋은 식재료</b></h4>
 			<div id="helpfulfoodList"></div>
 			<br><br>
 			
 			<!-- 병 관련 후기 -->
-			<h4><%= cntntssj %> 관련 후기</h4>
+			<h4 style="text-align:center;"><b><%= cntntssj %> 관련 후기</b></h4>
 			<div id="diseaseReview"></div>
 		</div>
 			
