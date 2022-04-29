@@ -66,7 +66,7 @@ public class ReviewController {
 		int count = service.reviewCount(reviewid);
 		ReviewDTO reviewresult = service.reviewResult(reviewid);
 		mv.addObject("reviewresult", reviewresult);
-		mv.setViewName("template5");
+		mv.setViewName("reviewresult");
 		return mv;
 	}
 	
@@ -78,7 +78,7 @@ public class ReviewController {
 		String memberid = (String)session.getAttribute("sessionid");
 		if(memberid != null) {
 			mv.addObject("memberid", memberid);
-			mv.setViewName("template6");			
+			mv.setViewName("reviewinput");			
 		}
 		else {
 			rttr.addFlashAttribute("result", "warning");
@@ -127,7 +127,7 @@ public class ReviewController {
 		ModelAndView mv = new ModelAndView();
 		ReviewDTO reviewmodify = service.reviewResult(reviewid);
 		mv.addObject("reviewmodify", reviewmodify);
-		mv.setViewName("template7");
+		mv.setViewName("reviewmodify");
 		return mv;
 	}
 	
