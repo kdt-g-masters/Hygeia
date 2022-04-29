@@ -54,6 +54,7 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		session.setAttribute("isLogOn", false);
 		session.removeAttribute("memberInfo");
+		session.removeAttribute("sessionid");
 		mv.setViewName("redirect:/");
 		return mv;
 	}
