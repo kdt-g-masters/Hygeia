@@ -19,11 +19,6 @@
 	});
 </script>
 <style>
-#reviewModifyTitle {
-	margin: 0 auto;
-	text-align: center;
-}
-
 #reviewModifyContents{
 	width: 65%;
 	margin: 0 auto;
@@ -66,10 +61,8 @@ input[type=text]{
 	
 	<main>
 		<br><br>
-		<div id="reviewModifyTitle">
-			<h4>
-				<span class="badge rounded-pill bg-warning text-white">만병통치 후기</span>
-			</h4>
+		<div class="col-lg-12 mainTitle">
+			<span id="title" class="btn btn-primary btn-lg" href="">만병통치 후기</span>
 		</div>
 		<br><br>
 		
