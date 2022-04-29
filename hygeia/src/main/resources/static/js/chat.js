@@ -5,70 +5,70 @@
 		$(".floating-button").click( function(){
 			$("#ch-window").fadeToggle();
 			$.ajax({
-					url : "/chatbot",
-					data : {"request": "", "event":"대화시작"}, //입력,대화시작 
-					type : "get",
-					dataType : "json",
-					success : function(serverdata){
-						$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
-						parser(serverdata)
-						$("li").on('click',function(){
-							console.log($(this).text());
-							$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
-							$.ajax({
-								url : "/chatbot",
-								data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
-								type : "get",
-								dataType : "json",
-								success : function(serverdata){
-									parser(serverdata);
-									$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
-									$("li").on('click',function(){
-										console.log($(this).text());
-										$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
-										$.ajax({
-											url : "/chatbot",
-											data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
-											type : "get",
-											dataType : "json",
-											success : function(serverdata){
-												parser(serverdata);
-												$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
-												$("li").on('click',function(){
-													console.log($(this).text());
-													$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
-													$.ajax({
-														url : "/chatbot",
-														data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
-														type : "get",
-														dataType : "json",
-														success : function(serverdata){
-															parser(serverdata);
-															$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
-															$("li").on('click',function(){
-																console.log($(this).text());
-																$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
-																$.ajax({
-																	url : "/chatbot",
-																	data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
-																	type : "get",
-																	dataType : "json",
-																	success : function(serverdata){
-																		parser(serverdata);
-																		$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
-																	}
-																});//ajax end
-															});  //li end
-														}
-													});//ajax end
-												});  //li end
-											}
-										});//ajax end
-									});  //li end
-								}
-							});//ajax end
-						});  //li end
-					}//function end
+				url : "/chatbot",
+				data : {"request": "", "event":"대화시작"}, //입력,대화시작 
+				type : "get",
+				dataType : "json",
+				success : function(serverdata){
+					$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
+					parser(serverdata)
+					$("li").on('click',function(){
+						console.log($(this).text());
+						$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
+						$.ajax({
+							url : "/chatbot",
+							data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
+							type : "get",
+							dataType : "json",
+							success : function(serverdata){
+								parser(serverdata);
+								$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
+								$("li").on('click',function(){
+									console.log($(this).text());
+									$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
+									$.ajax({
+										url : "/chatbot",
+										data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
+										type : "get",
+										dataType : "json",
+										success : function(serverdata){
+											parser(serverdata);
+											$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
+											$("li").on('click',function(){
+												console.log($(this).text());
+												$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
+												$.ajax({
+													url : "/chatbot",
+													data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
+													type : "get",
+													dataType : "json",
+													success : function(serverdata){
+														parser(serverdata);
+														$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
+														$("li").on('click',function(){
+															console.log($(this).text());
+															$("#record").append("<div class='question'>" + $(this).html() + "</div>");	//선택한 것출력
+															$.ajax({
+																url : "/chatbot",
+																data : {"request": $(this).html(), "event":"입력"}, //request: 인사/생활습관병/식재료/맞춤/후기
+																type : "get",
+																dataType : "json",
+																success : function(serverdata){
+																	parser(serverdata);
+																	$("#record-box").scrollTop($("#record-box")[0].scrollHeight);
+																}
+															});//ajax end
+														});  //li end
+													}
+												});//ajax end
+											});  //li end
+										}
+									});//ajax end
+								});  //li end
+							}
+						});//ajax end
+					});  //li end
+				}//function end
 			});// ajax end
 				
 			$("#close").on('click',function(){
