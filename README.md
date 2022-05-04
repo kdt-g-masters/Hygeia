@@ -26,5 +26,5 @@
 
 *****
 <b>히기에이아 결과보고서</b> | [결과보고서](https://github.com/kdt-g-masters/Hygeia/files/8597373/_4.pdf)      
-<b>히기에이아 방문하기</b>  |  [Hygeia Web](http://27.96.131.149:8080/, "hygeia link")       
+<b>히기에이아 방문하기</b>  |  [Hygeia Web](http://118.67.129.219:8080/, "hygeia link")       
 <b>히기에이아 팀 활동</b>  |  [Hygeia Team](https://trello.com/b/d0qKpxgt/semi-project-hygeia, "hygeia team link")  
