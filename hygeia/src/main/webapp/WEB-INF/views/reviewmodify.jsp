@@ -90,7 +90,7 @@ input[type=text]{
 					<div class="col-2">${ reviewmodify.getSubDateWrtn() }</div>
 				</div>
 				<!-- 후기 내용 -->
-				<textarea rows="40" cols="100" name="content" style="width: 100%; border-radius: 30px; padding: 15px;">${ reviewmodify.content }</textarea>
+				<textarea rows="40" cols="100" name="content" style="width: 100%; border-radius: 30px; padding: 15px; height: 450px;">${ reviewmodify.content }</textarea>
 				<input class="btn btn-primary" type="submit" value="후기 수정">
 				<button class="btn btn-primary" type="button" onclick="location.href='/reviewresult?reviewid=${ reviewmodify.id }'">수정 취소</button>
 			</form>

@@ -116,7 +116,7 @@ input[type=text], input[type=file]{
 					</div>
 				</div>
 				<!-- 후기 내용 -->
-				<textarea rows="40" cols="100" name="content" placeholder="글을 작성하세요." style="width: 100%; border-radius: 30px; padding: 15px;"></textarea>
+				<textarea rows="40" cols="100" name="content" placeholder="글을 작성하세요." style="width: 100%; border-radius: 30px; padding: 15px; height: 450px;"></textarea>
 				<br><br>
 				<button class="btn btn-primary">후기 올리기</button>
 			</form>
