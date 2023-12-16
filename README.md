@@ -1,8 +1,10 @@
-# 생활습관병(성인병) 예방 및 증상 완화를 위한 <br>식재료 정보 제공 서비스
-
 <img src="./README_asset/logo_orange.png" width="300"/>
 
-###### | _<b>Hygeia</b>란 그리스 로마 신화에 나오는 건강의 여신을 말합니다._
+# 생활습관병(성인병) 예방 및 증상 완화를 위한 <br>식재료 정보 제공 서비스
+
+> <b>Hygeia</b> 란 그리스 로마 신화에 나오는 건강의 여신을 의미합니다. <br>
+
+<br>
 
 ### 프로젝트 개발 기간
 
@@ -181,8 +183,7 @@
 
 | 이새하                                                              | 김정규                                                          | 연주원                                                            | 이종무                                                            | 이훈학                                                            |
 | ------------------------------------------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| ![saehalee](https://avatars.githubusercontent.com/u/42618047?v=4)   | ![inacro](https://avatars.githubusercontent.com/u/86817551?v=4) | ![joo1yeon](https://avatars.githubusercontent.com/u/50977497?v=4) | ![JaeHa29](https://avatars.githubusercontent.com/u/100458789?v=4) | ![hoonak2](https://avatars.githubusercontent.com/u/132100894?v=4) |
-| [saehalee](https://github.com/saehalee)                             | [inacro](https://github.com/inacro)                             | [joo1yeon](https://github.com/joo1yeon)                           | [JaeHa29](https://github.com/JaeHa29)                             | [hoonak2](https://github.com/hoonak2)                             |
+| [![saehalee](https://avatars.githubusercontent.com/u/42618047?v=4)](https://github.com/saehalee)                             | [![inacro](https://avatars.githubusercontent.com/u/86817551?v=4)](https://github.com/inacro)                             | [![joo1yeon](https://avatars.githubusercontent.com/u/50977497?v=4)](https://github.com/joo1yeon)                           | [![JaeHa29](https://avatars.githubusercontent.com/u/100458789?v=4)](https://github.com/JaeHa29)                             | [![hoonak2](https://avatars.githubusercontent.com/u/132100894?v=4)](https://github.com/hoonak2)                             |
 | 팀장 <br>PM <br>챗봇 기능 <br>DB 모델링 <br>마이 페이지 <br>UI 설계 | <br>생활습관병 정보 제공 기능 <br>후기 기능                     | <br>회원 관리 <br>메인 페이지 <br>식재료 검색 기능                | <br>증상 테스트 기능 <br>문서화 <br>최종 발표                     | <br>식재료 정보 제공 기능 <br>                                    |
 
 <br>
