@@ -1,6 +1,8 @@
-<img src="./README_asset/logo_orange.png" width="300"/>
+<img src="./README_asset/cover_image.png"/>
 
 # 생활습관병(성인병) 예방 및 증상 완화를 위한 <br>식재료 정보 제공 서비스
+
+<img src="./README_asset/logo_orange.png" width="100"/>
 
 > <b>Hygeia</b> 란 그리스 로마 신화에 나오는 건강의 여신을 의미합니다. <br>
 
