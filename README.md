@@ -12,6 +12,12 @@
 
 `2022.04.01.` - `2022.04.29.` (4주)
 
+### 팀 활동
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Right%20Light%20Skin%20Tone.png" alt="Backhand Index Pointing Right Light Skin Tone" width="30" height="30" /> [<img src="https://img.shields.io/badge/trello-0052CC?style=for-the-badge&logo=trello&logoColor=white">](https://trello.com/b/d0qKpxgt/semi-project-hygeia, "hygeia team link")
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Right%20Light%20Skin%20Tone.png" alt="Backhand Index Pointing Right Light Skin Tone" width="30" height="30" /> [<img src="https://img.shields.io/badge/결과보고서-000000?style=for-the-badge&logo=googledocs&logoColor=white" />](https://github.com/kdt-g-masters/Hygeia/files/8597373/_4.pdf)  
+
 <br>
 
 # 📌 기술 스택
@@ -189,8 +195,3 @@
 | 팀장 <br>PM <br>챗봇 기능 <br>DB 모델링 <br>마이 페이지 <br>UI 설계 | <br>생활습관병 정보 제공 기능 <br>후기 기능                     | <br>회원 관리 <br>메인 페이지 <br>식재료 검색 기능                | <br>증상 테스트 기능 <br>문서화 <br>최종 발표                     | <br>식재료 정보 제공 기능 <br>                                    |
 
 <br>
-
----
-
-<b>히기에이아 결과보고서</b> | [결과보고서](https://github.com/kdt-g-masters/Hygeia/files/8597373/_4.pdf)  
-<b>히기에이아 팀 활동</b> | [Trello](https://trello.com/b/d0qKpxgt/semi-project-hygeia, "hygeia team link")
