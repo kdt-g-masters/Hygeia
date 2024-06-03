@@ -4,7 +4,7 @@
 
 <img src="./README_asset/logo_orange.png" width="100"/>
 
-> <b>Hygeia</b> 란 그리스 로마 신화에 나오는 건강의 여신을 의미합니다. <br>
+> <b>Hygeia</b>(히기에이아)란 그리스 로마 신화에 등장하는 의술의 신 아스클레피오스의 딸로 건강과 위생을 주관하는 신을 의미합니다. <br>
 
 <br>
 
